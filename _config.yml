@@ -10,3 +10,9 @@ email:
 
 # Build settings
 markdown: kramdown
+highlighter: pygments
+sass:
+    style: :compressed
+
+# Gems
+gems: [jekyll-paginate]
