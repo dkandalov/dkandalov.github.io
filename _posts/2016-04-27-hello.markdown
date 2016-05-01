@@ -1,8 +1,0 @@
----
-layout: post
-title:  "Hello"
-date:   2016-04-27 12:51:48 +0100
-categories: jekyll update
----
-Nothing here yet.
-About to write notes from ACCU 2016 conference.
