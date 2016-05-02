@@ -5,29 +5,35 @@ date:   2016-05-01 10:57:48 +0100
 categories: accu conference
 ---
 
-This year I attended [ACCU conference](http://accu.org/index.php/conferences/accu_conference_2016) in Bristol.
-Below you can find some tweet-size notes I made during the conference.
-Most of the sessions at the conference were filmed so I attached available youtube videos.
-I'll update the blog when more videos are published.
+I recently attended [ACCU conference](http://accu.org/index.php/conferences/accu_conference_2016) in Bristol.
+Below you can find some of the tweet-size notes I made during the conference.
 
-If you haven't been to ACCU conference, I do recommend you try it.
+If you haven't been to ACCU conferences, the [conference schedule](http://accu.org/index.php/conferences/accu_conference_2016/accu2016_schedule)
+might give you an idea of what it's like.
 It has emphasis on C++ but other languages and technologies are welcome.
 Because of C++ focus, most of the attendees are much more experienced compared to other conferences.
-Therefore, it's a great opportunity to learn.
-ACCU conference has schedule prepared in advance but it feels a bit like open-space conference
-where you're welcome to start talking to anyone.
+Therefore, it might be a great opportunity to learn.
+Even though the conference has tracks and schedule prepared in advance,
+overall it feels more like open-space conference where you're welcome to talk to anyone.
+
+Most of the sessions were filmed but only some of them are available at the moment.
+I’ll update the blog when more videos are published.
 
 
 #### A Glimpse of Trygve: From Class-oriented Programming to Real OO - [Jim Coplien](https://twitter.com/jcoplien)
+
+<p align="center">
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/lQQ_CahFVzw" frameborder="0" allowfullscreen></iframe>
+</p>
 
 The talk was along the lines of [The DCI Architecture](http://www.artima.com/articles/dci_vision.html)
 but using Trygve programming language as an example.
 To be honest I still don't quite understand DCI so hopefully playing with actual
 programming language will make it more clear.
-This is the [Github project](https://github.com/jcoplien/trygve) for Trygve programming language.
+This is the [GitHub project](https://github.com/jcoplien/trygve) for Trygve programming language.
 
 - OO is about objects not classes. Most of the modern "Object Oriented" languages are really "Class Oriented".
-- Architecture happens is at **runtime**, classes, etc. is scaffolding for runtime behaviour.
+- Architecture happens is at **runtime**. Classes, etc. is "scaffolding" to define runtime behaviour.
 - Project value is in delivering use-cases.
 - Use-case change rate is usually faster than changes in data.
   Therefore, it doesn't always make sense to combine use-cases and data in classes.
@@ -36,11 +42,6 @@ This is the [Github project](https://github.com/jcoplien/trygve) for Trygve prog
 
 Amazing sketchnote by [Michel Grootjans](https://twitter.com/michelgrootjans):
 ![](../assets/images/2016-05-01/trygve.png)
-
-Video:
-<p align="center">
-	<iframe width="560" height="315" src="https://www.youtube.com/embed/lQQ_CahFVzw" frameborder="0" allowfullscreen></iframe>
-</p>
 
 
 #### How I Went from C++ Programmer to Running My Own Software Product Company (and you can too) - [Andy Brice](https://successfulsoftware.net/)
@@ -58,13 +59,17 @@ It was very insightful and interesting talk showing how far seemingly niche
 - Typical website conversion rate:
 	- for well targeted visitors - 1%
 	- untargeted - 0.00038%
-- Don't worry too much about competition. No competitions means there is no market.
+- Don't worry too much about competition. No competition means there is no market.
 - Have free trial version.
 - The first two minutes of using software is vital. Do UX testing! Actually watch someone using it.
 - Don't have a free version of software. If it's good, everyone will use it. If it's not good, nobody will buy full version.
 
 
 #### Waltzing with Branches - [Chris Oldwood](http://chrisoldwood.blogspot.co.uk/)
+
+<p align="center">
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/gYhndMJEbpg?list=PL9hrFapz4dsObkSjgBlyFl-aotNvk2GeP" frameborder="0" allowfullscreen></iframe>
+</p>
 
 This talk was partially based on ACCU journal [Branching Strategies](http://accu.org/index.php/journals/1920) article.
 The most interesting idea for me was to think about branching strategies in terms of
@@ -81,31 +86,43 @@ rather than purely software.
 Amazing sketchnote by [Michel Grootjans](https://twitter.com/michelgrootjans):
 ![](../assets/images/2016-05-01/waltzing-with-branches.png)
 
-Video:
-<p align="center">
-	<iframe width="560" height="315" src="https://www.youtube.com/embed/gYhndMJEbpg?list=PL9hrFapz4dsObkSjgBlyFl-aotNvk2GeP" frameborder="0" allowfullscreen></iframe>
-</p>
-
 
 #### How to Evolve Your Way Out of a Paper Bag - [Frances Buontempo](https://twitter.com/fbuontempo)
 
-Genetic algorithms, cellular automata and combination of the two.
-
-http://accu.org/index.php/journals/1821
-https://github.com/doctorlove/paperbag/tree/master/ga
-
-https://github.com/doctorlove/paperbag/tree/master/evolve/Evolution
-
-Video:
 <p align="center">
 	<iframe width="560" height="315" src="https://www.youtube.com/embed/vhhS_MYViW4?list=PL9hrFapz4dsObkSjgBlyFl-aotNvk2GeP" frameborder="0" allowfullscreen></iframe>
 </p>
 
+There were three parts in this talk:
+
+- using genetic algorithms to determine speed and angle for a particle to leave "paper bag".
+You can find [article on this topic in ACCU journal](http://accu.org/index.php/journals/1821).
+- cellular automata and in particular [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
+which "overflowed" from the paper bag.
+- using genetic algorithm to determine rules for simple cellular automata.
+
+Source code on GitHub [here](https://github.com/doctorlove/paperbag/tree/master/ga)
+and [here](https://github.com/doctorlove/paperbag/tree/master/evolve/Evolution).
+
+#### Predictive Models of Development Teams and the Systems they Build - [Robert Smallshire](https://twitter.com/robsmallshire)
+
+This talk was partially based on [this article](http://sixty-north.com/blog/predictive-models-of-development-teams-and-the-systems-they-build)
+and also included showing simulation using Python to explore applicability of [Brooks' Law](https://en.wikipedia.org/wiki/Brooks%E2%80%99_law)
+(for source code see [this project on GitHub](https://github.com/sixty-north/brooks)).
+
+The most exciting idea for me was that modelling and simulations have been successfully applied in other industries
+and software development doesn't have to be an exception (especially if we want it to become more scientific).
+
 
 #### Declarative Thinking, Declarative Practice - [Kevlin Henney](https://twitter.com/KevlinHenney)
+
 <p align="center">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/nrVIlhtoE3Y?list=PL9hrFapz4dsM1B9bI8VmEE4JJlR0m-dvo" frameborder="0" allowfullscreen></iframe>
 </p>
+
+If you are not familiar with [FizzBuzz](https://en.wikipedia.org/wiki/Fizz_buzz#Programming_interviews)
+or you think that FizzBuzz implementation is obvious and straightforward, this talk is for you.
+On a serious note, it was a great talk about thinking about problems in more declarative way to express your intent rather than computer instructions.
 
 
 #### Balancing Bias in Software Development - [Marian Petre](http://mcs.open.ac.uk/mp8)
@@ -115,15 +132,24 @@ Video:
 	- [Confirmation bias](https://en.wikipedia.org/wiki/Confirmation_bias)
 	- [Status quo bias](https://en.wikipedia.org/wiki/Status_quo_bias)
 	- [Overconfidence_effect](https://en.wikipedia.org/wiki/Overconfidence_effect)
-	- [Dunning–Kruger effect](https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect)
 
 - Experts use practices to overcome biases, e.g. to avoid anchoring bias double estimate and multiply by 10 or use planning poker.
 - Experts make more mistakes but have better tools to find them fast.
 
+#### Writing Snake in 6 Programming Languages - [Andy Balaam](https://twitter.com/andybalaam)
+
+As the title suggests this session was about implementing classic [snake video game](https://en.wikipedia.org/wiki/Snake_(video_game))
+using different programming languages and platforms (including ZX Spectrum!).
+You can find Andy Balaam's videos on this topic in [his blog](http://www.artificialworlds.net/blog/2015/02/05/snake-in-groovy).
+
+Overall, writing snake sounds like a good "code kata" for exploring new languages and platforms.
+
 
 #### Lightning talks
-Guess the fruit
+On Wednesday, Thursday and Friday there were series of 5 minute [lightning talks](https://en.wikipedia.org/wiki/Lightning_talk)
+They were planned during the day and everyone attending the conference was encouraged to give a lightning talk.
+The talks covered variety of topics in different formats and they have to be watched rather than described.
+Hopefully lightning talks videos will be published soon.
 
-
-#### Good to see you
-TODO
+[Pete Goodliffe](https://twitter.com/petegoodliffe) entertaining audience between lightning talks:
+![](../assets/images/2016-05-01/guess-the-fruit.png)
