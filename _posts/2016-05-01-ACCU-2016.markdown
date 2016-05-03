@@ -27,8 +27,8 @@ I’ll update the blog when more videos are published.
 </p>
 
 The talk was along the lines of [The DCI Architecture](http://www.artima.com/articles/dci_vision.html)
-but using Trygve programming language as an example.
-To be honest I still don't quite understand DCI so hopefully playing with actual
+using Trygve programming language as an example.
+After reading about DCI I still don't quite understand it so, hopefully, playing with actual
 programming language will make it more clear.
 This is the [GitHub project](https://github.com/jcoplien/trygve) for Trygve programming language.
 
@@ -41,7 +41,7 @@ This is the [GitHub project](https://github.com/jcoplien/trygve) for Trygve prog
 - Micro-services don't necessarily solve the most important problem of semantically breaking down project.
 
 Amazing sketchnote by [Michel Grootjans](https://twitter.com/michelgrootjans):
-![](../assets/images/2016-05-01/trygve.png)
+![](/assets/images/2016-05-01/trygve.png)
 
 
 #### How I Went from C++ Programmer to Running My Own Software Product Company (and you can too) - [Andy Brice](https://successfulsoftware.net/)
@@ -84,7 +84,7 @@ rather than purely software.
 - "Advanced monitoring is indistinguishable from testing".
 
 Amazing sketchnote by [Michel Grootjans](https://twitter.com/michelgrootjans):
-![](../assets/images/2016-05-01/waltzing-with-branches.png)
+![](/assets/images/2016-05-01/waltzing-with-branches.png)
 
 
 #### How to Evolve Your Way Out of a Paper Bag - [Frances Buontempo](https://twitter.com/fbuontempo)
@@ -152,4 +152,4 @@ The talks covered variety of topics in different formats and they have to be wat
 Hopefully lightning talks videos will be published soon.
 
 [Pete Goodliffe](https://twitter.com/petegoodliffe) entertaining audience between lightning talks:
-![](../assets/images/2016-05-01/guess-the-fruit.png)
+![](/assets/images/2016-05-01/guess-the-fruit.png)

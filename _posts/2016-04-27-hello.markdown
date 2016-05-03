@@ -1,0 +1,12 @@
+---
+layout: post
+title:  Hello
+date:   2016-04-27 08:56:00 +0100
+categories:
+---
+
+I only wanted to published quick notes from ACCU 2016 conference
+but ended up playing with [Jekyl](http://jekyllrb.com/) and started
+this yet-another-blog-about-programming.
+
+I hope it will be enjoyable experience. Thank you for reading this.
