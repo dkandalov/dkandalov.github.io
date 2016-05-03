@@ -53,7 +53,7 @@ It was very insightful and interesting talk showing how far seemingly niche
 
 - Success = idea * (execution<sup>2</sup>), i.e. ideas are cheap, execution is crucial.
 - Narrow product which does only one thing is good because internet is BIG and small niche is big enough.
-- Product won't sell itself, examples like Minecraft are outliers. "Word of month" is **very** slow.
+- Product won't sell itself, examples like Minecraft are outliers. "Word of mouth" is **very** slow.
 - Amount of marketing required for developing software product is larger than writing software itself.
 - The biggest challenge is getting noticed.
 - Typical website conversion rate:
@@ -146,7 +146,7 @@ Overall, writing snake sounds like a good "code kata" for exploring new language
 
 
 #### Lightning talks
-On Wednesday, Thursday and Friday there were series of 5 minute [lightning talks](https://en.wikipedia.org/wiki/Lightning_talk)
+On Wednesday, Thursday and Friday there were series of 5 minute [lightning talks](https://en.wikipedia.org/wiki/Lightning_talk).
 They were planned during the day and everyone attending the conference was encouraged to give a lightning talk.
 The talks covered variety of topics in different formats and they have to be watched rather than described.
 Hopefully lightning talks videos will be published soon.
