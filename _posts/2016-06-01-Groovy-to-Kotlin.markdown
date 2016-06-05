@@ -39,13 +39,14 @@ To create an instance of a class you can just use class name with constructor pa
 This doesn't sound like much but I believe that lots of tiny improvements can accumulate and make a big overall difference.
 
 Groovy:
-{% highlight groovy %}
+<groovy>
 new ActivityTracker.Config(...)
-{% endhighlight %}
+</groovy>
+
 Kotlin:
-{% highlight kotlin %}
+<kotlin>
 ActivityTracker.Config(...)
-{% endhighlight %}
+</kotlin>
 
 #### No implicit narrowing/widening for numbers
 Unlike Groovy (and probably most JVM languages) there is no implicit narrowing/widening conversion for numbers in Kotlin.
@@ -58,17 +59,17 @@ considering how subtle and difficult to find implicit conversion bugs can be.
 (In case you were wondering about silent underflow/overflow, it is still there. Works the same way as in Java.)
 
 Groovy:
-{% highlight groovy %}
+<groovy>
 def l = 123L
 def i = 123
 l = i // works ok
-{% endhighlight %}
+</groovy>
 Kotlin:
-{% highlight kotlin %}
+<kotlin>
 var l = 123L
 var i = 123
 l = i // compilation error
-{% endhighlight %}
+</kotlin>
 
 #### Closure type parameters
 In Groovy types and type parameters are optional.
@@ -79,15 +80,15 @@ To be fair, there is ``ClosureParams`` annotation to specify types for closure i
 In Kotlin, closures (aka lambdas) have type parameters for both inputs and output as you would expect.
 
 Groovy:
-{% highlight groovy %}
-private updateState(Closure<State> closure) {...}
+<groovy>
+private updateState(Closure&lt;State&gt; closure) {...}
 // or
-private updateState(@ClosureParams(State.class) Closure<State> closure) {...}
-{% endhighlight %}
+private updateState(@ClosureParams(State.class) Closure&lt;State&gt; closure) {...}
+</groovy>
 Kotlin:
-{% highlight kotlin %}
-private fun updateState(closure: (State) -> State) {...}
-{% endhighlight %}
+<kotlin>
+private fun updateState(closure: (State) -&gt; State) {}
+</kotlin>
 
 #### "With" vs "run" and "apply"
 One of the interesting features in Groovy is ``.with`` function defined on ``Object`` class.
@@ -101,7 +102,7 @@ In addition, there is the ``.apply`` function in Kotlin which is like ``.run`` b
 It can be useful when building trees of object to avoid ``it`` as the last expression in each closure.
 
 Groovy:
-{% highlight groovy %}
+<groovy>
 def actionGroup = new DefaultActionGroup().with {
 	add(toggleTracking)
 	add(new DefaultActionGroup("Current Log", true).with {
@@ -116,9 +117,9 @@ def actionGroup = new DefaultActionGroup().with {
 	//...
 	it
 }
-{% endhighlight %}
+</groovy>
 Kotlin:
-{% highlight kotlin %}
+<kotlin>
 val actionGroup = DefaultActionGroup().apply {
     add(toggleTracking)
     add(DefaultActionGroup("Current Log", true).apply {
@@ -129,9 +130,9 @@ val actionGroup = DefaultActionGroup().apply {
         add(rollCurrentLog)
         add(clearCurrentLog)
     })
-    ...
+    // ...
 }
-{% endhighlight %}
+</kotlin>
 
 #### "Modifying" immutable objects
 Both Groovy and Kotlin can define value-objects, i.e. a class with immutable fields
@@ -142,21 +143,21 @@ with one or more fields modified.
 In both Groovy and Kotlin it's almost the same method name and almost the same syntax.
 
 Groovy:
-{% highlight groovy %}
+<groovy>
 @Immutable(copyWith = true)
 static final class State {
 	boolean isTracking
 	boolean trackIdeActions
 }
 new State(false, false).copyWith(trackIdeActions: true)
-{% endhighlight %}
+</groovy>
 Kotlin:
-{% highlight kotlin %}
+<kotlin>
 data class State(
         val isTracking: Boolean,
         val trackIdeActions: Boolean)
 State(false, false).copy(trackIdeActions = true)
-{% endhighlight %}
+</kotlin>
 
 #### No groovy getters
 When referencing Java getters from Groovy code you can pretend it is a read-only field.
@@ -166,13 +167,13 @@ with mutually exclusive options and lots of people getting frustrated no matter 
 Basically, Kotlin doesn't have groovy getters, you have to use getters Java-style.
 
 Groovy:
-{% highlight groovy %}
+<groovy>
 def actionManager = ActionManager.instance
-{% endhighlight %}
+</groovy>
 Kotlin:
-{% highlight kotlin %}
+<kotlin>
 val actionManager = ActionManager.getInstance()
-{% endhighlight %}
+</kotlin>
 
 #### Method names with spaces
 Both Groovy and Kotlin allow method names with spaces.
@@ -184,17 +185,17 @@ Another less practical but much more exciting question is whether any string can
 For Groovy the answer is yes, while Kotlin seems to be more restrictive.
 
 Groovy:
-{% highlight groovy %}
+<groovy>
 @Test def "convert event object into csv line"() {...}
 @Test def "\n"() {...} // naming is hard
 @Test def ""() {...}   // the shortest method name ever
-{% endhighlight %}
+</groovy>
 Kotlin:
-{% highlight kotlin %}
+<kotlin>
 @Test fun `convert event object into csv line`() {...}
 @Test fun `\n`() {...} // doesn't compile
 @Test fun ``() {...}   // doesn't compile :(
-{% endhighlight %}
+</kotlin>
 
 #### Almost optional "return"
 In Groovy the last expression in function/closure is its return value.
@@ -211,16 +212,20 @@ In practice I had no problems with it except when transforming Kotlin code
 from lambda into method and the other way round.
 
 #### Getting Class object
+Kotlin has its own reflection classes, i.e. in addition to ``java.lang.Class`` there is also ``kotlin.reflect.KClass``.
+This makes sense because Kotlin has language features which do not exist in java
+(for example, optional function arguments) but can be confusing if you don't know about it.
+
 Java:
-{% highlight java %}
+<java>
 println(ActivityTracker.class);
-{% endhighlight %}
+</java>
 Groovy:
-{% highlight groovy %}
+<groovy>
 println(ActivityTracker)
-{% endhighlight %}
+</groovy>
 Kotlin:
-{% highlight kotlin %}
+<kotlin>
 println(ActivityTracker::class.java)
-{% endhighlight %}
+</kotlin>
 
