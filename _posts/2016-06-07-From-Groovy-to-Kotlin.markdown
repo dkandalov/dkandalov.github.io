@@ -1,27 +1,28 @@
 ---
 layout: post
 title:  "From Groovy to Kotlin"
-date:   2016-06-01 12:31:00 +0100
+date:   2016-06-07 00:29:00 +0100
 categories: groovy kotlin
-published: false
 ---
 
-This is a write-up of my experience converting [Activity Tracker](https://github.com/dkandalov/activity-tracker)
+This is a write-up of my experience converting source code of
+[Activity Tracker](https://github.com/dkandalov/activity-tracker)
 plugin for IntelliJ IDEs from [Groovy](http://www.groovy-lang.org/) to [Kotlin](https://kotlinlang.org/).
 
 It is written for anyone familiar with Groovy or Kotlin
-and might be especially relevant for anyone considering move from Groovy to Kotlin.
+and might be especially relevant if you are considering move from Groovy to Kotlin.
 Hopefully, it can be interesting for non-Groovy and non-Kotlin people as well.
 
-This is not a thorough comparison, since it only includes things I came across while transforming Groovy code in Kotlin.
+Please note that this is not intended to be a thorough comparison or overview of the languages.
+The only difference mentioned are those which I came across while transforming Groovy code to Kotlin.
 
 
 #### About migration
-It doesn't really matter for this blog post but might good to mention that
-Activity Tracker is a proof-of-concept plugin for IntelliJ IDEs to track and record user activity.
-It keeps all your data locally so you can see and control what is being logged.
+In case you were wondering, [Activity Tracker](https://github.com/dkandalov/activity-tracker)
+is a proof-of-concept plugin for IntelliJ IDEs to track and record user activity.
+It keeps all the data locally so you can see and control what is being logged.
 
-IntelliJ plugins are usually written in Java and they use a bit of xml plus Java API of IntelliJ platform.
+IntelliJ plugins are usually written in Java with a bit of xml configs and IntelliJ platform Java API.
 Activity Tracker is not like that at all. In the first place, it mostly ignores standard xml configuration
 and uses [LivePlugin](https://github.com/dkandalov/live-plugin) Groovy API instead.
 From plugin point of view this means that in addition to standard Java APIs it has to interface with LivePlugin Groovy API.
@@ -52,25 +53,26 @@ ActivityTracker.Config(...)
 Unlike Groovy (and probably most JVM languages) there is no implicit narrowing/widening conversion for numbers in Kotlin.
 That is if you have variable of type ``Long`` you cannot assign ``Int`` value to it and vice versa.
 
-Even thought this might seem strange from C-like languages point of view,
+Even thought this might seem strange,
 this makes perfect sense because ``Int`` and ``Long`` classes are not subtypes of each other.
 The same applies to ``Double`` and ``Float``.
-
 Considering how subtle and difficult it can be to find implicit conversion bugs
 this is probably a good design.
+
 (In case you were wondering about silent number underflow/overflow, it is still there. Works the same way as in Java.)
 
 Groovy:
 <groovy>
-def l = 123L
-def i = 123
-l = i // works ok
+def longValue = 123L
+def intValue = 123
+longValue = intValue // works ok
 </groovy>
 Kotlin:
 <kotlin>
-var l = 123L
-var i = 123
-l = i // compilation error
+var longValue = 123L
+var intValue = 123
+longValue = intValue // compilation error
+longValue = intValue.toLong() // works ok
 </kotlin>
 
 
@@ -109,18 +111,18 @@ This is useful for building object trees and avoiding ``it`` as the last express
 Groovy:
 <groovy>
 def actionGroup = new DefaultActionGroup().with {
-	add(toggleTracking)
-	add(new DefaultActionGroup("Current Log", true).with {
-		add(showStatistics)
-		add(openLogInIde)
-		add(openLogFolder)
-		addSeparator()
-		add(rollCurrentLog)
-		add(clearCurrentLog)
-		it // &lt;-- meh
-	})
-	//...
-	it // &lt;-- meh
+    add(toggleTracking)
+    add(new DefaultActionGroup("Current Log", true).with {
+        add(showStatistics)
+        add(openLogInIde)
+        add(openLogFolder)
+        addSeparator()
+        add(rollCurrentLog)
+        add(clearCurrentLog)
+        it // &lt;-- meh
+    })
+    //...
+    it // &lt;-- meh
 }
 </groovy>
 Kotlin:
@@ -141,13 +143,14 @@ val actionGroup = DefaultActionGroup().apply {
 
 
 #### "Modifying" immutable objects
-Both Groovy and Kotlin can define value-objects, i.e. a class with immutable fields
-and implicitly defined equality and hash code methods.
-In Groovy it's ``@Immutable`` annotation, in Kotlin it's ``data class`` definition.
+Both Groovy and Kotlin can define value-objects classes, i.e.
+a class with immutable fields and implicitly defined equality and hash code methods.
+In Groovy it's a class with ``@Immutable`` annotation, in Kotlin ``data class`` definition.
 One of the things you might want to do with value-object is copy it into new object
-with one or more fields modified.
+changing one or more fields.
 
-In both Groovy and Kotlin it's almost the same method name and almost the same syntax.
+Even though underlying implementation is different,
+from user point of view Groovy and Kotlin code looks similar.
 
 Groovy:
 <groovy>
@@ -168,8 +171,8 @@ State(false, false).copy(trackIdeActions = true)
 
 
 #### No groovy getters
-When referencing Java getters from Groovy code you can pretend it is a read-only field.
-So in Groovy instead of ``o.getFoo()``, you can do ``o.foo``.
+When referencing Java getters from Groovy code you can use pretend that getter is a read-only field.
+So instead of ``o.getFoo()``, you can do ``o.foo``.
 
 Kotlin doesn't have groovy getters. You have to use getters Java-style.
 
@@ -216,8 +219,9 @@ And ``return`` in lambda means returning from enclosing method.
 
 There must be good reasons behind this design in Kotlin
 but why last expression in function always needs ``return`` is a mystery for me.
+
 In practice, I had no problems with it except when transforming Kotlin lambdas
-into methods and the other way round. The code has to be modified to add/remove ``return`s.
+into methods and the other way round because the code has to be modified to add/remove ``return``s.
 
 
 #### Getting Class object
@@ -225,12 +229,12 @@ Kotlin has its own reflection classes, i.e. in addition to ``java.lang.Class`` t
 This makes sense because Kotlin has language features which do not exist in Java.
 (For example, you might want to check using reflection if function argument is optional.)
 
-In Groovy, as far as I know, it's not possible to know using reflection if function argument is optional or not.
-Probably, checking Groovy AST is the way to do it.
+In Groovy, as far as I know, it's not possible to know using reflection whether function argument is optional or not.
+Probably, analyzing Groovy AST is the way to do it.
 
 Java:
 <java>
-System.out.println(ActivityTracker.class);
+println(ActivityTracker.class);
 </java>
 Groovy:
 <groovy>
@@ -242,7 +246,7 @@ println(ActivityTracker::class.java)
 </kotlin>
 
 
-#### Buffered file appender
+#### Appending writer
 Groovy has quite a few "helper" methods which are automatically "added" to Java core classes.
 For example, ``withWriterAppend()`` method in ``ResourceGroovyMethods`` class
 which simplifies appending to a text file using ``Writer``.
@@ -255,21 +259,22 @@ so reproducing Groovy behaviour is somewhat verbose.
 Groovy:
 <groovy>
 new File(statsFilePath).withWriterAppend("UTF-8") { writer -&gt;
-	// ...
+    // use writer
 }
 </groovy>
 Kotlin:
 <kotlin>
 FileOutputStream(File(statsFilePath), true).buffered().writer(utf8).use { writer -&gt;
-	// ...
+    // use writer
 }
 </kotlin>
 
 
-#### Mapping collection into Map
-In Groovy there is ``collectEntries()`` method from ``DefaultGroovyMethods`` class which is
-automatically added to all collections. It takes a closure and assuming the closure returns
-two-elements arrays, it will put them into a map.
+#### Converting Collection into Map
+In Groovy there is ``collectEntries()`` method in ``DefaultGroovyMethods`` class which is
+automatically added to all collection classes.
+``collectEntries()`` takes a closure and, assuming the closure returns
+two-elements arrays, puts them into a map with first element as a entry key and second element as its value.
 
 In Kotlin there seems to be no functionality like this.
 Using ``Pair`` and avoiding maps is one possible way out.
@@ -296,17 +301,16 @@ events
 
 #### Same class in different class loaders
 On JVM class loaders work somewhat like "namespaces".
-For example, if you load exactly the same bytecode for a class in two different class loader,
-then instances of the class won't be assignable between two class loaders.
+For example, if you load exactly the same bytecode for a class in two different class loaders,
+then instances of the class won't be assignable between the class loaders.
 
-In Groovy this is still true but since it's an optionally typed language,
-you can skip types and use class instance from another class loader.
-It's not a feature you would use every day but it can be useful.
+In Groovy this is still true but since Groovy is an optionally typed language,
+you can skip types and use object from another class loader calling methods dynamically.
+This is not a feature you would use every day but it can be useful.
 
-Since Kotlin is statically typed language so there is no workaround
-(except for some reflection magic may be).
-To be precise, there are [dynamic type](https://kotlinlang.org/docs/reference/dynamic-type.html)
-in Kotlin but it's only supported for JavaScript, and not available on JVM.
+Since Kotlin is statically typed language so there is no workaround (except for some verbose reflection magic).
+To be precise, Kotlin has [dynamic types](https://kotlinlang.org/docs/reference/dynamic-type.html)
+but they are only supported for JavaScript, and not available on JVM.
 
 Groovy:
 <groovy>
@@ -327,7 +331,7 @@ Kotlin:
 
 
 #### Extending Groovy interfaces/classes in Kotlin
-If you plan to migrate Groovy code or use Groovy API from Kotlin, be aware that it doesn't work very well at the moment.
+If you plan to use Groovy API from Kotlin, be aware that it doesn't work very well at the moment.
 Basically, Kotlin compiler doesn't see method implementations of ``groovy.lang.GroovyObject``.
 
 The only workaround I found is to implement these methods in Kotlin.
@@ -337,12 +341,12 @@ If you know the answer, I'll be grateful if you could reply to
 Groovy:
 <groovy>
 class MyGroovyClass {
-	def foo() {}
+    def foo() {}
 }
 </groovy>
 Kotlin:
 <kotlin>
-// fails with:
+// compilation fails with:
 // Object must be declared abstract or implement abstract base
 // class member public abstract fun setProperty(p0: String!, p1: Any!): Unit
 object : MyGroovyClass() {
@@ -353,23 +357,24 @@ Java:
 <java>
 // yes, this works fine in Java
 new MyGroovyClass() {
-	@Override public Object foo() {
-		return super.foo();
-	}
+    @Override public Object foo() {
+        return super.foo();
+    }
 };
 </java>
 
 
 #### Summary
-Kotlin was created few years after Groovy and "borrowed" some of the features from it
-so Kotlin feels like "a language I almost know" (even though it's quite different).
+Kotlin was created few years after Groovy and "borrowed" some features from it
+so when switching from Groovy, Kotlin feels like "a language I almost know".
+
 Being statically typed, Kotlin might have a bit more "resistance" than Groovy.
-On the other hand, it seems to be more suitable for writing "big legacy enterprise projects".
+On the other hand, it seems to be more suitable for writing "big corporation legacy enterprise projects".
 
 If you expected opinion about which language is better, sorry there won't be one.
 Both Groovy and Kotlin are good.
 
-Here is the final code snippet showing strategically designed Kotlin core libraries:
+To conclude, here is the final code snippet showing strategically designed Kotlin core libraries:
 <kotlin>
 public operator fun times(other: Long): Long
 </kotlin>
