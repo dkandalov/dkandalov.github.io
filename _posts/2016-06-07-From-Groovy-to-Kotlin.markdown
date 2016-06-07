@@ -177,6 +177,11 @@ And instead of setter ``o.setFoo("bar")``, you can do ``o.foo = "bar"``.
 
 Kotlin also has groovy getters/setters, although for instance methods only.
 
+Java:
+<java>
+ActionManager actionManager = ActionManager.getInstance();
+println(actionManager.getComponentName());
+</java>
 Groovy:
 <groovy>
 def actionManager = ActionManager.instance
