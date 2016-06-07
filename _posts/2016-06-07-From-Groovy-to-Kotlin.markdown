@@ -170,19 +170,22 @@ State(false, false).copy(trackIdeActions = true)
 </kotlin>
 
 
-#### No groovy getters
-When referencing Java getters from Groovy code you can use pretend that getter is a read-only field.
-So instead of ``o.getFoo()``, you can do ``o.foo``.
+#### Groovy getters and setters
+When referencing getters/setters from Groovy code you can pretend you're using a public field.
+So instead of Java-style getter ``o.getFoo()``, you can use ``o.foo``.
+And instead of setter ``o.setFoo("bar")``, you can do ``o.foo = "bar"``.
 
-Kotlin doesn't have groovy getters. You have to use getters Java-style.
+Kotlin also has groovy getters/setters, although for instance methods only.
 
 Groovy:
 <groovy>
 def actionManager = ActionManager.instance
+println(actionManager.componentName)
 </groovy>
 Kotlin:
 <kotlin>
 val actionManager = ActionManager.getInstance()
+println(actionManager.componentName)
 </kotlin>
 
 
@@ -218,7 +221,7 @@ The result of the last expression in lambda is the value that lambda will return
 And ``return`` in lambda means returning from enclosing method.
 
 There must be good reasons behind this design in Kotlin
-but why last expression in function always needs ``return`` is a mystery for me.
+but why last expression in function needs ``return`` keyword is a mystery for me.
 
 In practice, I had no problems with it except when transforming Kotlin lambdas
 into methods and the other way round because the code has to be modified to add/remove ``return``s.
@@ -270,30 +273,37 @@ FileOutputStream(File(statsFilePath), true).buffered().writer(utf8).use { writer
 </kotlin>
 
 
-#### Converting Collection into Map
-In Groovy there is ``collectEntries()`` method in ``DefaultGroovyMethods`` class which is
-automatically added to all collection classes.
-``collectEntries()`` takes a closure and, assuming the closure returns
+#### Enhanced Collections and Maps
+In Groovy there are few functions in ``DefaultGroovyMethods`` class which are automatically added to all collection classes.
+For example, ``collectEntries()`` function takes a closure and, assuming the closure returns
 two-elements arrays, puts them into a map with first element as a entry key and second element as its value.
+Or ``sort()`` function which take a closure and returns sorted collection or even a sorted map.
 
-In Kotlin there seems to be no functionality like this.
-Using ``Pair`` and avoiding maps is one possible way out.
+Kotlin has many similar functions available on collections and maps. There are few subtle differences though.
+Similar to Groovy ``collectEntries()`` Kotlin has ``associateBy()`` function but it's only available on collections, not on maps.
+This makes it harder to convert one map into another.
+Another example is ``sortBy()`` function which in Kotlin exists only on collections and not maps.
 
-(Note that except for missing ``collectEntries`` the code below is almost identical.)
+(Note that except for few difference the code below is almost identical.)
 
 Groovy:
 <groovy>
-events
+def eventsByFile = events
     .findAll{ it.eventType == "IdeState" && it.focusedComponent == "Editor" && it.file != "" }
     .groupBy{ it.file }
     .collectEntries{ [fileName(it.key), it.value.size()] }
-    .sort{ -it.value }
+
+// OMG, map sorted by its own value
+eventsByFile.sort{ -it.value }
 </groovy>
 Kotlin:
 <kotlin>
-events
+val eventsByFile = events
     .filter{ it.eventType == "IdeState" && it.focusedComponent == "Editor" && it.file != "" }
-    .groupBy{ it.file }
+    .groupBy{ it.file }.toList()
+    .associateBy({ it.first }, { it.second.size })
+
+eventsByFile
     .map{ Pair(fileName(it.key), it.value.size)}
     .sortedBy{ it.second }
 </kotlin>
@@ -315,18 +325,20 @@ but they are only supported for JavaScript, and not available on JVM.
 Groovy:
 <groovy>
 private updateState(Closure&lt;State&gt; closure) {
-	// note that parameter class is commented out because on plugin reload it will
-	// be a different type (since it's loaded in new classloader)
-	stateVar.set { /*State*/ oldValue -&gt;
-		def newValue = closure.call(oldValue)
-		onUpdate(oldValue, newValue)
-		newValue
-	}
+    // note that parameter class is commented out because on plugin reload it will
+    // be a different type (since it's loaded in new classloader)
+    stateVar.set { /*State*/ oldValue -&gt;
+        def newValue = closure.call(oldValue)
+        onUpdate(oldValue, newValue)
+        newValue
+    }
 }
 </groovy>
 Kotlin:
 <kotlin>
-// can't do this :(
+// Can't do this :(
+// The workaround is to convert object to/from instance of a class
+// from parent class loader, e.g. java.lang.String.
 </kotlin>
 
 
@@ -365,11 +377,11 @@ new MyGroovyClass() {
 
 
 #### Summary
-Kotlin was created few years after Groovy and "borrowed" some features from it
+Kotlin was created few years after Groovy and borrowed some features from it
 so when switching from Groovy, Kotlin feels like "a language I almost know".
 
 Being statically typed, Kotlin might have a bit more "resistance" than Groovy.
-On the other hand, it seems to be more suitable for writing "big corporation legacy enterprise projects".
+On the other hand, it seems to be more suitable for writing "big legacy enterprise projects".
 
 If you expected opinion about which language is better, sorry there won't be one.
 Both Groovy and Kotlin are good.
