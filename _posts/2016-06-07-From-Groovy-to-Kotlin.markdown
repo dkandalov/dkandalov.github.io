@@ -80,10 +80,10 @@ longValue = intValue.toLong() // works ok
 In Groovy types and type parameters are optional.
 You can skip types all together or specify them in when you feel like doing it.
 I found it useful to always add types to libraries and other APIs which might be heavily used from other code.
-It worked fine except for the ``Closure<V>`` type which has type parameter only for its return value.
+It works fine except for ``Closure<V>`` type which has type parameter only for its return value.
 To be fair, there is ``ClosureParams`` annotation to specify types for closure inputs, but it's too painful to use.
 
-In Kotlin, closures (aka lambdas) have type parameters for both inputs and output as you would expect.
+In Kotlin, closures (aka lambdas) have type parameters for inputs and output as you would expect.
 
 Groovy:
 <groovy>
