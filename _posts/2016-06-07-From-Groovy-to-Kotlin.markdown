@@ -299,7 +299,7 @@ def eventsByFile = events
     .collectEntries{ [fileName(it.key), it.value.size()] }
 
 // OMG, map sorted by its own value
-eventsByFile.sort{ -it.value }
+eventsByFile.sort{ it.value }
 </groovy>
 Kotlin:
 <kotlin>
