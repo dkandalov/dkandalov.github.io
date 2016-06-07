@@ -14,7 +14,7 @@ and might be especially relevant if you are considering move from Groovy to Kotl
 Hopefully, it can be interesting for non-Groovy and non-Kotlin people as well.
 
 Please note that this is not intended to be a thorough comparison or overview of the languages.
-The only difference mentioned are those which I came across while transforming Groovy code to Kotlin.
+The only differences mentioned are those which I came across while transforming Groovy code to Kotlin.
 
 
 #### About migration
