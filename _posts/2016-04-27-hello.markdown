@@ -6,7 +6,7 @@ categories:
 ---
 
 I only wanted to published quick notes from ACCU 2016 conference
-but ended up playing with [Jekyl](http://jekyllrb.com/) and started
+but ended up playing with [Jekyll](http://jekyllrb.com/) and started
 this yet-another-blog-about-programming.
 
 I hope it will be enjoyable experience for everyone involved. Thank you for reading this.

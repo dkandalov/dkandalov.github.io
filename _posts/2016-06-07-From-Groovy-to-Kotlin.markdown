@@ -53,7 +53,7 @@ ActivityTracker.Config(...)
 Unlike Groovy (and probably most JVM languages) there is no implicit narrowing/widening conversion for numbers in Kotlin.
 That is if you have variable of type ``Long`` you cannot assign ``Int`` value to it and vice versa.
 
-Even thought this might seem strange,
+Even though this might seem strange,
 it makes perfect sense because ``Int`` and ``Long`` classes are not subtypes of each other.
 The same applies to ``Double`` and ``Float``.
 Considering how subtle and difficult it can be to find implicit conversion bugs
