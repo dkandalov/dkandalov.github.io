@@ -267,7 +267,7 @@ so reproducing Groovy behaviour is somewhat verbose.
 Java:
 <java>
 // Too many lines of code
-</java
+</java>
 
 Groovy:
 <groovy>
