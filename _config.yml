@@ -14,4 +14,4 @@ sass:
     style: :compressed
 
 # Gems
-gems: [jekyll-paginate]
+plugins: [jekyll-paginate]
