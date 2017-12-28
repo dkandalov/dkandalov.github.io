@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <script src="https://unpkg.com/tippy.js@2.0.8/dist/tippy.all.min.js"></script>
+    <script type="text/javascript" src="js/three.min.js"></script>
+    <script type="text/javascript" src="js/OrbitControls.js"></script>
+    <script type="text/javascript" src="js/stats.min.js"></script>
+
+    <script type="text/javascript" src="js/EffectComposer.js"></script>
+    <script type="text/javascript" src="js/RenderPass.js"></script>
+    <script type="text/javascript" src="js/CopyShader.js"></script>
+    <script type="text/javascript" src="js/ShaderPass.js"></script>
+
+    <script type="text/javascript" src="js/kotlin.js"></script>
+    <script type="text/javascript" src="js/lsystem-js.js"></script>
+    <title>🤖🐢</title>
+    <style>
+        body {
+            background-color: #000000;
+            margin: 0;
+            overflow: hidden;
+            font-size: 16px;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        #lsystem-editor {
+            float: left;
+            width: 30vw;
+            height: 100vh;
+            display: inline-block;
+            position: relative;
+            text-align: left;
+            background: #FAFAFA;
+        }
+
+        #lsystem-editor .form-field {
+            padding: 7px 25px 5px 20px;
+        }
+
+        #lsystem-editor h3 {
+            display: inline-block;
+            margin: 5px 0 5px 0;
+        }
+
+        #lsystem-editor input {
+            width: 100%;
+            border: 2px solid #ccc;
+            border-radius: 2px;
+            transition: border-color 0.2s;
+            font-size: 16px;
+            font-family: 'Nunito', sans-serif;
+            outline: none;
+        }
+
+        #lsystem-editor input:focus {
+            border : 2px solid #222;
+        }
+
+        .help-popup {
+            position: absolute;
+            right: 0;
+            width: 14px;
+            height: 14px;
+            display: inline-block;
+            margin-top: 12px;
+            margin-right: 20px;
+        }
+
+        .help-popup .icon {
+            display: block;
+            fill: #777;
+            width: 100%;
+            height: 100%;
+        }
+
+        .help-content {
+            text-align: left;
+            display: inline-block;
+            width: auto;
+            padding: 20px;
+        }
+        .help-content ul {
+            list-style-type: none;
+        }
+    </style>
+</head>
+<body>
+<svg display="none">
+    <symbol id="help" viewBox="0 0 100 100"><path d="M75 0H25C11.19 0 0 11.193 0 25v50c0 13.802 11.19 25 25 25h50c13.811 0 25-11.198 25-25V25c0-13.807-11.189-25-25-25zM57.203 85.067H41.504V72.542h15.699v12.525zm16.154-43.026c-.84 2.066-1.873 3.834-3.102 5.298a20.59 20.59 0 0 1-4.101 3.751 91.479 91.479 0 0 0-4.249 3.101c-1.333 1.034-1.553 2.214-2.596 3.547-1.025 1.335-.977 3.004-.977 5.006v3.924H41.668v-4.623c0-2.864 1.366-5.265 2.27-7.202.896-1.935 2.255-3.581 3.459-4.947 1.196-1.367 2.62-2.556 3.955-3.557 1.327-.993 2.637-1.993 3.776-2.995 1.123-1.001 2.083-2.1 2.783-3.304.7-1.197 1.043-2.694.977-4.5 0-3.06-.74-5.33-2.245-6.795-1.498-1.465-3.582-2.206-6.25-2.206-1.8 0-3.337.351-4.639 1.05a9.172 9.172 0 0 0-3.199 2.808c-.837 1.163-1.448 3.593-1.847 5.156-.407 1.57-.602 6.115-.602 6.115H25.399c.073-8.333.684-7.963 1.855-10.965 1.164-2.995 2.8-6.132 4.899-8.33 2.099-2.197 4.63-4.179 7.601-5.417a25.782 25.782 0 0 1 9.945-1.977c4.736 0 8.683.581 11.856 1.876 3.167 1.302 5.713 2.889 7.65 4.817 1.929 1.937 3.312 4.004 4.149 6.234.831 2.237 1.245 4.313 1.245 6.242.002 3.206-.412 5.827-1.242 7.893z"></path></symbol>
+</svg>
+<div id="content">
+    <div id="lsystem-editor">
+        <h2 class="form-field">L-System Playground</h2>
+        <hr/>
+        <div class="form-field">
+            <h3><label for="title">Title</label></h3>
+            <input type="text" id="title" readonly/>
+        </div>
+        <div class="form-field axiom">
+            <h3><label for="axiom">Axiom</label></h3>
+            <div class="help-popup"><svg class="icon"><use xlink:href="#help"></use></svg></div>
+            <input type="text" id="axiom" value="F"/>
+        </div>
+        <div class="form-field rules">
+            <h3><label for="rules">Rules</label></h3>
+            <div class="help-popup"><svg class="icon"><use xlink:href="#help"></use></svg></div>
+            <input type="text" id="rules" value="F => F+F--F+F"/>
+        </div>
+        <div class="form-field angle">
+            <h3><label for="angle">Angle</label></h3>
+            <div class="help-popup"><svg class="icon"><use xlink:href="#help"></use></svg></div>
+            <input type="text" id="angle" value="60"/>
+        </div>
+        <div class="form-field iterations">
+            <h3><label for="iterations">Iterations</label></h3>
+            <div class="help-popup"><svg class="icon"><use xlink:href="#help"></use></svg></div>
+            <input type="text" id="iterations" value="2"/>
+        </div>
+        <div class="form-field shortcuts">
+            <h3>Shortcuts</h3>
+            <div class="help-popup"><svg class="icon"><use xlink:href="#help"></use></svg></div>
+        </div>
+    </div>
+</div>
+
+<div class="help-axiom help-content">
+    <p>
+        Axiom is the initial state of L-System before any of the rules are applied.
+        Axiom corresponds to zero iterations.
+    </p>
+    The following commands can be used:
+    <ul>
+        <li><b>FGHI</b> — move and draw line in the current direction</li>
+        <li><b>other letters</b> — no action; can be used for substitution rules</li>
+        <li><b>[]</b> — push/pop current position and angle to/from stack</li>
+        <li><b>-+</b> — rotate around Z axis (clockwise/counter-clockwise)</li>
+        <li><b><></b> — rotate around X axis (tilt left/right)</li>
+        <li><b>^&</b> — rotate around Y axis (pull up/down)</li>
+    </ul>
+</div>
+<div class="help-rules help-content">
+    <p>
+        Rules are applies to L-System state on each iteration.
+        These are simple substitution rules which replace letters (aka chars) with strings.
+        If no rules can be applied, L-System state doesn't change.
+    </p>
+    Rules syntax:
+    <ul>
+        <li>&lt;rules&gt; ::= &lt;rule&gt; ["; " &lt;rule&gt;]*</li>
+        <li>&lt;rule&gt; ::= &lt;char&gt; " =&gt; " &lt;string&gt;</li>
+    </ul>
+    The following commands can be used:
+    <ul>
+        <li><b>FGHI</b> — move and draw line in the current direction</li>
+        <li><b>other letters</b> — no action; can be used for substitution rules</li>
+        <li><b>[]</b> — push/pop current position and angle to/from stack</li>
+        <li><b>-+</b> — rotate around Z axis (clockwise/counter-clockwise)</li>
+        <li><b><></b> — rotate around X axis (tilt left/right)</li>
+        <li><b>^&</b> — rotate around Y axis (pull up/down)</li>
+    </ul>
+</div>
+<div class="help-angle help-content">
+    <p>Rotation angle in degrees used by commands <b>"-+<>^&"</b> (full rotation is 360 degrees).</p>
+    <p>When focus is outside of text inputs, "a" and "A" can be used as shortcuts to increase/decrease angle by 5 degrees.</p>
+</div>
+<div class="help-iterations help-content">
+    <p>Amount of times the substitution rules will be applied to L-System state starting with axiom.</p>
+    <p>Note that rules often have exponential complexity so specifying too many iterations can freeze the browser.
+        (For most built-in L-Systems more than 8 iterations is already too much.)</p>
+</div>
+<div class="help-shortcuts help-content">
+    Shortcuts (work when focus is outside of text inputs):
+    <ul>
+        <li><b>`</b> — toggle L-System editor</li>
+        <li><b>n</b> — next L-System</li>
+        <li><b>N</b> — previous L-System</li>
+        <li><b>u</b> — open URL associated with the current L-System</li>
+        <li><b>i</b> — increase amount of iterations</li>
+        <li><b>I</b> — decrease amount of iterations</li>
+        <li><b>a</b> — increase angle by 5 degrees</li>
+        <li><b>A</b> — decrease angle by 5 degrees</li>
+        <li><b>c</b> — reset 3d navigation to original position</li>
+        <li><b>drag mouse</b> — rotate object in space</li>
+        <li><b>ctrl+cmd drag mouse</b> — move object in space</li>
+        <li><b>mouse scroll</b> — zoom in/out</li>
+    </ul>
+</div>
+
+</body>
+
+<script>
+    this["lsystem-js"].lsystem.main(window, document);
+
+    function tippyConfig(selector) {
+        return {
+            placement: "right",
+            trigger: "click",
+            interactive: true,
+            arrow: true,
+            maxWidth: "500px",
+            html: document.querySelector(selector)
+        }
+    }
+    tippy(".axiom .help-popup", tippyConfig(".help-axiom"));
+    tippy(".rules .help-popup", tippyConfig(".help-rules"));
+    tippy(".angle .help-popup", tippyConfig(".help-angle"));
+    tippy(".iterations .help-popup", tippyConfig(".help-iterations"));
+    tippy(".shortcuts .help-popup", tippyConfig(".help-shortcuts"));
+</script>
+</html>

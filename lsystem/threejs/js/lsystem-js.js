@@ -43,6 +43,7 @@
   var THREE$PerspectiveCamera = $module$three.PerspectiveCamera;
   var THREE$Scene = $module$three.Scene;
   var THREE$WebGLRenderer = $module$three.WebGLRenderer;
+  var numberToInt = Kotlin.numberToInt;
   var THREE$EffectComposer = $module$three.EffectComposer;
   var THREE$RenderPass = $module$three.RenderPass;
   var THREE$ShaderPass = $module$three.ShaderPass;
@@ -57,6 +58,7 @@
   var toDouble = Kotlin.kotlin.text.toDouble_pdl1vz$;
   var toInt = Kotlin.kotlin.text.toInt_pdl1vz$;
   var THREE$Color = $module$three.Color;
+  var Triple = Kotlin.kotlin.Triple;
   var THREE$LineBasicMaterial = $module$three.LineBasicMaterial;
   var defineInlineFunction = Kotlin.defineInlineFunction;
   var wrapFunction = Kotlin.wrapFunction;
@@ -65,7 +67,7 @@
     this.body = ensureNotNull(document.body);
     var tmp$, tmp$_0, tmp$_1, tmp$_2, tmp$_3, tmp$_4, tmp$_5;
     this.content = Kotlin.isType(tmp$ = document.getElementById('content'), Node) ? tmp$ : throwCCE();
-    this.configToolbar = Kotlin.isType(tmp$_0 = document.getElementById('config-toolbar'), HTMLDivElement) ? tmp$_0 : throwCCE();
+    this.lSystemEditor = Kotlin.isType(tmp$_0 = document.getElementById('lsystem-editor'), HTMLDivElement) ? tmp$_0 : throwCCE();
     this.axiom = Kotlin.isType(tmp$_1 = document.getElementById('axiom'), HTMLInputElement) ? tmp$_1 : throwCCE();
     this.rules = Kotlin.isType(tmp$_2 = document.getElementById('rules'), HTMLInputElement) ? tmp$_2 : throwCCE();
     this.angle = Kotlin.isType(tmp$_3 = document.getElementById('angle'), HTMLInputElement) ? tmp$_3 : throwCCE();
@@ -523,8 +525,6 @@
     this.renderer_otbw2q$_0 = this.renderer_otbw2q$_0;
     this.composer_7cvly7$_0 = this.composer_7cvly7$_0;
     this.stats_2ckilo$_0 = this.stats_2ckilo$_0;
-    this.windowHalfX_0 = this.window_0.innerWidth / 2.0;
-    this.windowHalfY_0 = this.window_0.innerHeight / 2.0;
     var $receiver = new WebUI$material1$ObjectLiteral();
     $receiver.color = 0;
     $receiver.opacity = 1.0;
@@ -589,9 +589,9 @@
       this.stats_2ckilo$_0 = stats;
     }
   });
-  function WebUI$init$lambda$lambda(closure$child) {
+  function WebUI$init$lambda$lambda(closure$canvas) {
     return function (f) {
-      closure$child.focus();
+      closure$canvas.focus();
       return Unit;
     };
   }
@@ -636,48 +636,49 @@
       this$WebUI.render_0();
     };
   }
+  function WebUI$init$lambda(this$WebUI) {
+    return function (f) {
+      this$WebUI.onWindowResize_0();
+      return Unit;
+    };
+  }
   WebUI.prototype.init = function () {
-    var container = this.page_0.content;
-    this.camera_0 = new THREE$PerspectiveCamera(33.0, this.window_0.innerWidth / this.window_0.innerHeight, 1.0, 10000.0);
+    var tmp$ = this.calcRenderingSizes_0();
+    var width = tmp$.component1()
+    , height = tmp$.component2()
+    , aspect = tmp$.component3();
+    this.camera_0 = new THREE$PerspectiveCamera(33.0, aspect, 1.0, 10000.0);
     this.camera_0.position.set(0, 0, 400);
     this.stats_0 = new Stats();
     this.scene_0 = new THREE$Scene();
     var $receiver = new THREE$WebGLRenderer();
-    var tmp$;
+    var tmp$_0;
+    var canvas = Kotlin.isType(tmp$_0 = this.page_0.content.appendChild($receiver.domElement), HTMLElement) ? tmp$_0 : throwCCE();
+    canvas.setAttribute('tabindex', '0');
+    canvas.addEventListener('click', WebUI$init$lambda$lambda(canvas));
     $receiver.setPixelRatio(this.window_0.devicePixelRatio);
-    $receiver.setSize(this.window_0.innerWidth, this.window_0.innerHeight);
-    var child = Kotlin.isType(tmp$ = container.appendChild($receiver.domElement), HTMLElement) ? tmp$ : throwCCE();
-    child.setAttribute('tabindex', '0');
-    child.addEventListener('click', WebUI$init$lambda$lambda(child));
+    $receiver.setSize(numberToInt(width), height);
     this.renderer_0 = $receiver;
     this.applyTheme2_0();
     this.composer_0 = new THREE$EffectComposer(this.renderer_0);
     this.composer_0.addPass(new THREE$RenderPass(this.scene_0, this.camera_0));
-    var tmp$_0 = this.composer_0;
+    var tmp$_1 = this.composer_0;
     var $receiver_0 = new THREE$ShaderPass($module$three.CopyShader);
     $receiver_0.renderToScreen = true;
-    tmp$_0.addPass($receiver_0);
+    tmp$_1.addPass($receiver_0);
     var editor = new LSystemEditor();
     var generateScene = WebUI$init$generateScene(this, editor);
     generateScene();
     var orbitControls = new THREE$OrbitControls(this.camera_0, this.renderer_0.domElement);
     orbitControls.keyPanSpeed = 0.0;
-    this.initConfigToolbar_0(editor, getCallableRef('generateScene', function () {
+    this.init_0(editor, getCallableRef('generateScene', function () {
       return generateScene(), Unit;
     }));
-    this.updateConfigToolbar_0(editor);
-    this.window_0.addEventListener('resize', getCallableRef('onWindowResize', function ($receiver, event) {
-      return $receiver.onWindowResize_0(event), Unit;
-    }.bind(null, this)), false);
+    this.update_0(editor);
+    this.window_0.addEventListener('resize', WebUI$init$lambda(this), false);
     this.window_0.addEventListener('keypress', this.onKeyPress_0(editor, orbitControls, getCallableRef('generateScene', function () {
       return generateScene(), Unit;
     })));
-  };
-  WebUI.prototype.clear_0 = function ($receiver) {
-    while ($receiver.children.length > 0) {
-      var children = $receiver.children;
-      $receiver.remove(children[0]);
-    }
   };
   function WebUI$onKeyPress$lambda(closure$editor) {
     return function () {
@@ -761,14 +762,14 @@
     return function (event) {
       if (Kotlin.isType(event, KeyboardEvent)) {
         if (equals(event.key, '`')) {
-          this$WebUI.toggleConfigToolbar_0();
+          this$WebUI.toggleLSystemEditor_0();
         }
         if (!Kotlin.isType(event.target, HTMLInputElement)) {
           var action = closure$mapping.get_11rb$(event.key);
           if (action != null) {
             action();
             closure$updateUI();
-            this$WebUI.updateConfigToolbar_0(closure$editor);
+            this$WebUI.update_0(closure$editor);
           }
         }
       }
@@ -784,7 +785,7 @@
   var mapCapacity = Kotlin.kotlin.collections.mapCapacity_za3lpa$;
   var coerceAtLeast = Kotlin.kotlin.ranges.coerceAtLeast_dqglrj$;
   var LinkedHashMap_init = Kotlin.kotlin.collections.LinkedHashMap_init_xf5xz2$;
-  function WebUI$initConfigToolbar$applyChanges(this$WebUI, closure$editor, closure$updateUI) {
+  function WebUI$init$applyChanges(this$WebUI, closure$editor, closure$updateUI) {
     return function () {
       closure$editor.presenter.lSystem.axiom = this$WebUI.page_0.axiom.value;
       var tmp$ = closure$editor.presenter.lSystem;
@@ -811,29 +812,29 @@
       closure$updateUI();
     };
   }
-  function WebUI$initConfigToolbar$lambda$lambda(closure$applyChanges) {
+  function WebUI$init$lambda$lambda_0(closure$applyChanges) {
     return function (f) {
       closure$applyChanges();
       return Unit;
     };
   }
-  WebUI.prototype.initConfigToolbar_0 = function (editor, updateUI) {
-    var applyChanges = WebUI$initConfigToolbar$applyChanges(this, editor, updateUI);
+  WebUI.prototype.init_0 = function (editor, updateUI) {
+    var applyChanges = WebUI$init$applyChanges(this, editor, updateUI);
     var tmp$;
     tmp$ = listOf([this.page_0.axiom, this.page_0.rules, this.page_0.angle, this.page_0.iterations]).iterator();
     while (tmp$.hasNext()) {
       var element = tmp$.next();
-      element.addEventListener('change', WebUI$initConfigToolbar$lambda$lambda(applyChanges));
+      element.addEventListener('input', WebUI$init$lambda$lambda_0(applyChanges));
     }
   };
-  function WebUI$updateConfigToolbar$lambda(it) {
+  function WebUI$update$lambda(it) {
     var $receiver = unboxChar(it.key);
     return String.fromCharCode($receiver) + ' => ' + it.value;
   }
-  WebUI.prototype.updateConfigToolbar_0 = function (editor) {
+  WebUI.prototype.update_0 = function (editor) {
     this.page_0.title.value = editor.presenter.title;
     this.page_0.axiom.value = editor.presenter.lSystem.axiom;
-    this.page_0.rules.value = joinToString(editor.presenter.lSystem.rules.entries, '; ', void 0, void 0, void 0, void 0, WebUI$updateConfigToolbar$lambda);
+    this.page_0.rules.value = joinToString(editor.presenter.lSystem.rules.entries, '; ', void 0, void 0, void 0, void 0, WebUI$update$lambda);
     this.page_0.angle.value = toDegrees(editor.presenter.lSystem.angle).toString();
     this.page_0.iterations.value = editor.presenter.iterations.toString();
   };
@@ -859,20 +860,36 @@
   WebUI.prototype.render_0 = function () {
     this.composer_0.render();
   };
-  WebUI.prototype.onWindowResize_0 = function (event) {
-    this.windowHalfX_0 = this.window_0.innerWidth / 2.0;
-    this.windowHalfY_0 = this.window_0.innerHeight / 2.0;
-    this.camera_0.aspect = this.window_0.innerWidth / this.window_0.innerHeight;
+  WebUI.prototype.onWindowResize_0 = function () {
+    var tmp$ = this.calcRenderingSizes_0();
+    var width = tmp$.component1()
+    , height = tmp$.component2()
+    , aspect = tmp$.component3();
+    this.camera_0.aspect = aspect;
     this.camera_0.updateProjectionMatrix();
-    this.renderer_0.setSize(this.window_0.innerWidth, this.window_0.innerHeight);
+    this.renderer_0.setSize(numberToInt(width), height);
   };
-  WebUI.prototype.toggleConfigToolbar_0 = function () {
-    var it = this.page_0.configToolbar;
+  WebUI.prototype.calcRenderingSizes_0 = function () {
+    var editorWidth = equals(this.page_0.lSystemEditor.style.display, 'none') ? 0.0 : this.page_0.lSystemEditor.getBoundingClientRect().width;
+    var width = this.window_0.innerWidth - editorWidth;
+    var height = this.window_0.innerHeight;
+    var aspect = width / height;
+    return new Triple(width, height, aspect);
+  };
+  WebUI.prototype.toggleLSystemEditor_0 = function () {
+    var it = this.page_0.lSystemEditor;
     if (equals(it.style.display, 'none')) {
       it.style.display = '';
     }
      else {
       it.style.display = 'none';
+    }
+    this.onWindowResize_0();
+  };
+  WebUI.prototype.clear_0 = function ($receiver) {
+    while ($receiver.children.length > 0) {
+      var children = $receiver.children;
+      $receiver.remove(children[0]);
     }
   };
   var IllegalArgumentException_init = Kotlin.kotlin.IllegalArgumentException;
