@@ -34,11 +34,9 @@
   var kotlin_js_internal_DoubleCompanionObject = Kotlin.kotlin.js.internal.DoubleCompanionObject;
   var toList = Kotlin.kotlin.sequences.toList_veqyi0$;
   var take_0 = Kotlin.kotlin.collections.take_ba2ldo$;
-  var equals = Kotlin.equals;
-  var last_0 = Kotlin.kotlin.collections.last_2p1efm$;
-  var first = Kotlin.kotlin.collections.first_2p1efm$;
   var round = Kotlin.kotlin.math.round_14dthe$;
   var listOf = Kotlin.kotlin.collections.listOf_i5x0yv$;
+  var first = Kotlin.kotlin.collections.first_2p1efm$;
   var throwUPAE = Kotlin.throwUPAE;
   var THREE$PerspectiveCamera = $module$three.PerspectiveCamera;
   var THREE$Scene = $module$three.Scene;
@@ -57,6 +55,8 @@
   var toBoxedChar = Kotlin.toBoxedChar;
   var toDouble = Kotlin.kotlin.text.toDouble_pdl1vz$;
   var toInt = Kotlin.kotlin.text.toInt_pdl1vz$;
+  var equals = Kotlin.equals;
+  var toString = Kotlin.toString;
   var roundToInt = Kotlin.kotlin.math.roundToInt_yrwdxr$;
   var THREE$Color = $module$three.Color;
   var Triple = Kotlin.kotlin.Triple;
@@ -424,7 +424,7 @@
   }
   var dontConnectDots;
   function LSystemEditor() {
-    this.lSystemPresenters = listOf([new LSystemEditor$LSystemPresenter(kochSnowflake, void 0, 'Koch snowflake', 'https://en.wikipedia.org/wiki/Koch_snowflake'), new LSystemEditor$LSystemPresenter(cesaroFractal, void 0, 'Cesaro fractal', 'http://mathworld.wolfram.com/CesaroFractal.html'), new LSystemEditor$LSystemPresenter(quadraticType2Curve, void 0, 'Quadratic type 2', 'https://en.wikipedia.org/wiki/Koch_snowflake#Variants_of_the_Koch_curve'), new LSystemEditor$LSystemPresenter(hilbertCurve, void 0, 'Hilbert curve', 'https://en.wikipedia.org/wiki/Hilbert_curve'), new LSystemEditor$LSystemPresenter(lindenmayerCurve, void 0, 'Lindenmayer curve'), new LSystemEditor$LSystemPresenter(gosperCurve, void 0, 'Gosper curve', 'https://en.wikipedia.org/wiki/Gosper_curve'), new LSystemEditor$LSystemPresenter(sierpinskiTriangle, void 0, 'Sierpinski triangle', 'https://en.wikipedia.org/wiki/Sierpinski_triangle'), new LSystemEditor$LSystemPresenter(sierpinskiArrowheadCurve, void 0, 'Sierpinski arrow head triangle', 'https://en.wikipedia.org/wiki/Sierpi%C5%84ski_arrowhead_curve'), new LSystemEditor$LSystemPresenter(dragonCurve, 14, 'Dragon curve', 'https://en.wikipedia.org/wiki/Dragon_curve'), new LSystemEditor$LSystemPresenter(fractalPlant, void 0, 'Plant', 'https://en.wikipedia.org/wiki/L-system#Example_7:_Fractal_plant'), new LSystemEditor$LSystemPresenter(hilbertCurve3d, void 0, 'Hilbert Curve 3d', 'https://math.stackexchange.com/questions/123642/representing-a-3d-hilbert-curve-as-an-l-system')]);
+    this.lSystemPresenters = listOf([new LSystemEditor$LSystemPresenter(kochSnowflake, void 0, 'Koch snowflake', 'https://en.wikipedia.org/wiki/Koch_snowflake'), new LSystemEditor$LSystemPresenter(kochCurve, void 0, 'Koch curve', 'https://en.wikipedia.org/wiki/L-system#Example_4:_Koch_curve'), new LSystemEditor$LSystemPresenter(lindenmayerCurve, void 0, 'Lindenmayer curve', 'https://akademikmatematik.tr.gg/Hilbert-Curve.htm'), new LSystemEditor$LSystemPresenter(gosperCurve, void 0, 'Gosper curve', 'https://en.wikipedia.org/wiki/Gosper_curve'), new LSystemEditor$LSystemPresenter(sierpinskiTriangle, void 0, 'Sierpinski triangle', 'https://en.wikipedia.org/wiki/Sierpinski_triangle'), new LSystemEditor$LSystemPresenter(sierpinskiArrowheadCurve, void 0, 'Sierpinski arrow head triangle', 'https://en.wikipedia.org/wiki/Sierpi%C5%84ski_arrowhead_curve'), new LSystemEditor$LSystemPresenter(dragonCurve, 14, 'Dragon curve', 'https://en.wikipedia.org/wiki/Dragon_curve'), new LSystemEditor$LSystemPresenter(fractalPlant, void 0, 'Plant', 'https://en.wikipedia.org/wiki/L-system#Example_7:_Fractal_plant'), new LSystemEditor$LSystemPresenter(hilbertCurve, void 0, 'Hilbert curve', 'https://en.wikipedia.org/wiki/Hilbert_curve'), new LSystemEditor$LSystemPresenter(hilbertCurve3d, void 0, 'Hilbert Curve 3d', 'https://math.stackexchange.com/questions/123642/representing-a-3d-hilbert-curve-as-an-l-system')]);
     this.presenter = first(this.lSystemPresenters);
     this.debugMode = false;
     this.debugStepSize_0 = 1;
@@ -432,36 +432,6 @@
   LSystemEditor.prototype.generatePoints = function () {
     var points = toList(this.presenter.generatePoints());
     return this.debugMode ? take_0(points, this.debugStepSize_0) : points;
-  };
-  LSystemEditor.prototype.changeLSystem_za3lpa$ = function (direction) {
-    var tmp$;
-    var $receiver = this.lSystemPresenters;
-    var indexOfFirst$result;
-    indexOfFirst$break: do {
-      var tmp$_0;
-      var index = 0;
-      tmp$_0 = $receiver.iterator();
-      while (tmp$_0.hasNext()) {
-        var item = tmp$_0.next();
-        if (equals(item.lSystem, this.presenter.lSystem)) {
-          indexOfFirst$result = index;
-          break indexOfFirst$break;
-        }
-        index = index + 1 | 0;
-      }
-      indexOfFirst$result = -1;
-    }
-     while (false);
-    var i = indexOfFirst$result + direction | 0;
-    if (i < 0)
-      tmp$ = last_0(this.lSystemPresenters);
-    else if (i >= this.lSystemPresenters.size)
-      tmp$ = first(this.lSystemPresenters);
-    else
-      tmp$ = this.lSystemPresenters.get_za3lpa$(i);
-    this.presenter = tmp$;
-    this.debugMode = false;
-    this.debugStepSize_0 = 0;
   };
   LSystemEditor.prototype.changeIterationCount_za3lpa$ = function (increment) {
     var tmp$;
@@ -643,6 +613,13 @@
       return Unit;
     };
   }
+  function WebUI$init$lambda_0(closure$generateScene, closure$editor, this$WebUI) {
+    return function () {
+      closure$generateScene();
+      this$WebUI.update_0(closure$editor);
+      return Unit;
+    };
+  }
   WebUI.prototype.init = function () {
     var tmp$ = this.calcRenderingSizes_0();
     var width = tmp$.component1()
@@ -672,114 +649,78 @@
     generateScene();
     var orbitControls = new THREE$OrbitControls(this.camera_0, this.renderer_0.domElement);
     orbitControls.keyPanSpeed = 0.0;
-    this.init_0(editor, getCallableRef('generateScene', function () {
+    this.initEditor_0(editor, getCallableRef('generateScene', function () {
       return generateScene(), Unit;
     }));
     this.update_0(editor);
     this.window_0.addEventListener('resize', WebUI$init$lambda(this), false);
-    this.window_0.addEventListener('keypress', this.onKeyPress_0(editor, orbitControls, getCallableRef('generateScene', function () {
-      return generateScene(), Unit;
-    })));
+    this.window_0.addEventListener('keypress', this.onKeyPress_0(editor, orbitControls, WebUI$init$lambda_0(generateScene, editor, this)));
   };
-  function WebUI$onKeyPress$lambda(closure$editor) {
+  function WebUI$onKeyPress$lambda(this$WebUI) {
     return function () {
-      closure$editor.changeLSystem_za3lpa$(1);
+      this$WebUI.toggleLSystemEditor_0();
       return Unit;
     };
   }
-  function WebUI$onKeyPress$lambda_0(closure$editor) {
-    return function () {
-      closure$editor.changeLSystem_za3lpa$(-1);
-      return Unit;
-    };
-  }
-  function WebUI$onKeyPress$lambda_1(closure$editor) {
-    return function () {
-      closure$editor.changeIterationCount_za3lpa$(1);
-      return Unit;
-    };
-  }
-  function WebUI$onKeyPress$lambda_2(closure$editor) {
+  function WebUI$onKeyPress$lambda_0(closure$editor, closure$updateUI) {
     return function () {
       closure$editor.changeIterationCount_za3lpa$(-1);
+      closure$updateUI();
       return Unit;
     };
   }
-  function WebUI$onKeyPress$lambda_3(closure$editor) {
+  function WebUI$onKeyPress$lambda_1(closure$editor, closure$updateUI) {
     return function () {
-      closure$editor.changeAngle_14dthe$(toRadians(5));
+      closure$editor.changeIterationCount_za3lpa$(1);
+      closure$updateUI();
       return Unit;
     };
   }
-  function WebUI$onKeyPress$lambda_4(closure$editor) {
+  function WebUI$onKeyPress$lambda_2(closure$editor, closure$updateUI) {
     return function () {
       closure$editor.changeAngle_14dthe$(toRadians(-5));
+      closure$updateUI();
       return Unit;
     };
   }
-  function WebUI$onKeyPress$lambda_5(closure$orbitControls) {
+  function WebUI$onKeyPress$lambda_3(closure$editor, closure$updateUI) {
+    return function () {
+      closure$editor.changeAngle_14dthe$(toRadians(5));
+      closure$updateUI();
+      return Unit;
+    };
+  }
+  function WebUI$onKeyPress$lambda_4(closure$orbitControls) {
     return function () {
       closure$orbitControls.reset();
       return Unit;
     };
   }
-  function WebUI$onKeyPress$lambda_6(this$WebUI) {
+  function WebUI$onKeyPress$lambda_5(closure$editor, this$WebUI) {
     return function () {
-      this$WebUI.applyTheme1_0();
+      var tmp$;
+      var url = closure$editor.presenter.url;
+      if (url != null)
+        (tmp$ = this$WebUI.window_0.open(url)) != null ? (tmp$.focus(), Unit) : null;
       return Unit;
     };
   }
-  function WebUI$onKeyPress$lambda_7(this$WebUI) {
-    return function () {
-      this$WebUI.applyTheme2_0();
-      return Unit;
-    };
-  }
-  function WebUI$onKeyPress$lambda_8(closure$editor) {
-    return function () {
-      closure$editor.debugMode = !closure$editor.debugMode;
-      return Unit;
-    };
-  }
-  function WebUI$onKeyPress$lambda_9(closure$editor) {
-    return function () {
-      closure$editor.increaseDebugStep();
-      return Unit;
-    };
-  }
-  function WebUI$onKeyPress$lambda_10(closure$editor) {
-    return function () {
-      closure$editor.decreaseDebugStep();
-      return Unit;
-    };
-  }
-  function WebUI$onKeyPress$lambda_11(this$WebUI, closure$editor) {
-    return function () {
-      var tmp$, tmp$_0;
-      return (tmp$_0 = this$WebUI.window_0.open((tmp$ = closure$editor.presenter.url) != null ? tmp$ : '')) != null ? (tmp$_0.focus(), Unit) : null;
-    };
-  }
-  function WebUI$onKeyPress$lambda_12(this$WebUI, closure$mapping, closure$updateUI, closure$editor) {
+  function WebUI$onKeyPress$lambda_6(closure$mapping) {
     return function (event) {
       if (Kotlin.isType(event, KeyboardEvent)) {
-        if (equals(event.key, '`')) {
-          this$WebUI.toggleLSystemEditor_0();
-        }
-        if (!Kotlin.isType(event.target, HTMLInputElement)) {
-          var action = closure$mapping.get_11rb$(event.key);
-          if (action != null) {
-            action();
-            closure$updateUI();
-            this$WebUI.update_0(closure$editor);
-          }
+        var action = closure$mapping.get_11rb$(event.key);
+        if (action != null) {
+          action();
+          event.preventDefault();
+          event.stopImmediatePropagation();
         }
       }
       return Unit;
     };
   }
   WebUI.prototype.onKeyPress_0 = function (editor, orbitControls, updateUI) {
-    var mapping = mapOf([to('n', WebUI$onKeyPress$lambda(editor)), to('N', WebUI$onKeyPress$lambda_0(editor)), to('i', WebUI$onKeyPress$lambda_1(editor)), to('I', WebUI$onKeyPress$lambda_2(editor)), to('a', WebUI$onKeyPress$lambda_3(editor)), to('A', WebUI$onKeyPress$lambda_4(editor)), to('c', WebUI$onKeyPress$lambda_5(orbitControls)), to('q', WebUI$onKeyPress$lambda_6(this)), to('w', WebUI$onKeyPress$lambda_7(this)), to('d', WebUI$onKeyPress$lambda_8(editor)), to('s', WebUI$onKeyPress$lambda_9(editor)), to('S', WebUI$onKeyPress$lambda_10(editor)), to('u', WebUI$onKeyPress$lambda_11(this, editor))]);
-    return WebUI$onKeyPress$lambda_12(this, mapping, updateUI, editor);
+    var mapping = mapOf([to('`', WebUI$onKeyPress$lambda(this)), to('(', WebUI$onKeyPress$lambda_0(editor, updateUI)), to(')', WebUI$onKeyPress$lambda_1(editor, updateUI)), to('{', WebUI$onKeyPress$lambda_2(editor, updateUI)), to('}', WebUI$onKeyPress$lambda_3(editor, updateUI)), to('c', WebUI$onKeyPress$lambda_4(orbitControls)), to('u', WebUI$onKeyPress$lambda_5(editor, this))]);
+    return WebUI$onKeyPress$lambda_6(mapping);
   };
   var trim = Kotlin.kotlin.text.trim_gw00vp$;
   var ArrayList_init = Kotlin.kotlin.collections.ArrayList_init_ww73n8$;
@@ -787,7 +728,7 @@
   var mapCapacity = Kotlin.kotlin.collections.mapCapacity_za3lpa$;
   var coerceAtLeast = Kotlin.kotlin.ranges.coerceAtLeast_dqglrj$;
   var LinkedHashMap_init = Kotlin.kotlin.collections.LinkedHashMap_init_xf5xz2$;
-  function WebUI$init$applyChanges(this$WebUI, closure$editor, closure$updateUI) {
+  function WebUI$initEditor$applyChanges(this$WebUI, closure$editor, closure$updateUI) {
     return function () {
       closure$editor.presenter.lSystem.axiom = this$WebUI.page_0.axiom.value;
       var tmp$ = closure$editor.presenter.lSystem;
@@ -823,13 +764,13 @@
       closure$updateUI();
     };
   }
-  function WebUI$init$lambda$lambda_0(closure$applyChanges) {
+  function WebUI$initEditor$lambda$lambda(closure$applyChanges) {
     return function (f) {
       closure$applyChanges();
       return Unit;
     };
   }
-  function WebUI$init$lambda_0(closure$editor, this$WebUI, closure$updateUI) {
+  function WebUI$initEditor$lambda(closure$editor, this$WebUI, closure$updateUI) {
     return function (f) {
       var tmp$ = closure$editor;
       var $receiver = closure$editor.lSystemPresenters;
@@ -853,16 +794,22 @@
       return Unit;
     };
   }
-  WebUI.prototype.init_0 = function (editor, updateUI) {
+  function WebUI$initEditor$lambda$lambda_0(this$WebUI) {
+    return function (f) {
+      this$WebUI.updateRulesHeight_0();
+      return Unit;
+    };
+  }
+  WebUI.prototype.initEditor_0 = function (editor, updateUI) {
     var tmp$;
-    var applyChanges = WebUI$init$applyChanges(this, editor, updateUI);
+    var applyChanges = WebUI$initEditor$applyChanges(this, editor, updateUI);
     var tmp$_0;
     tmp$_0 = listOf([this.page_0.axiom, this.page_0.rules, this.page_0.angle, this.page_0.iterations]).iterator();
     while (tmp$_0.hasNext()) {
       var element = tmp$_0.next();
-      element.addEventListener('input', WebUI$init$lambda$lambda_0(applyChanges));
+      element.addEventListener('input', WebUI$initEditor$lambda$lambda(applyChanges));
     }
-    this.page_0.name.addEventListener('change', WebUI$init$lambda_0(editor, this, updateUI));
+    this.page_0.name.addEventListener('change', WebUI$initEditor$lambda(editor, this, updateUI));
     var child = Kotlin.isType(tmp$ = ensureNotNull(this.page_0.name.firstElementChild).cloneNode(true), HTMLOptionElement) ? tmp$ : throwCCE();
     this.page_0.name.innerHTML = '';
     var tmp$_1, tmp$_0_0;
@@ -880,6 +827,9 @@
       var node = $receiver;
       this.page_0.name.appendChild(node);
     }
+    var it = this.page_0.rules;
+    it.setAttribute('style', 'height:' + toString(it.scrollHeight) + 'px;overflow-y:hidden;');
+    it.addEventListener('input', WebUI$initEditor$lambda$lambda_0(this));
   };
   function WebUI$update$lambda(it) {
     var $receiver = unboxChar(it.key);
@@ -889,8 +839,13 @@
     this.page_0.name.value = editor.presenter.name;
     this.page_0.axiom.value = editor.presenter.lSystem.axiom;
     this.page_0.rules.value = joinToString(editor.presenter.lSystem.rules.entries, '\n', void 0, void 0, void 0, void 0, WebUI$update$lambda);
+    this.updateRulesHeight_0();
     this.page_0.angle.value = roundToInt(toDegrees(editor.presenter.lSystem.angle)).toString();
     this.page_0.iterations.value = editor.presenter.iterations.toString();
+  };
+  WebUI.prototype.updateRulesHeight_0 = function () {
+    this.page_0.rules.style.height = 'auto';
+    this.page_0.rules.style.height = this.page_0.rules.scrollHeight.toString() + 'px';
   };
   WebUI.prototype.applyTheme1_0 = function () {
     this.lineMaterial_0 = this.material1_0;
@@ -1145,6 +1100,7 @@
     return $receiver;
   });
   var kochSnowflake;
+  var kochCurve;
   var cesaroFractal;
   var quadraticType2Curve;
   var hilbertCurve;
@@ -1188,6 +1144,11 @@
   Object.defineProperty(package$lsystem, 'kochSnowflake', {
     get: function () {
       return kochSnowflake;
+    }
+  });
+  Object.defineProperty(package$lsystem, 'kochCurve', {
+    get: function () {
+      return kochCurve;
     }
   });
   Object.defineProperty(package$lsystem, 'cesaroFractal', {
@@ -1250,7 +1211,8 @@
   yAxis = new THREE$Vector3(0, 1, 0);
   zAxis = new THREE$Vector3(0, 0, 1);
   dontConnectDots = new THREE$Vector3(kotlin_js_internal_DoubleCompanionObject.NaN, kotlin_js_internal_DoubleCompanionObject.NaN, kotlin_js_internal_DoubleCompanionObject.NaN);
-  kochSnowflake = new LSystem('F--F--F', mapOf_0(to(toBoxedChar(70), 'F+F--F+F')), math.PI / 3, true);
+  kochSnowflake = new LSystem('F--F--F', mapOf_0(to(toBoxedChar(70), 'F+F--F+F')), math.PI / 3);
+  kochCurve = new LSystem('F', mapOf_0(to(toBoxedChar(70), 'F+F-F-F+F')), math.PI / 2);
   cesaroFractal = new LSystem('F', mapOf_0(to(toBoxedChar(70), 'F+F-F-F+F')), toRadians(85));
   quadraticType2Curve = new LSystem('F', mapOf_0(to(toBoxedChar(70), 'F+F-F-FF+F+F-F')), math.PI / 2);
   hilbertCurve = new LSystem('A', mapOf([to(toBoxedChar(65), '-BF+AFA+FB-'), to(toBoxedChar(66), '+AF-BFB-FA+')]), math.PI / 2);
