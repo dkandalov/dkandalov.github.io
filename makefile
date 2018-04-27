@@ -2,5 +2,8 @@
 setup:
 	gem install bundler && bundle install
 
+update:
+	bundle update
+
 run:
 	bundle exec jekyll serve
