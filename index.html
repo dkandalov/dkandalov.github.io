@@ -4,14 +4,16 @@ layout: default
 
 <div class="home">
   {% for post in site.posts %}
-    <article class="post">
-      <h2 class="post-title"><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
+    {% unless post.draft %}
+        <article class="post">
+          <h2 class="post-title"><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
 
-      <time datetime="{{ post.date | date_to_xmlschema }}" class="post-date">{{ post.date | date: '%B %d, %Y' }}</time>
+          <time datetime="{{ post.date | date_to_xmlschema }}" class="post-date">{{ post.date | date: '%B %d, %Y' }}</time>
 
-      {{ post.content | truncatewords:50 | strip_html }}
+          {{ post.content | truncatewords:50 | strip_html }}
 
-      <hr>
-    </article>
+          <hr>
+        </article>
+    {% endunless %}
   {% endfor %}
 </div>
