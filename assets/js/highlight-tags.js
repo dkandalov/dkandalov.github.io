@@ -3,18 +3,16 @@
 // has to be after the tag and this looks ugly. 
 function transformLanguageToCodeTagsOnLoad(hljs) {
     document.addEventListener("DOMContentLoaded", function(event) {
-        var languages = ["groovy", "kotlin", "java"];
+		var languages = ["groovy", "kotlin", "java", "lua", "javascript", "scheme"];
         languages.forEach(function(language) {
             $.each($(language), function(n, it) {
                 var element = $(it);
                 element = element.replaceWith(
-                    "<pre><code class='code'>" + element.html().trim() + "</code></pre>"
+                    "<pre><code class='"+ language + "'>" + element.html().trim() + "</code></pre>"
                 );
             });
         });
-
-        $('pre code').each(function(i, block) {
-            hljs.highlightBlock(block);
-        }); 
+		hljs.configure({tabReplace: '    '});
+		hljs.initHighlighting();
     });
 }
