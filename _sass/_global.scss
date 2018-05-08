@@ -80,14 +80,9 @@ figure {
 .site-header {
     overflow: hidden;
     padding: 2em 0 .5em 0;
-    background: $white;
-    margin-bottom: 2em;
-}
-
-@media (min-width: 34em) {
-    .site-header {
-        margin-bottom: 4em;
-    }
+    border-bottom: solid 1px #EAEAEA;
+    background: #f1f1f1;
+    margin-bottom: 30px;
 }
 
 h1 {
@@ -98,6 +93,7 @@ h1 {
 .site-title {
     text-decoration: none;
     font-weight: 300;
+    font-size: 22px;
 }
 
 .site-nav a {
