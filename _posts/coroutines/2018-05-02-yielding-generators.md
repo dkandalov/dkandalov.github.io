@@ -2,14 +2,24 @@
 draft: true
 ---
 
-Even though coroutines as threads is the most intuitive implementation, the most widespread coroutines implementation is the one based on yield/async/await. In the following code examples I will use JavaScript. The reason is that its coroutines implementation is quite typical, JavaScript is dynamically typed so hopefully it should be easier to understand examples without paying to much attention to types, plus JavaScript has C-like syntax so should be readable for most programmers.
+This is the second blog in a series of blogposts explaining coroutines, how they implemented in various programming languages and how they can make your life better. 
+There are currently four blogposts
+[coroutines as threads]({% post_url 2018-05-01-coroutines-as-threads %}),
+[yielding generators]({% post_url 2018-05-02-yielding-generators %}),
+[async await]({% post_url 2018-05-03-async-await %}) and
+[call with current continuation]({% post_url 2018-05-06-call-with-current-continuation %}).
+You can read them in any order but they probably make more sense when read sequentially.
 
-The first part of yield/async/await implementation is generators created using `yield` keyword. Below is a diagram showing coroutines as threads followed by diagram showing a generator. As you can see the two are pretty much identical. The main difference is that generators are predominantly used to return values back into calling function. In a way it's like a design pattern which uses coroutines for a particular purpose.
+In the [previous blogpost]({% post_url 2018-05-01-coroutines-as-threads %}) we looked at coroutines implementation as threads which is the most intuitive usage for coroutines. However, the most widespread coroutines implementation seems to be the one based on yield/async/await keywords (it's implemented in Python, C#, JavaScript and there is proposal for C++). There are two parts to it: generators and async/await. In the following code examples I will use JavaScript. It seems to be a good choice because JavaScript coroutines implementation is quite typical, JavaScript is dynamically typed so it should be easier to understand examples without paying too much attention to types, plus JavaScript has C-like syntax so should be readable for most programmers.
+
+#### Generators as threads
+
+The first part of yield/async/await implementation is generators created using `yield` keyword. Below is a diagram showing coroutines as threads followed by diagram showing a generator. As you can see they are pretty much identical. The main difference is that generators are predominantly used to return values back into calling function. In a way it's like a design pattern which uses coroutines for a particular purpose.
 
 ![](/assets/images/coroutines/yield/0-coroutine.png)
 ![](/assets/images/coroutines/yield/1-generator.png)
 
-Here is an example of JavaScript generator which works similar to the first diagram. In the code we define function `createGenerator`. This is similar to `coroutine.create` in Lua code. Note that `createGenerator` has `*` after `function` keyword. This tells JavaScript that this function is a coroutine, so just like in Lua where we couldn't use `coroutine.yield()` outside of coroutine, we can't use `yield` outside functions which are not generators, i.e. not marked with `*`. After creating generator, we assign to `c` and can use `next()` function to start/resume execution of the coroutine. Overall, the program resumes coroutine, which yield back to `main`. It prints "12345" never reaching the line which prints the monkey. 
+Here is an example of JavaScript generator which works similar to the first diagram. In the code we define function `createGenerator`. This is similar to `coroutine.create` in Lua code. Note that `createGenerator` has `*` after `function` keyword. This tells JavaScript that this function is a coroutine, so just like in Lua where we couldn't use `coroutine.yield()` outside of coroutine, we can't use `yield` outside functions which are not generators, i.e. not marked with `*`. After creating generator, we assign to `c` and can use `next()` function to start/resume execution of the coroutine. Overall, the program resumes coroutine, which yields back to `main`. It prints `12345` never reaching the line which prints the monkey. 
 <javascript>
 function* createGenerator() {
 	console.log("2");
@@ -25,6 +35,9 @@ console.log("3");
 c.next();
 console.log("5");
 </javascript>
+
+#### Generator state
+
 Similar to threads, generators have state. In the example below, we create a generator which yields twice and resume it three times printing result value of both `next()` and `yield`. The program prints:
 ```
 { value: undefined, done: false }
@@ -44,7 +57,7 @@ console.log(c.next());
 console.log(c.next());
 console.log(c.next()); 
 </javascript>
-As mentioned before the whole point of generator is to return some values, so the example above is a bit pointless (although it helps to illustrate the analogy between coroutines as threads and coroutines as generators). To make it a bit more useful we yield values from generator back into the main function. In the example below we create generator which yields dog and pig. In the main function we resume the generator passing values to it. Note that unlike Lua the first value passed into generator is lost and the next two values evaluated as a result of `yield` expression. So overall the output is:
+As mentioned before the whole point of generator is to return some values, so the example above is a bit pointless (although it helps to illustrate the analogy between coroutines as threads and coroutines as generators). To make it a bit more useful we `yield` values from generator back into the main function. In the example below we create generator which yields dog and pig. In the `main` function we resume the generator passing values to it. Note that unlike Lua the first value passed into generator is lost and the next two values evaluated as a result of `yield` expression. So overall the output is:
 ```
 { value: '🐶', done: false }
 B
@@ -62,7 +75,10 @@ console.log(c.next("will be lost"));
 console.log(c.next("B"));
 console.log(c.next("C"));
 </javascript>
-Unlike Lua coroutines which are stackful, JavaScript coroutines implementation is stackless (this also applies to most other languages using yield/async/await coroutines implementation). In particular, this means that we cannot yield from sub-function, even if it's an anonymous function. In the example below, we create generator which yields a dog and then calls `forEach` on an array which takes an anonymous function `it => { ... }`. Because JavaScript generators are stackless and anonymous function cannot be marked as generator, we cannot `yield` from inside it. So the code below just crashes.
+
+#### Stackless yield
+
+Unlike Lua coroutines which are stackful, JavaScript coroutines implementation is stackless (this also applies to most other languages using yield/async/await coroutines implementation). In particular, this means that we cannot `yield` from sub-function, even if it's an anonymous function. In the example below, we create generator which yields a dog and then calls `forEach` on an array which takes an anonymous function `it => { ... }`. Because JavaScript generators are stackless and anonymous function cannot be marked as generator, we cannot `yield` from inside it. So the code below just crashes.
  
 <javascript>
 function* createGenerator() {
@@ -165,7 +181,7 @@ console.log(f.next());
 console.log(f.next());
 console.log(f.next(10));
 </javascript>
-The previous examples might look a little bit too magical. To dispel the magic we can look at how the same functionality can be done in JavaScript versions without support for `yield` keyword. Luckily this is easy to do using BabelJS which can transpile modern JavaScript (ES2018) to code runnable in the old ES5 language version. The code below is transpiled version of the skipping factorial generator. Note taht at the bottom of the example you can see that `console.log(f.next())` code didn't change at all. Also `factorial()` function signature didn't change although its code was transformed. There are some implementation details we cannot see in `regeneratorRuntime.wrap()` function but the main point here is that `factorial` code is transformed into a state machine. There is a `switch` statement which switches on the current state of the state machine. For example, initially the state is `0` so we match `case 0` and initialise `n`, `result` and `skip` variables. Then we fall though into `case 3` where `if (!true)` and `if (skip)` evaluate to false and won't be executed. The next state is set to `7` in `_context.next = 7` and the generator returns current result. When main function calls `f.next()` generator will continue execution from `case 7`. So as you can see there is no particular magic going on here. It might not a trivial code transformation going on in the compiler but after all the code becomes just a state machine.
+The previous examples might look a little bit too magical. To dispel the magic we can look at how the same functionality can be done in JavaScript versions without support for `yield` keyword. Luckily this is easy to do using [BabelJS](https://babeljs.io) which can transpile modern JavaScript (ES2018) to code runnable in the old ES5 language version. The code below is transpiled version of the skipping factorial generator. Note that at the bottom of the example you can see that `console.log(f.next())` code didn't change at all. Also `factorial()` function signature didn't change although its code was transformed. There are some implementation details we can't see in `regeneratorRuntime.wrap()` function but the main point here is that `factorial` code is transformed into a state machine. There is a `switch` statement which switches on the current state of the state machine. For example, initially the state is `0` so we match `case 0` and initialise `n`, `result` and `skip` variables. Then we fall though into `case 3` where `if (!true)` and `if (skip)` evaluate to false and won't be executed. The next state is set to `7` in `_context.next = 7` and the generator returns current result. When main function calls `f.next()` generator will continue execution from `case 7`. So as you can see there is no particular magic going on here. It might not a trivial code transformation going on in the compiler but after all the code becomes just a state machine.
 
 <javascript>
 "use strict";
