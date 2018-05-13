@@ -87,6 +87,9 @@ Here is another example of CPS in which we read file from web sever, save it int
 	))
 )
 ```
+
+### Call with current continuation
+
 Below is a basic example of using `call/cc` (here `/` is part of the function name just like any other character). This program prints "1" and then invokes `call/cc` which takes lambda as an argument. The lambda is evaluated straight away so it will print "2". Then `(continuation 3)` is called and this is where things become more interesting because calling `continuation` will finish executing code in the lambda (so the monkey will never be printed) and will evaluate the `call/cc` expression to the value we passed to `continuation`. In the example below it's equivalent to replacing `(print (call/cc ... ))` with `(print 3)`. As in the examples above when `continuation` represents the rest of our program except that here we didn't have to make any effort to write code in continuation-passing style. With `call/cc` we can get current continuation without changing our code.
 ```
 (define (print message)
