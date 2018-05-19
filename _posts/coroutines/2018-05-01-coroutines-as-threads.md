@@ -2,18 +2,16 @@
 draft: true
 ---
 
-This is the first blog in a series of blogposts explaining coroutines, how they implemented in various programming languages and how they can make your life better. 
-There are currently four blogposts
-[coroutines as threads]({% post_url 2018-05-01-coroutines-as-threads %}),
-[yielding generators]({% post_url 2018-05-02-yielding-generators %}),
-[async await]({% post_url 2018-05-03-async-await %}) and
-[call with current continuation]({% post_url 2018-05-06-call-with-current-continuation %}).
-You can read them in any order but they probably make more sense when read sequentially.
+This post is part of the blogpost series explaining coroutines, how they implemented in various programming languages and how they can make your life better:
+1. 👉 [coroutines as threads]({% post_url 2018-05-01-coroutines-as-threads %}) 👈
+2. [yielding generators]({% post_url 2018-05-02-yielding-generators %})
+3. [async await]({% post_url 2018-05-03-async-await %})
+4. [call with current continuation]({% post_url 2018-05-06-call-with-current-continuation %}).
 
 The main motivation for these blogposts is that, probably like many other developers, I heard about coroutines, continuations, yield/async/await and even used them to some extent, but somehow I never got to really understand what they mean from computational point of view, how they work and how concepts like continuations relate to coroutines. This is an attempt to clarify coroutines for myself and anyone else interested in the subject.
 
 
-### Why use coroutines?
+#### Why use coroutines?
 
 There are multiple reasons you might want to use coroutines.
 They will be explained in more details in later posts but here is a quick description of few main use-cases: 
@@ -26,12 +24,12 @@ Some programming languages don't have threads. This can be by design like in Lua
 3. **Efficient use of OS resources and hardware.** If the design of your application requires a lot of threads, then you can benefit from coroutines by saving on memory allocation, time it takes to do context switch and ultimately benefit from using hardware more efficiently. For example, if each "business object" in your application is assigned a thread, then by using coroutines you will need less memory and will benefit from faster switching between coroutines. Another example might be performing blocking IO. Because in general, threads are more expensive than sockets, you are more likely to run out of available OS threads than sockets. To avoid this problem you can use non-blocking IO with coroutines.
 
 
-### Brief history
+#### Brief history
 
 There is nothing new about coroutines from computer science point of view. [According to wikipedia](https://en.wikipedia.org/wiki/Coroutine) coroutines were known as early as 1958. There were implemented in high-level programming languages starting with [Simula 67](https://en.wikipedia.org/wiki/Simula) and in [Scheme](https://en.wikipedia.org/wiki/Scheme_%28programming_language%29) in 1972. Coroutines were so old news by 90s that John Reynolds wrote [The Discoveries of Continuations paper](http://www.cs.ru.nl/%7Efreek/courses/tt-2011/papers/cps/histcont.pdf) in 1993 describing the rediscoveries of continuations. Until about 80s there were no threads easily available in operating systems so if you needed any concurrent behaviour you would have to use coroutines or something similar. Later on, when threads because widespread, it seems that everyone forgot about coroutines for a while. Until recently, when coroutines came back into mainstream probably because some of the languages (like Python and JavaScript) don't have or can't use threads by design.
 
 
-### Coroutine definition
+#### Coroutine definition
 
 A coroutine is a function which:
  - can **suspend** its execution (the expression where it suspends is called **suspension point**);
@@ -41,7 +39,7 @@ This is an informal definition because there seems to be no consensus about what
 There are few ways in which coroutines are implemented in programming languages. The most widespread implementations are coroutines as threads, yield/async/await and via "call with current continuation" (abbreviated as "call/cc"). Under the hood they all use the same idea, so it might useful to think about them as design patterns which use the same underlying mechanism to solve different problems.
 
 
-### Coroutines as threads
+## Coroutines as threads
 
 [Lua](https://www.lua.org/about.html) is a scripting programming language designed to be used as an embedded language in large applications (thinking about it as "javascript for interacting with C" might be a fair analogy). In case you never encountered Lua, it is the most used scripting language in the gaming industry and definitely falls into the category of industrial strength enterprise languages.
 
