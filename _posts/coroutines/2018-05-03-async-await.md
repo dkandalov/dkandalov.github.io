@@ -2,12 +2,28 @@
 draft: true
 ---
 
-The second part of `yield/async/await` implementation of coroutines is `async/await`. As you can see in the diagram below, it is a bit more involved than `yield` but fundamentally it is still the same idea of suspending execution of a function at some point and then continuing from the same execution point some time later. 
-What is different between `yield` and `async/await` is the motivation. In particular `yield` is useful for lazily producing values. Imagine that your process reads data from upstream source, does some processing and sends data to downstream system. If the downstream system is constantly overloaded, there is no point getting more data from upstream. This can thought of as having too much data from upstream. This is where a generator can be useful so that data is read from upstream only when asked.
+This post is part of the blogpost series explaining coroutines, how they implemented in various programming languages and how they can make your life better:
+1. [coroutines as threads]({% post_url 2018-05-01-coroutines-as-threads %})
+2. [yielding generators]({% post_url 2018-05-02-yielding-generators %})
+3. 👉 [async await]({% post_url 2018-05-03-async-await %}) 👈
+4. [call with current continuation]({% post_url 2018-05-06-call-with-current-continuation %}).
 
+The second part of `yield/async/await` implementation of coroutines is `async/await`. It is a bit more complicated than `yield` but fundamentally it uses the same idea of suspending execution of a function and continuing some time later from the same execution point.
+
+#### Why use async/await?
+ 
+There are two main reasons to use `async/await`:
+ - to perform asynchronous operations without blocking current thread (assuming that you can use non-blocking IO). The goal is to save resources such as threads and memory.
+ - to avoid nested callbacks (aka [callback hell](http://callbackhell.com) and [pyramid of doom](https://en.wikipedia.org/wiki/Pyramid_of_doom_(programming))) and write programs in imperative style. The goal is to restructure program so that it's easier for humans to write and maintain.
+
+These reasons are not mutually exclusive, e.g. in order to fully use hardware, you want to switch to non-blocking IO but its API has a lot of callbacks, so you can use `async/await` to solve both problems.
+
+A typical example of application which might benefit from `async/await` might be a web server which had 
 There is another possible problem that even though downstream system is not overloaded, it takes it a really long time to respond. Waiting for response will block threads in our system (and potentially will make it run out of threads). Assuming there is some non-blocking IO available, this problem can be solved with `async/await`. The idea is that as soon as the current thread sends data to downstream system, it suspends execution of sending function and continues doing other things, i.e. serving more upstream requests. Some time later this (or another) thread can observe via non-blocking IO that downstream system has processed the original request and will continue execution from the suspension point. This way we can process as much upstream data as possible and send it all downstream maximising usage of threads.
 
-In the diagram below a thread starts executing `main` and calls async function. Few instructions later the async function starts some potentially long-running task and instead of waiting for it to finish it wraps the result into `promise` and yields execution back to `main`. (Here `promise` means an object which holds the result of computation which might finish some time in the future. There are other terms for `promise`, for example, `future` or `task`.) The `promise` will be also automatically chained to executed the rest of the async function after the promisr has been completed. This is essentially the same as restoring stack and instruction pointer. Note that `main` also receives `overall promise` which will be completed when the whole async function is completed. After returning from async function, thread will run the rest of the `main` and can potentially chain some code to be executed after the `overall promise` is completed. Some time later another thread observes that the long running task has finished and so it completes the `promise`. The promise will make the thread "jump" back into the middle of the async function. Few instructions later the second thread starts another long-running task, creates another promise and yields execution to whatever the thread was doing before completing the first `promise`. Some time later yet another thread observes that the second task has finished so it completes the second `promise` and resumes execution of async function from the last suspension point. This time the thread finishes execution of the whole async function, so it completes `overall promise` and runs all callbacks associated with it. There were three threads in this description but in reality it could be even one thread. Coroutines don't mandate any particular threading model, they're only about concurrency.
+#### Basic async/await example
+
+In the diagram below a thread starts executing `main` and calls async function. Few instructions later the async function starts some potentially long-running task and instead of waiting for it to finish it wraps the result into `promise` and yields execution back to `main`. (Here `promise` means an object which holds the result of computation which might finish some time in the future. There are other terms for `promise`, for example, `future` or `task`.) The `promise` will be also automatically chained to executed the rest of the async function after the promisr has been completed. This is essentially the same as restoring stack and instruction pointer. Note that `main` also receives `overall promise` which will be completed when the whole async function is completed. After returning from async function, thread will run the rest of the `main` and can potentially chain some code to be executed after the `overall promise` is completed. Some time later another thread observes that the long-running task has finished and so it completes the `promise`. The promise will make the thread "jump" back into the middle of the async function. Few instructions later the second thread starts another long-running task, creates another promise and yields execution to whatever the thread was doing before completing the first `promise`. Some time later yet another thread observes that the second task has finished so it completes the second `promise` and resumes execution of async function from the last suspension point. This time the thread finishes execution of the whole async function, so it completes `overall promise` and runs all callbacks associated with it. There were three threads in this description but in reality it could be even one thread. Coroutines don't mandate any particular threading model, they're only about concurrency.
 
 ![](/assets/images/coroutines/async-await/0-async-await.png)
 
@@ -44,6 +60,8 @@ let overallPromise = c();
 overallPromise.then(_ => console.log("done"));
 console.log(3); 
 ```
+
+#### Combining async results
 
 Hopefully, the example above helps with understanding execution flow of `async` functions. However, it's a bit pointless because promises don't return any values at all. So below is essentially the same example but with promises returning some values. Here `promise1` returns a dog and `promise2` return a pig. The `async` function sequentially waits for each promise to complete and then concatenates and returns their output. Note that even though the async function returns a string, the actual object returned from it is a promise (this is because it has `async` modifier so the compiler knows it should do some code transformations). In the `main` function we register callback on `overallPromise` to concatenate "!" to the result and print it to the console. Overall, after 5 second delay the program prints `🐶🐷!`.
 ```
@@ -95,7 +113,12 @@ let overallPromise = c();
 overallPromise.then(it => console.log(it));
 ```
 
-Just like with generators, it might seem that `async/await` is some complicated compiler magic. It's not that magical though. Using babel.js we can transform the code for older JS versions which don't support `async/await` keywords. You don't need to understand the code below (and some parts of it are defined in babel library) but similar to generators `async` function is transformed into a state machine. You might also notice `_asyncToGenerator()` function which hints that under the hood `async` functions are implemented as generators, i.e. fundamentally async functions are not that different from generators. 
+#### Coroutines VS Promises
+TODO
+
+#### Async/await coroutines are state machines
+
+Just like with generators, it might seem that `async/await` is some complicated compiler magic. It's not that magical though. Using [BabelJS](https://babeljs.io) we can transform the code for older JS versions which don't have `async/await` support. You don't need to understand the code below (and some parts of it are defined in babel library) but similar to generators `async` function is transformed into a state machine. You might also notice `_asyncToGenerator()` function which hints that under the hood `async` functions are implemented as generators, i.e. fundamentally async functions are not that different from generators. 
 ```
 "use strict"; 
 var c = function () {
@@ -163,3 +186,6 @@ overallPromise.then(function (it) {
 	return console.log(it);
 });
 ```
+
+#### Summary
+TODO

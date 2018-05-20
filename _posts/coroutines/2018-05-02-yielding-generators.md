@@ -15,6 +15,8 @@ The following code examples will use JavaScript (to be precise [ECMAScript 2017]
 #### Why use generators?
 The main reason to use generator is to define a lazy [iterator](https://en.wikipedia.org/wiki/Iterator) using more expressive syntax than writing an iterator manually (see [example below](#factorial-example)). There are other reasons like simulating concurrency and using generators as a base for implementing async/await but they are less common.
 
+The simplest use-case for lazy iterator is when the amount of data it needs to iterate through is too large to be stored in memory, e.g. processing rows from huge database table. Other reasons might be related to high-level design of the application. For example, let's say there is program which reads data from upstream source, performs some processing and sends data to be consumed by downstream system. If the downstream system is constantly overloaded, there is no point getting more data from upstream so we could use a generator so that upstream data is consumed one item at a time when there is downstream capacity.
+
 #### The most basic generator
 Here is an example of the most basic generator:
 <javascript>
