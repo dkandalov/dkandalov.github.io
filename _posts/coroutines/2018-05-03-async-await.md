@@ -16,16 +16,21 @@ The main use-case for `async/await` is to make it easier to write asynchronous c
 
 A typical example of using `async/await` is avoiding threads blocked on IO operations. Let's say there is a web server which on each request grabs a thread from a thread pool, requests data from back-end system and sends the result back to client. The web sever is under high load and profiling shows that most of its threads are not busy doing any work but blocked waiting for response from the back-end. It takes a while to receive response from back-end but overall back-end has enough capacity to handle more requests in parallel. Assuming that back-end response time cannot be improved, web server is the bottleneck because it doesn't have enough runnable threads to match the capacity of the back-end. To solve the issue, web server can use `async/await` with non-blocking IO so that threads don't block waiting for response from the back-end but instead handle more client requests.
 
-#### Basic async/await example
+#### Control flow of async/await
 
-In the diagram below a thread starts executing `main` and calls async function. Few instructions later async function starts some potentially long-running task and the current thread, instead of waiting for it to finish, wraps the result into `promise` and yields execution back to `main`. (Here `promise` means an object which holds the result of computation which might finish some time in the future. There are other terms for `promise`, for example, `future` or `task`.) The `promise` will be also automatically chained to execute the rest of the async function after the promise has been completed. This is essentially the same as restoring stack and instruction pointer. Note that `main` also receives `overall promise` which will be completed when the whole async function is completed. After returning from async function, thread will run the rest of the `main` and can potentially chain some code to be executed after the `overall promise` is completed. Some time later another thread observes that the long-running task has finished and so it completes the `promise`. The promise will make the thread "jump" back into the middle of the async function. Few instructions later the second thread starts another long-running task, creates another promise and yields execution to whatever the thread was doing before completing the first `promise`. Some time later yet another thread observes that the second task has finished so it completes the second `promise` and resumes execution of async function from the last suspension point. This time the thread finishes execution of the whole async function, so it completes `overall promise` and runs all callbacks associated with it. There were three threads in this description but in reality it could be even one thread. Coroutines don't mandate any particular threading model, they're only about concurrency.
+One of the simplest `async/await` examples is an async function without any return values which `await`s for two promises. (Here `promise` means an object which holds the result of a computation which might be computed and will become available some time in the future. There are [other terms](https://en.wikipedia.org/wiki/Futures_and_promises) for it, e.g. future, deferred or task). This is depicted in the following diagram (you can find description of the notation in [the previous blogpost]({% post_url 2018-05-01-coroutines-as-threads %})):
 
 ![](/assets/images/coroutines/async-await/0-async-await-no-return.png)
 
-One of the most confusing things about `async/await` is that `await` doesn't really make the current thread wait for anything. Instead it saved current stack and instruction pointer and yields execution back to calling function just like in the previous examples with coroutines as threads and `yield`. The confusion happens because we usually think about code sequentially from the point of view of a computer, or rather CPU or a thread. So when we see a function, call like `sleep(2)` we think of it as current thread being stopped for two seconds (or milliseconds). The `async/await` implementation of coroutines breaks this implicit expectation because `await` is not about current thread anymore. I guess it was an attempt to make developer think about code in terms of the task itself ignoring how runtime execution is being done. Because all abstractions are leaky I'm not convinced it was the best choice. To summarise, `await` doesn't wait for anything, it chains the rest of async function to run after promise is completed and **yields** execution.
+In the diagram a thread starts executing `main` and calls async function. Few instructions later async function reaches `await` which, assuming that `promise1` is not yet complete, suspends execution of async function and yields execution back to `main`. Note that there is no restriction on when and how the promise was created. The most common use-case would be to call from async function some long-running task which returns a promise but we could also create the promise some time before and pass into async function as an argument. After `await` yielded execution back to `main`, the thread executes the rest of the `main` and returns from it as usual.
 
-The following JavaScript code shows `async/await` execution similar to the diagram above. Similar to generators with `yield` where we had function marked with `*`, here we declare `c` function which is marked with `async` keyword which tells the compiler that this is a coroutine. In the `main` function we invoke `c()` which starts executing to the point when it reaches `await promise1` and yields execution back to `main`. Here `promise1` signifies some task which takes a long time to finish (in this particular example it will be resolved after 2 second timeout). After yielding back to `main` we get `overallPromise` on which we set callback to print "done" when the whole async function finishes. About 2 seconds later `promise1` is completed and execution continues from `await promise1` expression until it reaches `await promise2` which yields again. In 3 seconds `promise2` is completed so the whole coroutine is completed so the callback defined in `main` prints "done" (both promises are created almost at the same time so the delay for second promise completion is about 5 - 2 = 3 seconds).
-Note again that the `main` function finishes execution before async function `c` so in spite of what you could expect from the `await` keyword.  
+Some time later another thread observes (e.g. via non-blocking IO) that the long-running task has finished and completes `promise1`. Completing `promise1` makes thread to "jump" back into the middle of the async function and continue from the **suspension point**. Few instructions later the thread reaches the second `await` which assuming that `promise2` is not yet complete, yields execution back to whatever the thread was doing before completing `promise1`. 
+
+Some time later yet another thread observes that the second long-running task has finished so it completes `promise2` and resumes execution of async function from the last **suspension point**. This time the thread finishes execution of the whole async function. Even though there were three threads mentioned in this description, coroutines don't mandate any particular threading model, and in this example there could be any amount of threads between one and three.
+
+One of the most confusing things is that `await` doesn't really make current thread wait for anything. If the promise is not yet completed, `await` chains execution of the rest of async function to run after the promise is completed (e.g. by saving current stack and instruction pointer at suspension point) and yields execution back to the calling function. If the promise is already completed, `await` extracts result from the promise and continues executing async function as usual. The confusion happens because it's usual to think about code from the point of view of a computer (CPU or a thread) sequentially executing instructions. When we see `sleep(2)`, we think of it as current thread sleeping for two seconds (or milliseconds). Unlike most of the normal code, `await` keyword means "waiting" from the point of view of the current task. 
+
+The following JavaScript code shows `async/await` execution similar to the diagram above: 
 ```
 let promise1 = new Promise(resolve => {
 	setTimeout(() => resolve(), 2000);
@@ -43,25 +48,33 @@ async function c() {
 }
 
 console.log(1);
-let overallPromise = c();
-overallPromise.then(_ => console.log("done"));
+c();
 console.log(3); 
 ```
-As expected, this program prints:
+As you could probably expect, the program prints:
 ```
 1
 2
 3
-4
-5
-done
 ```
+Waits for about 2 seconds and prints:
+```
+4
+```
+Waits for about (5 - 2) = 3 seconds and prints:
+```
+5
+```
+Note that `function c()` is marked with `async` keyword which tells JS interpreter that this is a coroutine (similar to [generators]({% post_url 2018-05-02-yielding-generators %}) which in JS are marked with `*`). Both `promise1` and `promise2` signify some long-running tasks (in this example they are resolved 2 and 5 seconds after being created). It also might be a bit counter-intuitive that `main` finishes execution before async function `c` (as mentioned above this not what you would normally expect from something called "await").
+
 
 #### Returning async results
 
+The goal of the previous example was to show execution flow of async functions. However, it was significantly simplified by having async function which ignored results of the promises and didn't return anything itself. This example adds more details about how async functions return values via [promises](https://en.wikipedia.org/wiki/Futures_and_promises). The following diagram shows async function which `await`s for two promises. After the first `await` async function returns `overall promise` to the `main` which can potentially chain more code to be executed once `overall promise` is completed. After both `promise1` and `promise2` are completed, the thread that completed `promise2` will execute the rest of async function and complete `overall promise`.
+
 ![](/assets/images/coroutines/async-await/1-async-await.png)
 
-Hopefully, the example above helps with understanding execution flow of `async` functions. However, it's a bit pointless because promises don't return any values at all. So below is essentially the same example but with promises returning some values. Here `promise1` returns a dog and `promise2` return a pig. The `async` function sequentially waits for each promise to complete and then concatenates and returns their output. Note that even though the async function returns a string, the actual object returned from it is a promise (this is because it has `async` modifier so the compiler knows it should do some code transformations). In the `main` function we register callback on `overallPromise` to concatenate "!" to the result and print it to the console. Overall, after 5 second delay the program prints `🐶🐷!`.
+There are some details though which are hard to show on a diagram and are better illustrated with source code:
 ```
 let promise1 = new Promise(resolve => {
 	setTimeout(() => resolve("🐶"), 2000);
@@ -77,10 +90,26 @@ async function c() {
 }
 
 let overallPromise = c();
-overallPromise.then(it => console.log(it + "!"));
+overallPromise.then(result => console.log(result + "!"));
+```
+In this example, `promise1` returns `🐶` after 2 second delay and `promise2` returns `🐷` after 5 seconds. The async function sequentially `await`s for each promise to complete and returns concatenated output (after about 5 second delay). Note that even though the async function returns a string, actual object received by `main` is a promise (this happens because `function c()` has `async` modifier which tells JS it should do some code transformations). In the `main` function we register callback on `overallPromise` to append "!" to the `result` and print it to the console. As expected, the program runs for about 5 seconds and prints:
+```
+🐶🐷!
 ```
 
-Considering the previous two examples it might look like `async/await` transforms code between `await` keywords into promises and chains the promises together. This is not correct though. The example below illustrates that similar to generators, `async` functions work with `try/catch/finally` blocks. In this example `promise1` returns a dog, and `promise2` throws an explosion 💥. So in the async function `await promise1` after a timeout will be evaluated to a dog and assigned to `value1`. However, `await promise2` will complete by throwing an explosion and will continue by executing `catch` and `finally` blocks (the code which logs monkey to console and returns concatenated values will never run). Note even though `async` function yields execution twice, the `finally` block is run only once when the whole function is finished. Because `catch/finally` don't return any values `overallPromise` result will be `undefined`. The whole program prints:
+#### Composing async functions
+
+Because async functions `await` on promises and return promises themselves, they can be easily composed. In the diagram below instead of `await`ing on some promise async function sequentially invokes `asyncFunction1()`, `asyncFunction2()` and `await`s on their promises.
+ 
+![](/assets/images/coroutines/async-await/2-async-await-composed.png)
+
+Here is JS code with equivalent behaviour:
+```
+```
+
+#### Async try catch
+
+Considering previous examples it might look like `async/await` transforms code between `await` keywords into promises and chains the promises together. This is not correct though. The example below illustrates that similar to generators, `async` functions work with `try/catch/finally` blocks. In this example `promise1` returns a dog, and `promise2` throws an explosion 💥. So in the async function `await promise1` after a timeout will be evaluated to a dog and assigned to `value1`. However, `await promise2` will complete by throwing an explosion and will continue by executing `catch` and `finally` blocks (the code which logs monkey to console and returns concatenated values will never run). Note even though `async` function yields execution twice, the `finally` block is run only once when the whole function is finished. Because `catch/finally` don't return any values `overallPromise` result will be `undefined`. The whole program prints:
 ```
 catch 💥
 finally
@@ -111,15 +140,12 @@ let overallPromise = c();
 overallPromise.then(it => console.log(it));
 ```
 
-#### Combining async results
-TODO
-
 #### Coroutines VS Promises
 TODO
 
 #### Async/await coroutines are state machines
 
-Just like with generators, it might seem that `async/await` is some complicated compiler magic. It's not that magical though. Using [BabelJS](https://babeljs.io) we can transform the code for older JS versions which don't have `async/await` support. You don't need to understand the code below (and some parts of it are defined in babel library) but similar to generators `async` function is transformed into a state machine. You might also notice `_asyncToGenerator()` function which hints that under the hood `async` functions are implemented as generators, i.e. fundamentally async functions are not that different from generators. 
+Just like with generators, it might seem that `async/await` is some complicated compiler/interpreter magic. It's not that magical though. Using [BabelJS](https://babeljs.io) we can transform the code for older JS versions without `async/await` support. You don't need to understand the code below (and some parts of it are defined in babel library) but similar to generators async function is transformed into a state machine. You might also notice `_asyncToGenerator()` function which hints that under the hood `async` functions are implemented as generators, i.e. fundamentally async functions are not that different from generators. 
 ```
 "use strict"; 
 var c = function () {

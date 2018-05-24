@@ -287,7 +287,7 @@ In the previous examples we used `yield` keyword without any explanation about h
 
 The code snippet below is the [skipping factorial generator](#skipping-factorial-example) example transpiled to JavaScript without `yield` keyword. This code is not intended to be read by humans and there are some implementation details missing (e.g. we don't see source code of `regeneratorRuntime` object). The main point here is that `factorial` code is transformed into a [finite state machine](https://en.wikipedia.org/wiki/Finite-state_machine). 
  
-There is a `switch` statement which branches on the current state of the state machine. Initially, the state of the machine is `0` so we match `case 0` and initialise `n`, `result` and `skip` variables. Then we fall though into `case 3` where `if (!true)` and `if (skip)` evaluate to `false` and won't be executed. Then `_context.next = 7` sets the next state of the state machine to `7` and yields current result. When the generator resumes execution again, it will start from `case 7`. As you can see, there is no particular magic going on here. It might be not a trivial code transformation going on in the compiler but in the end generator code becomes a finite state machine.
+There is a `switch` statement which branches on the current state of the state machine. Initially, the state of the machine is `0` so we match `case 0` and initialise `n`, `result` and `skip` variables. Then we fall though into `case 3` where `if (!true)` and `if (skip)` evaluate to `false` and won't be executed. Then `_context.next = 7` sets the next state of the state machine to `7` and yields current result. When the generator resumes execution again, it will start from `case 7`. As you can see, there is no particular magic going on here. It might be not a trivial code transformation going on in the compiler/interpreter but in the end generator code becomes a finite state machine.
 
 Note that at the bottom there is `console.log(f.next())` code which didn't change at all. Also `factorial()` function signature didn't change even though its code was transformed.
 
@@ -353,4 +353,4 @@ console.log(f.next(10));
 It is worth mentioning that this particular transformation into state machine is designed for stackless coroutines and represents capturing single stackframe and its execution point. C# and Kotlin coroutines perform similar transformations.
 
 ### Summary
-Generators with `yield` keyword is one of the most useful and most common implementation of coroutines. Hopefully, this blog helped to give some idea of how generators relate to coroutines as threads (it's a bit like using different design patterns), how/why to use generators and how stackless generators are represented as state machines.
+Generators with `yield` keyword is one of the most useful and most common implementation of coroutines. Hopefully, this blog helps to understand how generators relate to other coroutines implementations, how/why to use generators.
