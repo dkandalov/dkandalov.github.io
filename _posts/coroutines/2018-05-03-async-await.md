@@ -18,7 +18,7 @@ A typical example of using `async/await` is avoiding threads blocked on IO opera
 
 #### Control flow of async/await
 
-One of the simplest `async/await` examples is an async function without any return values which `await`s for two promises. (Here `promise` means an object which holds the result of a computation which might be computed and will become available some time in the future. There are [other terms](https://en.wikipedia.org/wiki/Futures_and_promises) for it, e.g. future, deferred or task). This is depicted in the following diagram (you can find description of the notation in [the previous blogpost]({% post_url 2018-05-01-coroutines-as-threads %})):
+One of the simplest `async/await` examples is an async function without any return values which `await`s for two promises. (Here `promise` means an object which holds the result of a computation which might be computed and will become available some time in the future. There are [other terms](https://en.wikipedia.org/wiki/Futures_and_promises) for it, e.g. future, deferred or task). This is depicted in the following diagram (you can find description of the [notation in the previous blogpost]({% post_url 2018-05-01-coroutines-as-threads %}#notation)):
 
 ![](/assets/images/coroutines/async-await/0-async-await-no-return.png)
 
@@ -51,7 +51,7 @@ console.log(1);
 c();
 console.log(3); 
 ```
-Note that `function c()` is marked with `async` keyword which tells JS interpreter that this is a coroutine (similar to [generators]({% post_url 2018-05-02-yielding-generators %}) which in JS are marked with `*`). Both `promise1` and `promise2` signify some long-running tasks (in this example they are resolved 2 and 5 seconds after being created). It also might be a bit counter-intuitive that `main` finishes execution before async function `c` (as mentioned above this not what you would normally expect from something called "await"). As you probably expected, the program prints:
+Note that `function c()` is marked with `async` keyword which tells JS interpreter that this is a coroutine (similar to [generators]({% post_url 2018-05-02-yielding-generators %}#basic-generator) which in JS are marked with `*`). Both `promise1` and `promise2` signify some long-running tasks (in this example they are resolved 2 and 5 seconds after being created). It also might be a bit counter-intuitive that `main` finishes execution before async function `c` (as mentioned above this not what you would normally expect from something called "await"). As you probably expected, the program prints:
 ```
 1
 2
@@ -130,7 +130,7 @@ The main point here is that `c()` awaits on the result of another async function
 
 #### Async try/catch
 
-Considering previous examples it might look like `async/await` transforms code between `await` keywords into promises and chains the promises together. This is not entirely true though. In the example below you can see that similar to generators, `async` functions work with `try/catch/finally` blocks.
+Considering previous examples it might look like `async/await` transforms code between `await` keywords into promises and chains the promises together. This is not entirely true though. In the example below you can see that [similar to generators]({% post_url 2018-05-02-yielding-generators %}#try-catch), `async` functions work with `try/catch/finally` blocks.
 ```
 let promise1 = new Promise(resolve => {
 	setTimeout(() => resolve("🐶"), 200);
@@ -164,9 +164,9 @@ undefined
 
 #### Async/await as state machine
 
-Just like with generators, it might seem that `async/await` is some complicated compiler/interpreter magic. It's not that magical though. Using [BabelJS](https://babeljs.io) we can [transpile](https://en.wikipedia.org/wiki/Source-to-source_compiler) the code from previous example to be compatible with older JS versions without `async/await` support.
+It might seem that `async/await` does some complicated compiler/interpreter magic. Even though it's not trivial there nothing magical about it. Using [BabelJS](https://babeljs.io) we can [transpile](https://en.wikipedia.org/wiki/Source-to-source_compiler) the code from previous example to be compatible with older JS versions without `async/await` support.
 
-You don't need to understand all the code below (and parts of it are defined in BabelJS library anyway), the point here is that, [similar to generators]({% post_url 2018-05-02-yielding-generators %}), async function is transformed into a state machine. The original code is split into snippets along `await`, `catch` and `finally` keywords. State maching does a `switch` on the current state, executes the appropriate snippet and moves to the next state. You might also notice `_asyncToGenerator()` function which hints that under the hood async functions are implemented as generators, i.e. fundamentally async functions can be expressed using generators.
+You don't need to understand all the code below (and parts of it are defined in BabelJS library anyway), the point here is that, [similar to generators]({% post_url 2018-05-02-yielding-generators %}#state-machines), async function is transformed into a state machine. The original code is split into snippets along `await`, `catch` and `finally` keywords. State matching does a `switch` on the current state, executes the appropriate snippet and moves to the next state. You might also notice `_asyncToGenerator()` function which hints that under the hood async functions are implemented as generators, i.e. fundamentally async functions can be expressed using generators.
 ```
 "use strict"; 
 var c = function () {
@@ -237,4 +237,4 @@ overallPromise.then(function (result) {
 
 #### Summary
 
-Coroutines based on `async/await` are probably the most complicated to use compared to other coroutine implementations. Fundamentally, `async/await` uses the same idea as other coroutines of saving current stack and executions pointer and later using this information to continue execution from suspension point. Unlike other coroutines, `async/await` adds quite a few things on top of this idea. It also doesn't help that `await` keyword doesn't make current thread wait but works more like `yield` in [generators]({% post_url 2018-05-02-yielding-generators %}).
+Coroutines based on `async/await` are probably the most complicated to use compared to other coroutine implementations. Fundamentally, `async/await` uses the same idea as other coroutines of saving current stack and executions pointer and later using this information to continue execution from suspension point. Unlike other coroutines, `async/await` adds quite a few things on top of this idea. It also doesn't help that `await` keyword doesn't make current thread wait but works more like [`yield` in generators]({% post_url 2018-05-02-yielding-generators %}#basic-generator).

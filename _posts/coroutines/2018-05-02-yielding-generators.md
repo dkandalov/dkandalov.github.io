@@ -16,6 +16,8 @@ The following code examples will use JavaScript (to be precise [ECMAScript 2017]
 The main reason to use generator is to define a lazy [iterator](https://en.wikipedia.org/wiki/Iterator) using more expressive syntax than writing an iterator manually (see [example below](#factorial-example)). There are other reasons like simulating concurrency and using generators as a base for implementing async/await but they are less common.
 
 The simplest use-case for lazy iterator is when the amount of data it needs to iterate through is too large to be stored in memory, e.g. processing rows from huge database table. Other reasons might be related to high-level design of the application. For example, let's say there is program which reads data from upstream source, performs some processing and sends data to be consumed by downstream system. If the downstream system is constantly overloaded, there is no point getting more data from upstream so we could use a generator so that upstream data is consumed one item at a time when there is downstream capacity.
+                
+<a name="basic-generator"/>
 
 #### The most basic generator
 Here is an example of the most basic generator:
@@ -35,7 +37,7 @@ In the code above we define a function called `createGenerator`. Note that `crea
 
 #### Generators as threads
 
-This might not be the first thing that comes up when you start using generators but there are couple similarities between generators and coroutines as threads. The diagram below illustrates coroutines as threads in which `coroutine` yields execution back to `main` (you can find description of the notation in [the previous blogpost]({% post_url 2018-05-01-coroutines-as-threads %})). 
+This might not be the first thing that comes up when you start using generators but there are couple similarities between generators and coroutines as threads. The diagram below illustrates coroutines as threads in which `coroutine` yields execution back to `main` (you can find description of the notation in [the previous blogpost]({% post_url 2018-05-01-coroutines-as-threads %}#notation)). 
 ![](/assets/images/coroutines/yield/0-coroutine.png)
 
 And the diagram below shows a generator. As you can see they are pretty much identical. The main difference is that generators are predominantly used to return values back into calling function. To be fair, coroutines as threads can also pass values from/to coroutine so technically there is little difference, the difference is in the intent of the program (so it might be useful to think about different coroutine implementations as [design patterns](https://en.wikipedia.org/wiki/Software_design_pattern)).
@@ -171,6 +173,8 @@ E
 { value: undefined, done: true }
 ```
 
+<a name="try-catch"/>
+
 #### Generators and try/catch/finally
 
 In the previous example we've seen that JavaScript knows how to combine `for` loops and `yield` but it's not the only control structure which can be used transparently with generators. It also works fine with `try/catch/finally`: 
@@ -280,6 +284,8 @@ This program prints:
 { value: 39916800, done: false }
 ```
 (Of course, these factorial implementations are invalid. The problem is that factorial function grows quite fast and after few values the result can no longer be accurately represented by floating point [numbers in JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Numbers_and_dates).)
+
+<a name="state-machines"/>
 
 #### Generators as state machines
 

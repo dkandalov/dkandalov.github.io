@@ -47,11 +47,12 @@ There are few ways in which coroutines are implemented in programming languages.
 Lua is good for showing coroutines because it has quite typical implementation of coroutines as threads and it has straightforward syntax which should be readable for most people.
 
 #### Notation
+<a name="notation"/>
 
 In order to illustrate coroutines, I will use the following notation: 
 ![](/assets/images/coroutines/coroutines-as-threads/0-subfunction.png)
 
-In this notation rectangles represent functions as sequence of code instruction (executed from the top to the bottom), and arrowed lines represent a thread. For example, in the diagram above a thread starts executing program's `main` function, at some point it calls `function`, executes it, returns back to the execution point in `main`, finishes `main` and the whole program terminates (`main` here represents program's entry point named after ["main" function in C](https://en.wikipedia.org/wiki/Entry_point#C_and_C++)). 
+In this notation rectangles represent functions as sequence of instructions (executed from the top to the bottom), and solid lines represent threads (with arrows showing direction in which thread executes instructions). For example, in the diagram above a thread starts executing program's `main` function, at some point it calls `function`, executes it, returns back to the execution point in `main`, finishes `main` and terminates the whole program (`main` here represents program's entry point named after ["main" function in C](https://en.wikipedia.org/wiki/Entry_point#C_and_C++)). 
 
 An equivalent code in Lua which prints `hello`, executes sub-function to print `from`, then returns to `main` and prints `Lua`, looks like this: 
 <lua>
