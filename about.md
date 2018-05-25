@@ -5,15 +5,14 @@ permalink: /about/
 ---
 Hello. I am Dmitry.
 
-I have been programming and trying to get better at it since DOS times.
-Last 10 years or so I spent in Java and JVM languages land.
+I have been programming and trying to get better at it since [DOS](https://en.wikipedia.org/wiki/DOS) times.
+The last 10 years or so I spent in Java and JVM languages land, most recently focusing on [Kotlin](https://kotlinlang.org/). 
 
-The most exciting project I'm working on is [Code History Miner](http://codehistoryminer.com).
-It is CLI and web-server to analyze project code history.
-(See also [code mining IntelliJ plugin](https://plugins.jetbrains.com/plugin/7273) with similar functionality.)
+I've attempted few projects and libraries. 
+Ignoring the vanity metric of github stars [code history mining](https://github.com/dkandalov/code-history-mining) and [activity tracker](https://github.com/dkandalov/activity-tracker) are probably the most interesting projects I've done. The bad news is that they're currently dormant. I really hope to get back to them sometime soon. 
 
-If you bump into me at some conference or meetup in London, please say "hello".
-Here is an approximation of what I look in real life.
+For something more exciting and interactive see [L-System Playground](http://dkandalov.github.io/lsystem).
+ 
+Feel free to [tweet](https://twitter.com/dmitrykandalov) or email me dmitry.kandalov(at)gmail.com.
+
 ![Me](/assets/images/me.jpg)
-
-You can send emails to dmitry.kandalov(at)gmail.com.
