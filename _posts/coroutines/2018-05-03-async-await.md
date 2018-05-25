@@ -51,7 +51,7 @@ console.log(1);
 c();
 console.log(3); 
 ```
-As you could probably expect, the program prints:
+Note that `function c()` is marked with `async` keyword which tells JS interpreter that this is a coroutine (similar to [generators]({% post_url 2018-05-02-yielding-generators %}) which in JS are marked with `*`). Both `promise1` and `promise2` signify some long-running tasks (in this example they are resolved 2 and 5 seconds after being created). It also might be a bit counter-intuitive that `main` finishes execution before async function `c` (as mentioned above this not what you would normally expect from something called "await"). As you probably expected, the program prints:
 ```
 1
 2
@@ -65,8 +65,6 @@ Waits for about (5 - 2) = 3 seconds and prints:
 ```
 5
 ```
-Note that `function c()` is marked with `async` keyword which tells JS interpreter that this is a coroutine (similar to [generators]({% post_url 2018-05-02-yielding-generators %}) which in JS are marked with `*`). Both `promise1` and `promise2` signify some long-running tasks (in this example they are resolved 2 and 5 seconds after being created). It also might be a bit counter-intuitive that `main` finishes execution before async function `c` (as mentioned above this not what you would normally expect from something called "await").
-
 
 #### Returning async results
 
@@ -99,22 +97,40 @@ In this example, `promise1` returns `🐶` after 2 second delay and `promise2` r
 
 #### Composing async functions
 
-Because async functions `await` on promises and return promises themselves, they can be easily composed. In the diagram below instead of `await`ing on some promise async function sequentially invokes `asyncFunction1()`, `asyncFunction2()` and `await`s on their promises.
+It might be obvious, but it's still worth mentioning that async functions `await` on promises and return promises themselves. Because of this async functions can be easily composed. For example, in the diagram below async function sequentially invokes `asyncFunction1()`, `asyncFunction2()` and `await`s on their promises.
  
 ![](/assets/images/coroutines/async-await/2-async-await-composed.png)
 
-Here is JS code with equivalent behaviour:
+Equivalent JS code might look something like this:
 ```
+let promise1 = new Promise(resolve => {
+	setTimeout(() => resolve("🐶"), 2000);
+});
+let promise2 = new Promise(resolve => {
+	setTimeout(() => resolve("🐷"), 5000);
+});
+
+async function dog() {
+	return await promise1 + "_";
+}
+async function pig() {
+	return await promise2 + "_";
+}
+async function c() {
+	return await dog() + await pig();
+}
+
+let overallPromise = c();
+overallPromise.then(result => console.log(result + "!"));
+```
+The main point here is that `c()` awaits on the result of another async function which could also depend on other async functions. After about 5 second delay the program prints:
+```
+🐶_🐷_!
 ```
 
-#### Async try catch
+#### Async try/catch
 
-Considering previous examples it might look like `async/await` transforms code between `await` keywords into promises and chains the promises together. This is not correct though. The example below illustrates that similar to generators, `async` functions work with `try/catch/finally` blocks. In this example `promise1` returns a dog, and `promise2` throws an explosion 💥. So in the async function `await promise1` after a timeout will be evaluated to a dog and assigned to `value1`. However, `await promise2` will complete by throwing an explosion and will continue by executing `catch` and `finally` blocks (the code which logs monkey to console and returns concatenated values will never run). Note even though `async` function yields execution twice, the `finally` block is run only once when the whole function is finished. Because `catch/finally` don't return any values `overallPromise` result will be `undefined`. The whole program prints:
-```
-catch 💥
-finally
-undefined
-```  
+Considering previous examples it might look like `async/await` transforms code between `await` keywords into promises and chains the promises together. This is not entirely true though. In the example below you can see that similar to generators, `async` functions work with `try/catch/finally` blocks.
 ```
 let promise1 = new Promise(resolve => {
 	setTimeout(() => resolve("🐶"), 200);
@@ -137,15 +153,20 @@ async function c() {
 }
 
 let overallPromise = c();
-overallPromise.then(it => console.log(it));
+overallPromise.then(result => console.log(result));
 ```
+In this example `promise1` returns `🐶`, and `promise2` throws `💥`. After a delay `promise1` will be evaluated in async function `c()` to `🐶` and assigned to `value1`. However, `await promise2` will complete by throwing `💥` and will continue by executing `catch` and `finally` blocks (the code which logs `🙈` to console and returns concatenated values will never run). Note that even though async function yields execution twice, the `finally` block is run only once when the whole async function is finished. Because `catch/finally` doesn't return any values `overallPromise` result will be `undefined`. Overall, the program prints:
+```
+catch 💥
+finally
+undefined
+```  
 
-#### Coroutines VS Promises
-TODO
+#### Async/await as state machine
 
-#### Async/await coroutines are state machines
+Just like with generators, it might seem that `async/await` is some complicated compiler/interpreter magic. It's not that magical though. Using [BabelJS](https://babeljs.io) we can [transpile](https://en.wikipedia.org/wiki/Source-to-source_compiler) the code from previous example to be compatible with older JS versions without `async/await` support.
 
-Just like with generators, it might seem that `async/await` is some complicated compiler/interpreter magic. It's not that magical though. Using [BabelJS](https://babeljs.io) we can transform the code for older JS versions without `async/await` support. You don't need to understand the code below (and some parts of it are defined in babel library) but similar to generators async function is transformed into a state machine. You might also notice `_asyncToGenerator()` function which hints that under the hood `async` functions are implemented as generators, i.e. fundamentally async functions are not that different from generators. 
+You don't need to understand all the code below (and parts of it are defined in BabelJS library anyway), the point here is that, [similar to generators]({% post_url 2018-05-02-yielding-generators %}), async function is transformed into a state machine. The original code is split into snippets along `await`, `catch` and `finally` keywords. State maching does a `switch` on the current state, executes the appropriate snippet and moves to the next state. You might also notice `_asyncToGenerator()` function which hints that under the hood async functions are implemented as generators, i.e. fundamentally async functions can be expressed using generators.
 ```
 "use strict"; 
 var c = function () {
@@ -209,10 +230,11 @@ var promise2 = new Promise(function (resolve, reject) {
 });
 
 var overallPromise = c();
-overallPromise.then(function (it) {
-	return console.log(it);
+overallPromise.then(function (result) {
+	return console.log(result);
 });
 ```
 
 #### Summary
-TODO
+
+Coroutines based on `async/await` are probably the most complicated to use compared to other coroutine implementations. Fundamentally, `async/await` uses the same idea as other coroutines of saving current stack and executions pointer and later using this information to continue execution from suspension point. Unlike other coroutines, `async/await` adds quite a few things on top of this idea. It also doesn't help that `await` keyword doesn't make current thread wait but works more like `yield` in [generators]({% post_url 2018-05-02-yielding-generators %}).

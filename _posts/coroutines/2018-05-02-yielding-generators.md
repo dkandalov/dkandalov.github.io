@@ -281,7 +281,7 @@ This program prints:
 ```
 (Of course, these factorial implementations are invalid. The problem is that factorial function grows quite fast and after few values the result can no longer be accurately represented by floating point [numbers in JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Numbers_and_dates).)
 
-#### Generators are state machines
+#### Generators as state machines
 
 In the previous examples we used `yield` keyword without any explanation about how it works under the hood. To dispel the magic we can look at how the same functionality can be implemented in JavaScript versions without support for `yield`. Luckily this can be easily done with [BabelJS](https://babeljs.io) which [transpiles](https://en.wikipedia.org/wiki/Source-to-source_compiler) modern JavaScript into the code runnable by older versions of the language. 
 

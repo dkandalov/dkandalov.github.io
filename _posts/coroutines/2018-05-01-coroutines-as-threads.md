@@ -10,6 +10,7 @@ This post is part of the blogpost series explaining coroutines, how they impleme
 
 The main motivation for these blogposts is that, probably like many other developers, I heard about coroutines, continuations, yield/async/await and even used them to some extent, but somehow I never got to really understand what they mean from computational point of view, how they work and how concepts like continuations relate to coroutines. This is an attempt to clarify coroutines for myself and anyone else interested in the subject.
 
+The classification of coroutines as threads, `yield/async/await` and `call/cc` is my own observation in attempt to identify commonalities between languages. To draw analogy with [design patterns](https://en.wikipedia.org/wiki/Software_design_pattern), quite a few [behavioural patterns](https://en.wikipedia.org/wiki/Behavioral_pattern) are at their core based on [dynamic dispatch](https://en.wikipedia.org/wiki/Dynamic_dispatch). Each pattern adds more details on top of dynamic dispatch to solve particular problems but fundamentally they all rely on dynamic dispatch. Similarly, coroutines have implementations specific details to address particular problems but they all use the same core idea of saving current stack and executions pointer and later using this information to continue execution from suspension point. 
 
 #### Why use coroutines?
 
