@@ -8,7 +8,7 @@ This post is part of the blogpost series explaining coroutines, how they impleme
 3. [async await]({% post_url 2018-05-03-async-await %})
 4. 👉 [call with current continuation]({% post_url 2018-05-06-call-with-current-continuation %}) 👈
 
-["Call with current continuation"](https://en.wikipedia.org/wiki/Call-with-current-continuation) (abbreviated as `callcc`) originates in [Scheme](https://en.wikipedia.org/wiki/Scheme_%28programming_language%29). It's not as widespread as `yield/async/await` and less intuitive than coroutines as threads implementation, but it seems to be quite influential because it was probably the first language to have first-class [continuations](https://en.wikipedia.org/wiki/Scheme_%28programming_language%29#First-class_continuations) which represent the common idea behind all coroutines implementations. Because `callcc` comes from Scheme all code examples in this post are also in Scheme.
+["Call with current continuation"](https://en.wikipedia.org/wiki/Call-with-current-continuation) (abbreviated as `call/cc`) originates in [Scheme](https://en.wikipedia.org/wiki/Scheme_%28programming_language%29). It's not as widespread as `yield/async/await` and less intuitive than coroutines as threads implementation, but it seems to be quite influential because it was probably the first language to have first-class [continuations](https://en.wikipedia.org/wiki/Scheme_%28programming_language%29#First-class_continuations) which represent the common idea behind all coroutines implementations. Because `call/cc` comes from Scheme all code examples in this post are written in Scheme (and should be executable with [CHICKEN Scheme](https://call-cc.org)).
 
 Before diving into `calcc`, it's worth understanding what **continuation** is or rather what people mean when they say "continuation". There are several meanings:
 1. A callback passed into function. In other words, if a function takes another function as an argument and calls it at some point, the argument is "continuation". 
@@ -81,7 +81,7 @@ The same program rewritten in CPS:
 ```
 To convert `factorial` function to CPS we add one more argument to `factorial-cps` and use it almost like a `return` statement. This is straightforward for values, e.g. in `(continuation 1)`. However, it's a bit more subtle when calling other functions, e.g. `(continuation (* n (factorial-cps (- n 1)))))` won't work. The problem is that the result of `factorial-cps` is only accessible in its callback, so we need to invoke `continuation` inside the lambda. Similarly, in the `main` function we display `result` by passing callback (aka continuation) to `factorial-cps`.
 
-Here is another example of CPS in which we read a file from web sever, save it into a file and open the file (to be fair this example could be broken down further by writing `string-append` in CPS). Hopefully, this can convince you that any program can be rewritten in continuation-passing style. There are certain advantages of explicitly passing continuations, however as you can see the `main` function quickly becomes very nested. This is sometimes referred to as [callback hell](http://callbackhell.com). And this is when `callcc` can be really useful.
+Here is another example of CPS in which we read a file from web sever, save it into a file and [open](https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/open.1.html) the file with default application. Hopefully, this is somewhat convincing that any program can be rewritten in continuation-passing style. There are some advantages of explicitly passing continuations, however, as you can see in the `main` function, the code quickly becomes very nested. This is [callback hell](http://callbackhell.com) (aka [pyramid of doom](https://en.wikipedia.org/wiki/Pyramid_of_doom_(programming))) and this is when `call/cc` can be really useful.
 ```
 (use http-client)
 
@@ -106,16 +106,16 @@ Here is another example of CPS in which we read a file from web sever, save it i
 	))
 )
 ```
+(Strictly speaking, this example and examples before could be broken down further, e.g. re-writing `if`, `=`, `-`, `*`, `display`, `string-append` in CPS.)
 
 #### Basic call/cc
 
-Below is a basic example of using `call/cc` (here `/` is part of the function name just like any other character). This program prints "1" and then invokes `call/cc` which takes lambda as an argument. The lambda is evaluated straight away so it will print "2". Then `(continuation 3)` is called and this is where things become more interesting because calling `continuation` will finish executing code in the lambda (so the monkey will never be printed) and will evaluate the `call/cc` expression to the value we passed to `continuation`. In the example below it's equivalent to replacing `(print (call/cc ... ))` with `(print 3)`. As in the examples above when `continuation` represents the rest of our program except that here we didn't have to make any effort to write code in continuation-passing style. With `call/cc` we can get current continuation without changing our code.
+Below is a basic example of using `call/cc` (`/` is part of the function name just like any other character).
 ```
 (define (print message)
     (display message)
     (newline)
 )
-
 (define (main args)
     (print 1)
     (print (call/cc (lambda (continuation)
@@ -126,25 +126,23 @@ Below is a basic example of using `call/cc` (here `/` is part of the function na
     (print 4)
 ) 
 ```
+As you might expect the output is:
+```
+1
+2
+3
+4
+```
+After printing `1` the program invokes `call/cc` which takes lambda as an argument. The lambda is evaluated straight away and prints `2`. Then `(continuation 3)` is called and this is where things become more interesting. Calling `continuation` will evaluate the `call/cc` expression to the value passed to `continuation`. In the example below it's equivalent to replacing `(print (call/cc ... ))` with `(print 3)`. The rest of the code in the lambda will not be executed so it will never print `🙈`. As in the previous examples `continuation` represents the rest of our program except that with `call/cc` we didn't have to make any effort to write code in continuation-passing style and got current continuation without restructuring code.
 
 #### Rocket jump
 
-In the example above we use continuation immediately inside the callback. But there are other options like saving it somewhere in memory and using it later and may be even several times. This is exactly what's going on the following example. We define `count` variable and assign `0` to it. Then we call `+` adding `100` and the result of evaluating `call/cc`. The interesting bit here is that we save `continuation` into a global variable `saved-continuation`. Then we "return" from the callback with `(continuation 100)` so the program will do `(print (+ 100 100))`. Later on we within the `if` expression we increment the `count` with `(set! count (+ 1 count))`, print rocket and invoke `saved-continuation`. When calling `saved-continuation` the program jumps back to the place where `call/cc` was invoked and substitutes `call/cc` with current value of `count`. Effectively we're jumping right into the middle of `+` expression (not something you can do in most programming languages). Overall, the program will print:
-```
-200
-🚀
-101
-🚀
-102
-🚀
-103
-```
+In the previous example we used `continuation` inside the callback. But there are other options, e.g. saving reference to `continuation` and invoking it later outside of the callback, and may be even invoking several times. This is exactly what the following example is about.
 ```
 (define (print message)
     (display message)
     (newline)
 )
-
 (define (main args)
     (define count 0)
 
@@ -161,6 +159,18 @@ In the example above we use continuation immediately inside the callback. But th
     ))
 )
 ```
+The program will print:
+```
+200
+🚀
+101
+🚀
+102
+🚀
+103
+```
+We define `count` variable and assign `0` to it. Then we call `+` adding `100` and the result of evaluating `call/cc`. The interesting bit here is that we save `continuation` into a global variable `saved-continuation`. Then we "return" from the callback with `(continuation 100)` so the program will do `(print (+ 100 100))`. Later on we within the `if` expression we increment the `count` with `(set! count (+ 1 count))`, print rocket and invoke `saved-continuation`. When calling `saved-continuation` the program jumps back to the place where `call/cc` was invoked and substitutes `call/cc` with current value of `count`. Effectively we're jumping right into the middle of `+` expression (not something you can do in most programming languages).
+
 The following diagram illustrates the example above. The interesting part of this is that you can think of continuation as saving current stack and instruction pointer somewhere in memory. This is the analogy we used when looking at coroutines as threads and as `yield/async/await`. And this is how coroutines and continuations are related to each other.
 
 ![](/assets/images/coroutines/callcc/0-callcc.png) 
@@ -213,7 +223,6 @@ Having access to continuations is a more fundamental concept than yielding contr
     (print 7)
 )
 ```
-It might seem that continuations support is some kind of compiler hack which does some code transformation to save current continuation (or even current stack and instruction pointer). There is more to it though than just a compiler feature. Continuations are more fundamental and come up in computer science every now and then. For example, in the [Definitional Interpreters for Higher-Order Programming Languages](https://surface.syr.edu/cgi/viewcontent.cgi?referer=https://duckduckgo.com/&httpsredir=1&article=1012&context=lcsmith_other) paper by [John Reynholds](https://en.wikipedia.org/wiki/John_C._Reynolds). In my free interpretation of the paper it is about writing interpreters for programming languages. If you write an interpreter in pass-by-value programming language, then your target programming language becomes pass-by-value. If you write and interpreter in pass-by-name programming language, then your target programming language becomes also pass-by-name. And the way to overcome this is by using continuations. (You can see more detailed explanation of the by paper by Philip Wadler at Papers We Love meetup video.)
 
 #### Summary
-TODO
+It might seem that continuations support is some kind of compiler hack which does some code transformation to save current continuation (or even current stack and instruction pointer). There is more to it though than just a compiler feature. Continuations are more fundamental and come up in computer science every now and then. For example, in the [Definitional Interpreters for Higher-Order Programming Languages](https://surface.syr.edu/cgi/viewcontent.cgi?referer=https://duckduckgo.com/&httpsredir=1&article=1012&context=lcsmith_other) paper by [John Reynholds](https://en.wikipedia.org/wiki/John_C._Reynolds). In my free interpretation of the paper it is about writing interpreters for programming languages. If you write an interpreter in pass-by-value programming language, then your target programming language becomes pass-by-value. If you write and interpreter in pass-by-name programming language, then your target programming language becomes also pass-by-name. And the way to overcome this is by using continuations. (You can see more detailed explanation of the by paper by Philip Wadler at Papers We Love meetup video.)
