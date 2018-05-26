@@ -6,11 +6,11 @@ This post is part of the blogpost series explaining coroutines, how they impleme
 1. 👉 [coroutines as threads]({% post_url 2018-05-01-coroutines-as-threads %}) 👈
 2. [yielding generators]({% post_url 2018-05-02-yielding-generators %})
 3. [async await]({% post_url 2018-05-03-async-await %})
-4. [call with current continuation]({% post_url 2018-05-06-call-with-current-continuation %}).
+4. [call with current continuation]({% post_url 2018-05-06-call-with-current-continuation %})
 
 The main motivation for these blogposts is that, probably like many other developers, I heard about coroutines, continuations, yield/async/await and even used them to some extent, but somehow I never got to really understand what they mean from computational point of view, how they work and how concepts like continuations relate to coroutines. This is an attempt to clarify coroutines for myself and anyone else interested in the subject.
 
-The classification of coroutines as threads, `yield/async/await` and `call/cc` is my own observation in attempt to identify commonalities between languages. To draw analogy with [design patterns](https://en.wikipedia.org/wiki/Software_design_pattern), quite a few [behavioural patterns](https://en.wikipedia.org/wiki/Behavioral_pattern) are at their core based on [dynamic dispatch](https://en.wikipedia.org/wiki/Dynamic_dispatch). Each pattern adds more details on top of dynamic dispatch to solve particular problems but fundamentally they all rely on dynamic dispatch. Similarly, coroutines have implementations specific details to address particular problems but they all use the same core idea of saving current stack and executions pointer and later using this information to continue execution from suspension point. 
+The classification of coroutines as threads, `yield/async/await` and `call/cc` is my own attempt to identify commonalities between languages. To draw analogy with [design patterns](https://en.wikipedia.org/wiki/Software_design_pattern), quite a few [behavioural patterns](https://en.wikipedia.org/wiki/Behavioral_pattern) are at their core based on [dynamic dispatch](https://en.wikipedia.org/wiki/Dynamic_dispatch). Each pattern adds more details on top of dynamic dispatch to solve particular problems but fundamentally they all rely on dynamic dispatch. Similarly, coroutines have implementations specific details to address particular problems but they all use the same core idea of saving current stack and executions pointer and later using this information to continue execution from suspension point.
 
 #### Why use coroutines?
 
@@ -207,7 +207,4 @@ They all mean similar things but the encompassing theme is to not use OS threads
 
 Overall, thinking about coroutines as lightweight threads is the most intuitive and the most high-level metaphor for coroutines. Compared to actual threads the biggest conceptual difference is the lack of scheduler (all context switching must be done by the program) and the fact that coroutine implementations can be stackless.
 
-This is not the end of the story though, coroutines is a bit more subtle subject. You can read more in the following blogposts
-[yielding generators]({% post_url 2018-05-02-yielding-generators %}),
-[async await]({% post_url 2018-05-03-async-await %}) and
-[call with current continuation]({% post_url 2018-05-06-call-with-current-continuation %}).   
+Read next [yielding generators]({% post_url 2018-05-02-yielding-generators %}).   

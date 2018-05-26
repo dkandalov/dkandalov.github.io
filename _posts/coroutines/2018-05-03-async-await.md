@@ -6,7 +6,7 @@ This post is part of the blogpost series explaining coroutines, how they impleme
 1. [coroutines as threads]({% post_url 2018-05-01-coroutines-as-threads %})
 2. [yielding generators]({% post_url 2018-05-02-yielding-generators %})
 3. 👉 [async await]({% post_url 2018-05-03-async-await %}) 👈
-4. [call with current continuation]({% post_url 2018-05-06-call-with-current-continuation %}).
+4. [call with current continuation]({% post_url 2018-05-06-call-with-current-continuation %})
 
 This post is about `async/await` coroutines implementation which is a bit more complicated than `yield` but fundamentally, just like other coroutine implementations, uses the idea of suspending functions and continuing some time later from the same execution point (so the current thread doesn't really "await" for anything but rather suspends execution of async function).
 
@@ -238,3 +238,5 @@ overallPromise.then(function (result) {
 #### Summary
 
 Coroutines based on `async/await` are probably the most complicated to use compared to other coroutine implementations. Fundamentally, `async/await` uses the same idea as other coroutines of saving current stack and executions pointer and later using this information to continue execution from suspension point. Unlike other coroutines, `async/await` adds quite a few things on top of this idea. It also doesn't help that `await` keyword doesn't make current thread wait but works more like [`yield` in generators]({% post_url 2018-05-02-yielding-generators %}#basic-generator).
+
+Read next about [call with current continuation]({% post_url 2018-05-06-call-with-current-continuation %}).

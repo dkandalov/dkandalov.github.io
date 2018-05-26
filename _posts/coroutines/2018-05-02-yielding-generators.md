@@ -6,7 +6,7 @@ This post is part of the blogpost series explaining coroutines, how they impleme
 1. [coroutines as threads]({% post_url 2018-05-01-coroutines-as-threads %})
 2. 👉 [yielding generators]({% post_url 2018-05-02-yielding-generators %}) 👈
 3. [async await]({% post_url 2018-05-03-async-await %})
-4. [call with current continuation]({% post_url 2018-05-06-call-with-current-continuation %}).
+4. [call with current continuation]({% post_url 2018-05-06-call-with-current-continuation %})
 
 The previous blogpost was about coroutines as threads implementation which is probably the most intuitive usage for coroutines. However, there is another widespread and time-tested implementation based on generators with `yield` keyword and composable promises with `async/await`. This is blog is about generators. They have been part of Python [since 2001](https://www.python.org/download/releases/2.2), C# [since 2005](https://en.wikipedia.org/wiki/C_Sharp_(programming_language)#Versions) and JavaScript [since 2015](http://www.ecma-international.org/ecma-262/6.0/index.html).
 
@@ -360,3 +360,5 @@ It is worth mentioning that this particular transformation into state machine is
 
 ### Summary
 Generators with `yield` keyword is one of the most useful and most common implementation of coroutines. Hopefully, this blog helps to understand how generators relate to other coroutines implementations, how/why to use generators.
+
+Read next about [async/await]({% post_url 2018-05-03-async-await %}).
