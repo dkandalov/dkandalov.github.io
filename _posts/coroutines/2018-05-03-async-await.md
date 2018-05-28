@@ -239,4 +239,4 @@ overallPromise.then(function (result) {
 
 Coroutines based on `async/await` are probably the most complicated to use compared to other coroutine implementations. Fundamentally, `async/await` uses the same idea as other coroutines of saving current stack and executions pointer and later using this information to continue execution from suspension point. Unlike other coroutines, `async/await` adds quite a few things on top of this idea. It also doesn't help that `await` keyword doesn't make current thread wait but works more like [`yield` in generators]({% post_url 2018-05-02-yielding-generators %}#basic-generator).
 
-Read next about [call with current continuation]({% post_url 2018-05-06-call-with-current-continuation %}).
+Read next: [call with current continuation]({% post_url 2018-05-06-call-with-current-continuation %}).

@@ -361,4 +361,4 @@ It is worth mentioning that this particular transformation into state machine is
 ### Summary
 Generators with `yield` keyword is one of the most useful and most common implementation of coroutines. Hopefully, this blog helps to understand how generators relate to other coroutines implementations, how/why to use generators.
 
-Read next about [async/await]({% post_url 2018-05-03-async-await %}).
+Read next: [async/await]({% post_url 2018-05-03-async-await %}).

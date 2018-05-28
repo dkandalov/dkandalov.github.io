@@ -207,4 +207,4 @@ They all mean similar things but the encompassing theme is to not use OS threads
 
 Overall, thinking about coroutines as lightweight threads is the most intuitive and the most high-level metaphor for coroutines. Compared to actual threads the biggest conceptual difference is the lack of scheduler (all context switching must be done by the program) and the fact that coroutine implementations can be stackless.
 
-Read next [yielding generators]({% post_url 2018-05-02-yielding-generators %}).   
+Read next: [yielding generators]({% post_url 2018-05-02-yielding-generators %}).   
