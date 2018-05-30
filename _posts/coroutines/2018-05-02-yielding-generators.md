@@ -1,12 +1,12 @@
 ---
-draft: true
+permalink: yielding-generators
 ---
 
 This post is part of the blogpost series explaining coroutines, how they implemented in various programming languages and how they can make your life better:
-1. [coroutines as threads]({% post_url 2018-05-01-coroutines-as-threads %})
-2. 👉 [yielding generators]({% post_url 2018-05-02-yielding-generators %}) 👈
-3. [async await]({% post_url 2018-05-03-async-await %})
-4. [call with current continuation]({% post_url 2018-05-06-call-with-current-continuation %})
+1. [coroutines as threads]({% post_url coroutines/2018-05-01-coroutines-as-threads %})
+2. 👉 [yielding generators]({% post_url coroutines/2018-05-02-yielding-generators %}) 👈
+3. [async await]({% post_url coroutines/2018-05-03-async-await %})
+4. [call with current continuation]({% post_url coroutines/2018-05-06-call-with-current-continuation %})
 
 The previous blogpost was about coroutines as threads implementation which is probably the most intuitive usage for coroutines. However, there is another widespread and time-tested implementation based on generators with `yield` keyword and composable promises with `async/await`. This is blog is about generators. They have been part of Python [since 2001](https://www.python.org/download/releases/2.2), C# [since 2005](https://en.wikipedia.org/wiki/C_Sharp_(programming_language)#Versions) and JavaScript [since 2015](http://www.ecma-international.org/ecma-262/6.0/index.html).
 
@@ -33,11 +33,11 @@ console.log(c.next().value);
 console.log(c.next().value);
 console.log(c.next().value);
 </javascript>
-In the code above we define a function called `createGenerator`. Note that `createGenerator` has `*` after `function` keyword. This tells JavaScript that this function is a coroutine and we can use `yield` keyword inside it. Obviously, if function is not marked with `*`, then `yield` is illegal and will be cause runtime error in JavaScript or compilation error in compiled languages. (This is similar to [the previous blogpost]({% post_url 2018-05-01-coroutines-as-threads %}) where we couldn't use Lua `coroutine.yield()` outside of coroutine created with `coroutine.create`.) After creating the generator, we assign it to `c` and can use `next()` to start/resume execution of the coroutine. Each invocation of `next()` changes state of the generator and returns an object which has a property called `value` through which we can access the data yielded by the generator. Overall, the program resumes coroutine three times and prints `123` never reaching the line with the monkey. To get the monkey printed we need to add one more invocation of `c.next()`.
+In the code above we define a function called `createGenerator`. Note that `createGenerator` has `*` after `function` keyword. This tells JavaScript that this function is a coroutine and we can use `yield` keyword inside it. Obviously, if function is not marked with `*`, then `yield` is illegal and will be cause runtime error in JavaScript or compilation error in compiled languages. (This is similar to [the previous blogpost]({% post_url coroutines/2018-05-01-coroutines-as-threads %}) where we couldn't use Lua `coroutine.yield()` outside of coroutine created with `coroutine.create`.) After creating the generator, we assign it to `c` and can use `next()` to start/resume execution of the coroutine. Each invocation of `next()` changes state of the generator and returns an object which has a property called `value` through which we can access the data yielded by the generator. Overall, the program resumes coroutine three times and prints `123` never reaching the line with the monkey. To get the monkey printed we need to add one more invocation of `c.next()`.
 
 #### Generators as threads
 
-This might not be the first thing that comes up when you start using generators but there are couple similarities between generators and coroutines as threads. The diagram below illustrates coroutines as threads in which `coroutine` yields execution back to `main` (you can find description of the notation in [the previous blogpost]({% post_url 2018-05-01-coroutines-as-threads %}#notation)). 
+This might not be the first thing that comes up when you start using generators but there are couple similarities between generators and coroutines as threads. The diagram below illustrates coroutines as threads in which `coroutine` yields execution back to `main` (you can find description of the notation in [the previous blogpost]({% post_url coroutines/2018-05-01-coroutines-as-threads %}#notation)). 
 ![](/assets/images/coroutines/yield/0-coroutine.png)
 
 And the diagram below shows a generator. As you can see they are pretty much identical. The main difference is that generators are predominantly used to return values back into calling function. To be fair, coroutines as threads can also pass values from/to coroutine so technically there is little difference, the difference is in the intent of the program (so it might be useful to think about different coroutine implementations as [design patterns](https://en.wikipedia.org/wiki/Software_design_pattern)).
@@ -361,4 +361,4 @@ It is worth mentioning that this particular transformation into state machine is
 ### Summary
 Generators with `yield` keyword is one of the most useful and most common implementation of coroutines. Hopefully, this blog helps to understand how generators relate to other coroutines implementations, how/why to use generators.
 
-Read next: [async/await]({% post_url 2018-05-03-async-await %}).
+Read next: [async/await]({% post_url coroutines/2018-05-03-async-await %}).

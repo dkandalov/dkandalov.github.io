@@ -1,12 +1,12 @@
 ---
-draft: true
+permalink: coroutines-as-threads
 ---
 
 This post is part of the blogpost series explaining coroutines, how they implemented in various programming languages and how they can make your life better:
-1. 👉 [coroutines as threads]({% post_url 2018-05-01-coroutines-as-threads %}) 👈
-2. [yielding generators]({% post_url 2018-05-02-yielding-generators %})
-3. [async await]({% post_url 2018-05-03-async-await %})
-4. [call with current continuation]({% post_url 2018-05-06-call-with-current-continuation %})
+1. 👉 [coroutines as threads]({% post_url coroutines/2018-05-01-coroutines-as-threads %}) 👈
+2. [yielding generators]({% post_url coroutines/2018-05-02-yielding-generators %})
+3. [async await]({% post_url coroutines/2018-05-03-async-await %})
+4. [call with current continuation]({% post_url coroutines/2018-05-06-call-with-current-continuation %})
 
 The main motivation for these blogposts is that, probably like many other developers, I heard about coroutines, continuations, yield/async/await and even used them to some extent, but somehow I never got to really understand what they mean from computational point of view, how they work and how concepts like continuations relate to coroutines. This is an attempt to clarify coroutines for myself and anyone else interested in the subject.
 
@@ -207,4 +207,4 @@ They all mean similar things but the encompassing theme is to not use OS threads
 
 Overall, thinking about coroutines as lightweight threads is the most intuitive and the most high-level metaphor for coroutines. Compared to actual threads the biggest conceptual difference is the lack of scheduler (all context switching must be done by the program) and the fact that coroutine implementations can be stackless.
 
-Read next: [yielding generators]({% post_url 2018-05-02-yielding-generators %}).   
+Read next: [yielding generators]({% post_url coroutines/2018-05-02-yielding-generators %}).   

@@ -1,12 +1,12 @@
 ---
-draft: true
+permalink: call-with-current-continuation
 ---
 
 This post is part of the blogpost series explaining coroutines, how they implemented in various programming languages and how they can make your life better:
-1. [coroutines as threads]({% post_url 2018-05-01-coroutines-as-threads %})
-2. [yielding generators]({% post_url 2018-05-02-yielding-generators %})
-3. [async await]({% post_url 2018-05-03-async-await %})
-4. 👉 [call with current continuation]({% post_url 2018-05-06-call-with-current-continuation %}) 👈
+1. [coroutines as threads]({% post_url coroutines/2018-05-01-coroutines-as-threads %})
+2. [yielding generators]({% post_url coroutines/2018-05-02-yielding-generators %})
+3. [async await]({% post_url coroutines/2018-05-03-async-await %})
+4. 👉 [call with current continuation]({% post_url coroutines/2018-05-06-call-with-current-continuation %}) 👈
 
 ["Call with current continuation"](https://en.wikipedia.org/wiki/Call-with-current-continuation) (abbreviated as `call/cc`) originates in [Scheme](https://en.wikipedia.org/wiki/Scheme_%28programming_language%29). It's not as widespread as `yield/async/await` and less intuitive than coroutines as threads implementation, but it seems to be quite influential because it was probably the first language to have first-class [continuations](https://en.wikipedia.org/wiki/Scheme_%28programming_language%29#First-class_continuations) which represent the common idea behind all coroutines implementations. Because `call/cc` comes from Scheme all code examples in this post are written in Scheme (and should be executable with [CHICKEN Scheme](https://call-cc.org)).
 
@@ -171,13 +171,13 @@ The program will print:
 ```
 The main difference compared to previous examples is that in `call/cc` callback `continuation` is saved into a global variable `saved-continuation`. Then we "return" from the callback with `(continuation 100)` so the print statement becomes `(print (+ 100 100))` and will print `200`. Later on after printing `🚀`, we invoke `(saved-continuation count)` so the program jumps back to the expression where `call/cc` was initially invoked and evaluates `call/cc` expression to the current value of `count`. Effectively, this is transferring control flow right into the middle of `+` expression, something that can't be easily done in most programming languages. It's repeated while `counter` is less than `3`, otherwise, the program would loop forever.
 
-The following diagram illustrates the example using [notation from the previous blogpost]({% post_url 2018-05-01-coroutines-as-threads %}#notation). Similar to coroutines as threads and `yield/async/await`, you can think about continuation as saving current stack and instruction pointer somewhere in memory and using it later to return to a particular point in program. Overall, this is how coroutine implementations and continuations are related to each other.
+The following diagram illustrates the example using [notation from the previous blogpost]({% post_url coroutines/2018-05-01-coroutines-as-threads %}#notation). Similar to coroutines as threads and `yield/async/await`, you can think about continuation as saving current stack and instruction pointer somewhere in memory and using it later to return to a particular point in program. Overall, this is how coroutine implementations and continuations are related to each other.
 
 ![](/assets/images/coroutines/callcc/0-callcc.png) 
 
 #### Yield with continuations
 
-Continuations are more fundamental concept than coroutines and, therefore, can be used to implement coroutines and other control structures such as exceptions. The following example shows minimal implementation of `yeild/resume` using `call/cc`. The main idea is the same as in the rocket jump example. We save current continuation into a variable (in this case `yield-point` and `jump-out`) and use it later to change execution flow. For simplicity, this example uses global variables, but they could be scoped within some object with `yield` and `resume` functions so it will look more like a normal [generator]({% post_url 2018-05-02-yielding-generators %}).
+Continuations are more fundamental concept than coroutines and, therefore, can be used to implement coroutines and other control structures such as exceptions. The following example shows minimal implementation of `yeild/resume` using `call/cc`. The main idea is the same as in the rocket jump example. We save current continuation into a variable (in this case `yield-point` and `jump-out`) and use it later to change execution flow. For simplicity, this example uses global variables, but they could be scoped within some object with `yield` and `resume` functions so it will look more like a normal [generator]({% post_url coroutines/2018-05-02-yielding-generators %}).
 
 ```
 (define (print message)
