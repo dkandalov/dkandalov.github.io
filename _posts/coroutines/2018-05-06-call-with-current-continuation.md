@@ -8,6 +8,8 @@ This post is part of the blogpost series explaining coroutines, how they impleme
 3. [async await]({% post_url coroutines/2018-05-03-async-await %})
 4. 👉 [call with current continuation]({% post_url coroutines/2018-05-06-call-with-current-continuation %}) 👈
 
+<!--preview-post-from-here-->
+
 ["Call with current continuation"](https://en.wikipedia.org/wiki/Call-with-current-continuation) (abbreviated as `call/cc`) originates in [Scheme](https://en.wikipedia.org/wiki/Scheme_%28programming_language%29). It's not as widespread as `yield/async/await` and less intuitive than coroutines as threads implementation, but it seems to be quite influential because it was probably the first language to have first-class [continuations](https://en.wikipedia.org/wiki/Scheme_%28programming_language%29#First-class_continuations) which represent the common idea behind all coroutines implementations. Because `call/cc` comes from Scheme all code examples in this post are written in Scheme (and should be executable with [CHICKEN Scheme](https://call-cc.org)).
 
 Before diving into `calcc`, it's worth understanding what **continuation** is or rather what people mean when they say "continuation". There are several meanings:

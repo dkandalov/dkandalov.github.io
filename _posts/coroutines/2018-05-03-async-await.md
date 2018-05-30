@@ -8,6 +8,8 @@ This post is part of the blogpost series explaining coroutines, how they impleme
 3. 👉 [async await]({% post_url coroutines/2018-05-03-async-await %}) 👈
 4. [call with current continuation]({% post_url coroutines/2018-05-06-call-with-current-continuation %})
 
+<!--preview-post-from-here-->
+
 This post is about `async/await` coroutines implementation which is a bit more complicated than `yield` but fundamentally, just like other coroutine implementations, uses the idea of suspending functions and continuing some time later from the same execution point (so the current thread doesn't really "await" for anything but rather suspends execution of async function).
 
 #### Why use async/await?

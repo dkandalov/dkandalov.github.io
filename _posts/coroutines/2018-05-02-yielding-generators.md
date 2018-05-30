@@ -8,6 +8,8 @@ This post is part of the blogpost series explaining coroutines, how they impleme
 3. [async await]({% post_url coroutines/2018-05-03-async-await %})
 4. [call with current continuation]({% post_url coroutines/2018-05-06-call-with-current-continuation %})
 
+<!--preview-post-from-here-->
+
 The previous blogpost was about coroutines as threads implementation which is probably the most intuitive usage for coroutines. However, there is another widespread and time-tested implementation based on generators with `yield` keyword and composable promises with `async/await`. This is blog is about generators. They have been part of Python [since 2001](https://www.python.org/download/releases/2.2), C# [since 2005](https://en.wikipedia.org/wiki/C_Sharp_(programming_language)#Versions) and JavaScript [since 2015](http://www.ecma-international.org/ecma-262/6.0/index.html).
 
 The following code examples will use JavaScript (to be precise [ECMAScript 2017](http://www.ecma-international.org/ecma-262/8.0/index.html)). There are few reasons: JavaScript coroutines implementation is quite typical; JavaScript is dynamically typed so it should be easier to understand examples without paying too much attention to types; JavaScript has C-like syntax so should look familiar for most developers.
