@@ -12,7 +12,7 @@ This post is part of the blogpost series explaining coroutines, how they impleme
 
 The main motivation for these blogposts is that, probably like many other developers, I heard about coroutines, continuations, yield/async/await and even used them to some extent, but I never got to really understand what they mean from computational point of view, how they work and how concepts like continuations relate to coroutines. This is an attempt to clarify coroutines for myself and anyone else interested in the subject.
 
-The classification of coroutines as threads, `yield/async/await` and `call/cc` is my own attempt to identify commonalities between languages. To draw analogy with [design patterns](https://en.wikipedia.org/wiki/Software_design_pattern), quite a few [behavioural patterns](https://en.wikipedia.org/wiki/Behavioral_pattern) are at their core based on [dynamic dispatch](https://en.wikipedia.org/wiki/Dynamic_dispatch). Each pattern adds more details on top of dynamic dispatch to solve particular problems but fundamentally they all rely on dynamic dispatch. Similarly, coroutines have implementations specific details to address particular problems but they all use the same core idea of saving current stack and executions pointer and later using this information to continue execution from suspension point.
+The classification of coroutines as threads, `yield/async/await` and `call/cc` is my own attempt to identify commonalities between languages. To draw analogy with [design patterns](https://en.wikipedia.org/wiki/Software_design_pattern), quite a few [behavioural patterns](https://en.wikipedia.org/wiki/Behavioral_pattern) are at their core based on [dynamic dispatch](https://en.wikipedia.org/wiki/Dynamic_dispatch). Each pattern adds more details on top of dynamic dispatch to solve particular problem but fundamentally they all rely on dynamic dispatch. Similarly, coroutines have implementation specific details but they all could be explained with the same core idea of saving current stack and execution pointer and later using this information to continue execution from suspension point.
 
 #### Why use coroutines?
 
@@ -20,16 +20,16 @@ There are multiple reasons you might want to use coroutines.
 They will be explained in more details in later posts but here is a quick description of few main use-cases: 
 
 1. **Concurrency in single-threaded environment.** 
-Some programming languages don't have threads. This can be by design like in Lua or JavaScript (because it simplifies a lot of things in language design). Or like in Python which has threads but because of [global interpreter lock](https://wiki.python.org/moin/GlobalInterpreterLock) they cannot be used concurrently. Or it might be an embedded device running OS without threads. In all these cases, if you need concurrency, coroutines might be your best option.
+Some programming languages/environments have only single thread. This might be done by design (e.g. in Lua and JavaScript) because it simplifies a lot of things in the language. In other language like Python, you can have multiple threads but because of [global interpreter lock](https://wiki.python.org/moin/GlobalInterpreterLock) they cannot be used concurrently. Another example is an embedded device running OS without threads. In all these cases, if you need concurrency, coroutines is your only choice.
 
 2. **To simplify code.** It can be done by using `yield` keyword to write lazy iterables, by using `async/await` to "flatten" asynchronous code avoiding [callback hell](http://callbackhell.com) or by writing asynchronous code in imperative style (and staying away from converting all the code into pure functional style, e.g. see this [blog post](http://blog.paralleluniverse.co/2015/08/07/scoped-continuations/)).
 
-3. **Efficient use of OS resources and hardware.** If the design of your application requires a lot of threads, then you can benefit from coroutines by saving on memory allocation, time it takes to do context switch and ultimately benefit from using hardware more efficiently. For example, if each "business object" in your application is assigned a thread, then by using coroutines you will need less memory and will benefit from faster switching between coroutines. Another example might be performing blocking IO. Because in general, threads are more expensive than sockets, you are more likely to run out of available OS threads than sockets. To avoid this problem you can use non-blocking IO with coroutines.
+3. **Efficient use of OS resources and hardware.** If design of your application requires a lot of threads, then you can benefit from coroutines by saving on memory allocation, time it takes to do context switch and ultimately benefit from using hardware more efficiently. For example, if each "business object" in your application is assigned a thread, then by using coroutines you will need less memory and will benefit from faster context switching between coroutines. Another example is using non-blocking IO with many concurrent users. Because in general, threads are more expensive than sockets, you will run out of available OS threads faster than sockets. To avoid this problem you can use non-blocking IO with coroutines.
 
 
 #### Brief history
 
-There is nothing new about coroutines from computer science point of view. [According to wikipedia](https://en.wikipedia.org/wiki/Coroutine) coroutines were known as early as 1958. There were implemented in high-level programming languages starting with [Simula 67](https://en.wikipedia.org/wiki/Simula) and in [Scheme](https://en.wikipedia.org/wiki/Scheme_%28programming_language%29) in 1972. Coroutines were so old news by 90s that John Reynolds wrote [The Discoveries of Continuations paper](http://www.cs.ru.nl/%7Efreek/courses/tt-2011/papers/cps/histcont.pdf) in 1993 describing the rediscoveries of continuations. Until about 80s there were no threads easily available in operating systems so if you needed any concurrent behaviour you would have to use coroutines or something similar. Later on, when threads because widespread, it seems that everyone forgot about coroutines for a while. Until recently, when coroutines came back into mainstream probably because some of the languages (like Python and JavaScript) don't have or can't use threads by design.
+There is nothing new about coroutines from computer science point of view. [According to wikipedia](https://en.wikipedia.org/wiki/Coroutine) coroutines were known as early as 1958. There were implemented in high-level programming languages starting with [Simula 67](https://en.wikipedia.org/wiki/Simula) and [Scheme](https://en.wikipedia.org/wiki/Scheme_%28programming_language%29) in 1972. Coroutines were so old news by 90s that [John Reynolds](https://en.wikipedia.org/wiki/John_C._Reynolds) wrote [The Discoveries of Continuations paper](http://www.cs.ru.nl/%7Efreek/courses/tt-2011/papers/cps/histcont.pdf) in 1993 describing the rediscoveries of continuations. Until about 80s there were no threads easily available in operating systems so if you needed any concurrent behaviour you would have to use coroutines or something similar. Later on, when threads became widespread, it seems that everyone forgot about coroutines for a while. Until recently, when coroutines came back into mainstream.
 
 
 #### Coroutine definition
@@ -39,22 +39,22 @@ A coroutine is a function which:
  - can be **resumed** from **suspension point**  (keeping its original arguments and local variables).
 
 This is an informal definition because there seems to be no consensus about what exactly "coroutine" means. 
-There are few ways in which coroutines are implemented in programming languages. The most widespread implementations are coroutines as threads, yield/async/await and via "call with current continuation" (abbreviated as "call/cc"). Under the hood they all use the same idea, so it might useful to think about them as design patterns which use the same underlying mechanism to solve different problems.
+There are few ways in which coroutines are implemented in programming languages. The most widespread implementations are coroutines as threads, yield/async/await and "call/cc" (which stands for "call with current continuation"). Under the hood they all use the same idea, so it might be useful to think about them as design patterns which use the same underlying mechanism to solve different problems.
 
 
 ## Coroutines as threads
 
 [Lua](https://www.lua.org/about.html) is a scripting programming language designed to be used as an embedded language in large applications (thinking about it as "javascript for interacting with C" might be a fair analogy). In case you never encountered Lua, it is the most used scripting language in the gaming industry and definitely falls into the category of industrial strength enterprise languages.
 
-Lua is good for showing coroutines because it has quite typical implementation of coroutines as threads and it has straightforward syntax which should be readable for most people.
+Lua is good for the purpose because it has quite typical implementation of coroutines as threads and has straightforward syntax which should be readable for most people.
 
 #### Notation
 <a name="notation"/>
 
-In order to illustrate coroutines, I will use the following notation: 
+In order to illustrate coroutines, I will use the following graphical notation: 
 ![](/assets/images/coroutines/coroutines-as-threads/0-subfunction.png)
 
-In this notation rectangles represent functions as sequence of instructions (executed from the top to the bottom), and solid lines represent threads (with arrows showing direction in which thread executes instructions). For example, in the diagram above a thread starts executing program's `main` function, at some point it calls `function`, executes it, returns back to the execution point in `main`, finishes `main` and terminates the whole program (`main` here represents program's entry point named after ["main" function in C](https://en.wikipedia.org/wiki/Entry_point#C_and_C++)). 
+In this notation rectangles represent functions as sequence of instructions executed from the top to the bottom. Solid lines represent threads with arrows showing direction in which thread executes instructions. For example, in the diagram above a thread starts executing program's `main` function, at some point it calls `function`, executes it, returns back to the execution point in `main`, finishes `main` and terminates the whole program (`main` here represents program's entry point named after ["main" function in C](https://en.wikipedia.org/wiki/Entry_point#C_and_C++)). 
 
 An equivalent code in Lua which prints `hello`, executes sub-function to print `from`, then returns to `main` and prints `Lua`, looks like this: 
 <lua>
@@ -72,7 +72,7 @@ print("Lua")
 Now here is a diagram representing execution of a basic coroutine: 
 ![](/assets/images/coroutines/coroutines-as-threads/1-coroutine.png)
 
-In the diagram some thread enters `main`, executes a bit of code and invokes the coroutine. Coroutine executes few instructions until it reaches **suspension point** which saves current **stack and instruction pointer** somewhere in memory. (In this context "stack" and "instruction pointer" are used in an abstract way and don't necessarily imply any particular implementation details. They are used as a convenient way to think about what's going on.) After the suspension point the coroutine returns back to `main` just like a normal sub-function. Some time later, after executing a bit of code, `main` calls the coroutine again. Coroutine starts executing from the last suspension point, i.e. effectively it restores saved stack and jumps back to the saved instruction pointer. After executing few more commands the coroutine reaches another suspension point which saves current stack and instruction pointer again and returns back to `main`. After this `main` executes few more commands and the whole program terminates. (As you have probably noticed, it didn't have to finish execution of the coroutine.)
+In the diagram some thread enters `main`, executes a bit of code and invokes the coroutine. Coroutine executes few instructions until it reaches **suspension point** which saves current **stack and instruction pointer** somewhere in memory. (In this context "stack" and "instruction pointer" are used in an abstract way and don't necessarily imply any particular implementation. They are used as a convenient way to think about what's going on.) After the suspension point the coroutine returns back to `main` just like a normal sub-function. Some time later, after executing a bit of code, `main` calls the coroutine again. Coroutine starts executing from the last suspension point, i.e. effectively it restores saved stack and jumps back to the saved instruction pointer. After executing few more commands the coroutine reaches another suspension point which saves current stack and instruction pointer again and returns back to `main`. After this `main` executes few more commands and the whole program terminates. (As you have probably noticed, the coroutine didn't fully finish execution before finishing `main`.)
 
 Below is the equivalent code in Lua: 
 <lua>
@@ -98,7 +98,7 @@ First of all, we define coroutine with `coroutine.create` [library function](htt
 
 #### Coroutine status
 
-Similar to threads, coroutines in Lua have status. In the example below we create a coroutine but instead of printing numbers we print the result of `coroutine.status(c)` which, as you can guess, returns status of coroutine `c`. This example will print status `suspended` when invoked in `main` and `running` when in coroutine `c`. After the coroutine executes all the commands, it ends up with the `dead` status. This mimics status of threads given that they can only be executed one at a time. (In case you were wondering, in Lua `..` is a string concatenation operator similar to `+` in most C-like languages.) 
+Similar to threads, coroutines can have status. In the example below we create a coroutine but instead of printing numbers we print the result of `coroutine.status(c)` which, as you can guess, returns status of coroutine `c`. This example will print status `suspended` when invoked in `main` and `running` when in coroutine `c`. After the coroutine executes all the commands, it ends up with the `dead` status. This mimics status of threads given that they can only be executed one at a time. (In case you were wondering, in Lua `..` is a string concatenation operator similar to `+` in most C-like languages.) 
 <lua>
 c = coroutine.create(function()
 	print("c is: " .. coroutine.status(c)) -- c is: running
@@ -143,7 +143,7 @@ c received: 5
 
 #### All functions as coroutines
 
-In the diagram below, if you ignore entry and exit points into the `main` function, then the whole invocation sequence looks quite symmetric. There seems to be no big difference between `main` and `coroutine` as if they are just two threads (or coroutines) switching execution between each other.
+In the diagram below, if you ignore entry and exit points into the `main` function, then the whole invocation sequence looks quite symmetric. There seems to be no big difference between `main` and `coroutine` as if they are just two threads switching execution between each other.
 ![](/assets/images/coroutines/coroutines-as-threads/2-symmetry1.png)
 
 So we could rename `main` and `coroutine` to `coroutine 1` and `coroutine 2`. 
@@ -168,7 +168,7 @@ end)
 
 coroutine.resume(c1)
 </lua>
-This is the most basic example of how to achieve concurrency in a single-threaded environment by using [cooperative multitasking](https://en.wikipedia.org/wiki/Cooperative_multitasking) which is one of the main reasons to use coroutines as mentioned in the beginning of this blogpost. If you imagine that `coroutine.yield` and `coroutine.resume` are automatically sprinkled over the coroutines by some other program which we could call "scheduler", then we no longer control context switching between coroutines and it becomes [preemtive multitasking](https://en.wikipedia.org/wiki/Preemption_(computing)#Preemptive_multitasking). Arguably, this is the point when we can no longer say that we are dealing with coroutines.
+This is the most basic example of how to achieve concurrency in a single-threaded environment by using [cooperative multitasking](https://en.wikipedia.org/wiki/Cooperative_multitasking) which is one of the main reasons to use coroutines as mentioned in the beginning of this blogpost. If you imagine that `coroutine.yield` and `coroutine.resume` are automatically sprinkled over the coroutines by some other program which we could call "scheduler", then we no longer control context switching between coroutines and it becomes [preemptive multitasking](https://en.wikipedia.org/wiki/Preemption_(computing)#Preemptive_multitasking). Arguably, this is the point when we can no longer say that we are dealing with coroutines.
 
 #### Stackful vs stackless coroutines
 
@@ -205,8 +205,8 @@ There are few terms related to the idea of coroutines being used as threads:
 [green threads](https://en.wikipedia.org/wiki/Green_threads), 
 [protothreads](https://en.wikipedia.org/wiki/Protothreads) and 
 [goroutines](https://en.wikipedia.org/wiki/Go_(programming_language)#Concurrency:_goroutines_and_channels).
-They all mean similar things but the encompassing theme is to not use OS threads for concurrency or multitasking. The reason might be that the OS/programming environment doesn't support threads at all or that it's more efficient to use custom context switching mechanism. There is no specific requirement, however, that there is only one OS thread or CPU executing coroutines and particular implementation can be using multiple threads, but this is implementation details.
+They all mean similar things but the encompassing theme is to not use OS threads for concurrency or multitasking. The reason might be that the OS or programming environment doesn't support threads at all or that it's more efficient to use custom context switching mechanism. There is no specific requirement, however, that there is only one OS thread or CPU executing coroutines and particular implementation can be using multiple threads, but this is implementation details.
 
-Overall, thinking about coroutines as lightweight threads is the most intuitive and the most high-level metaphor for coroutines. Compared to actual threads the biggest conceptual difference is the lack of scheduler (all context switching must be done by the program) and the fact that coroutine implementations can be stackless.
+Overall, thinking about coroutines as lightweight threads is the most intuitive and the most high-level metaphor for coroutines. Compared to actual threads the biggest conceptual differences are the lack of scheduler (all context switching must be done by the program) and the fact that coroutine implementations can be stackless.
 
 Read next: [yielding generators]({% post_url coroutines/2018-05-02-yielding-generators %}).   

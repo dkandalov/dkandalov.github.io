@@ -35,14 +35,14 @@ console.log(c.next().value);
 console.log(c.next().value);
 console.log(c.next().value);
 </javascript>
-In the code above we define a function called `createGenerator`. Note that `createGenerator` has `*` after `function` keyword. This tells JavaScript that this function is a coroutine and we can use `yield` keyword inside it. Obviously, if function is not marked with `*`, then `yield` is illegal and will be cause runtime error in JavaScript or compilation error in compiled languages. (This is similar to [the previous blogpost]({% post_url coroutines/2018-05-01-coroutines-as-threads %}) where we couldn't use Lua `coroutine.yield()` outside of coroutine created with `coroutine.create`.) After creating the generator, we assign it to `c` and can use `next()` to start/resume execution of the coroutine. Each invocation of `next()` changes state of the generator and returns an object which has a property called `value` through which we can access the data yielded by the generator. Overall, the program resumes coroutine three times and prints `123` never reaching the line with the monkey. To get the monkey printed we need to add one more invocation of `c.next()`.
+In the code above we define a function called `createGenerator`. Note that `createGenerator` has `*` after `function` keyword. This tells JavaScript that this function is a coroutine and we can use `yield` keyword inside it. If function is not marked with `*`, then `yield` is illegal and will be cause runtime error in JavaScript or compilation error in compiled languages. (Note the similarity to [the previous blogpost]({% post_url coroutines/2018-05-01-coroutines-as-threads %}) where we couldn't use Lua `coroutine.yield()` outside of coroutine created with `coroutine.create`.) After creating the generator, we assign it to `c` and can use `next()` to start/resume execution of the coroutine. Each invocation of `next()` changes state of the generator and returns an object which has a property called `value` through which we can access the data yielded by the generator. Overall, the program resumes coroutine three times and prints `123` never reaching the line with the monkey. To get the monkey printed we would need to add one more invocation of `c.next()`.
 
 #### Generators as threads
 
 This might not be the first thing that comes up when you start using generators but there are couple similarities between generators and coroutines as threads. The diagram below illustrates coroutines as threads in which `coroutine` yields execution back to `main` (you can find description of the notation in [the previous blogpost]({% post_url coroutines/2018-05-01-coroutines-as-threads %}#notation)). 
 ![](/assets/images/coroutines/yield/0-coroutine.png)
 
-And the diagram below shows a generator. As you can see they are pretty much identical. The main difference is that generators are predominantly used to return values back into calling function. To be fair, coroutines as threads can also pass values from/to coroutine so technically there is little difference, the difference is in the intent of the program (so it might be useful to think about different coroutine implementations as [design patterns](https://en.wikipedia.org/wiki/Software_design_pattern)).
+And the diagram below shows a generator. As you can see they are pretty much identical. The main difference is that generators are predominantly used to return values back into calling function. To be fair, coroutines as threads can also pass values to/from coroutine so technically there is little difference, the difference is in the intent of the program (so it might be useful to think about different coroutine implementations as [design patterns](https://en.wikipedia.org/wiki/Software_design_pattern)).
 ![](/assets/images/coroutines/yield/1-generator.png)
 
 The main point here is that because the underlying idea is the same, we can use generators to do context switching similar to coroutines as threads: 
@@ -105,7 +105,7 @@ B
 C
 { value: undefined, done: true }
 ```
-Here we create a generator which yields dog and pig. And in the `main` function we resume the generator by passing values to it. Note that the first value passed into `c.next()` is lost and the last value returned from generator when it finishes execution is `undefined`.
+Here we create a generator which yields a dog and a pig. And in the `main` function we resume the generator by passing values to it. Note that the first value passed into `c.next()` is lost and the last value returned from generator when it finishes execution is `undefined`.
 
 #### Stackless yield
 
@@ -295,7 +295,7 @@ In the previous examples we used `yield` keyword without any explanation about h
 
 The code snippet below is the [skipping factorial generator](#skipping-factorial-example) example transpiled to JavaScript without `yield` keyword. This code is not intended to be read by humans and there are some implementation details missing (e.g. we don't see source code of `regeneratorRuntime` object). The main point here is that `factorial` code is transformed into a [finite state machine](https://en.wikipedia.org/wiki/Finite-state_machine). 
  
-There is a `switch` statement which branches on the current state of the state machine. Initially, the state of the machine is `0` so we match `case 0` and initialise `n`, `result` and `skip` variables. Then we fall though into `case 3` where `if (!true)` and `if (skip)` evaluate to `false` and won't be executed. Then `_context.next = 7` sets the next state of the state machine to `7` and yields current result. When the generator resumes execution again, it will start from `case 7`. As you can see, there is no particular magic going on here. It might be not a trivial code transformation going on in the compiler/interpreter but in the end generator code becomes a finite state machine.
+There is a `switch` statement which branches on the current state of the state machine. Initially, the state of the machine is `0` so we match `case 0` and initialise `n`, `result` and `skip` variables. Then we fall though into `case 3` where `if (!true)` and `if (skip)` evaluate to `false` and won't be executed. Then `_context.next = 7` sets the next state of the state machine to `7` and yields current result. When the generator resumes execution again, it will start from `case 7`. As you can see, there is nothing particularly magical going on here. It's not a trivial code transformation but in the end the generator code is transformed into a somewhat understandable finite state machine.
 
 Note that at the bottom there is `console.log(f.next())` code which didn't change at all. Also `factorial()` function signature didn't change even though its code was transformed.
 
@@ -361,6 +361,6 @@ console.log(f.next(10));
 It is worth mentioning that this particular transformation into state machine is designed for stackless coroutines and represents capturing single stackframe and its execution point. C# and Kotlin coroutines perform similar transformations.
 
 ### Summary
-Generators with `yield` keyword is one of the most useful and most common implementation of coroutines. Hopefully, this blog helps to understand how generators relate to other coroutines implementations, how/why to use generators.
+Generators with `yield` keyword is one of the most useful and most common implementations of coroutines. Hopefully, this blog helps to understand why use generators and how they are relate to other coroutines implementations.
 
 Read next: [async/await]({% post_url coroutines/2018-05-03-async-await %}).
