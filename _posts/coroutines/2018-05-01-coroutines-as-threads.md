@@ -207,6 +207,6 @@ There are few terms related to the idea of coroutines being used as threads:
 [goroutines](https://en.wikipedia.org/wiki/Go_(programming_language)#Concurrency:_goroutines_and_channels).
 They all mean similar things but the encompassing theme is to not use OS threads for concurrency or multitasking. The reason might be that the OS or programming environment doesn't support threads at all or that it's more efficient to use custom context switching mechanism. There is no specific requirement, however, that there is only one OS thread or CPU executing coroutines and particular implementation can be using multiple threads, but this is implementation details.
 
-Overall, thinking about coroutines as lightweight threads is the most intuitive and the most high-level metaphor for coroutines. Compared to actual threads the biggest conceptual differences are the lack of scheduler (all context switching must be done by the program) and the fact that coroutine implementations can be stackless.
+Overall, thinking about coroutines as lightweight threads is the most intuitive and the most high-level metaphor for coroutines. Compared to actual threads the biggest conceptual difference is the lack of scheduler (all context switching must be done by the program) and the fact that coroutine implementations can be stackless.
 
 Read next: [yielding generators]({% post_url coroutines/2018-05-02-yielding-generators %}).   
