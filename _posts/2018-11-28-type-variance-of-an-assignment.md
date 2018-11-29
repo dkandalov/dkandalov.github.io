@@ -55,7 +55,8 @@ val x1: A = A()
 val x2: B = B()
 </kotlin>
 
-Just like in the previous example replacing `A` objects with `B` is ok, but not the other way round:
+Just like in the previous example replacing **object** `A` with `B` is ok, but not the other way round
+(note that this is not the same as replacing characters "A" and "B"):
 <kotlin>
 val x1: A = <s>A()</s>B() // ok
 val x2: B = <s>B()</s>A() // compilation error
@@ -68,9 +69,9 @@ val x2:<s> B</s> A = B() // ok
 </kotlin>
 
 The interesting thing here is that unlike examples before replacing `A` with `B` failed to compile but replacing `B` with `A` was ok.
-In other words, replacing "A"s and "B"s for object constructors behaved differently compared to variable types.
+In other words, replacing `A` and `B` in object constructors has different effect compared to replacing `A` and `B` in variable types.
  
-This also shows that if `B` is subtype of `A` we cannot just replace all "A" symbols with "B" and expect the code to compile.
+This also shows that if `B` is subtype of `A` we cannot just replace all "A" symbols with "B" everywhere and expect the code to compile.
 
 This is summarised in the table below:
  
@@ -94,7 +95,7 @@ val x1: A = readA()
 val x2: B = readB()
 </kotlin>
 
-Similarly, we try replacing `readA` with `readB` and vice versa.
+Similarly, we can try replacing `readA` with `readB` and vice versa.
 Because `read` functions directly call object constructors,
 it's not surprising that the result is the same as when we were replacing `A` and `B` objects.
 <kotlin>
@@ -102,7 +103,7 @@ val x1: A = <s>readA()</s>readB() // ok
 val x2: B = <s>readB()</s>readA() // compilation error
 </kotlin>
 
-The difference here is that `readA` and `readB` functions have their own types:
+The difference compared to using objects directly is that `readA` and `readB` functions have their own types:
 <kotlin>
 val x1: () -> A = <s>::readA</s> ::readB // ok
 val x2: () -> B = <s>::readB</s> ::readA // compilation error
@@ -114,8 +115,8 @@ val x2: () -> B = <s>::readB</s> ::readA // compilation error
 | **readB** | ❌ | ✅ |
 {:.post-table}
 
-This relationship in the table looks identical to `A` and `B` objects.
-Since `B` is subtype of `A`, we can conclude that function with type `() -> B` is subtype of `() -> A`. 
+The table results look identical to the one we've seen when replacing `A` and `B` objects.
+Since `B` is a subtype of `A`, we can conclude that function with type `() -> B` is subtype of `() -> A`. 
 Graphically:
 ```text
 A    () -> A
@@ -193,7 +194,7 @@ The results of replacing `read` and `write` functions:
  
 
 
-It's possible to rewrite `read` and `write` in a more generic way using type parameters
+It is possible to rewrite `read` and `write` in a more generic way using type parameters
 and the functions will keep all the properties described above.
 <kotlin>
 fun &lt;T&gt; read(): T = error("👻")
