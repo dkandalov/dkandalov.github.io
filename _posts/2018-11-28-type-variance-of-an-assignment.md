@@ -123,7 +123,7 @@ A    () -> A
 B    () -> B
 ```
 The fat arrows which show subtyping are pointing in the same direction, 
-so the `read` functions are said to be **covariant**. 
+so the `read` functions are said to be **covariant**.
 
 
 ### Contravariance of write
@@ -169,8 +169,32 @@ The fat arrows which show subtyping are pointing in different directions, so the
 
 ### Summary
 
-It's possible to rewrite `read` and `write` functions in a more generic way using type parameters
-and they will keep all the properties described above.
+The results of replacing objects and types in an assignment:
+
+|                | replaced with A   | replaced with B   |
+| -------------- | ----------------- | ----------------- |
+| **object A**   | ✅ | ✅ |
+| **object B**   | ❌ | ✅ |
+|                |**replaced with A**|**replaced with B**|
+| **val type A** | ✅ | ❌ |
+| **val type B** | ✅ | ✅ |
+{:.post-table}
+
+The results of replacing `read` and `write` functions:
+
+|            | replaced with readA    | replaced with readB    |
+| ---------- | ---------------------- | ---------------------- |
+| **readA**  | ✅ | ✅ |
+| **readB**  | ❌ | ✅ |
+|            |**replaced with writeA**|**replaced with writeB**|
+| **writeA** | ✅ | ❌ |
+| **writeB** | ✅ | ✅ |
+{:.post-table}
+ 
+
+
+It's possible to rewrite `read` and `write` in a more generic way using type parameters
+and the functions will keep all the properties described above.
 <kotlin>
 fun &lt;T&gt; read(): T = error("👻")
 fun &lt;T&gt; write(value: T) {}
@@ -178,9 +202,9 @@ val x: B = read&lt;A&gt;() // compilation error
 write&lt;B&gt;(A()) // compilation error
 </kotlin>
 
-Overall, variance depends on the argument position in function signature.
+Variance depends on the argument position in function signature.
 For example, given a generic function which consumes values of type `T1` and `T2`, and returns value of type `U`,
-it will be covariant in its return type `U` and contravariant in `T1` and `T2`: 
+the function will be covariant in its return type `U` and contravariant in `T1` and `T2`: 
 <kotlin>
 &nbsp;                    contravariant
                        👇      👇
@@ -189,5 +213,5 @@ fun &lt;T1, T2, U&gt; foobar(t1: T1, t2: T2): U = error("👻")
                                      covariant
 </kotlin>
 
-The important thing here though is that these are not arbitrary rules 
+Overall, the important thing here is that covariance and contravariance rules are not arbitrary
 but a logical conclusion from type substitution and variable assignment.
