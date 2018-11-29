@@ -198,8 +198,8 @@ and the functions will keep all the properties described above.
 <kotlin>
 fun &lt;T&gt; read(): T = error("👻")
 fun &lt;T&gt; write(value: T) {}
-val x: B = read&lt;A&gt;() // compilation error
-write&lt;B&gt;(A()) // compilation error
+val x: B = <s>read&lt;B&gt;</s>read&lt;A&gt;() // compilation error
+<s>write&lt;A&gt;</s>write&lt;B&gt;(A()) // compilation error
 </kotlin>
 
 Variance depends on the argument position in function signature.
