@@ -1,6 +1,6 @@
 ---
-permalink: type-variance-of-an-assignment
 draft: true 
+permalink: type-variance-of-an-assignment
 ---
 
 Type variance is one of the most difficult and confusing subjects when it comes to statically typed programming languages. 
@@ -182,7 +182,7 @@ Overall, variance depends on the argument position in function signature.
 For example, given a generic function which consumes values of type `T1` and `T2`, and returns value of type `U`,
 it will be covariant in its return type `U` and contravariant in `T1` and `T2`: 
 <kotlin>
-&nbsp;                     contravariant
+&nbsp;                    contravariant
                        👇      👇
 fun &lt;T1, T2, U&gt; foobar(t1: T1, t2: T2): U = error("👻")
                                         👆
