@@ -1,5 +1,5 @@
 ---
-categories: type variance kotlin
+permalink: type-variance-of-an-assignment
 draft: true 
 ---
 
