@@ -168,6 +168,18 @@ h1 {
     clear: both;
 }
 
+.post-table {
+    border-collapse: collapse;
+    border: 1px solid black;
+    padding: 5px 5px 25px 5px;
+    
+    th, td {
+        border: 1px solid black;
+        padding: 5px;
+        text-align: center;
+    }
+}
+
 blockquote {
     padding: 1em 2em;
     margin: 0;
