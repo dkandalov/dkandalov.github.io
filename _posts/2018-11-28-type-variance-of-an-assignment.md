@@ -69,9 +69,9 @@ val x2:<s> B</s> A = B() // ok
 </kotlin>
 
 The interesting thing here is that unlike examples before replacing `A` with `B` failed to compile but replacing `B` with `A` was ok.
-In other words, replacing `A` and `B` in object constructors has different effect compared to replacing `A` and `B` in variable types.
+In other words, replacing `A` and `B` in **object** constructors has different effect compared to replacing `A` and `B` in **variable types**.
  
-This also shows that if `B` is subtype of `A` we cannot just replace all "A" symbols with "B" everywhere and expect the code to compile.
+This also shows that if `B` is subtype of `A`, we cannot just replace all "A" symbols with "B" everywhere and expect the code to compile.
 
 This is summarised in the table below:
  
@@ -139,7 +139,7 @@ writeB(B())
 </kotlin>
 
 When replacing `writeA` with `writeB` and vice versa, we get the following output 
-which matches the results of replacing `A` and `B` variable types:
+which matches the results of replacing `A` and `B` variable **types**:
 <kotlin>
 <s>writeA</s> writeB(A()) // compilation error
 <s>writeB</s> writeA(B()) // ok
@@ -157,8 +157,8 @@ val x2: (B) -> Unit = <s>::writeB</s> ::writeA // ok
 | **writeB** | ✅ | ✅ |
 {:.post-table}
 
-If swap rows and columns in the table above, then the results will match the summary table for `A` and `B` objects.
-But also `writeA` and `writeB` labels will swap places with each other, so we can conclude the type `(A) -> Unit` is subtype of `(B) -> Unit`. 
+If we swap rows and columns in the table above, then the results will match the summary table for `A` and `B` objects.
+But also `writeA` and `writeB` labels will swap places with each other, so we can conclude that the type `(A) -> Unit` is subtype of `(B) -> Unit`. 
 Graphically:
 ```text
 A    (A) -> Unit
@@ -194,8 +194,7 @@ The results of replacing `read` and `write` functions:
  
 
 
-It is possible to rewrite `read` and `write` in a more generic way using type parameters
-and the functions will keep all the properties described above.
+It is possible to rewrite `read` and `write` in a more generic way using type parameters. The rewritten functions will keep all the properties described above.
 <kotlin>
 fun &lt;T&gt; read(): T = error("👻")
 fun &lt;T&gt; write(value: T) {}
@@ -214,5 +213,5 @@ fun &lt;T1, T2, U&gt; foobar(t1: T1, t2: T2): U = error("👻")
                                      covariant
 </kotlin>
 
-Overall, the important thing here is that covariance and contravariance rules are not arbitrary
+Overall, the main message here is that covariance and contravariance rules are not arbitrary
 but a logical conclusion from type substitution and variable assignment.
