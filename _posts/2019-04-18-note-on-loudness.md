@@ -16,7 +16,11 @@ I didn’t come to a conclusion what is the "right" loudness level for youtube b
 ### Practice 
 
 You can measure LUFS of a video using `ffmpeg`.
-For example, `ffmpeg -nostats -i 'video.mp4' -filter_complex ebur128 -f null -` will print few lines to console and in the end a summary with something like:
+For example, 
+```
+ffmpeg -nostats -i 'video.mp4' -filter_complex ebur128 -f null -
+``` 
+will print few lines to console and in the end a summary with something like:
 ```
 Integrated loudness:
 I:         -15.9 LUFS
@@ -25,4 +29,7 @@ where "integrated" means it was calculated for the whole video, not just a part 
 
 You can also download videos from youtube using [youtube-dl](https://github.com/ytdl-org/youtube-dl) and then run them through `ffmpeg` to determine their loudness.
 
-To increase you can do `ffmpeg -i inputfile -vcodec copy -af "volume=10dB" outputfile`.
+To increase volume of a video you can do 
+```
+ffmpeg -i inputfile -vcodec copy -af "volume=10dB" outputfile
+```
