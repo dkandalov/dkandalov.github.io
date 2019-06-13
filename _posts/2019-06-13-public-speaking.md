@@ -3,6 +3,38 @@ draft: true
 permalink: public-speaking
 ---
 
+### 2009
+
+| Dates | Event | Talk |
+| --- | --- | --- |
+| 9 December | [Agile Days](http://2009.agiledays.ru) | SOLID principles |
+{:.post-table}
+
+### 2013
+
+| Dates | Event | Talk |
+| --- | --- | --- |
+| 2-5 June        | [SoCraTes UK](http://socratesuk.org) | Code history mining |
+{:.post-table}
+
+### 2014
+
+| Dates | Event | Talk |
+| --- | --- | --- |
+| 31 January    | [TICOSA](http://www.ticosa.org) | Visualizing Project History |
+| 12-15 June    | [SoCraTes UK](http://socratesuk.org) | Behavioural economics in programming |
+| 23-24 October | [SECR](http://2014.secrus.org/lang/en) | Project history visualization |
+{:.post-table}
+
+### 2016
+
+| Dates | Event | Talk |
+| --- | --- | --- |
+| 19-23 April     | [ACCU 2016](https://accu.org/index.php/conferences/accu_conference_2016) | Code History Analysis and Visualization |
+| 2-5 June        | [SoCraTes UK](http://socratesuk.org) | Spy on yourself |
+| 19-22 September | [Java One](https://en.wikipedia.org/wiki/JavaOne) | Code History Analysis and Visualization |
+{:.post-table}
+
 ### 2017
 
 | Dates | Event | Talk |
@@ -36,7 +68,7 @@ permalink: public-speaking
 | 15-17 May       | [GeeCON](https://2019.geecon.org/) | Coroutines explained, FizzBuzzWoof with TCR | 
 | 24 May          | [Joy of coding](https://joyofcoding.org) | FizzBuzzWoof with TCR | 
 | 1 June          | [Kotlin Night Kyiv](http://knightkyiv.com) | Live Coding Kotlin/Native Snake | 
-| 6-9 June        | [SoCraTes UK](https://socratesuk.org) | Live Coding Kotlin/Native Snake, Mobbing FizzBuzzWoof with TCR, FizzBuzzWoof with TCR, Tennis kata with TCR, Why all interviews are broken? | 
+| 6-9 June        | [SoCraTes UK](https://socratesuk.org) | Live Coding Kotlin/Native Snake, Mobbing FizzBuzzWoof with TCR, FizzBuzzWoof with TCR, Tennis kata with TCR | 
 | 26-27 September | [GeekOut](https://2019.geekout.ee) | Live Coding Kotlin/Native Snake | 
 | 6-8 November    | [ØREDEV](https://oredev.org) | Live Coding Kotlin/Native Snake | 
 {:.post-table}
