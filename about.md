@@ -3,15 +3,15 @@ layout: page
 title: About me
 permalink: /about/
 ---
-Hello. I am Dmitry.
+Hello, I'm Dmitry.
 
-I have been programming and trying to get better at it since [DOS](https://en.wikipedia.org/wiki/DOS) times.
-The last 10 years or so I spent in Java and JVM languages land, most recently focusing on [Kotlin](https://kotlinlang.org/). 
+I have been writing software since [DOS](https://en.wikipedia.org/wiki/DOS) times using various programming languages and technologies.
+I spent the last 13 years in Java lands and has recently escaped banking industry to use [Kotlin](https://kotlinlang.org/)
+and [Extreme programming](https://en.wikipedia.org/wiki/Extreme_programming) practices.
 
-Ignoring the vanity metric of github stars, [code history mining](https://github.com/dkandalov/code-history-mining) and [activity tracker](https://github.com/dkandalov/activity-tracker) are probably the most interesting projects I've done. The bad news is that they're currently dormant. I really hope to get back to them sometime soon. 
-
-For something more exciting and interactive see [L-System Playground](http://dkandalov.github.io/lsystem).
+I often attend tech meetups and other events. Say "hi" if you see me there 😀<br/> 
+You can find an incomplete list of my past and future presentations [on this page]({% post_url 2019-06-13-public-speaking %}).
  
-Feel free to [tweet](https://twitter.com/dmitrykandalov) or email me dmitry.kandalov(at)gmail.com.
+Feel free to [tweet](https://twitter.com/dmitrykandalov) or email me at dmitry.kandalov(at)gmail.com.
 
 ![Me](/assets/images/me.jpg)
