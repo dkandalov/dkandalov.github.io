@@ -32,6 +32,7 @@ permalink: public-speaking
 | --- | --- | --- |
 | 19-23 April     | [ACCU 2016](https://accu.org/index.php/conferences/accu_conference_2016) | Code History Analysis and Visualization |
 | 2-5 June        | [SoCraTes UK](http://socratesuk.org) | Spy on yourself |
+| 17-27 June      | [SPA 2016](https://spaconference.org/spa2016) | Code History Analysis and Visualization |
 | 19-22 September | [Java One](https://en.wikipedia.org/wiki/JavaOne) | Code History Analysis and Visualization |
 {:.post-table}
 
@@ -39,11 +40,13 @@ permalink: public-speaking
 
 | Dates | Event | Talk |
 | --- | --- | --- |
-| 26-29 April  | [ACCU 2017](https://conference.accu.org/2017/accu2017.html) | [An introduction to Kotlin by example](https://www.youtube.com/watch?v=uZqo21geUa0) | 
-| 11-12 May    | [Devoxx UK](http://www.devoxx.co.uk) | [An introduction to Kotlin by example](https://www.youtube.com/watch?v=pjC8C1xid3k) |
-| 15-17 May    | [Riga DevDays](https://rigadevdays.lv/) | [An introduction to Kotlin by example](https://www.youtube.com/watch?v=k1QUKaDMiYU) |
-| 29 August    | [Kotlin London Meetup](https://www.meetup.com/kotlin-london/events/241918493/) | [Kotlin Puzzlers](https://github.com/dkandalov/kotlin-puzzlers) |
-| 16 September | [Uncodebar 3](https://codebar.io/events/uncodebar-3) | An introduction to Kotlin by example |
+| 26-29 April     | [ACCU 2017](https://conference.accu.org/2017/accu2017.html) | [An introduction to Kotlin by example](https://www.youtube.com/watch?v=uZqo21geUa0) | 
+| 11-12 May       | [Devoxx UK](http://www.devoxx.co.uk) | [An introduction to Kotlin by example](https://www.youtube.com/watch?v=pjC8C1xid3k) |
+| 15-17 May       | [Riga DevDays](https://rigadevdays.lv/) | [An introduction to Kotlin by example](https://www.youtube.com/watch?v=k1QUKaDMiYU) |
+| 29 August       | [Kotlin London Meetup](https://www.meetup.com/kotlin-london/events/241918493/) | [Kotlin Puzzlers](https://github.com/dkandalov/kotlin-puzzlers) |
+| 16 September    | [code.talks](https://www.codetalks.de) | An introduction to Kotlin by example |
+| 28-29 September | [Uncodebar 3](https://codebar.io/events/uncodebar-3) | An introduction to Kotlin by example |
+| 7 October       | [SoCraTes Day Berlin](https://www.meetup.com/Software-Craftsmanship-Berlin/events/241973901/) | An introduction to Kotlin by example |
 {:.post-table}
 
 ### 2018
