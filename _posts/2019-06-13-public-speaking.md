@@ -25,6 +25,7 @@ permalink: public-speaking
 | 24 March      | [XProLo Meetup](https://www.meetup.com/Extreme-Programmers-London/events/167057442) | Visualizing Project History |
 | 12-15 June    | [SoCraTes UK](http://socratesuk.org) | Behavioural economics in programming |
 | 23-24 October | [SECR](http://2014.secrus.org/lang/en) | Project history visualization |
+| 13 November   | [ACCU London](https://www.meetup.com/ACCULondon/events/209671672) | Writing IntelliJ plugins for fun and profit |
 {:.post-table}
 
 ### 2016
