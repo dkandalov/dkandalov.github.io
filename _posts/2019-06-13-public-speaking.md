@@ -75,7 +75,7 @@ permalink: public-speaking
 | 15-17 May       | [GeeCON](https://2019.geecon.org/) | Coroutines explained, FizzBuzzWoof with TCR | 
 | 24 May          | [Joy of coding](https://joyofcoding.org) | FizzBuzzWoof with TCR | 
 | 1 June          | [Kotlin Night Kyiv](http://knightkyiv.com) | Live Coding Kotlin/Native Snake | 
-| 6-9 June        | [SoCraTes UK](https://socratesuk.org) | Live Coding Kotlin/Native Snake, TCR sessions (see [1](https://www.youtube.com/watch?v=tmRRlzPWyYA)) | 
+| 6-9 June        | [SoCraTes UK](https://socratesuk.org) | Live Coding Kotlin/Native Snake, TCR sessions (see [1](https://www.youtube.com/watch?v=tmRRlzPWyYA), [2](https://www.youtube.com/watch?v=H0z_NhQIOHQ), [3](https://www.youtube.com/watch?v=wDhBNl_a0ww), [4](https://www.youtube.com/watch?v=JkMnqrML8dk) ) | 
 | 14-19 July      | [JCrete](http://www.jcrete.org/) | ??? | 
 | 26-27 September | [GeekOut](https://2019.geekout.ee) | Live Coding Kotlin/Native Snake | 
 | 6-8 November    | [ØREDEV](https://oredev.org) | Live Coding Kotlin/Native Snake | 
