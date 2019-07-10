@@ -7,7 +7,7 @@ permalink: public-speaking
 
 | Dates | Event | Talk |
 | --- | --- | --- |
-| 9 December | [Agile Days](http://2009.agiledays.ru) | SOLID principles |
+| 9 December | [Agile Days](http://2009.agiledays.ru) | [SOLID principles](https://www.youtube.com/watch?v=av9ykUpscyk) |
 {:.post-table}
 
 ### 2013
