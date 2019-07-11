@@ -1,5 +1,6 @@
 ---
-draft: true 
+layout: page
+title: Public speaking
 permalink: public-speaking
 ---
 

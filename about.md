@@ -10,7 +10,7 @@ I spent the last 13 years in Java lands and have recently escaped banking indust
 and [Extreme programming](https://en.wikipedia.org/wiki/Extreme_programming) practices.
 
 I often attend tech meetups and other events. Say "hi" if you see me there 😀<br/> 
-You can find an incomplete list of my past and future presentations [on this page]({% post_url 2019-06-13-public-speaking %}).
+You can find an incomplete list of my past and future presentations [on this page](/public-speaking).
  
 Feel free to [tweet](https://twitter.com/dmitrykandalov) or email me at dmitry.kandalov(at)gmail.com.
 
