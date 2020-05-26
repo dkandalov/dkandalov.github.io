@@ -4,12 +4,20 @@ title: Public speaking
 permalink: public-speaking
 ---
 
+### 2020
+
+| Dates | Event | Talk |
+| --- | --- | --- |
+| 8 May           | [SoCraTes UK](https://www.eventbrite.co.uk/e/socrates-uk-2020-digital-spring-tickets-101979310864) | Server as a function with http4k | 
+| 5 March         | [Talking.Kt](https://talkingkt.fr) | [Live coding: Server as a function with http4k](https://www.youtube.com/watch?v=vsueRJCJuLI) | 
+{:.post-table}
+
 ### 2019
 
 | Dates | Event | Talk |
 | --- | --- | --- |
-| 6-8 November    | [ØREDEV](https://oredev.org) | Live Coding Kotlin/Native Snake | 
-| 26-27 September | [GeekOut](https://2019.geekout.ee) | Live Coding Kotlin/Native Snake | 
+| 6-8 November    | [ØREDEV](https://oredev.org) | Live Coding Kotlin/Native Snake,<br/>[IntelliJ tips and tricks with Anton Arhipov](https://www.youtube.com/watch?v=u6l1B770qHo) | 
+| 26-27 September | [GeekOut](https://2019.geekout.ee) | Live Coding Kotlin/Native Snake,<br/>[Binary search with Anton Keks](https://www.youtube.com/watch?v=_n1M8G5ifKo) | 
 | 14-19 July      | [JCrete](http://www.jcrete.org/) | ??? | 
 | 6-9 June        | [SoCraTes UK](https://socratesuk.org) | Live Coding Kotlin/Native Snake,<br/>TCR sessions (see [1](https://www.youtube.com/watch?v=tmRRlzPWyYA), [2](https://www.youtube.com/watch?v=H0z_NhQIOHQ), [3](https://www.youtube.com/watch?v=wDhBNl_a0ww), [4](https://www.youtube.com/watch?v=JkMnqrML8dk) ) | 
 | 1 June          | [Kotlin Night Kyiv](http://knightkyiv.com) | Live Coding Kotlin/Native Snake | 
