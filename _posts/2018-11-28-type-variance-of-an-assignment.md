@@ -1,5 +1,4 @@
 ---
-draft: false 
 permalink: type-variance-of-an-assignment
 ---
 
