@@ -35,6 +35,7 @@ Use `Find Action` and search for "Registry...":
  - use `cmd+2` for Git toolwindow
  - use `cmd+M` for "Scroll to Center"
  - use `cmd+shift+G` for "Execute Gradle Task"
+ - assign a shortcut to `Window > Notifications > Close First / Close All` (see [IDEA-218434](https://youtrack.jetbrains.com/issue/IDEA-218434))
 
 ### OSX
  - disable accents `defaults write -g ApplePressNadHoldEnabled -bool false`
