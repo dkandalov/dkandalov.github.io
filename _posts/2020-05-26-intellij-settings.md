@@ -10,6 +10,7 @@ I intend to keep this page up-to-date with new settings and changes in my prefer
  - disable `Editor > General > Breadcrumbs > Show breadcrumbs`
  - enable `Editor > General > Smart Keys > Use "CamelHumps" words`
  - disable `Editor > General > Smart Keys > Honor "CamelHumps" words on double click`
+ - disable `Editor > General > Smart Keys > Surround selection on typing quote or brace`
  - disable `Editor > General > Appearance > Show intention bulb`
  - disable `Editor > General > Appearance > Smooth scrolling`
  - disable `Editor > Code Editing > Highlight on Caret Movement > Usages of element at caret`
