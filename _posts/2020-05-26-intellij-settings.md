@@ -13,6 +13,7 @@ I intend to keep this page up-to-date with new settings and changes in my prefer
  - disable `Editor > General > Appearance > Show intention bulb`
  - disable `Editor > General > Appearance > Smooth scrolling`
  - disable `Editor > Code Editing > Highlight on Caret Movement > Usages of element at caret`
+ - disable `Editor > Code Editing > Show quick documentation on mouse move`
  - enable `Appearance & Behavior > Appearance > Automatically position mouse cursor on default button`
  - disable `Appearance & Behavior > Appearance > Allow merging buttons on dialogs`
 
