@@ -7,17 +7,20 @@ I intend to keep this page up-to-date with new settings and changes in my prefer
 
 ### IDE Settings
  - disable `Main Menu > View > Appearance > Navigation Bar`
- - disable `Editor > General > Breadcrumbs > Show breadcrumbs`
- - enable `Editor > General > Rich-Text Copy > Plain text`
- - enable `Editor > General > Smart Keys > Use "CamelHumps" words`
- - disable `Editor > General > Smart Keys > Honor "CamelHumps" words on double click`
- - disable `Editor > General > Smart Keys > Surround selection on typing quote or brace`
- - disable `Editor > General > Appearance > Show intention bulb`
- - disable `Editor > General > Appearance > Smooth scrolling`
- - disable `Editor > Code Editing > Highlight on Caret Movement > Usages of element at caret`
- - disable `Editor > Code Editing > Show quick documentation on mouse move`
- - enable `Appearance & Behavior > Appearance > Automatically position mouse cursor on default button`
- - disable `Appearance & Behavior > Appearance > Allow merging buttons on dialogs`
+ - in `Editor > General`
+     - enable `Smart Keys > Use "CamelHumps" words`
+     - disable `Smart Keys > Honor "CamelHumps" words on double click`
+     - disable `Smart Keys > Surround selection on typing quote or brace`
+     - disable `Appearance > Show intention bulb`
+     - disable `Appearance > Smooth scrolling`
+     - disable `Breadcrumbs > Show breadcrumbs`
+     - enable `Rich-Text Copy > Plain text`
+ - in `Editor > Code Editing`
+     - disable `Highlight on Caret Movement > Usages of element at caret`
+     - disable `Show quick documentation on mouse move`
+ - in `Appearance & Behavior > Appearance`
+     - enable `Automatically position mouse cursor on default button`
+     - disable `Allow merging buttons on dialogs`
 
 ### IDE Registry
 Use `Find Action` and search for "Registry...":
