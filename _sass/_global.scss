@@ -301,8 +301,9 @@ pre {
   max-width: 60em;
 }
 code.highlighter-rouge {
-  border: 1px solid;
+  font-size: 0.9em;
+  padding: 0 0.3em 0.1em;
   border-radius: 3px;
-  border-color: $gray3;
+  border: 1px solid $gray3;
   background: #FFF;
 }
