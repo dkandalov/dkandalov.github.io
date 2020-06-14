@@ -8,7 +8,7 @@ permalink: public-speaking
 
 | Dates | Event | Talk |
 | --- | --- | --- |
-| 8-12 Jun        | [XP 2020](https://www.agilealliance.org/xp2020) | Limited WIP for Developers | 
+| 9-11 Jun        | [XP 2020](https://www.agilealliance.org/xp2020) | Limited WIP for Developers | 
 | 29-30 May       | [CITCON Virtual](https://citconf.com/virtual2020) | Limited WIP for Developers | 
 | 8 May           | [SoCraTes UK](https://www.eventbrite.co.uk/e/socrates-uk-2020-digital-spring-tickets-101979310864) | Server as a function with http4k | 
 | 5 March         | [Talking.Kt](https://talkingkt.fr) | [Live coding: Server as a function with http4k](https://www.youtube.com/watch?v=vsueRJCJuLI) | 
