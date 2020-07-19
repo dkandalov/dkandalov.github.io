@@ -117,11 +117,11 @@ val x2: () -> B = <s>::readB</s> ::readA // compilation error
 The table results look identical to the one we've seen when replacing `A` and `B` objects.
 Since `B` is a subtype of `A`, we can conclude that function with type `() -> B` is subtype of `() -> A`. 
 Graphically:
-```text
+<plain-text>
 A    () -> A
 ⬆      ⬆
 B    () -> B
-```
+</plain-text>
 The fat arrows which show subtyping are pointing in the same direction, 
 so the `read` functions are said to be **covariant**.
 
@@ -159,11 +159,11 @@ val x2: (B) -> Unit = <s>::writeB</s> ::writeA // ok
 If we swap rows and columns in the table above, then the results will match the summary table for `A` and `B` objects.
 But also `writeA` and `writeB` labels will swap places with each other, so we can conclude that the type `(A) -> Unit` is subtype of `(B) -> Unit`. 
 Graphically:
-```text
+<plain-text>
 A    (A) -> Unit
 ⬆        ⬇
 B    (B) -> Unit
-```
+</plain-text>
 The fat arrows which show subtyping are pointing in different directions, so the `write` functions are said to be **contravariant**.
 
 
