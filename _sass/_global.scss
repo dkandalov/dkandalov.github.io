@@ -289,21 +289,29 @@ a.previous:hover, a.next:hover {
 =          Overrides           =
 ==============================*/
 html {
-  font: 100%/1.5 "Avenir Next","Avenir","Helvetica Neue",Arial,sans-serif;
+    font: 100%/1.5 "Avenir Next", "Avenir", "Helvetica Neue", Arial, sans-serif;
 }
+
 pre {
-  padding: 0;
+    padding: 0;
 }
+
 .site-title {
-   font-weight: bold;
+    font-weight: bold;
 }
+
 .wrapper {
-  max-width: 60em;
+    max-width: 60em;
 }
+
+code {
+    font-size: 0.9em;
+}
+
 code.highlighter-rouge {
-  font-size: 0.9em;
-  padding: 0 0.3em 0.1em;
-  border-radius: 3px;
-  border: 1px solid $gray3;
-  background: #FFF;
+    font-size: 0.9em;
+    padding: 0 0.3em 0.1em;
+    border-radius: 3px;
+    border: 1px solid $gray3;
+    background: #FFF;
 }
