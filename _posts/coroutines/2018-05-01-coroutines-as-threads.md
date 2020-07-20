@@ -12,7 +12,7 @@ This post is part of the blogpost series explaining coroutines, how they impleme
 
 The main motivation for these blogposts is that, probably like many other developers, I heard about coroutines, continuations, yield/async/await and even used them to some extent, but I never got to really understand what they mean from computational point of view, how they work and how concepts like continuations relate to coroutines. This is an attempt to clarify coroutines for myself and anyone else interested in the subject.
 
-The classification of coroutines as threads, `yield/async/await` and `call/cc` is my own attempt to identify commonalities between languages. To draw analogy with [design patterns](https://en.wikipedia.org/wiki/Software_design_pattern), quite a few [behavioural patterns](https://en.wikipedia.org/wiki/Behavioral_pattern) are at their core based on [dynamic dispatch](https://en.wikipedia.org/wiki/Dynamic_dispatch). Each pattern adds more details on top of dynamic dispatch to solve particular problem but fundamentally they all rely on dynamic dispatch. Similarly, coroutines have implementation specific details but they all could be explained with the same core idea of saving current stack and execution pointer and later using this information to continue execution from suspension point.
+The classification of coroutines as threads, `yield/async/await` and `call/cc` is my own attempt to identify commonalities between languages. To draw analogy with [design patterns](https://en.wikipedia.org/wiki/Software_design_pattern), quite a few [behavioural patterns](https://en.wikipedia.org/wiki/Behavioral_pattern) are at their core based on [dynamic dispatch](https://en.wikipedia.org/wiki/Dynamic_dispatch). Each pattern adds more details on top of dynamic dispatch to solve a particular problem but fundamentally they all rely on dynamic dispatch. Similarly, coroutines have implementation specific details but they all could be explained with the same core idea of saving current stack and execution pointer and later using this information to continue execution from suspension point.
 
 #### Why use coroutines?
 
@@ -57,6 +57,7 @@ In order to illustrate coroutines, I will use the following graphical notation:
 In this notation rectangles represent functions as sequence of instructions executed from the top to the bottom. Solid lines represent threads with arrows showing direction in which thread executes instructions. For example, in the diagram above a thread starts executing program's `main` function, at some point it calls `function`, executes it, returns back to the execution point in `main`, finishes `main` and terminates the whole program (`main` here represents program's entry point named after ["main" function in C](https://en.wikipedia.org/wiki/Entry_point#C_and_C++)). 
 
 An equivalent code in Lua which prints `hello`, executes sub-function to print `from`, then returns to `main` and prints `Lua`, looks like this: 
+
 <lua>
 function sub_routine()
 	print("from ")
