@@ -208,9 +208,9 @@ The design of http4k was inspired by ["Your Server as a Function" paper] which d
 ```
 interface HttpHandler<Request, Response>: (Request) -> Future<Response>
 ```
-The main difference compared to http4k is the `Future` in the return type which highlights the asynchronous nature of HTTP requests. The advantage is that each request becomes a task and can be scheduled or even executed asynchronously by the framework. The disadvantage is that `Future` complicates every request and response for some potential performance benefits which don't pay off in most cases. Not doubt, there are large-scale companies which can benefit from this, but the chances are you're one of them. Another argument is that HTTP abstraction should only be dealing with HTTP and stay away from threading strategies, similar to how you would avoid mixing HTTP and domain logic.
+The main difference compared to http4k is the `Future` in the return type which highlights the asynchronous nature of HTTP requests. The advantage is that requests can be treated as tasks to be scheduled for execution asynchronously. The disadvantage is that `Future` complicates every request and response. There are potential performance benefits, and no doubt some large-scale companies can benefit from this, but the chances are you're not one of them. Another argument against using `Future` is that HTTP abstraction should only be dealing with HTTP and stay away from threading strategy, similar to how you would avoid mixing HTTP and domain logic.
 
-From the simple design point of view, it's also not easy to justify the conceptual complexity of an average HTTP framework with its own lifecycle and special testing suite. That's not to mention the use of annotations, which are pretty much [custom keywords][modifiers-vs-annotations] and should probably be used sparingly.
+From the simple design point of view, it's also not easy to justify the conceptual complexity of an average HTTP framework with its own lifecycle and special testing suite. That's not to mention the use of annotations, which are pretty much [custom keywords][modifiers-vs-annotations] and should be used sparingly.
 
 
 ### Summary
@@ -219,7 +219,7 @@ One thing to remember from this blog, is that **HTTP servers and clients are uni
 It's worth mentioning that http4k has been successfully used in large-scale enterprise systems.
 There are quite a few http4k modules and this blog just scratches the surface of [the core module].
 You can find out more about http4k on [its website][http4k].
-For a bit more in-depth overview, I suggest you watch this video by http4k authors:
+For a bit more in-depth overview, here is a video by http4k authors:
 <p align="center">
 	<iframe width="800" height="450" src="https://www.youtube.com/embed/p1VTfcQJefk" frameborder="0" allowfullscreen></iframe>
 </p>
