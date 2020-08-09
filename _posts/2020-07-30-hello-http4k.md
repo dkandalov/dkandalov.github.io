@@ -201,7 +201,7 @@ HTTP/1.1 418 I'm a teapot
 You can find more filters bundled with http4k in `org.http4k.filter.ServerFilters` and `org.http4k.filter.ClientFilters` objects.
 
 ### HTTP as a function
-Just like any other library or framework http4k is only an abstraction on top of the HTTP protocol. Event the simplest GET request can end up talking to multiple servers (think DNS, SSL) and with containerised cloud (using kubernetes, etc.) there is even more stuff going on in the background. So the library design is by no means a representation of reality but rather it's an abstraction for the library users. Arguably, for the majority of users plain old function (POF?) with an immutable request/response is the best abstraction over HTTP.
+Just like any other library or framework http4k is only an abstraction on top of the HTTP protocol. Even the simplest GET request can end up talking to multiple servers (think DNS, SSL) and with containerised cloud (using kubernetes, etc.) there is even more stuff going on in the background. So the library design is by no means a representation of reality but rather it's an abstraction for the library users. Arguably, for the majority of users plain old function (POF?) with an immutable request/response is the best abstraction over HTTP.
 
 The design of http4k was inspired by ["Your Server as a Function" paper] which defines `HttpHandler` in a bit more complicated way and roughly translates to Kotlin like this:
 ```
