@@ -8,6 +8,7 @@ permalink: public-speaking
 
 | Dates | Event | Talk |
 | --- | --- | --- |
+| 17 November     | [DevCon Live](https://www.dev-con.ro/agenda/3-web-mobile-week) | Server as a function with http4k | 
 | 17 October      | [Devfest Poland](https://gdg.community.dev/events/details/google-gdg-warszawa-presents-devfest-poland-2020-with-gdg) | [Server as a function with http4k](https://www.youtube.com/watch?v=x325JPp1aSo&t=6345s) | 
 | 6 October       | [JAX London](https://jaxlondon.com) | Server as a function with http4k,<br/>Error handling in Kotlin and beyond | 
 | 24 September    | [VKUG](https://www.meetup.com/Virtual-Kotlin-User-Group/events/269998087) | [Server as a function with http4k](https://www.youtube.com/watch?v=GVU5VWGTJgc) | 
