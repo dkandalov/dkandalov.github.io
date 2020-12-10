@@ -12,20 +12,22 @@ I intend to keep this page up-to-date with new settings and changes in my prefer
      - disable `Smart Keys > Honor "CamelHumps" words on double click`
      - disable `Smart Keys > Surround selection on typing quote or brace`
      - disable `Appearance > Show intention bulb`
-     - disable `Appearance > Smooth scrolling`
      - disable `Breadcrumbs > Show breadcrumbs`
      - enable `Rich-Text Copy > Plain text`
  - in `Editor > Code Editing`
      - disable `Highlight on Caret Movement > Usages of element at caret`
      - disable `Show quick documentation on mouse move`
  - in `Appearance & Behavior > Appearance`
-     - enable `Automatically position mouse cursor on default button`
-     - disable `Allow merging buttons on dialogs`
+     - disable `Smooth scrolling`
+     - enable `Automatically position mouse cursor on default button`<br/>
+       (in the latest versions of IJ it can only be set in Registry using `ide.settings.move.mouse.on.default.button`)
+     - disable `Allow merging buttons on dialogs`<br/>
+       (in the latest versions of IJ it can only be set in Registry using `ide.allow.merge.buttons`)
 
 ### IDE Registry
 Use `Find Action` and search for "Registry...":
  - disable `ide.mac.file.chooser.native` — IJ file chooser dialog is just better
- - disable `light.edit.file.open.enabled` — <br/> 
+ - disable `light.edit.file.open.enabled` — <br/>
    because light editor it's not ready yet (see [IDEA-236868](https://youtrack.jetbrains.com/issue/IDEA-236868))
  - enable `analyze.exceptions.on.the.fly` — <br/>
    automatically analyze clipboard content for stacktrace on IDE frame activation
