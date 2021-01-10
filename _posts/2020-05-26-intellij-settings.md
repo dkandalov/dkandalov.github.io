@@ -37,6 +37,9 @@ Use `Find Action` and search for "Registry...":
  - disable `git.reset.credential.helper` — don't save passwords in IDE ([IDEA-211251](https://youtrack.jetbrains.com/issue/IDEA-211251))
  - disable `show.live.templates.in.completion` (see [IDEA-216928](https://youtrack.jetbrains.com/issue/IDEA-216928))
  - configure `undo.globalUndoLimit` and `undo.documentUndoLimit`
+ - enable `toolwindow.disable.overlay.by.double.key` — <br/>
+   because when using `alt+...` shortcuts (e.g. with [IJKL shortcuts plugin](https://github.com/dkandalov/ijkl-shortcuts-plugin)) 
+   it can be annoying in presentation mode to accidentally open toolwindow overlay (see [IDEA-112097](https://youtrack.jetbrains.com/issue/IDEA-112097)) 
 
 ### IDE Keymap
  - use [IJKL shortcuts plugin](https://github.com/dkandalov/ijkl-shortcuts-plugin)
