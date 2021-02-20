@@ -4,6 +4,15 @@ title: Public speaking
 permalink: public-speaking
 ---
 
+### 2021
+
+| Dates | Event | Talk |
+| --- | --- | --- |
+| 23 March        | [Codemotion - Italian Edition](https://events.codemotion.com/conferences/online/2021/online-tech-conference-italian-edition-spring) | Server as a function with http4k |
+| 13 March        | [ACCU](https://flame.firebird.systems/archer-yates/ACCU2021/MyProgrammes#Programme.ItemPage.104.0) | [Limited work-in-progress for developers](https://flame.firebird.systems/archer-yates/ACCU2021/MyProgrammes#Entry.ItemPage.12114.0.EntryDefinition.b8efce33-2c84-4290-ba65-991a03ef305d) |
+| 07 February     | [FOSDEM](https://fosdem.org/2021) | [Server as a function with http4k](https://fosdem.org/2021/schedule/event/live_coding_with_http4k) |
+{:.post-table}
+
 ### 2020
 
 | Dates | Event | Talk |
@@ -45,7 +54,7 @@ permalink: public-speaking
 | 15 September  | [Uncodebar 4](https://codebar.io/events/uncodebar-4) | Live Coding Kotlin/Native Snake |
 | 7-10 June     | [SoCraTes UK](http://socratesuk.org) | Coroutines explained |
 | 20-21 April   | [Citcon](https://www.citconf.com/vienna2018) | Coroutines explained |
-| 11-14 April   | [ACCU 2018](https://conference.accu.org/2018/accu2018.html) | Coroutines explained |
+| 11-14 April   | [ACCU](https://accu.org/conf-main/main) | Coroutines explained |
 | 17-19 January | [NDC London](https://ndc-london.com) | [An introduction to Kotlin by example](https://www.youtube.com/watch?v=6k7az23iZME) | 
 {:.post-table}
 
@@ -59,7 +68,7 @@ permalink: public-speaking
 | 15-17 May       | [Riga DevDays](https://rigadevdays.lv/) | [An introduction to Kotlin by example](https://www.youtube.com/watch?v=k1QUKaDMiYU) |
 | 11-12 May       | [Devoxx UK](http://www.devoxx.co.uk) | [An introduction to Kotlin by example](https://www.youtube.com/watch?v=pjC8C1xid3k) |
 | 7 October       | [SoCraTes Day Berlin](https://www.meetup.com/Software-Craftsmanship-Berlin/events/241973901/) | An introduction to Kotlin by example |
-| 26-29 April     | [ACCU 2017](https://conference.accu.org/2017/accu2017.html) | [An introduction to Kotlin by example](https://www.youtube.com/watch?v=uZqo21geUa0) | 
+| 26-29 April     | [ACCU](https://accu.org/conf-main/main) | [An introduction to Kotlin by example](https://www.youtube.com/watch?v=uZqo21geUa0) | 
 {:.post-table}
 
 ### 2016
@@ -69,7 +78,7 @@ permalink: public-speaking
 | 19-22 September | [Java One](https://en.wikipedia.org/wiki/JavaOne) | Code History Analysis and Visualization |
 | 17-27 June      | [SPA 2016](https://spaconference.org/spa2016) | Code History Analysis and Visualization |
 | 2-5 June        | [SoCraTes UK](http://socratesuk.org) | Spy on yourself |
-| 19-23 April     | [ACCU 2016](https://accu.org/index.php/conferences/accu_conference_2016) | Code History Analysis and Visualization |
+| 19-23 April     | [ACCU](https://accu.org/index.php/conferences/accu_conference_2016) | Code History Analysis and Visualization |
 {:.post-table}
 
 ### 2014
