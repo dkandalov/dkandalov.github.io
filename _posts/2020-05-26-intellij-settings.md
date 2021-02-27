@@ -39,7 +39,10 @@ Use `Find Action` and search for "Registry...":
  - configure `undo.globalUndoLimit` and `undo.documentUndoLimit`
  - enable `toolwindow.disable.overlay.by.double.key` — <br/>
    because when using `alt+...` shortcuts (e.g. with [IJKL shortcuts plugin](https://github.com/dkandalov/ijkl-shortcuts-plugin)) 
-   it can be annoying in presentation mode to accidentally open toolwindow overlay (see [IDEA-112097](https://youtrack.jetbrains.com/issue/IDEA-112097)) 
+   it can be annoying in presentation mode to accidentally open toolwindow overlay (see [IDEA-112097](https://youtrack.jetbrains.com/issue/IDEA-112097))
+ - disable `vcs.commit.tool.window` — show local changes and shelf tabs in VCS toolwindow
+ - enable `vcs.non.modal.commit.toggle.ui` — hide commit panel after commit is performed
+ - enable `vcs.background.commit.checks` — perform commit checks in background
 
 ### IDE Keymap
  - use [IJKL shortcuts plugin](https://github.com/dkandalov/ijkl-shortcuts-plugin)
