@@ -40,14 +40,14 @@ Use `Find Action` and search for "Registry...":
  - enable `toolwindow.disable.overlay.by.double.key` — <br/>
    because when using `alt+...` shortcuts (e.g. with [IJKL shortcuts plugin](https://github.com/dkandalov/ijkl-shortcuts-plugin)) 
    it can be annoying in presentation mode to accidentally open toolwindow overlay (see [IDEA-112097](https://youtrack.jetbrains.com/issue/IDEA-112097))
- - disable `vcs.commit.tool.window` — show local changes and shelf tabs in VCS toolwindow
+ - disable `vcs.commit.tool.window` — show local changes and shelf tabs in VCS tool window
  - enable `vcs.non.modal.commit.toggle.ui` — hide commit panel after commit is performed
  - enable `vcs.background.commit.checks` — perform commit checks in background
 
 ### IDE Keymap
  - use [IJKL shortcuts plugin](https://github.com/dkandalov/ijkl-shortcuts-plugin)
  - remove `F1` from keymap
- - use `cmd+2` for Git toolwindow
+ - use `cmd+2` for Git tool window
  - use `cmd+M` for "Scroll to Center"
  - use `cmd+shift+G` for "Execute Gradle Task"
  - assign a shortcut to `Window > Notifications > Close First / Close All` (see [IDEA-218434](https://youtrack.jetbrains.com/issue/IDEA-218434))

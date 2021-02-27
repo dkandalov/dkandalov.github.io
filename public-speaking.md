@@ -21,7 +21,7 @@ permalink: public-speaking
 | 17 October      | [Devfest Poland](https://gdg.community.dev/events/details/google-gdg-warszawa-presents-devfest-poland-2020-with-gdg) | [Server as a function with http4k](https://www.youtube.com/watch?v=x325JPp1aSo&t=6345s) | 
 | 6 October       | [JAX London](https://jaxlondon.com) | Server as a function with http4k,<br/>Error handling in Kotlin and beyond | 
 | 24 September    | [VKUG](https://www.meetup.com/Virtual-Kotlin-User-Group/events/269998087) | [Server as a function with http4k](https://www.youtube.com/watch?v=GVU5VWGTJgc) | 
-| 9-11 June       | [XP 2020](https://www.agilealliance.org/xp2020) | Limited WIP for Developers | 
+| 9-11 June       | [XP 2020](https://www.agilealliance.org/xp2020) | [Limited WIP for Developers](https://www.agilealliance.org/xp2020/xp-2020-online-program/industry-and-practice-abstracts/#Kandalov) | 
 | 29-30 May       | [CITCON Virtual](https://citconf.com/virtual2020) | Limited WIP for Developers | 
 | 8 May           | [SoCraTes UK](https://www.eventbrite.co.uk/e/socrates-uk-2020-digital-spring-tickets-101979310864) | Server as a function with http4k | 
 | 5 March         | [Talking.Kt](https://talkingkt.fr) | [Server as a function with http4k](https://www.youtube.com/watch?v=vsueRJCJuLI) | 
