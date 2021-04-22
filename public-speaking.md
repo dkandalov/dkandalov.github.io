@@ -9,7 +9,7 @@ permalink: public-speaking
 | Dates | Event | Talk |
 | --- | --- | --- |
 | 23 March        | [Codemotion - Italian Edition](https://events.codemotion.com/conferences/online/2021/online-tech-conference-italian-edition-spring) | Server as a function with http4k |
-| 13 March        | [ACCU](https://flame.firebird.systems/archer-yates/ACCU2021/MyProgrammes#Programme.ItemPage.104.0) | [Limited work-in-progress for developers](https://flame.firebird.systems/archer-yates/ACCU2021/MyProgrammes#Entry.ItemPage.12114.0.EntryDefinition.b8efce33-2c84-4290-ba65-991a03ef305d) |
+| 13 March        | [ACCU](https://flame.firebird.systems/archer-yates/ACCU2021/MyProgrammes#Programme.ItemPage.104.0) | [Limited work-in-progress for developers](https://www.youtube.com/watch?v=AWbgen9x6xs),<br/>[How to write a quine?](https://www.youtube.com/watch?v=wOZd5PnUCD8) |
 | 07 February     | [FOSDEM](https://fosdem.org/2021) | [Server as a function with http4k](https://fosdem.org/2021/schedule/event/live_coding_with_http4k) |
 {:.post-table}
 
