@@ -2,8 +2,8 @@
 permalink: intellij-settings
 ---
 
-As a reminder for myself and for the benefit of anyone else interested, here are some of my IntelliJ settings.
-I intend to keep this page up-to-date with new settings and changes in my preferences. 
+For the benefit of anyone who might be interested and as a reference for myself, here are the IntelliJ (and related OSX) settings I normally use.
+This page is being updated on new IntelliJ releases and changes in my preferences. Last update: `IJ 2021.1.1`. 
 
 ### IDE Settings
  - disable `Main Menu > View > Appearance > Navigation Bar`
@@ -23,6 +23,7 @@ I intend to keep this page up-to-date with new settings and changes in my prefer
        (in the latest versions of IJ it can only be set in Registry using `ide.settings.move.mouse.on.default.button`)
      - disable `Allow merging buttons on dialogs`<br/>
        (in the latest versions of IJ it can only be set in Registry using `ide.allow.merge.buttons`)
+     - disable `System Settings > Updates > Show What's New in the editor after an IDE update`  
 
 ### IDE Registry
 Use `Find Action` and search for "Registry...":
@@ -43,6 +44,7 @@ Use `Find Action` and search for "Registry...":
  - disable `vcs.commit.tool.window` — show local changes and shelf tabs in VCS tool window
  - enable `vcs.non.modal.commit.toggle.ui` — hide commit panel after commit is performed
  - enable `vcs.background.commit.checks` — perform commit checks in background
+ - disable `ide.switcher.tool.window.list` and `ide.recent.files.tool.window.list` — hide tool windows from switcher and recent file popups (see [IDEA-131137](https://youtrack.jetbrains.com/issue/IDEA-131137))
 
 ### IDE Keymap
  - use [IJKL shortcuts plugin](https://github.com/dkandalov/ijkl-shortcuts-plugin)
