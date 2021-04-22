@@ -1,5 +1,4 @@
 ---
-draft: true 
 permalink: max-change-size
 title: Limited WIP — Maximum change size
 ---
@@ -20,11 +19,11 @@ After a while this technique should naturally nudge you into working in a more f
 
 
 ### Calculating change size
-Calculating change size is a bit more tricky than it seems. The most obvious question is what to count: lines, words, characters or even the amount of actions/keystrokes in the editor since last commit? Should empty lines and whitespace characters be excluded? Regardless of the choice, there is a problem that modifications of the same size might have different real-world weight. For example, in Java adding an import statement is usually less work compared to writing a line of code which will be executed. Another problem is that conceptually simple changes can produce large diffs. For example, renaming a function which is used across the project will create a large diff even though it's a single rename. There are other problems of this kind and none of them have simple solutions just because it's extremely hard to measure complexity and impact of code. In practice though, I found that using a simple metric like non-empty lines of code works quite well.
+Calculating change size is a bit more tricky than it seems. The most obvious question is what to count: lines, words, characters or even the amount of actions/keystrokes in the editor since last commit? Should empty lines and whitespace characters be excluded? Regardless of the choice, there is a problem that modifications of the same size might have different real-world weight. For example, in Java adding an import statement is usually less work compared to writing a line of code that will be executed. Another problem is that conceptually simple changes can produce large diffs. For example, renaming a function which is used across the project will create a large diff even though it's a single rename. There are other problems of this kind and none of them have simple solutions just because it's extremely hard to measure complexity and impact of code. In practice though, I found that using a simple metric like non-empty lines of code works quite well.
 
 Another question is how to calculate modifications on diffs. If we are measuring change size in lines, then adding a brand-new file with 10 lines of code should count as 10. But what if the change is replacing 10 lines of code with completely different 5 lines? Should the change size include only the new code, both old and new `10 + 5 = 15` or maybe average `(10 + 5) / 2 = 7.5`? 
 
-Finally, there is a question about how to quantify file system changes such as moving/renaming files or creating directories and how well the diff algorithm can determine if the file was moved or it's a new file with similar content.
+Finally, there is a question about how to quantify file system changes such as moving/renaming files or creating directories and how well the diff algorithm can determine if a file was moved or it's a new file with similar content.
 
 Given the above, the maximum change size is obviously a heuristic which you will need to experiment with to make it useful. A good strategy might be to start with a threshold which is quite low and gradually increase it. Note that you can also track your progress in version control by analysing how commit sizes changed over time.
 
