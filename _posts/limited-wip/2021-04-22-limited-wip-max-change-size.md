@@ -29,7 +29,7 @@ Given the above, the maximum change size is obviously a heuristic which you will
 
 
 ### Thought experiments
-To explore the idea, let's perform couple thought experiments: 
+To explore the idea, let's perform a couple of thought experiments: 
 - With the maximum change of 1_000_000 lines of code you will never notice that there is a change size limit because pretty much nobody changes a million lines of code on daily basis.
 - If we go down to maximum change size of 10_000, once again it's unlikely to be noticed, except for large-scale code migration and restructuring. 
 - It becomes more interesting with the change size limit around 100 and below. This is where the learning opportunities are. 
