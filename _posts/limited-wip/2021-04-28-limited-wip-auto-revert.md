@@ -43,7 +43,7 @@ Finally, when using auto-revert, you might start committing really often. This b
 
 
 ### Try it yourself!
-The simplest way to try auto-revert is to use a timer on command line on your phone. Although if you're not pair-programming, it's easy to negotiate with yourself and skip the revert "just this one time". A bit more advanced approach might be to write a script which will perform `git reset` every few minutes and restart timer if there are no local changes. I ended up going down the path of creating [Limited WIP plugin] for IntelliJ IDEs.
+The simplest way to try auto-revert is to use a timer on the command line or on your phone. Although if you're not pair-programming, it's easy to negotiate with yourself and skip the revert "just this one time". A bit more advanced approach might be to write a script which will perform `git reset` every few minutes and restart timer if there are no local changes. I ended up going down the path of creating [Limited WIP plugin] for IntelliJ IDEs.
 
 Auto-revert is an absolutely essential constraint to try on a [codekata] to challenge your current ways of working and observe reaction to code being reverted. It can be more tricky to use on a large-scale project but it's worth trying just to find the bottlenecks in your working environment. Similar to other workflows, nothing is set in stone with auto-revert, so feel free to experiment with it and have fun.
 
