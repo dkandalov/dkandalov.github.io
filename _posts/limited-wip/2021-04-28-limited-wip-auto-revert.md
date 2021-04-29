@@ -1,5 +1,4 @@
 ---
-draft: true 
 permalink: auto-revert
 title: Limited WIP — Auto-revert
 ---
