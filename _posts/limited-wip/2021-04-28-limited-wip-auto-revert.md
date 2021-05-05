@@ -7,7 +7,7 @@ As software developers we seem to be mostly interested in technology and tools r
 
 The interesting part is failing at red-green-refactor steps by making too many changes. It's easy to focus on the solution, start exploring how it can be expressed in a programming language and end up writing/changing way more code than is necessary to pass existing tests. When we finally add more tests for the implemented functionality, the new code might not work as expected, so we need to debug it, therefore red-code-code-debug-green pattern (notice that the "refactor" step is missing). It's quite a common problem so [Adrian Bolboaca] came up with [baby steps] constraint for [code retreats] which essentially adds a time limit to red-green-refactor steps.
 
-The idea of limiting work-in-progress (WIP) based on time is not specific to TDD and can be used in other contexts as well. Similar to other limited WIP techniques, the benefits are about doing more focused work with fewer mistakes while constantly keeping project in a releasable state. In this blog post I'll describe a generic version of [baby steps] constraint which I call "auto-revert".
+The idea of limiting work-in-progress (WIP) based on time is not specific to TDD and can be used in other contexts as well. Similar to other limited WIP techniques, the benefits are about doing more focused work with fewer mistakes while constantly keeping project in a releasable state. In this blog post I'll describe a generic version of the baby steps constraint which I call "auto-revert".
 
 
 ### The idea
