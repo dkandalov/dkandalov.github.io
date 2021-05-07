@@ -1,5 +1,4 @@
 ---
-draft: true
 permalink: tcr
 title: Limited WIP — test && commit || revert
 ---
