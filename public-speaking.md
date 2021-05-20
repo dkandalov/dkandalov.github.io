@@ -8,6 +8,8 @@ permalink: public-speaking
 
 | Dates | Event | Talk |
 | --- | --- | --- |
+| 9 June          | [DevDays Moscow](https://devdayscon.ru/Dmitry-Kandalov) | Limited work-in-progress for developers |
+| 19 May          | [Codemotion Online - English Edition](https://events.codemotion.com/conferences/online/2021/online-tech-conference-spring/agenda) | Server as a function with http4k |
 | 23 March        | [Codemotion - Italian Edition](https://events.codemotion.com/conferences/online/2021/online-tech-conference-italian-edition-spring) | Server as a function with http4k |
 | 13 March        | [ACCU](https://flame.firebird.systems/archer-yates/ACCU2021/MyProgrammes#Programme.ItemPage.104.0) | [Limited work-in-progress for developers](https://www.youtube.com/watch?v=AWbgen9x6xs),<br/>[How to write a quine?](https://www.youtube.com/watch?v=wOZd5PnUCD8) |
 | 07 February     | [FOSDEM](https://fosdem.org/2021) | [Server as a function with http4k](https://fosdem.org/2021/schedule/event/live_coding_with_http4k) |
