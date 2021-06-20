@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="billboard.css">
+    <link rel="stylesheet" href="bulmaswatch.min.css">
+    <script src="billboard.js"></script>
+    <title>Chart Builder</title>
+</head>
+<body>
+<section class="section">
+    <div class="container">
+        <h1 class="title">Chart Builder</h1>
+        <div class="columns is-8">
+            <div class="column is-four-fifths">
+                <div class="box">
+                    <div id="chart"></div>
+                </div>
+                <div class="field">
+                    <label class="label">CSV data:</label>
+                    <div class="control">
+                    <textarea id="textarea-with-data" class="textarea is-small" placeholder="e.g. 1,2,3,4,5"></textarea>
+                    </div>
+                </div>
+                <div class="control">
+                    <button onclick="onUpdateChart()" class="button is-link">Update chart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    function onUpdateChart() {
+        let words = document.getElementById('textarea-with-data').value.split(",");
+        let array = Array(words + 1);
+        array[0] = "data";
+        words.forEach((word, index) => {
+            array[index + 1] = parseFloat(word);
+        });
+        generateChart(array);
+    }
+
+    function generateChart(data) {
+        bb.generate({
+            data: {
+                columns: [data],
+                type: "line"
+            },
+            bindto: "#chart"
+        });
+    }
+
+    generateChart(["data", 1, 15, 30, 10]);
+
+</script>
+</body>
+</html>
