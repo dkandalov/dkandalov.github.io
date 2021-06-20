@@ -17,6 +17,20 @@
                 <div class="box">
                     <div id="chart"></div>
                 </div>
+                <div class="field is-hidden">
+                    <div class="select is-rounded">
+                        <select id="chart-type" onchange="onChartType(value)">
+                            <option value="line">Line</option>
+                            <option value="spline">Spline</option>
+                            <option value="step">Step</option>
+                            <option value="bar">Bar</option>
+                            <option value="scatter">Scatter</option>
+                            <option value="area">Area</option>
+                            <option value="area-spline">Area spline</option>
+                            <option value="area-step">Area step</option>
+                        </select>
+                    </div>
+                </div>
                 <div class="field">
                     <label class="label">CSV data:</label>
                     <div class="control">
@@ -31,21 +45,30 @@
     </div>
 </section>
 <script>
+    let chartType = document.getElementById("chart-type").value;
+    let data = ["data", 1, 15, 30, 10];
+
+    function onChartType(value) {
+        chartType = value;
+        generateChart();
+    }
+
     function onUpdateChart() {
-        let words = document.getElementById('textarea-with-data').value.split(",");
+        let words = document.getElementById("textarea-with-data").value.split(",");
         let array = Array(words + 1);
         array[0] = "data";
         words.forEach((word, index) => {
             array[index + 1] = parseFloat(word);
         });
-        generateChart(array);
+        data = array;
+        generateChart();
     }
 
-    function generateChart(data) {
+    function generateChart() {
         bb.generate({
             data: {
                 columns: [data],
-                type: "line"
+                type: chartType
             },
             legend: {
                 show: false
@@ -57,7 +80,7 @@
         });
     }
 
-    generateChart(["data", 1, 15, 30, 10]);
+    generateChart();
 
 </script>
 </body>
