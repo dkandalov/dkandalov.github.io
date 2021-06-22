@@ -8,6 +8,11 @@
  * @version 3.0.3
  */
 /*-- Chart --*/
+svg {
+    font: 10px sans-serif;
+    background-color: white;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+
 .bb svg {
     font: 10px sans-serif;
     background-color: white;
