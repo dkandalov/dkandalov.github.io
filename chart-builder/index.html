@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="billboard.css">
     <link rel="stylesheet" href="bulmaswatch.min.css">
+    <script type="text/javascript" src="https://unpkg.com/canvg@3.0.4/lib/umd.js"></script>
     <script src="billboard.js"></script>
     <title>Chart Builder</title>
 </head>
@@ -37,8 +38,14 @@
                     <textarea id="textarea-with-data" class="textarea is-small" placeholder="e.g. 1,2,3,4,5"></textarea>
                     </div>
                 </div>
-                <div class="control">
-                    <button onclick="onUpdateChart()" class="button is-link">Update chart</button>
+
+                <div class="field is-grouped">
+                    <div class="control">
+                        <button onclick="onUpdateChart()" class="button is-link">Update chart</button>
+                    </div>
+                    <div class="control">
+                        <button onclick="onSave()" class="button">Save as PNG</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -47,6 +54,48 @@
 <script>
     let chartType = document.getElementById("chart-type").value;
     let data = ["data", 1, 15, 30, 10];
+
+    function onSave() {
+        fetch("billboard.css")
+            .then(response => response.text())
+            .then(css => {
+                let svgHtml = document.getElementById("chart").children[0];
+                let style = "<style>" + css + "</style>"
+
+                let svgData = new XMLSerializer().serializeToString(svgHtml);
+                let i = svgData.indexOf(">");
+                svgData = svgData.substring(0, i + 1) + style + svgData.substring(i + 1);
+                svgData = svgData.replaceAll(/clip-path="url\(.*?(#.*?)\)"/g, 'clip-path="url($1)"');
+
+                let svgBlob = new Blob([svgData], {type: "image/svg+xml;charset=utf-8"});
+                let bounding = svgHtml.getBoundingClientRect();
+                let width = bounding.width * 2;
+                let height = bounding.height * 2;
+                let canvas = document.createElement("canvas");
+                let context = canvas.getContext("2d");
+
+                // Set the canvas width and height before loading the new Image
+                canvas.width = width;
+                canvas.height = height;
+
+                let image = new Image();
+                image.onload = function() {
+                    // Clear the context
+                    context.clearRect(0, 0, width, height);
+                    context.drawImage(image, 0, 0, width, height);
+                    canvas.toBlob(function(svgBlob) {
+                        let svgUrl = URL.createObjectURL(svgBlob);
+                        let downloadLink = document.createElement("a");
+                        downloadLink.href = svgUrl;
+                        downloadLink.download = "chart.png";
+                        document.body.appendChild(downloadLink);
+                        downloadLink.click();
+                        document.body.removeChild(downloadLink);
+                    });
+                };
+                image.src = URL.createObjectURL(svgBlob);
+            });
+    }
 
     function onChartType(value) {
         chartType = value;
@@ -75,6 +124,9 @@
             },
             zoom: {
                 enabled: true
+            },
+            svg: {
+                classname: "bb"
             },
             bindto: "#chart"
         });
