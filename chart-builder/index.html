@@ -18,7 +18,7 @@
                 <div class="box">
                     <div id="chart"></div>
                 </div>
-                <div class="field">
+                <div class="field is-hidden">
                     <div class="select is-rounded">
                         <select id="chart-type" onchange="onChartType(value)">
                             <option value="line">Line</option>
@@ -39,6 +39,9 @@
                         <input type="checkbox" id="show-grid" onclick="onShowGrid()">
                         Show grid
                     </label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="Title" onchange="onTitle(value)">
+                    </div>
                 </div>
                 <div class="field">
                     <label class="label">CSV data:</label>
@@ -61,6 +64,7 @@
 </section>
 <script>
     let chartType = document.getElementById("chart-type").value;
+    let chartTitle = "";
     let showLegend = false;
     let showGrid = false;
     let data = ["data", 1, 15, 30, 10];
@@ -112,6 +116,11 @@
         generateChart();
     }
 
+    function onTitle(value) {
+        chartTitle = value;
+        generateChart();
+    }
+
     function onShowLegend() {
         showLegend = document.getElementById("show-legend").checked;
         generateChart();
@@ -149,6 +158,9 @@
                 y: {
                     show: showGrid
                 }
+            },
+            title: {
+                text: chartTitle
             },
             zoom: {
                 enabled: true
