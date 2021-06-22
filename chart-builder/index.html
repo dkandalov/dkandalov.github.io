@@ -31,6 +31,10 @@
                             <option value="area-step">Area step</option>
                         </select>
                     </div>
+                    <label class="checkbox">
+                        <input type="checkbox" id="show-legend" onclick="onShowLegend()">
+                        Show legend
+                    </label>
                 </div>
                 <div class="field">
                     <label class="label">CSV data:</label>
@@ -53,6 +57,7 @@
 </section>
 <script>
     let chartType = document.getElementById("chart-type").value;
+    let showLegend = false;
     let data = ["data", 1, 15, 30, 10];
 
     function onSave() {
@@ -102,6 +107,11 @@
         generateChart();
     }
 
+    function onShowLegend() {
+        showLegend = document.getElementById("show-legend").checked;
+        generateChart();
+    }
+
     function onUpdateChart() {
         let words = document.getElementById("textarea-with-data").value.split(",");
         let array = Array(words + 1);
@@ -120,7 +130,7 @@
                 type: chartType
             },
             legend: {
-                show: false
+                show: showLegend
             },
             zoom: {
                 enabled: true
