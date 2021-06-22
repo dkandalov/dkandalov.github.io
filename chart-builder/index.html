@@ -18,7 +18,7 @@
                 <div class="box">
                     <div id="chart"></div>
                 </div>
-                <div class="field is-hidden">
+                <div class="field">
                     <div class="select is-rounded">
                         <select id="chart-type" onchange="onChartType(value)">
                             <option value="line">Line</option>
@@ -34,6 +34,10 @@
                     <label class="checkbox">
                         <input type="checkbox" id="show-legend" onclick="onShowLegend()">
                         Show legend
+                    </label>
+                    <label class="checkbox">
+                        <input type="checkbox" id="show-grid" onclick="onShowGrid()">
+                        Show grid
                     </label>
                 </div>
                 <div class="field">
@@ -58,6 +62,7 @@
 <script>
     let chartType = document.getElementById("chart-type").value;
     let showLegend = false;
+    let showGrid = false;
     let data = ["data", 1, 15, 30, 10];
 
     function onSave() {
@@ -112,6 +117,11 @@
         generateChart();
     }
 
+    function onShowGrid() {
+        showGrid = document.getElementById("show-grid").checked;
+        generateChart();
+    }
+
     function onUpdateChart() {
         let words = document.getElementById("textarea-with-data").value.split(",");
         let array = Array(words + 1);
@@ -132,8 +142,19 @@
             legend: {
                 show: showLegend
             },
+            grid: {
+                x: {
+                    show: showGrid
+                },
+                y: {
+                    show: showGrid
+                }
+            },
             zoom: {
                 enabled: true
+            },
+            transition: {
+                duration: null
             },
             svg: {
                 classname: "bb"
