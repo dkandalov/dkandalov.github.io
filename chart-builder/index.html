@@ -46,7 +46,7 @@
                 <div class="field">
                     <label class="label">CSV data:</label>
                     <div class="control">
-                    <textarea id="textarea-with-data" class="textarea is-small" placeholder="e.g. 1,2,3,4,5"></textarea>
+                    <textarea id="textarea-with-data" class="textarea is-small" placeholder="e.g. 1,2,3,4,5">1,15,30,10</textarea>
                     </div>
                 </div>
 
@@ -67,7 +67,7 @@
     let chartTitle = "";
     let showLegend = false;
     let showGrid = false;
-    let data = ["data", 1, 15, 30, 10];
+    let data = parseCsv(document.getElementById("textarea-with-data").value);
 
     function onSave() {
         fetch("billboard.css")
@@ -132,14 +132,18 @@
     }
 
     function onUpdateChart() {
-        let words = document.getElementById("textarea-with-data").value.split(",");
-        let array = Array(words + 1);
+        data = parseCsv(document.getElementById("textarea-with-data").value);
+        generateChart();
+    }
+
+    function parseCsv(value) {
+        let values = value.split(/[,\n]/);
+        let array = Array(values + 1);
         array[0] = "data";
-        words.forEach((word, index) => {
+        values.forEach((word, index) => {
             array[index + 1] = parseFloat(word);
         });
-        data = array;
-        generateChart();
+        return array;
     }
 
     function generateChart() {
