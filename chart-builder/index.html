@@ -43,13 +43,24 @@
                         <input class="input" type="text" placeholder="Title" onchange="onTitle(value)">
                     </div>
                 </div>
+                <div class="tabs is-hidden">
+                    <ul>
+                        <li id="tab-0" class="is-active"><a onclick="onTab(0)">Series 1</a></li>
+                        <li id="tab-1" ><a onclick="onTab(1)">Series 2</a></li>
+                        <li id="tab-2" ><a onclick="onTab(2)">Series 3</a></li>
+                    </ul>
+                </div>
                 <div class="field">
-                    <label class="label">CSV data:</label>
                     <div class="control">
-                    <textarea id="textarea-with-data" class="textarea is-small" placeholder="e.g. 1,2,3,4,5">1,15,30,10</textarea>
+                        <textarea id="textarea-with-data-0" class="textarea is-small" placeholder="CSV data, e.g. 1,2,3,4,5">1,15,30,10</textarea>
+                    </div>
+                    <div class="control">
+                        <textarea id="textarea-with-data-1" class="textarea is-small is-hidden" placeholder="CSV data, e.g. 1,2,3,4,5"></textarea>
+                    </div>
+                    <div class="control">
+                        <textarea id="textarea-with-data-2" class="textarea is-small is-hidden" placeholder="CSV data, e.g. 1,2,3,4,5"></textarea>
                     </div>
                 </div>
-
                 <div class="field is-grouped">
                     <div class="control">
                         <button onclick="onUpdateChart()" class="button is-link">Update chart</button>
@@ -67,7 +78,11 @@
     let chartTitle = "";
     let showLegend = false;
     let showGrid = false;
-    let data = parseCsv(document.getElementById("textarea-with-data").value);
+    let data = [
+        parseCsv(0, document.getElementById("textarea-with-data-0").value),
+        parseCsv(1, document.getElementById("textarea-with-data-1").value),
+        parseCsv(2, document.getElementById("textarea-with-data-2").value)
+    ];
 
     function onSave() {
         fetch("billboard.css")
@@ -111,6 +126,13 @@
             });
     }
 
+    function onTab(tabIndex) {
+        [0, 1, 2].forEach((i) => {
+            document.getElementById(`tab-${i}`).className = i === tabIndex ? "is-active" : "";
+            document.getElementById(`textarea-with-data-${i}`).className = i === tabIndex ? "textarea is-small" : "textarea is-small is-hidden";
+        });
+    }
+
     function onChartType(value) {
         chartType = value;
         generateChart();
@@ -132,14 +154,16 @@
     }
 
     function onUpdateChart() {
-        data = parseCsv(document.getElementById("textarea-with-data").value);
+        data[0] = parseCsv(0, document.getElementById("textarea-with-data-0").value);
+        data[1] = parseCsv(1, document.getElementById("textarea-with-data-1").value);
+        data[2] = parseCsv(2, document.getElementById("textarea-with-data-2").value);
         generateChart();
     }
 
-    function parseCsv(value) {
+    function parseCsv(index, value) {
         let values = value.split(/[,\n]/);
         let array = Array(values + 1);
-        array[0] = "data";
+        array[0] = `series-${index}`;
         values.forEach((word, index) => {
             array[index + 1] = parseFloat(word);
         });
@@ -149,7 +173,7 @@
     function generateChart() {
         bb.generate({
             data: {
-                columns: [data],
+                columns: data,
                 type: chartType
             },
             legend: {
