@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="bulmaswatch.min.css">
     <script type="text/javascript" src="https://unpkg.com/canvg@3.0.4/lib/umd.js"></script>
     <script src="billboard.js"></script>
+    <script src="d3-array@3.min.js"></script>
     <title>Chart Builder</title>
 </head>
 <body>
@@ -178,6 +179,18 @@
             },
             legend: {
                 show: showLegend
+            },
+            axis: {
+                x: {
+                    tick: {
+                        values: function() {
+                            let stepCount = 10;
+                            let min = 0;
+                            let max = data[0].length - 1;
+                            return d3.range(min, max, d3.tickStep(min, max, stepCount));
+                        }
+                    }
+                }
             },
             grid: {
                 x: {
