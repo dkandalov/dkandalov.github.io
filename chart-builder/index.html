@@ -182,6 +182,9 @@
             },
             axis: {
                 x: {
+                    padding: {
+                        left: 0
+                    },
                     tick: {
                         values: function() {
                             let stepCount = 10;
@@ -189,6 +192,11 @@
                             let max = data[0].length - 1;
                             return d3.range(min, max, d3.tickStep(min, max, stepCount));
                         }
+                    }
+                },
+                y: {
+                    padding: {
+                        bottom: 0
                     }
                 }
             },
