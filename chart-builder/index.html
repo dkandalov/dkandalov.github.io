@@ -44,22 +44,9 @@
                         <input class="input" type="text" placeholder="Title" onchange="onTitle(value)">
                     </div>
                 </div>
-                <div class="tabs">
-                    <ul>
-                        <li id="tab-0" class="is-active"><a onclick="onTab(0)">Series 1</a></li>
-                        <li id="tab-1" ><a onclick="onTab(1)">Series 2</a></li>
-                        <li id="tab-2" ><a onclick="onTab(2)">Series 3</a></li>
-                    </ul>
-                </div>
                 <div class="field">
                     <div class="control">
-                        <textarea id="textarea-with-data-0" class="textarea is-small" placeholder="CSV data, e.g. 1,2,3,4,5">1,15,30,10</textarea>
-                    </div>
-                    <div class="control">
-                        <textarea id="textarea-with-data-1" class="textarea is-small is-hidden" placeholder="CSV data, e.g. 1,2,3,4,5"></textarea>
-                    </div>
-                    <div class="control">
-                        <textarea id="textarea-with-data-2" class="textarea is-small is-hidden" placeholder="CSV data, e.g. 1,2,3,4,5"></textarea>
+                        <textarea id="textarea-with-data" class="textarea is-small" placeholder="CSV data, e.g. 1,2,3,4,5">1,15,30,10</textarea>
                     </div>
                 </div>
                 <div class="field is-grouped">
@@ -124,13 +111,6 @@
             });
     }
 
-    function onTab(tabIndex) {
-        [0, 1, 2].forEach((i) => {
-            document.getElementById(`tab-${i}`).className = i === tabIndex ? "is-active" : "";
-            document.getElementById(`textarea-with-data-${i}`).className = i === tabIndex ? "textarea is-small" : "textarea is-small is-hidden";
-        });
-    }
-
     function onChartType(value) {
         chartType = value;
         generateChart();
@@ -157,19 +137,15 @@
     }
 
     function loadData() {
-        let series0 = parseCsv(document.getElementById("textarea-with-data-0").value);
-        let series1 = parseCsv(document.getElementById("textarea-with-data-1").value);
-        let series2 = parseCsv(document.getElementById("textarea-with-data-2").value);
+        let values = parseCsv(document.getElementById("textarea-with-data").value);
 
-        let minY = Math.min(...series0, ...series1, ...series2);
-        let maxY = Math.max(...series0, ...series1, ...series2);
+        let minY = Math.min(...values);
+        let maxY = Math.max(...values);
         if (minY >= 0 && maxY >= 0) minY = 0;
         else if (minY <= 0 && maxY <= 0) maxY = 0;
 
-        series0.unshift("series-0");
-        series1.unshift("series-1");
-        series2.unshift("series-2");
-        return [[series0, series1, series2], minY, maxY];
+        values.unshift("series");
+        return [[values], minY, maxY];
     }
 
     function parseCsv(value) {
