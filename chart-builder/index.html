@@ -44,7 +44,7 @@
                         <input class="input" type="text" placeholder="Title" onchange="onTitle(value)">
                     </div>
                 </div>
-                <div class="tabs is-hidden">
+                <div class="tabs">
                     <ul>
                         <li id="tab-0" class="is-active"><a onclick="onTab(0)">Series 1</a></li>
                         <li id="tab-1" ><a onclick="onTab(1)">Series 2</a></li>
@@ -79,11 +79,8 @@
     let chartTitle = "";
     let showLegend = false;
     let showGrid = false;
-    let data = [
-        parseCsv(0, document.getElementById("textarea-with-data-0").value),
-        parseCsv(1, document.getElementById("textarea-with-data-1").value),
-        parseCsv(2, document.getElementById("textarea-with-data-2").value)
-    ];
+    let data, minY, maxY;
+    [data, minY, maxY] = loadData();
 
     function onSave() {
         fetch("billboard.css")
@@ -155,18 +152,32 @@
     }
 
     function onUpdateChart() {
-        data[0] = parseCsv(0, document.getElementById("textarea-with-data-0").value);
-        data[1] = parseCsv(1, document.getElementById("textarea-with-data-1").value);
-        data[2] = parseCsv(2, document.getElementById("textarea-with-data-2").value);
+        [data, minY, maxY] = loadData();
         generateChart();
     }
 
-    function parseCsv(index, value) {
-        let values = value.split(/[,\n]/);
-        let array = Array(values + 1);
-        array[0] = `series-${index}`;
+    function loadData() {
+        let series0 = parseCsv(document.getElementById("textarea-with-data-0").value);
+        let series1 = parseCsv(document.getElementById("textarea-with-data-1").value);
+        let series2 = parseCsv(document.getElementById("textarea-with-data-2").value);
+
+        let minY = Math.min(...series0, ...series1, ...series2);
+        let maxY = Math.max(...series0, ...series1, ...series2);
+        if (minY >= 0 && maxY >= 0) minY = 0;
+        else if (minY <= 0 && maxY <= 0) maxY = 0;
+
+        series0.unshift("series-0");
+        series1.unshift("series-1");
+        series2.unshift("series-2");
+        return [[series0, series1, series2], minY, maxY];
+    }
+
+    function parseCsv(value) {
+        if (!value) return [];
+        let values = value.trim().split(/[,\n]/);
+        let array = Array(values.length);
         values.forEach((word, index) => {
-            array[index + 1] = parseFloat(word);
+            array[index] = parseFloat(word);
         });
         return array;
     }
@@ -195,6 +206,8 @@
                     }
                 },
                 y: {
+                    min: minY,
+                    max: maxY,
                     padding: {
                         bottom: 0
                     }
