@@ -162,7 +162,7 @@
     }
 
     function loadData() {
-        let series = parseCsv(document.getElementById("textarea-with-data").value);
+        let series = parseCsvLines(document.getElementById("textarea-with-data").value);
 
         let allValues = series.flat();
         let minY = Math.min(...allValues);
@@ -174,22 +174,21 @@
         return [series, minY, maxY];
     }
 
-    function parseCsv(value) {
-        if (!value) return [];
-        let lines = value.trim().split(/[\r\n]/);
-        return lines.map((line, index) => parseCsvLine(line, index));
-    }
-
-    function parseCsvLine(line, lineIndex) {
-        let values = line.split(",");
-        if (values.length === 0) return [];
-        let result = values.map(word => parseFloat(word));
-        if (isNaN(result[0])) {
-            result[0] = values[0];
-        } else {
-            result.unshift(`series-${lineIndex + 1}`);
+    function parseCsvLines(text) {
+        function parseLine(line, lineIndex) {
+            let values = line.split(",");
+            if (values.length === 0) return [];
+            let result = values.map(word => parseFloat(word));
+            if (isNaN(result[0])) {
+                result[0] = values[0];
+            } else {
+                result.unshift(`series-${lineIndex + 1}`);
+            }
+            return result;
         }
-        return result;
+        if (!text) return [];
+        let lines = text.trim().split(/[\r\n]/);
+        return lines.map((line, index) => parseLine(line, index));
     }
 
     function generateChart() {
