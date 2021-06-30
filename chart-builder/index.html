@@ -62,7 +62,7 @@
                     <div class="control">
                         <button onclick="onSave()" class="button">Save as PNG</button>
                     </div>
-                    <div class="dropdown is-hoverable is-up is-hidden">
+                    <div class="dropdown is-hoverable is-up">
                         <div class="dropdown-trigger">
                             <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
                                 <span class="icon">
@@ -72,12 +72,15 @@
                         </div>
                         <div class="dropdown-menu" id="dropdown-menu" role="menu">
                             <div class="dropdown-content">
-                                <a href="#" class="dropdown-item">Dropdown item</a>
-                                <a class="dropdown-item">Other dropdown item</a>
-                                <a href="#" class="dropdown-item is-active">Active dropdown item</a>
-                                <a href="#" class="dropdown-item">Show legend</a>
-                                <hr class="dropdown-divider">
-                                <a href="#" class="dropdown-item">Transposed CSV</a>
+<!--                                <a href="#" class="dropdown-item">Dropdown item</a>-->
+<!--                                <a class="dropdown-item">Other dropdown item</a>-->
+<!--                                <hr class="dropdown-divider">-->
+                                <div class="dropdown-item">
+                                    <label class="checkbox">
+                                        <input type="checkbox" id="parse-transposed" onchange="onParseTransposed(this)">
+                                        Transposed CSV
+                                    </label>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -91,6 +94,7 @@
     let chartTitle = "";
     let showLegend = false;
     let showGrid = false;
+    let parseTransposed = false;
     let data, minY, maxY;
     [data, minY, maxY] = loadData();
 
@@ -161,17 +165,64 @@
         generateChart();
     }
 
+    function onParseTransposed(checkbox) {
+        parseTransposed = checkbox.checked;
+        onUpdateChart();
+    }
+
     function loadData() {
-        let series = parseCsvLines(document.getElementById("textarea-with-data").value);
+        function isNumber(value) {
+            return typeof value === 'number' && isFinite(value);
+        }
+        function min(array) {
+            let result = Number.MAX_VALUE;
+            array.forEach(it => {
+                if (isNumber(it)) result = Math.min(it, result)
+            });
+            return result;
+        }
+        function max(array) {
+            let result = Number.MIN_VALUE;
+            array.forEach(it => {
+                if (isNumber(it)) result = Math.max(it, result)
+            });
+            return result;
+        }
+
+        let series = parseTransposed ?
+            parseCsvLines(document.getElementById("textarea-with-data").value) :
+            parseCsvColumns(document.getElementById("textarea-with-data").value);
 
         let allValues = series.flat();
-        let minY = Math.min(...allValues);
-        let maxY = Math.max(...allValues);
+        let minY = min(allValues);
+        let maxY = max(allValues);
         if (minY >= 0 && maxY >= 0) minY = 0;
         else if (minY <= 0 && maxY <= 0) maxY = 0;
-        console.log(minY, maxY)
 
         return [series, minY, maxY];
+    }
+
+    function parseCsvColumns(text) {
+        if (!text) return [];
+        let lines = text.trim().split(/[\r\n]/);
+        if (lines.length === 0) return [];
+        let columnNames = lines[0].split(",");
+        let hasHeader = isNaN(parseFloat(columnNames[0]));
+
+        let series = columnNames.map(() => Array(lines.length));
+        lines.forEach((line, lineIndex) => {
+            let values;
+            if (lineIndex === 0 && hasHeader) {
+                values = columnNames
+            } else {
+                values = line.split(",").map(word => parseFloat(word));
+            }
+            values.forEach((value, columnIndex) => series[columnIndex][lineIndex] = value)
+        })
+        if (!hasHeader) {
+            [...series.keys()].forEach((index) => series[index].unshift(`series-${index}`));
+        }
+        return series;
     }
 
     function parseCsvLines(text) {
