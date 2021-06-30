@@ -19,72 +19,93 @@
 </svg>
 <section class="section">
     <div class="container">
-        <h1 class="title">Chart Builder</h1>
         <div class="columns is-8">
             <div class="column is-four-fifths">
                 <div class="box">
                     <div id="chart"></div>
                 </div>
-                <div class="field is-hidden">
-                    <div class="select is-rounded">
-                        <select id="chart-type" onchange="onChartType(value)">
-                            <option value="line">Line</option>
-                            <option value="spline">Spline</option>
-                            <option value="step">Step</option>
-                            <option value="bar">Bar</option>
-                            <option value="scatter">Scatter</option>
-                            <option value="area">Area</option>
-                            <option value="area-spline">Area spline</option>
-                            <option value="area-step">Area step</option>
-                        </select>
-                    </div>
-                    <label class="checkbox">
-                        <input type="checkbox" id="show-legend" onclick="onShowLegend()">
-                        Show legend
-                    </label>
-                    <label class="checkbox">
-                        <input type="checkbox" id="show-grid" onclick="onShowGrid()">
-                        Show grid
-                    </label>
-                    <div class="control">
-                        <input class="input" type="text" placeholder="Title" onchange="onTitle(value)">
-                    </div>
-                </div>
-                <div class="field">
-                    <div class="control">
-                        <textarea id="textarea-with-data" class="textarea is-small" placeholder="CSV data, e.g. 1,2,3,4,5">1,15,30,10</textarea>
-                    </div>
-                </div>
-                <div class="field is-grouped">
-                    <div class="control">
-                        <button onclick="onUpdateChart()" class="button is-link">Update chart</button>
-                    </div>
-                    <div class="control">
-                        <button onclick="onSave()" class="button">Save as PNG</button>
-                    </div>
-                    <div class="dropdown is-hoverable is-up">
-                        <div class="dropdown-trigger">
-                            <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                <div class="columns is-8">
+                    <div class="column is-half">
+                        <h4 class="title is-4">Data</h4>
+                        <div class="field">
+                            <div class="control">
+                                <textarea id="textarea-with-data" class="textarea is-small" placeholder="CSV data, e.g. 1,2,3,4,5">1,15,30,10</textarea>
+                            </div>
+                        </div>
+                        <div class="field is-grouped">
+                            <div class="control">
+                                <button onclick="onUpdateChart()" class="button is-link">Update chart</button>
+                            </div>
+                            <div class="control">
+                                <button onclick="onSave()" class="button">Save as PNG</button>
+                            </div>
+                            <div class="dropdown is-hoverable is-up">
+                                <div class="dropdown-trigger">
+                                    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
                                 <span class="icon">
                                     <svg class="fa-cog"><use xlink:href="#fa-cog"></use></svg>
                                 </span>
-                            </button>
-                        </div>
-                        <div class="dropdown-menu" id="dropdown-menu" role="menu">
-                            <div class="dropdown-content">
-<!--                                <a href="#" class="dropdown-item">Dropdown item</a>-->
-<!--                                <a class="dropdown-item">Other dropdown item</a>-->
-<!--                                <hr class="dropdown-divider">-->
-                                <div class="dropdown-item">
-                                    <label class="checkbox">
-                                        <input type="checkbox" id="parse-transposed" onchange="onParseTransposed(this)">
-                                        Transposed CSV
-                                    </label>
+                                    </button>
+                                </div>
+                                <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                                    <div class="dropdown-content">
+                                        <!-- <a href="#" class="dropdown-item">Dropdown item</a>-->
+                                        <!-- <a class="dropdown-item">Other dropdown item</a>-->
+                                        <!-- <hr class="dropdown-divider">-->
+                                        <div class="dropdown-item">
+                                            <label class="checkbox">
+                                                <input type="checkbox" id="parse-transposed" onchange="onParseTransposed(this)">
+                                                Transposed CSV
+                                            </label>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                    <div class="column is-half">
+                        <h4 class="title is-4">Chart settings</h4>
+                        <div class="field">
+                            <div class="control">
+                                <input class="input" type="text" placeholder="Title" onchange="onTitle(value)">
+                            </div>
+                        </div>
+                        <div class="field is-horizontal">
+                            <div class="field-label is-normal">
+                                <label class="label">Chart type</label>
+                            </div>
+                            <div class="field-body">
+                                <div class="field">
+                                    <div class="control">
+                                        <div class="select">
+                                            <select id="chart-type" onchange="onChartType(value)">
+                                                <option value="line">Line</option>
+                                                <option value="spline">Spline</option>
+                                                <option value="step">Step</option>
+                                                <option value="bar">Bar</option>
+                                                <option value="scatter">Scatter</option>
+                                                <option value="area">Area</option>
+                                                <option value="area-spline">Area spline</option>
+                                                <option value="area-step">Area step</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="checkbox">
+                                <input type="checkbox" id="show-legend" onclick="onShowLegend()">
+                                Show legend
+                            </label>
+                        </div>
+                        <div class="field">
+                            <label class="checkbox">
+                                <input type="checkbox" id="show-grid" onclick="onShowGrid()">
+                                Show grid
+                            </label>
+                        </div>
+                    </div>
             </div>
         </div>
     </div>
