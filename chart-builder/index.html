@@ -57,7 +57,7 @@
                                         </div>
                                         <div class="dropdown-item">
                                             <label class="checkbox">
-                                                <input type="checkbox" onchange="onParseTransposed(this)">
+                                                <input type="checkbox" checked onchange="onParseTransposed(this)">
                                                 Transposed CSV
                                             </label>
                                         </div>
@@ -118,7 +118,7 @@
     let chartTitle = "";
     let showLegend = false;
     let showGrid = false;
-    let parseTransposed = false;
+    let parseTransposed = true;
     let firstSeriesIsX = false;
     let data, minY, maxY, minX, maxX;
     [data, minY, maxY, minX, maxX] = loadData();
