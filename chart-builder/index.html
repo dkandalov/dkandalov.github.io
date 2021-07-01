@@ -49,12 +49,15 @@
                                 </div>
                                 <div class="dropdown-menu" id="dropdown-menu" role="menu">
                                     <div class="dropdown-content">
-                                        <!-- <a href="#" class="dropdown-item">Dropdown item</a>-->
-                                        <!-- <a class="dropdown-item">Other dropdown item</a>-->
-                                        <!-- <hr class="dropdown-divider">-->
                                         <div class="dropdown-item">
                                             <label class="checkbox">
-                                                <input type="checkbox" id="parse-transposed" onchange="onParseTransposed(this)">
+                                                <input type="checkbox" onchange="onFirstRowIsX(this)">
+                                                First series is X
+                                            </label>
+                                        </div>
+                                        <div class="dropdown-item">
+                                            <label class="checkbox">
+                                                <input type="checkbox" onchange="onParseTransposed(this)">
                                                 Transposed CSV
                                             </label>
                                         </div>
@@ -116,8 +119,9 @@
     let showLegend = false;
     let showGrid = false;
     let parseTransposed = false;
-    let data, minY, maxY;
-    [data, minY, maxY] = loadData();
+    let firstSeriesIsX = false;
+    let data, minY, maxY, minX, maxX;
+    [data, minY, maxY, minX, maxX] = loadData();
 
     function onSave() {
         fetch("billboard.css")
@@ -182,8 +186,13 @@
     }
 
     function onUpdateChart() {
-        [data, minY, maxY] = loadData();
+        [data, minY, maxY, minX, maxX] = loadData();
         generateChart();
+    }
+
+    function onFirstRowIsX(checkbox) {
+        firstSeriesIsX = checkbox.checked;
+        onUpdateChart();
     }
 
     function onParseTransposed(checkbox) {
@@ -214,13 +223,21 @@
             parseCsvLines(document.getElementById("textarea-with-data").value) :
             parseCsvColumns(document.getElementById("textarea-with-data").value);
 
-        let allValues = series.flat();
-        let minY = min(allValues);
-        let maxY = max(allValues);
+        let yValues = firstSeriesIsX ? series.slice(1).flat() : series.flat();
+        let minY = min(yValues);
+        let maxY = max(yValues);
         if (minY >= 0 && maxY >= 0) minY = 0;
         else if (minY <= 0 && maxY <= 0) maxY = 0;
 
-        return [series, minY, maxY];
+        let minX = undefined;
+        let maxX = undefined;
+        if (firstSeriesIsX) {
+            let xValues = series[0];
+            minX = min(xValues);
+            maxX = max(xValues);
+        }
+
+        return [series, minY, maxY, minX, maxX];
     }
 
     function parseCsvColumns(text) {
@@ -266,6 +283,7 @@
     function generateChart() {
         bb.generate({
             data: {
+                x: firstSeriesIsX ? data[0][0] : null,
                 columns: data,
                 type: chartType
             },
@@ -274,14 +292,16 @@
             },
             axis: {
                 x: {
+                    min: minX,
+                    max: maxX,
                     padding: {
                         left: 0
                     },
                     tick: {
                         values: function() {
                             let stepCount = 10;
-                            let min = 0;
-                            let max = data[0].length - 1;
+                            let min = firstSeriesIsX ? minX : 0;
+                            let max = firstSeriesIsX ? maxX : data[0].length - 1;
                             return d3.range(min, max, d3.tickStep(min, max, stepCount));
                         }
                     }
