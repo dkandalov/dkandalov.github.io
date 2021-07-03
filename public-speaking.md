@@ -8,6 +8,8 @@ permalink: public-speaking
 
 | Dates | Event | Talk |
 | --- | --- | --- |
+| 03 July         | [Kotland](https://www.kotland.org) | Server as a function with http4k |
+| 25 June         | [jLove](https://jlove.konfy.care) | Limited work-in-progress for developers |
 | 9 June          | [DevDays Moscow](https://devdayscon.ru/Dmitry-Kandalov) | Limited work-in-progress for developers |
 | 19 May          | [Codemotion Online - English Edition](https://events.codemotion.com/conferences/online/2021/online-tech-conference-spring/agenda) | Server as a function with http4k |
 | 23 March        | [Codemotion - Italian Edition](https://events.codemotion.com/conferences/online/2021/online-tech-conference-italian-edition-spring) | Server as a function with http4k |
