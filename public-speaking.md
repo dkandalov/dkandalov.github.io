@@ -8,6 +8,7 @@ permalink: public-speaking
 
 | Dates | Event | Talk |
 | --- | --- | --- |
+| 22 July         | [Brighton Kotlin Meetup](https://www.meetup.com/Brighton-Kotlin/events/279015769) | Server as a function with http4k |
 | 03 July         | [Kotland](https://www.kotland.org) | Server as a function with http4k |
 | 25 June         | [jLove](https://jlove.konfy.care) | Limited work-in-progress for developers |
 | 9 June          | [DevDays Moscow](https://devdayscon.ru/Dmitry-Kandalov) | Limited work-in-progress for developers |
