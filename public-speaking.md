@@ -8,6 +8,7 @@ permalink: public-speaking
 
 | Dates | Event | Talk |
 | --- | --- | --- |
+| 02 December     | [Kotlin Koders](https://kotlin-koders.eu) | [Live coding server as a function with http4k](https://kotlin-koders.eu/#/talk/http4KLiveCoding) |
 | 25 November     | [VKUG](https://www.meetup.com/Virtual-Kotlin-User-Group/events/281875470) | [The Easy Way to Create IntelliJ Plugins](https://www.youtube.com/watch?v=GcYa4lMRta0) |
 | 17 September    | [SPA Conference 2021](https://www.spaconference.org/schedule) | Workshop: Server as a function with http4k |
 | 22 July         | [Brighton Kotlin Meetup](https://www.meetup.com/Brighton-Kotlin/events/279015769) | [Server as a function with http4k](https://www.youtube.com/watch?v=8RpGIUwe7dI) |
