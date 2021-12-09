@@ -10,7 +10,7 @@ This is a write-up of my experience converting source code of
 plugin for IntelliJ IDEs from [Groovy](http://www.groovy-lang.org/) to [Kotlin](https://kotlinlang.org/).
 
 It is written for anyone familiar with Groovy or Kotlin
-and might be especially relevant if you are considering move from Groovy to Kotlin.
+and might be especially relevant if you are considering moving from Groovy to Kotlin.
 Hopefully, it can be interesting for non-Groovy and non-Kotlin people as well.
 
 Please note that this is not intended to be a thorough comparison or overview of the languages.
@@ -25,18 +25,18 @@ It keeps all the data locally so you can see and control what is being logged.
 IntelliJ plugins are usually written in Java with a bit of xml configs and IntelliJ platform Java API.
 Activity Tracker is not like that at all. In the first place, it mostly ignores standard xml configuration
 and uses [LivePlugin](https://github.com/dkandalov/live-plugin) Groovy API instead.
-From plugin point of view this means that in addition to standard Java APIs it has to interface with LivePlugin Groovy API.
+From a plugin point of view this means that in addition to standard Java APIs it has to interface with LivePlugin Groovy API.
 Secondly, Activity Tracker was itself written in Groovy.
 
 Writing plugins in Groovy is not a common practice.
-At the time the main motivation for me was to use programming language more exciting than Java 6.
+At the time the main motivation for me was to use a programming language more exciting than Java 6.
 These days IntelliJ uses Java 8 and Kotlin is "officially approved" language for writing plugins.
 So migrating from Groovy to Kotlin was not only about having fun but also about moving to standard technology.
 
 
 #### No 'new' keyword
 Unlike Groovy (and probably most JVM languages) there is no ``new`` keyword in Kotlin.
-To create an instance of a class you can just use class name with constructor parameters.
+To create an instance of a class you can just use the class name with constructor parameters.
 
 Groovy:
 <groovy>
@@ -51,7 +51,7 @@ ActivityTracker.Config(...)
 
 #### No implicit narrowing/widening for numbers
 Unlike Groovy (and probably most JVM languages) there is no implicit narrowing/widening conversion for numbers in Kotlin.
-That is if you have variable of type ``Long`` you cannot assign ``Int`` value to it and vice versa.
+That is if you have a variable of type ``Long`` you cannot assign ``Int`` value to it and vice versa.
 
 Even though this might seem strange,
 it makes perfect sense because ``Int`` and ``Long`` classes are not subtypes of each other.
@@ -59,7 +59,7 @@ The same applies to ``Double`` and ``Float``.
 Considering how subtle and difficult it can be to find implicit conversion bugs
 this is probably a good design.
 
-(In case you were wondering about silent number underflow/overflow, it is still there. Works the same way as in Java.)
+(In case you were wondering about the silent number underflow/overflow, it is still there. Works the same way as in Java.)
 
 Groovy:
 <groovy>
@@ -78,9 +78,9 @@ longValue = intValue.toLong() // works ok
 
 #### Closure type parameters
 In Groovy types and type parameters are optional.
-You can skip types all together or specify them in when you feel like doing it.
+You can skip types all together or specify them when you feel like doing it.
 I found it useful to always add types to libraries and other APIs which might be heavily used from other code.
-It works fine except for ``Closure<V>`` type which has type parameter only for its return value.
+It works fine except for the ``Closure<V>`` type which has a type parameter only for its return value.
 To be fair, there is ``ClosureParams`` annotation to specify types for closure inputs, but it's too painful to use.
 
 In Kotlin, closures (aka lambdas) have type parameters for inputs and output as you would expect.
@@ -98,14 +98,14 @@ private fun updateState(closure: (State) -&gt; State) {...}
 
 
 #### "With" vs "run" and "apply"
-One of the interesting features in Groovy is ``.with`` function defined on ``Object`` class.
-It takes a closure and executes it with ``this`` set to target object.
+One of the interesting features in Groovy is the ``.with`` function defined on the ``Object`` class.
+It takes a closure and executes it with ``this`` set to the target object.
 The result of ``.with`` function is the value of the last expression in closure.
-This can be useful for calling a bunch of methods on object which doesn't have fluent API.
+This can be useful for calling a bunch of methods on an object which doesn't have a fluent API.
 
-Confusingly, Kotlin has ``with`` function which does exactly the same thing except that it cannot be called on object itself.
-So to replace Groovy ``.with`` in Kotlin there is ``.run`` function.
-In addition, there is the ``.apply`` function in Kotlin which is like ``.run`` but returns target object.
+Confusingly, Kotlin has ``with`` function which does exactly the same thing except that it cannot be called on the object itself.
+So to replace Groovy ``.with`` in Kotlin there is a ``.run`` function.
+In addition, there is the ``.apply`` function in Kotlin which is like ``.run`` but returns a target object.
 This is useful for building object trees and avoiding ``it`` as the last expression in each closure.
 
 Groovy:
@@ -149,8 +149,8 @@ In Groovy it's a class with ``@Immutable`` annotation, in Kotlin ``data class`` 
 One of the things you might want to do with value-object is copy it into new object
 changing one or more fields.
 
-Even though underlying implementation is different,
-from user point of view Groovy and Kotlin code looks similar.
+Even though the underlying implementation is different,
+from the user point of view Groovy and Kotlin code looks similar.
 
 Groovy:
 <groovy>
@@ -218,15 +218,15 @@ Kotlin:
 
 #### Almost optional "return"
 In Groovy the last expression in function/closure is its return value.
-You can use ``return`` keyword to return from function earlier, otherwise it's entirely optional.
+You can use ``return`` keyword to return from a function earlier, otherwise it's entirely optional.
 
 In Kotlin this is more complex.
-Functions must have ``return`` keyword while lambdas cannot use ``return``.
+Functions must have the ``return`` keyword while lambdas cannot use ``return``.
 The result of the last expression in lambda is the value that lambda will return.
-And ``return`` in lambda means returning from enclosing method.
+And ``return`` in lambda means returning from the enclosing method.
 
 There must be good reasons behind this design in Kotlin
-but why last expression in function needs ``return`` keyword is a mystery for me.
+but why the last expression in functions needs the ``return`` keyword is a mystery for me.
 
 In practice, I had no problems with it except when transforming Kotlin lambdas
 into methods and the other way round because the code has to be modified to add/remove ``return``s.
@@ -235,9 +235,9 @@ into methods and the other way round because the code has to be modified to add/
 #### Getting Class object
 Kotlin has its own reflection classes, i.e. in addition to ``java.lang.Class`` there is ``kotlin.reflect.KClass``.
 This makes sense because Kotlin has language features which do not exist in Java.
-(For example, you might want to check using reflection if function argument is optional.)
+(For example, you might want to check using reflection if the function argument is optional.)
 
-In Groovy, as far as I know, it's not possible to check using reflection whether function argument is optional or not.
+In Groovy, as far as I know, it's not possible to check using reflection whether a function argument is optional or not.
 Probably, analyzing Groovy AST is the way to do it.
 
 Java:
@@ -284,17 +284,17 @@ FileOutputStream(File(statsFilePath), true).buffered().writer(utf8).use { writer
 
 
 #### Enhanced Collections and Maps
-In Groovy there are few functions in ``DefaultGroovyMethods`` class which are automatically added to all collection classes.
+In Groovy there are few functions in the ``DefaultGroovyMethods`` class which are automatically added to all collection classes.
 For example, ``collectEntries()`` function takes a closure and, assuming the closure returns
-two-elements arrays, puts them into a map with first element as a entry key and second element as its value.
-Or ``sort()`` function which take a closure and returns sorted collection or even a sorted map.
+two-element arrays, puts them into a map with the first element as an entry key and second element as its value.
+Or ``sort()`` function which takes a closure and returns a sorted collection or even a sorted map.
 
 Kotlin has many similar functions available on collections and maps. There are few subtle differences though.
 Similar to Groovy ``collectEntries()`` Kotlin has ``associateBy()`` function but it's only available on collections, not on maps.
 This makes it harder to convert one map into another.
 Another example is ``sortBy()`` function which in Kotlin exists only on collections and not maps.
 
-(Note that except for few difference the code below is almost identical.)
+(Note that except for a few differences, the code below is almost identical.)
 
 Groovy:
 <groovy>
@@ -325,10 +325,10 @@ For example, if you load exactly the same bytecode for a class in two different 
 then instances of the class won't be assignable between the class loaders.
 
 In Groovy this is still true but since Groovy is an optionally typed language,
-you can skip types and use object from another class loader calling methods dynamically.
+you can skip types and use objects from another class loader calling methods dynamically.
 This is not a feature you would use every day but it can be useful.
 
-Since Kotlin is statically typed language there is no workaround (except for some verbose reflection magic).
+Since Kotlin is a statically typed language there is no workaround (except for some verbose reflection magic).
 To be precise, Kotlin has [dynamic types](https://kotlinlang.org/docs/reference/dynamic-type.html)
 but they are only supported for JavaScript, and not available on JVM.
 
@@ -354,7 +354,7 @@ Kotlin:
 
 #### Extending Groovy interfaces/classes in Kotlin
 If you plan to use Groovy API from Kotlin, be aware that it doesn't work very well at the moment.
-Basically, Kotlin compiler doesn't see method implementations of ``groovy.lang.GroovyObject`` generated by Groovy.
+Basically, the Kotlin compiler doesn't see method implementations of ``groovy.lang.GroovyObject`` generated by Groovy.
 
 The only workaround I found is to manually implement these methods in Kotlin.
 If you know the answer, I'll be grateful if you could reply to
@@ -393,7 +393,7 @@ so when switching from Groovy, Kotlin feels like "a language I almost know".
 Being statically typed, Kotlin might have a bit more "resistance" than Groovy.
 On the other hand, it seems to be more suitable for writing "big legacy enterprise projects".
 
-If you expected opinion about which language is better, sorry there won't be one.
+If you expected an opinion about which language is better, sorry there won't be one.
 Both Groovy and Kotlin are good.
 
 To conclude, here is the final code snippet showing strategically designed Kotlin core libraries:

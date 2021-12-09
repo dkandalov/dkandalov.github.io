@@ -14,13 +14,13 @@ This post is part of the blogpost series explaining coroutines, how they impleme
 
 Before diving into `calcc`, it's worth understanding what **continuation** is or rather what people mean when they say "continuation". There are several meanings:
 1. A callback passed into a function. In other words, if a function takes another function as an argument and calls it at some point, the argument is "continuation". 
-2. A function representing the rest of a program. This is a bit more academic definition in which "the rest of the program" actually means the rest of the program, e.g. if we transform program to extract all the code after the current expression into some function, that function will be "continuation".
+2. A function representing the rest of a program. This is a bit more academic definition in which "the rest of the program" actually means the rest of the program, e.g. if we transform a program to extract all the code after the current expression into some function, that function will be "continuation".
 3. Representation of a continuation in a particular programming language (e.g. as a class or an interface).
 4. Compiler or VM support for continuations.
 
 #### Continuation-passing style
 
-[Continuation-passing style](https://en.wikipedia.org/wiki/Continuation-passing_style) (abbreviated as CPS; not to be confused with [CSP](https://en.wikipedia.org/wiki/Communicating_sequential_processes)) is a way to structure programs so that all functions take an additional argument called **continuation** and instead of finishing or returning, functions invoke the continuation. For example, the program below is "hello world" written in [direct style](https://en.wikipedia.org/wiki/Direct_style). It uses built-in `display` function to print messages.
+[Continuation-passing style](https://en.wikipedia.org/wiki/Continuation-passing_style) (abbreviated as CPS; not to be confused with [CSP](https://en.wikipedia.org/wiki/Communicating_sequential_processes)) is a way to structure programs so that all functions take an additional argument called **continuation** and instead of finishing or returning, functions invoke the continuation. For example, the program below is "hello world" written in [direct style](https://en.wikipedia.org/wiki/Direct_style). It uses the built-in `display` function to print messages.
 ```
 (define (main args)
   (display "hello ")
@@ -39,9 +39,9 @@ The same program rewritten in CPS with custom `display-cps` function might look 
   ))
 )
 ```
-As you can see the `main` functions has changed quite a bit. Instead of two statements invoking `display` it's now a single statement calling `display-cps` which takes anonymous function as an argument. The anonymous function created with `(lambda () ... )` contains the second statement with call to `display-cps`. The last lambda is [no-op](https://en.wikipedia.org/wiki/NOP_%28code%29) and returns `#f` ("false" in Scheme) simply because it has to return something.
+As you can see the `main` function has changed quite a bit. Instead of two statements invoking `display` it's now a single statement calling `display-cps` which takes an anonymous function as an argument. The anonymous function created with `(lambda () ... )` contains the second statement with a call to `display-cps`. The last lambda is [no-op](https://en.wikipedia.org/wiki/NOP_%28code%29) and returns `#f` ("false" in Scheme) simply because it has to return something.
 
-Identity function, which unlike "hello world" has a return value, is another trivial example showing the difference between [direct style](https://en.wikipedia.org/wiki/Direct_style) and [CPS](https://en.wikipedia.org/wiki/Continuation-passing_style). It's worth noticing that `continuation` is used here almost like `return` keyword in imperative languages.
+Identity function, which unlike "hello world" has a return value, is another trivial example showing the difference between [direct style](https://en.wikipedia.org/wiki/Direct_style) and [CPS](https://en.wikipedia.org/wiki/Continuation-passing_style). It's worth noticing that `continuation` is used here almost like the `return` keyword in imperative languages.
 ```
 (define (identity value)
 	value
@@ -81,9 +81,9 @@ The same program rewritten in CPS:
 	))
 )
 ```
-To convert `factorial` function to CPS we add one more argument to `factorial-cps` and use it almost like a `return` statement. This is straightforward for values, e.g. in `(continuation 1)`. However, it's a bit more subtle when calling other functions, e.g. `(continuation (* n (factorial-cps (- n 1)))))` won't work. The problem is that the result of `factorial-cps` is only accessible in its callback, so we need to invoke `continuation` inside the lambda. Similarly, in the `main` function we display `result` by passing callback (aka continuation) to `factorial-cps`.
+To convert the `factorial` function to CPS we add one more argument to `factorial-cps` and use it almost like a `return` statement. This is straightforward for values, e.g. in `(continuation 1)`. However, it's a bit more subtle when calling other functions, e.g. `(continuation (* n (factorial-cps (- n 1)))))` won't work. The problem is that the result of `factorial-cps` is only accessible in its callback, so we need to invoke `continuation` inside the lambda. Similarly, in the `main` function we display `result` by passing callback (aka continuation) to `factorial-cps`.
 
-Here is another example of CPS in which we read a file from web sever, save it into a file and [open](https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/open.1.html) the file with default application. Hopefully, this is somewhat convincing that any program can be rewritten in continuation-passing style. However, as you can see in the `main` function, the code quickly becomes very nested. This is [callback hell](http://callbackhell.com) (aka [pyramid of doom](https://en.wikipedia.org/wiki/Pyramid_of_doom_(programming))) and this is when `call/cc` can be really useful.
+Here is another example of CPS in which we read a file from web server, save it into a file and [open](https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/open.1.html) the file with default application. Hopefully, this is somewhat convincing that any program can be rewritten in continuation-passing style. However, as you can see in the `main` function, the code quickly becomes very nested. This is [callback hell](http://callbackhell.com) (aka [pyramid of doom](https://en.wikipedia.org/wiki/Pyramid_of_doom_(programming))) and this is when `call/cc` can be really useful.
 ```
 (use http-client)
 
@@ -173,13 +173,13 @@ The program will print:
 ```
 The main difference here is that in `call/cc` callback `continuation` is saved into a global variable `saved-continuation`. Then we "return" from the callback with `(continuation 100)` so the print statement becomes `(print (+ 100 100))` and will print `200`. Later on after printing `🚀`, we invoke `(saved-continuation count)` so the program jumps back to the expression where `call/cc` was initially invoked and evaluates `call/cc` expression to the current value of `count`. Effectively, this is transferring control flow right into the middle of `+` expression, something that can't be easily done in most programming languages. It's repeated while `counter` is less than `3`, otherwise, the program would loop forever.
 
-The following diagram illustrates the example using [notation from the previous blogpost]({% post_url coroutines/2018-05-01-coroutines-as-threads %}#notation). Similar to coroutines as threads and `yield/async/await`, you can think about continuation as saving current stack and instruction pointer somewhere in memory and using it later to return to a particular point in program. Overall, this is how coroutine implementations and continuations are related to each other.
+The following diagram illustrates the example using [notation from the previous blogpost]({% post_url coroutines/2018-05-01-coroutines-as-threads %}#notation). Similar to coroutines as threads and `yield/async/await`, you can think about continuation as saving the current stack and instruction pointer somewhere in memory and using it later to return to a particular point in the program. Overall, this is how coroutine implementations and continuations are related to each other.
 
 ![](/assets/images/coroutines/callcc/0-callcc.png) 
 
 #### Yield with continuations
 
-Continuation is a more fundamental concept than coroutine and, therefore, can be used to implement coroutines and other control structures such as exceptions. The following example shows minimal implementation of `yeild/resume` using `call/cc`. The main idea is the same as in the rocket jump example. We save current continuation into a variable (in this case `yield-point` and `jump-out`) and use it later to change execution flow. For simplicity, this example uses global variables, but they could be scoped within some object with `yield` and `resume` functions so it will look more like a normal [generator]({% post_url coroutines/2018-05-02-yielding-generators %}).
+Continuation is a more fundamental concept than coroutine and, therefore, can be used to implement coroutines and other control structures such as exceptions. The following example shows minimal implementation of `yeild/resume` using `call/cc`. The main idea is the same as in the rocket jump example. We save the current continuation into a variable (in this case `yield-point` and `jump-out`) and use it later to change execution flow. For simplicity, this example uses global variables, but they could be scoped within some object with `yield` and `resume` functions so it will look more like a normal [generator]({% post_url coroutines/2018-05-02-yielding-generators %}).
 
 ```
 (define (print message)

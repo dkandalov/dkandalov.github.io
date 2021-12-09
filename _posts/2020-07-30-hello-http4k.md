@@ -4,7 +4,7 @@ permalink: hello-http4k
 
 This is a quick intro into [http4k] — a Kotlin library for writing HTTP servers and clients.
 Unlike many other libraries and frameworks with (over)complicated core abstractions and workflows, 
-http4k uses few simple concepts which encourage good design and testability.
+http4k uses a few simple concepts which encourage good design and testability.
 
 The examples below are based on the "[Live coding: Server as a function with http4k]" talk I've been doing earlier this year.
 
@@ -16,7 +16,7 @@ that takes immutable `Request` and returns immutable `Response`
 typealias HttpHandler = (Request) -> Response
 </kotlin>
 
-So the simplest server in http4k is just a lambda which returns an instance of `Response` with `OK` status and (optional) body content. Of course, lambdas can't send/receive HTTP requests over network — for that we need an actual HTTP server.
+So the simplest server in http4k is just a lambda which returns an instance of `Response` with `OK` status and (optional) body content. Of course, lambdas can't send/receive HTTP requests over the network — for that we need an actual HTTP server.
 Http4k doesn't attempt to reinvent the wheel and instead of implementing its own server/client, it has adapters to integrate
 with existing HTTP Java servers/clients.
 In this case, let's use `ApacheServer` which is an adapter for [Apache HttpComponents]:
@@ -89,9 +89,9 @@ In general, this outlines the http4k approach for making HTTP servers testable: 
 ### Hello routes
 The server above works just fine except that it replies to any request regardless of the URI. For example, it will reply with "Hello 🌍" even if we POST to `http://localhost:1234/foo`. 
 
-In order to fix this, we can use `routes()` function which takes one or more `RoutingHttpHandler`s and aggregates them into a composite `RoutingHttpHandler`. 
+In order to fix this, we can use the `routes()` function which takes one or more `RoutingHttpHandler`s and aggregates them into a composite `RoutingHttpHandler`. 
 
-The simplest way to create a `RoutingHttpHandler` is by using the following mini-DSL. First, `"/hello" bind GET` bundles path and HTTP method into `PathMethod` data class, and then, `... to { request: Request -> ... }` creates `RoutingHttpHandler`.
+The simplest way to create a `RoutingHttpHandler` is by using the following mini-DSL. First, `"/hello" bind GET` bundles path and HTTP method into the `PathMethod` data class, and then, `... to { request: Request -> ... }` creates `RoutingHttpHandler`.
 <kotlin>
 import org.http4k.core.*
 import org.http4k.server.*
@@ -160,7 +160,7 @@ fun main() {
     }
 }
 </kotlin>
-To try out the filter, let's make the server extract "name" query parameter from the request and throw an exception if the "name" parameter is missing: `request.query("name") ?: error("No name")`. We can apply the filter using `.withFilter(catchAll)`:
+To try out the filter, let's make the server extract the "name" query parameter from the request and throw an exception if the "name" parameter is missing: `request.query("name") ?: error("No name")`. We can apply the filter using `.withFilter(catchAll)`:
 <kotlin>
 fun main() {
     val catchAll = Filter { nextHandler ->
@@ -201,7 +201,7 @@ HTTP/1.1 418 I'm a teapot
 You can find more filters bundled with http4k in `org.http4k.filter.ServerFilters` and `org.http4k.filter.ClientFilters` objects.
 
 ### HTTP as a function
-Just like any other library or framework http4k is only an abstraction on top of the HTTP protocol. Even the simplest GET request can end up talking to multiple servers (think DNS, SSL) and with containerised cloud (using kubernetes, etc.) there is even more stuff going on in the background. So the library design is by no means a representation of reality but rather it's an abstraction for the library users. Arguably, for the majority of users plain old function (POF?) with an immutable request/response is the best abstraction over HTTP.
+Just like any other library or framework http4k is only an abstraction on top of the HTTP protocol. Even the simplest GET request can end up talking to multiple servers (think DNS, SSL) and with containerised clouds (using kubernetes, etc.) there is even more stuff going on in the background. So the library design is by no means a representation of reality but rather it's an abstraction for the library users. Arguably, for the majority of users plain old function (POF?) with an immutable request/response is the best abstraction over HTTP.
 
 The design of http4k was inspired by ["Your Server as a Function" paper] which defines `HttpHandler` in a bit more complicated way and roughly translates to Kotlin like this:
 ```

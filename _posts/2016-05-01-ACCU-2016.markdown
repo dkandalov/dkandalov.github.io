@@ -14,7 +14,7 @@ It has emphasis on C++ but other languages and technologies are welcome.
 Because of C++ focus, most of the attendees are much more experienced compared to other conferences.
 Therefore, it might be a great opportunity to learn.
 Even though the conference has tracks and schedule prepared in advance,
-overall it feels more like open-space conference where you're welcome to talk to anyone.
+overall it feels more like an aopen-space conference where you're welcome to talk to anyone.
 
 Most of the sessions were filmed but only some of them are available at the moment.
 I’ll update the blog when more videos are published.
@@ -38,7 +38,7 @@ This is the [GitHub project](https://github.com/jcoplien/trygve) for Trygve prog
 - Use-case change rate is usually faster than changes in data.
   Therefore, it doesn't always make sense to combine use-cases and data in classes.
 - Model in MVC (and similar patterns) is human **mental model**.
-- Micro-services don't necessarily solve the most important problem of semantically breaking down project.
+- Micro-services don't necessarily solve the most important problem of semantically breaking down a project.
 
 Amazing sketchnote by [Michel Grootjans](https://twitter.com/michelgrootjans):
 ![](/assets/images/2016-05-01/trygve.png)
@@ -52,17 +52,17 @@ It was very insightful and interesting talk showing how far seemingly niche
 [table planning piece of software](http://www.perfecttableplan.com) can take you if it's done well.
 
 - Success = idea * (execution<sup>2</sup>), i.e. ideas are cheap, execution is crucial.
-- Narrow product which does only one thing is good because internet is BIG and small niche is big enough.
+- Narrow product which does only one thing is good because the internet is BIG and a small niche is big enough.
 - Product won't sell itself, examples like Minecraft are outliers. "Word of mouth" is **very** slow.
-- Amount of marketing required for developing software product is larger than writing software itself.
+- Amount of marketing required for developing software products is larger than writing software itself.
 - The biggest challenge is getting noticed.
 - Typical website conversion rate:
 	- for well targeted visitors - 1%
 	- untargeted - 0.00038%
 - Don't worry too much about competition. No competition means there is no market.
-- Have free trial version.
+- Have a free trial version.
 - The first two minutes of using software is vital. Do UX testing! Actually watch someone using it.
-- Don't have a free version of software. If it's good, everyone will use it. If it's not good, nobody will buy full version.
+- Don't have a free version of software. If it's good, everyone will use it. If it's not good, nobody will buy the full version.
 
 
 #### Waltzing with Branches - [Chris Oldwood](http://chrisoldwood.blogspot.co.uk/)
@@ -71,12 +71,12 @@ It was very insightful and interesting talk showing how far seemingly niche
 	<iframe width="560" height="315" src="https://www.youtube.com/embed/gYhndMJEbpg?list=PL9hrFapz4dsObkSjgBlyFl-aotNvk2GeP" frameborder="0" allowfullscreen></iframe>
 </p>
 
-This talk was partially based on ACCU journal [Branching Strategies](http://accu.org/index.php/journals/1920) article.
+This talk was partially based on the ACCU journal [Branching Strategies](http://accu.org/index.php/journals/1920) article.
 The most interesting idea for me was to think about branching strategies in terms of
 project risk management (see [Waltzing With Bears book](http://www.amazon.com/Waltzing-With-Bears-Managing-Software/dp/0932633609))
 rather than purely software.
 
-- Cargo cult for Google development process. Practices which are useful for Google are no not necessarily useful on you project.
+- Cargo cult for Google development process. Practices which are useful for Google are no not necessarily useful on your project.
 - Branches exist to mitigate perceived risks:
 	- Loss of productivity because of broken trunk.
 	- Loss of confidence because of project code quality, people.
@@ -95,11 +95,11 @@ Amazing sketchnote by [Michel Grootjans](https://twitter.com/michelgrootjans):
 
 There were three parts in this talk:
 
-- using genetic algorithms to determine speed and angle for a particle to leave "paper bag".
+- using genetic algorithms to determine speed and angle for a particle to leave a "paper bag".
 You can find [article on this topic in ACCU journal](http://accu.org/index.php/journals/1821).
 - cellular automata and in particular [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
 which "overflowed" from the paper bag.
-- using genetic algorithm to determine rules for simple cellular automata.
+- using genetic algorithms to determine rules for simple cellular automata.
 
 Source code on GitHub [here](https://github.com/doctorlove/paperbag/tree/master/ga)
 and [here](https://github.com/doctorlove/paperbag/tree/master/evolve/Evolution).
@@ -122,7 +122,7 @@ and software development doesn't have to be an exception (especially if we want 
 
 If you are not familiar with [FizzBuzz](https://en.wikipedia.org/wiki/Fizz_buzz#Programming_interviews)
 or you think that FizzBuzz implementation is obvious and straightforward, this talk is for you.
-On a serious note, it was a great talk about thinking about problems in more declarative way to express your intent rather than computer instructions.
+On a serious note, it was a great talk about thinking about problems in a more declarative way to express your intent rather than computer instructions.
 
 
 #### Balancing Bias in Software Development - [Marian Petre](http://mcs.open.ac.uk/mp8)
@@ -148,7 +148,7 @@ Overall, writing snake sounds like a good "code kata" for exploring new language
 #### Lightning talks
 On Wednesday, Thursday and Friday there were series of 5 minute [lightning talks](https://en.wikipedia.org/wiki/Lightning_talk).
 They were planned during the day and everyone attending the conference was encouraged to give a lightning talk.
-The talks covered variety of topics in different formats and they have to be watched rather than described.
+The talks covered a variety of topics in different formats and they have to be watched rather than described.
 Hopefully lightning talks videos will be published soon.
 
 [Pete Goodliffe](https://twitter.com/petegoodliffe) entertaining audience between lightning talks:

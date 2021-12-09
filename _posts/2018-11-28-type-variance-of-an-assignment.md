@@ -24,8 +24,8 @@ open class B: A() {
 }
 </kotlin>
 Classes `A` and `B` correspond to **types** with the same names.
-Type `B` is subtype of `A` because class `B` inherits from `A`. 
-From practical point of view, this means that we can replace `A` objects with `B` objects and the program will still compile. 
+Type `B` is a subtype of `A` because class `B` inherits from `A`. 
+From a practical point of view, this means that we can replace `A` objects with `B` objects and the program will still compile. 
 For example, given:
 <kotlin>
 A()
@@ -70,7 +70,7 @@ val x2:<s> B</s> A = B() // ok
 The interesting thing here is that unlike examples before replacing `A` with `B` failed to compile but replacing `B` with `A` was ok.
 In other words, replacing `A` and `B` in **object** constructors has different effect compared to replacing `A` and `B` in **variable types**.
  
-This also shows that if `B` is subtype of `A`, we cannot just replace all "A" symbols with "B" everywhere and expect the code to compile.
+This also shows that if `B` is a subtype of `A`, we cannot just replace all "A" symbols with "B" everywhere and expect the code to compile.
 
 This is summarised in the table below:
  
@@ -115,7 +115,7 @@ val x2: () -> B = <s>::readB</s> ::readA // compilation error
 {:.post-table}
 
 The table results look identical to the one we've seen when replacing `A` and `B` objects.
-Since `B` is a subtype of `A`, we can conclude that function with type `() -> B` is subtype of `() -> A`. 
+Since `B` is a subtype of `A`, we can conclude that a function with type `() -> B` is a subtype of `() -> A`. 
 Graphically:
 <plain-text>
 A    () -> A
@@ -157,7 +157,7 @@ val x2: (B) -> Unit = <s>::writeB</s> ::writeA // ok
 {:.post-table}
 
 If we swap rows and columns in the table above, then the results will match the summary table for `A` and `B` objects.
-But also `writeA` and `writeB` labels will swap places with each other, so we can conclude that the type `(A) -> Unit` is subtype of `(B) -> Unit`. 
+But also `writeA` and `writeB` labels will swap places with each other, so we can conclude that the type `(A) -> Unit` is a subtype of `(B) -> Unit`. 
 Graphically:
 <plain-text>
 A    (A) -> Unit
