@@ -11,8 +11,7 @@ This blog post is about [LivePlugin](https://github.com/dkandalov/live-plugin) -
 
 
 ### Why?
-The main reason is faster and simpler workflow for plugin development.
-From the IDE user point of view, this means that you can write plugins for things you wouldn't bother writing plugins otherwise, e.g. project-specific scripts and workflows that can be added to IDE. In a way it's like creating IDE macros using a programming language. It also makes it easier to add "missing" IDE features and try these features before creating a "proper" plugin.
+The main reason is faster and simpler workflow for plugin development. From the IDE user point of view, this means that you can write plugins for things you wouldn't bother writing plugins otherwise, e.g. project-specific scripts and workflows that can be added to IDE. In a way it's like creating IDE macros using a programming language. It also makes it easier to add "missing" IDE features and try these features before creating a "proper" plugin.
 
 - **Minimal setup** — no need to create a separate project for plugin development.
 - **Fast feedback loop** — plugins are executed without IDE restarts.
@@ -41,7 +40,7 @@ Overall, the whole workflow can be summarized in three steps:
 2. compile plugin source code into `.class` file(s)
 3. load plugin classes into newly created classloader and execute the code
 
-This sounds simple but there are more details at each step. In the first place, why do you need to clean up resources from the previous execution? The reason for the cleanup is that if a plugin registers, for example, an IDE event listener, there is no way for the garbage collector to know when the listener is no longer used. So there is a common pattern in IntelliJ IDEs to pass an instance of `com.intellij.openapi.Disposable` class which represents a lifetime of the listener (or some other resource). Each time LivePlugin executes a script, it creates a new `pluginDisposable` object and passes it to the script. The script then will need to use it with IDE APIs or add an explicit cleanup callback (e.g. using `.whenDisposed()` function). When LivePlugin unloads the script, or before script is executed again, it disposes of `pluginDisposable` from the previous execution.
+This sounds simple but there are more details at each step. In the first place, why do you need to clean up resources from the previous execution? The reason for the cleanup is that if a plugin registers, for example, an IDE event listener, there is no way for the garbage collector to know when the listener is no longer used. So there is a common pattern in IntelliJ IDEs to pass an instance of `com.intellij.openapi.Disposable` class which represents a lifetime of the listener (or some other resource). Each time LivePlugin executes a script, it creates a new `pluginDisposable` object and passes it to the script. The script then will need to use it with IDE APIs or add an explicit cleanup callback (e.g. using `.whenDisposed()` function). When LivePlugin unloads the script, or before script is executed again, it disposes `pluginDisposable` from the previous execution.
 
 At the next step LivePlugin compiles plugin source code. This obviously requires a compiler, so the question is where do you get one? At the moment of writing, it seems that all IntelliJ IDEs come with a Kotlin compiler jar. But it's not clear if it will always be the case, and it's hard to know when Kotlin jars will be updated in IDE (with potentially breaking changes), so LivePlugin is bundled with its own Kotlin compiler. Another question is how to compile code which uses IDE APIs. Luckily, since IDE is running on the JVM, it's possible to look up the location of IDE jar files and use them for compilation classpath. This is limiting in a sense that you cannot write code for an older or newer version of IDE, but most of the time it's not a problem and compiling again current version of IDE just makes setup much easier. LivePlugin can also compile code which uses external libraries or other plugins.
 
@@ -86,7 +85,7 @@ logger.error("error message") // Will log and show error notification in IDE.
 println("info message")
 </kotlin>
 
-Finally, there are couple Kotlin functions in `com.intellij.openapi.ui` package and few static functions in the `com.intellij.openapi.ui.Messages` Java class for basic UI dialogs:
+Finally, there are couple Kotlin functions in the `com.intellij.openapi.ui` package and few static functions in the `com.intellij.openapi.ui.Messages` Java class for basic UI dialogs:
 <kotlin>
 val isYes = com.intellij.openapi.ui.showYesNoDialog(
     "Dialog Title",
@@ -290,7 +289,7 @@ document.replaceString(
 )
 </kotlin>
 
-This happens because modifying the state of a document without a write lock violates IntelliJ [Threading Rules](https://plugins.jetbrains.com/docs/intellij/general-threading-rules.html). I recommend reading the rules to understand the details, but overall the rules can be summarised by the following table, where `ReadAction` and `WriteAction` are classes with static `run(ThrowableRunnable)` method and in spite of the name are not related to `AnAction` class described in the section above (yes, naming is hard 🙈️).
+This happens because modifying the state of a document without a write lock violates IntelliJ [Threading Rules](https://plugins.jetbrains.com/docs/intellij/general-threading-rules.html). I recommend reading the rules to understand the details, but overall the rules can be summarized by the following table, where `ReadAction` and `WriteAction` are classes with static `run(ThrowableRunnable)` method and in spite of the name are not related to `AnAction` class described in the section above (yes, naming is hard 🙈️).
 
 |                   | Read       | Write       |
 | ----------------- | -----------| ----------- |
