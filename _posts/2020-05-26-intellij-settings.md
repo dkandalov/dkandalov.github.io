@@ -3,7 +3,7 @@ permalink: intellij-settings
 ---
 
 For the benefit of anyone who might be interested and as a reference for myself, here are the IntelliJ (and related OSX) settings I normally use.
-This page is being updated on new IntelliJ releases and changes in my preferences. Last update: `IJ 2021.1.1`. 
+This page is being updated on new IntelliJ releases and changes in my preferences. Last updated on 13 December 2021 for `IJ 2021.3`.
 
 ### IDE Settings
  - disable `Main Menu > View > Appearance > Navigation Bar`
@@ -13,17 +13,20 @@ This page is being updated on new IntelliJ releases and changes in my preference
      - disable `Smart Keys > Surround selection on typing quote or brace`
      - disable `Appearance > Show intention bulb`
      - disable `Breadcrumbs > Show breadcrumbs`
-     - enable `Rich-Text Copy > Plain text`
+     - disable `Rich-Text Copy > Copy as rich text`
  - in `Editor > Code Editing`
      - disable `Highlight on Caret Movement > Usages of element at caret`
-     - disable `Show quick documentation on mouse move`
+     - disable `Show quick documentation on hover`
  - in `Appearance & Behavior > Appearance`
      - disable `Smooth scrolling`
-     - enable `Automatically position mouse cursor on default button`<br/>
-       (in the latest versions of IJ it can only be set in Registry using `ide.settings.move.mouse.on.default.button`)
+     - enable `Advanaced Settings > User Interface > Position mouse cursor on default button in dialogs`<br/>
+       (in some versions of IJ it can only be set in Registry using `ide.settings.move.mouse.on.default.button`)
      - disable `Allow merging buttons on dialogs`<br/>
        (in the latest versions of IJ it can only be set in Registry using `ide.allow.merge.buttons`)
      - disable `System Settings > Updates > Show What's New in the editor after an IDE update`  
+ - in `Version Control`
+     - set `Update method` to rebase
+     - enable `Use credential helper` — don't save passwords in IDE ([IDEA-211251](https://youtrack.jetbrains.com/issue/IDEA-211251))
 
 ### IDE Registry
 Use `Find Action` and search for "Registry...":
@@ -35,14 +38,11 @@ Use `Find Action` and search for "Registry...":
  - enable `ide.completion.delay.autopopup.until.completed` — <br/>
    deterministic auto-completion results (see [KT-29042](https://youtrack.jetbrains.com/issue/KT-29042))
  - disable `debugger.valueTooltipAutoShow` — no debugger tooltip on mouse over
- - disable `git.reset.credential.helper` — don't save passwords in IDE ([IDEA-211251](https://youtrack.jetbrains.com/issue/IDEA-211251))
  - disable `show.live.templates.in.completion` (see [IDEA-216928](https://youtrack.jetbrains.com/issue/IDEA-216928))
  - configure `undo.globalUndoLimit` and `undo.documentUndoLimit`
  - enable `toolwindow.disable.overlay.by.double.key` — <br/>
    because when using `alt+...` shortcuts (e.g. with [IJKL shortcuts plugin](https://github.com/dkandalov/ijkl-shortcuts-plugin)) 
    it can be annoying in presentation mode to accidentally open toolwindow overlay (see [IDEA-112097](https://youtrack.jetbrains.com/issue/IDEA-112097))
- - disable `vcs.commit.tool.window` — show local changes and shelf tabs in VCS tool window
- - enable `vcs.non.modal.commit.toggle.ui` — hide commit panel after commit is performed
  - enable `vcs.background.commit.checks` — perform commit checks in background
  - disable `ide.switcher.tool.window.list` and `ide.recent.files.tool.window.list` — hide tool windows from switcher and recent file popups (see [IDEA-131137](https://youtrack.jetbrains.com/issue/IDEA-131137))
 
