@@ -3,7 +3,7 @@ permalink: intellij-settings
 ---
 
 For the benefit of anyone who might be interested and as a reference for myself, here are the IntelliJ (and related OSX) settings I normally use.
-This page is being updated on new IntelliJ releases and changes in my preferences. Last updated on 13 December 2021 for `IJ 2021.3`.
+This page is being updated on new IntelliJ releases and changes in my preferences. Last updated on 14 December 2021 for `IJ 2021.3`.
 
 ### IDE Settings
  - disable `Main Menu > View > Appearance > Navigation Bar`
@@ -29,6 +29,7 @@ This page is being updated on new IntelliJ releases and changes in my preference
      - enable `User Interface > Position mouse cursor on default button in dialogs`
        (in some versions of IJ it can only be set in Registry using `ide.settings.move.mouse.on.default.button`)
      - enable `Version Control > Toggle commit controls`
+     - disable `Version Control > Enable Commit tool window`
 
 ### IDE Registry
 Use `Find Action` and search for "Registry...":
