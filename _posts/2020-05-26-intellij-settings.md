@@ -19,14 +19,16 @@ This page is being updated on new IntelliJ releases and changes in my preference
      - disable `Show quick documentation on hover`
  - in `Appearance & Behavior > Appearance`
      - disable `Smooth scrolling`
-     - enable `Advanaced Settings > User Interface > Position mouse cursor on default button in dialogs`<br/>
-       (in some versions of IJ it can only be set in Registry using `ide.settings.move.mouse.on.default.button`)
      - disable `Allow merging buttons on dialogs`<br/>
        (in the latest versions of IJ it can only be set in Registry using `ide.allow.merge.buttons`)
      - disable `System Settings > Updates > Show What's New in the editor after an IDE update`  
  - in `Version Control`
      - set `Update method` to rebase
      - enable `Use credential helper` — don't save passwords in IDE ([IDEA-211251](https://youtrack.jetbrains.com/issue/IDEA-211251))
+ - in `Advanaced Settings`
+     - enable `User Interface > Position mouse cursor on default button in dialogs`
+       (in some versions of IJ it can only be set in Registry using `ide.settings.move.mouse.on.default.button`)
+     - enable `Version Control > Toggle commit controls`
 
 ### IDE Registry
 Use `Find Action` and search for "Registry...":
