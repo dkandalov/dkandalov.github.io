@@ -292,9 +292,9 @@ document.replaceString(
 This happens because modifying the state of a document without a write lock violates IntelliJ [Threading Rules](https://plugins.jetbrains.com/docs/intellij/general-threading-rules.html). I recommend reading the rules to understand the details, but overall the rules can be summarized by the following table, where `ReadAction` and `WriteAction` are classes with static `run(ThrowableRunnable)` method and in spite of the name are not related to `AnAction` class described in the section above (yes, naming is hard 🙈️).
 
 |                   | Read       | Write       |
-| ----------------- | -----------| ----------- |
-| **UI thread**     | ✅         | WriteAction |
-| **Other threads** | ReadAction | ❌          |
+|-------------------|------------|-------------|
+| **UI thread**     | ✅          | WriteAction |
+| **Other threads** | ReadAction | ❌           |
 {:.post-table}
 
 Since "Random Case" action code is executed on the UI thread, the  document modification code can be wrapped with `WriteAction`: 

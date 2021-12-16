@@ -45,7 +45,7 @@ Use `Find Action` and search for "Registry...":
  - configure `undo.globalUndoLimit` and `undo.documentUndoLimit`
  - enable `toolwindow.disable.overlay.by.double.key` — <br/>
    because when using `alt+...` shortcuts (e.g. with [IJKL shortcuts plugin](https://github.com/dkandalov/ijkl-shortcuts-plugin)) 
-   it can be annoying in presentation mode to accidentally open toolwindow overlay (see [IDEA-112097](https://youtrack.jetbrains.com/issue/IDEA-112097))
+   it can be annoying in presentation mode to accidentally open tool window overlay (see [IDEA-112097](https://youtrack.jetbrains.com/issue/IDEA-112097))
  - enable `vcs.background.commit.checks` — perform commit checks in background
  - disable `ide.switcher.tool.window.list` and `ide.recent.files.tool.window.list` — hide tool windows from switcher and recent file popups (see [IDEA-131137](https://youtrack.jetbrains.com/issue/IDEA-131137))
 
@@ -58,7 +58,7 @@ Use `Find Action` and search for "Registry...":
  - assign a shortcut to `Window > Notifications > Close First / Close All` (see [IDEA-218434](https://youtrack.jetbrains.com/issue/IDEA-218434))
 
 ### OSX
- - disable accents `defaults write -g ApplePressNadHoldEnabled -bool false`
+ - disable accents `defaults write -g ApplePressAndHoldEnabled -bool false`
  - max values for `Preferences > Keyboard > Key Repeat / Delay Until Repeat`
  - map CapsLock to Control in `Preferences > Keyboard > Modifier Keys...`
  - disable shortcuts in `Preferences > Keyboard > Shortcuts` which clash with IntelliJ, e.g. `cmd+shift+/`
