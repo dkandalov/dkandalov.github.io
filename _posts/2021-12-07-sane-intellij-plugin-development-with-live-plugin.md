@@ -9,6 +9,18 @@ This is different for code editors and IDEs with their target audience being [po
 
 This blog post is about [LivePlugin](https://github.com/dkandalov/live-plugin) - a plugin for adding/modifying IntelliJ IDEs functionality at runtime without IDE restarts using Kotlin (or Groovy). Even though this blog has details specific to IntelliJ platform and the JVM, some concepts and ideas are universal enough to be applied in other environments.
 
+### Contents
+1. [Why?](#why)
+2. [What does it look like?](#what-does-it-look-like)
+3. [How does it work?](#how-does-it-work)
+4. [Notifications, logging, basic input](#notifications-logging-basic-input)
+5. [Actions](#actions)
+6. [Action groups](#action-groups)
+7. [Editor and Document](#editor-and-document)
+8. [Intentions and Inspections](#intentions-and-inspections)
+9. [IntelliJ APIs Mini Cheat Sheet](#intellij-apis-mini-cheat-sheet)
+10. [Final thoughts](#final-thoughts)
+
 
 ### Why?
 The main reason is faster and simpler workflow for plugin development. From the IDE user point of view, this means that you can write plugins for things you wouldn't bother writing plugins otherwise, e.g. project-specific scripts and workflows that can be added to IDE. In a way it's like creating IDE macros using a programming language. It also makes it easier to add "missing" IDE features and try these features before creating a "proper" plugin.
@@ -165,6 +177,7 @@ registerAction("Invoke Another Action") { event ->
     action.actionPerformed(event) // Bookmark current line
 }
 </kotlin>
+
 
 ### Action groups
 Actions can be grouped into action groups which are actions themselves. The main reason for creating an action group is that it's a good way to present a bunch of actions in the UI as a submenu or a popup window.
@@ -391,6 +404,7 @@ inner class MyQuickFix: LocalQuickFix {
     override fun getFamilyName() = "Hello"
 }
 </kotlin>
+
 
 ### IntelliJ APIs mini cheat sheet
 There is an obvious and a very reasonable question of how you can find which functions or classes to use. Or, in other words, given a blank screen, how do you figure out what to type? Just like with any other large code base there is no simple answer. 
