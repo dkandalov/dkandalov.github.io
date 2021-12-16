@@ -2,7 +2,7 @@
 permalink: intellij-settings
 ---
 
-For the benefit of anyone who might be interested and as a reference for myself, here are the IntelliJ (and related OSX) settings I normally use.
+For the benefit of anyone who might be interested and as a reference for myself, here are the IntelliJ (and related macOS) settings I normally use.
 This page is being updated on new IntelliJ releases and changes in my preferences. Last updated on 14 December 2021 for `IJ 2021.3`.
 
 ### IDE Settings
@@ -57,7 +57,7 @@ Use `Find Action` and search for "Registry...":
  - use `cmd+shift+G` for "Execute Gradle Task"
  - assign a shortcut to `Window > Notifications > Close First / Close All` (see [IDEA-218434](https://youtrack.jetbrains.com/issue/IDEA-218434))
 
-### OSX
+### macOS
  - disable accents `defaults write -g ApplePressAndHoldEnabled -bool false`
  - max values for `Preferences > Keyboard > Key Repeat / Delay Until Repeat`
  - map CapsLock to Control in `Preferences > Keyboard > Modifier Keys...`
