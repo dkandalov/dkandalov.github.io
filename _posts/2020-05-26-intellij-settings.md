@@ -17,6 +17,8 @@ This page is being updated on new IntelliJ releases and changes in my preference
  - in `Editor > Code Editing`
      - disable `Highlight on Caret Movement > Usages of element at caret`
      - disable `Show quick documentation on hover`
+ - in `Editor > Inlay Hints`
+     - disable `Show hints for:`
  - in `Appearance & Behavior > Appearance`
      - disable `Smooth scrolling`
      - disable `Allow merging buttons on dialogs`<br/>
