@@ -8,17 +8,17 @@ permalink: public-speaking
 
 | Dates | Event | Talk |
 | --- | --- | --- |
-| 02 December     | [Kotlin Koders](https://kotlin-koders.eu) | [Live coding server as a function with http4k](https://kotlin-koders.eu/#/talk/http4KLiveCoding) |
-| 25 November     | [VKUG](https://www.meetup.com/Virtual-Kotlin-User-Group/events/281875470) | [The Easy Way to Create IntelliJ Plugins](https://www.youtube.com/watch?v=GcYa4lMRta0) |
-| 17 September    | [SPA Conference 2021](https://www.spaconference.org/schedule) | Workshop: Server as a function with http4k |
-| 22 July         | [Brighton Kotlin Meetup](https://www.meetup.com/Brighton-Kotlin/events/279015769) | [Server as a function with http4k](https://www.youtube.com/watch?v=8RpGIUwe7dI) |
-| 03 July         | [Kotland](https://www.kotland.org) | Server as a function with http4k |
-| 25 June         | [jLove](https://jlove.konfy.care) | Limited work-in-progress for developers |
-| 9 June          | [DevDays Moscow](https://devdayscon.ru/Dmitry-Kandalov) | Limited work-in-progress for developers |
-| 19 May          | [Codemotion Online - English Edition](https://events.codemotion.com/conferences/online/2021/online-tech-conference-spring/agenda) | Server as a function with http4k |
-| 23 March        | [Codemotion - Italian Edition](https://events.codemotion.com/conferences/online/2021/online-tech-conference-italian-edition-spring) | Server as a function with http4k |
-| 13 March        | [ACCU](https://flame.firebird.systems/archer-yates/ACCU2021/MyProgrammes#Programme.ItemPage.104.0) | [Limited work-in-progress for developers](https://www.youtube.com/watch?v=AWbgen9x6xs),<br/>[How to write a quine?](https://www.youtube.com/watch?v=wOZd5PnUCD8) |
-| 07 February     | [FOSDEM](https://fosdem.org/2021) | [Server as a function with http4k](https://fosdem.org/2021/schedule/event/live_coding_with_http4k) |
+| 2 December    | [Kotlin Koders](https://kotlin-koders.eu) | [Live coding server as a function with http4k](https://kotlin-koders.eu/#/talk/http4KLiveCoding) |
+| 25 November   | [VKUG](https://www.meetup.com/Virtual-Kotlin-User-Group/events/281875470) | [The Easy Way to Create IntelliJ Plugins](https://www.youtube.com/watch?v=GcYa4lMRta0) |
+| 17 September  | [SPA Conference 2021](https://www.spaconference.org/schedule) | Workshop: Server as a function with http4k |
+| 22 July       | [Brighton Kotlin Meetup](https://www.meetup.com/Brighton-Kotlin/events/279015769) | [Server as a function with http4k](https://www.youtube.com/watch?v=8RpGIUwe7dI) |
+| 3 July        | [Kotland](https://www.kotland.org) | Server as a function with http4k |
+| 25 June       | [jLove](https://jlove.konfy.care) | Limited work-in-progress for developers |
+| 9 June        | [DevDays Moscow](https://devdayscon.ru/Dmitry-Kandalov) | Limited work-in-progress for developers |
+| 19 May        | [Codemotion Online - English Edition](https://events.codemotion.com/conferences/online/2021/online-tech-conference-spring/agenda) | Server as a function with http4k |
+| 23 March      | [Codemotion - Italian Edition](https://events.codemotion.com/conferences/online/2021/online-tech-conference-italian-edition-spring) | Server as a function with http4k |
+| 13 March      | [ACCU](https://flame.firebird.systems/archer-yates/ACCU2021/MyProgrammes#Programme.ItemPage.104.0) | [Limited work-in-progress for developers](https://www.youtube.com/watch?v=AWbgen9x6xs),<br/>[How to write a quine?](https://www.youtube.com/watch?v=wOZd5PnUCD8) |
+| 7 February    | [FOSDEM](https://fosdem.org/2021) | [Server as a function with http4k](https://fosdem.org/2021/schedule/event/live_coding_with_http4k) |
 {:.post-table}
 
 ### 2020
