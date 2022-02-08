@@ -9,7 +9,7 @@ permalink: public-speaking
 | Dates | Event | Talk |
 | --- | --- | --- |
 | 2 February    | [FOSDEM 2022](https://fosdem.org/2022) | [Refactoring Gilded Rose Kata](https://fosdem.org/2022/schedule/event/refactoring_glided_rose_kata) |
-| 29 January   | [DevFest UK & Ireland](https://www.devfest-uki.com) | The easy way to create IntelliJ plugins |
+| 29 January   | [DevFest UK & Ireland](https://www.devfest-uki.com) | The Easy Way to Create IntelliJ Plugins |
 {:.post-table}
 
 ### 2021
