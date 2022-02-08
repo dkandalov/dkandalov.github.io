@@ -4,6 +4,14 @@ title: Public speaking
 permalink: public-speaking
 ---
 
+### 2022
+
+| Dates | Event | Talk |
+| --- | --- | --- |
+| 2 February    | [FOSDEM 2022](https://fosdem.org/2022) | [Refactoring Gilded Rose Kata](https://fosdem.org/2022/schedule/event/refactoring_glided_rose_kata) |
+| 29 January   | [DevFest UK & Ireland](https://www.devfest-uki.com) | The easy way to create IntelliJ plugins |
+{:.post-table}
+
 ### 2021
 
 | Dates | Event | Talk |
