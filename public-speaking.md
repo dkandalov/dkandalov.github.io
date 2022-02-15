@@ -8,8 +8,8 @@ permalink: public-speaking
 
 | Dates | Event | Talk |
 | --- | --- | --- |
-| 2 February    | [FOSDEM 2022](https://fosdem.org/2022) | [Refactoring Gilded Rose Kata](https://fosdem.org/2022/schedule/event/refactoring_glided_rose_kata) |
-| 29 January   | [DevFest UK & Ireland](https://www.devfest-uki.com) | The Easy Way to Create IntelliJ Plugins |
+| 2 February    | [FOSDEM](https://fosdem.org/2022) | [Refactoring Gilded Rose Kata](https://fosdem.org/2022/schedule/event/refactoring_glided_rose_kata) |
+| 29 January    | [DevFest UK & Ireland](https://www.devfest-uki.com) | The Easy Way to Create IntelliJ Plugins |
 {:.post-table}
 
 ### 2021
@@ -18,7 +18,7 @@ permalink: public-speaking
 | --- | --- | --- |
 | 2 December    | [Kotlin Koders](https://kotlin-koders.eu) | [Live coding server as a function with http4k](https://youtu.be/0HCNuVm4xSg) |
 | 25 November   | [VKUG](https://www.meetup.com/Virtual-Kotlin-User-Group/events/281875470) | [The Easy Way to Create IntelliJ Plugins](https://www.youtube.com/watch?v=GcYa4lMRta0) |
-| 17 September  | [SPA Conference 2021](https://www.spaconference.org/schedule) | Workshop: Server as a function with http4k |
+| 17 September  | [SPA](https://www.spaconference.org/schedule) | Workshop: Server as a function with http4k |
 | 22 July       | [Brighton Kotlin Meetup](https://www.meetup.com/Brighton-Kotlin/events/279015769) | [Server as a function with http4k](https://www.youtube.com/watch?v=8RpGIUwe7dI) |
 | 3 July        | [Kotland](https://www.kotland.org) | Server as a function with http4k |
 | 25 June       | [jLove](https://jlove.konfy.care) | Limited work-in-progress for developers |
@@ -92,7 +92,7 @@ permalink: public-speaking
 | Dates | Event | Talk |
 | --- | --- | --- |
 | 19-22 September | [Java One](https://en.wikipedia.org/wiki/JavaOne) | Code History Analysis and Visualization |
-| 17-27 June      | [SPA 2016](https://spaconference.org/spa2016) | Code History Analysis and Visualization |
+| 17-27 June      | [SPA](https://spaconference.org/spa2016) | Code History Analysis and Visualization |
 | 2-5 June        | [SoCraTes UK](http://socratesuk.org) | Spy on yourself |
 | 19-23 April     | [ACCU](https://accu.org/index.php/conferences/accu_conference_2016) | Code History Analysis and Visualization |
 {:.post-table}
