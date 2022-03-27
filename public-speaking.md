@@ -8,6 +8,7 @@ permalink: public-speaking
 
 | Dates | Event | Talk |
 | --- | --- | --- |
+| 26 March      | [Chicago KUG](https://www.meetup.com/Chicago-Kotlin/events/284574011) | [Refactoring Gilded Rose Kata](https://www.youtube.com/watch?v=MU-CcZJIwPE) |
 | 2 February    | [FOSDEM](https://fosdem.org/2022) | [Refactoring Gilded Rose Kata](https://fosdem.org/2022/schedule/event/refactoring_glided_rose_kata) |
 | 29 January    | [DevFest UK & Ireland](https://www.devfest-uki.com) | The Easy Way to Create IntelliJ Plugins |
 {:.post-table}
