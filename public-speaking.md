@@ -8,7 +8,7 @@ permalink: public-speaking
 
 | Dates | Event | Talk |
 | --- | --- | --- |
-| 7 July        | [Droidcon Berlin](https://berlin.droidcon.com) | [Extending IntelliJ-based IDEs at runtime](https://berlin.droidcon.com/dmitry-kandalov) |
+| 7 July        | [Droidcon Berlin](https://berlin.droidcon.com) | [Extending IntelliJ-based IDEs at runtime](https://www.droidcon.com/2022/08/02/extending-intellij-based-ides-at-runtime/) |
 | 14 April      | JetBrainsTV: Busy Developer Guide series | [Extending IntelliJ-based IDEs at runtime](https://www.youtube.com/watch?v=pgGg-IwUQYM) |
 | 26 March      | [Chicago KUG](https://www.meetup.com/Chicago-Kotlin/events/284574011) | [Refactoring Gilded Rose Kata](https://www.youtube.com/watch?v=MU-CcZJIwPE) |
 | 2 February    | [FOSDEM](https://fosdem.org/2022) | [Refactoring Gilded Rose Kata](https://fosdem.org/2022/schedule/event/refactoring_glided_rose_kata) |
