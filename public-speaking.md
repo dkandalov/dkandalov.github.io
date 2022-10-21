@@ -8,7 +8,8 @@ permalink: public-speaking
 
 | Dates | Event | Talk |
 | --- | --- | --- |
-| 4-5 October  | [Jax London](https://jaxlondon.com/) | DI: Refactoring from Spring to Kotlin, Refactoring Gilded Rose Kata |
+| 20 October    | [Source Talks: On Kotlin](https://www.meetup.com/source-talks-on-kotlin/events/288627160) | DI: Refactoring from Spring to Kotlin |
+| 4-5 October   | [Jax London](https://jaxlondon.com/) | DI: Refactoring from Spring to Kotlin, Refactoring Gilded Rose Kata |
 | 17 September  | [Uncodebar 8](https://www.codebar.io/events/uncodebar-8) | Refactoring Gilded Rose Kata |
 | 7 July        | [Droidcon Berlin](https://berlin.droidcon.com) | [Extending IntelliJ-based IDEs at runtime](https://www.droidcon.com/2022/08/02/extending-intellij-based-ides-at-runtime/) |
 | 14 April      | JetBrainsTV: Busy Developer Guide series | [Extending IntelliJ-based IDEs at runtime](https://www.youtube.com/watch?v=pgGg-IwUQYM) |
