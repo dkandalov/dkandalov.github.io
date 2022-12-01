@@ -17,3 +17,25 @@ function transformLanguageToCodeTagsOnLoad(hljs) {
 		hljs.initHighlighting();
 	});
 }
+
+function isDarkTheme() {
+	let theme = localStorage.getItem('theme');
+	return theme === 'dark' || (theme === null && window.matchMedia("(prefers-color-scheme: dark)").matches);
+}
+
+function toggleTheme() {
+	if (isDarkTheme()) {
+		localStorage.setItem('theme', 'light');
+	} else {
+		localStorage.setItem('theme', 'dark');
+	}
+	window.location.reload();
+	return false;
+}
+
+function appendStylesheet(href) {
+	const link = document.createElement('link');
+	link.rel = 'stylesheet';
+	link.href = href;
+	document.head.appendChild(link);
+}
