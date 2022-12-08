@@ -8,7 +8,7 @@ permalink: public-speaking
 
 | Dates | Event | Talk |
 | --- | --- | --- |
-| 24 November   | [Advanced Kotlin Dev Day Conference](https://kotlindevday.com/session/dependency-injection-refactoring-from-spring-to-kotlin) | DI: Refactoring from Spring to Kotlin |
+| 24 November   | [Advanced Kotlin Dev Day Conference](https://kotlindevday.com/session/dependency-injection-refactoring-from-spring-to-kotlin) | [DI: Refactoring from Spring to Kotlin](https://www.youtube.com/watch?v=d_GHTBqI7YE) |
 | 20 October    | [Source Talks: On Kotlin](https://www.meetup.com/source-talks-on-kotlin/events/288627160) | DI: Refactoring from Spring to Kotlin |
 | 4-5 October   | [Jax London](https://jaxlondon.com/) | DI: Refactoring from Spring to Kotlin, Refactoring Gilded Rose Kata |
 | 17 September  | [Uncodebar 8](https://www.codebar.io/events/uncodebar-8) | Refactoring Gilded Rose Kata |
