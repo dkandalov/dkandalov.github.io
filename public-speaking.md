@@ -4,6 +4,13 @@ title: Public speaking
 permalink: public-speaking
 ---
 
+### 2023
+
+| Dates | Event | Talk |
+| --- | --- | --- |
+| 14 April | [KotlinConf](https://kotlinconf.com/speakers/9aa1160b-ce4f-4992-a1ad-b6da7d62c033) | Gilded Rose Refactoring Kata |
+{:.post-table}
+
 ### 2022
 
 | Dates | Event | Talk |
