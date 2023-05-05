@@ -8,7 +8,7 @@ permalink: public-speaking
 
 | Dates | Event | Talk |
 | --- | --- | --- |
-| 14 April | [KotlinConf](https://kotlinconf.com/speakers/9aa1160b-ce4f-4992-a1ad-b6da7d62c033) | Gilded Rose Refactoring Kata |
+| 14 April | [KotlinConf](https://kotlinconf.com/speakers/9aa1160b-ce4f-4992-a1ad-b6da7d62c033) | [Gilded Rose Refactoring Kata](https://www.youtube.com/watch?v=AxxNHKCldzA) |
 {:.post-table}
 
 ### 2022
