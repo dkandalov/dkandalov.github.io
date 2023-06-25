@@ -13,23 +13,15 @@ function sequential(drawFunctions) {
     };
 }
 
-function square2x2(drawFunctions) {
+function square(size, drawFunctions) {
     return (x, y, t) => {
-        let tileY = (y / tileSize) % 2;
-        let tileX = (x / tileSize) % 2;
-        drawFunctions[tileY * 2 + tileX](x, y, t)
+        let tileY = (y / tileSize) % size;
+        let tileX = (x / tileSize) % size;
+        drawFunctions[tileY * size + tileX](x, y, t)
     };
 }
 
-function square4x4(drawFunctions) {
-    return (x, y, t) => {
-        let tileY = (y / tileSize) % 4;
-        let tileX = (x / tileSize) % 4;
-        drawFunctions[tileY * 4 + tileX](x, y, t)
-    };
-}
-
-const tileA = (x, y, t) => {
+const a = (x, y, t) => {
     context.beginPath();
     context.moveTo(x, y);
     context.lineTo(x, y + tileSize);
@@ -39,7 +31,7 @@ const tileA = (x, y, t) => {
     context.fill();
 };
 
-const tileB = (x, y, t) => {
+const b = (x, y, t) => {
     context.beginPath();
     context.moveTo(x, y + tileSize);
     context.lineTo(x, y);
@@ -49,7 +41,7 @@ const tileB = (x, y, t) => {
     context.fill();
 };
 
-const tileC = (x, y, t) => {
+const c = (x, y, t) => {
     context.beginPath();
     context.moveTo(x, y);
     context.lineTo(x + tileSize, y);
@@ -59,7 +51,7 @@ const tileC = (x, y, t) => {
     context.fill();
 };
 
-const tileD = (x, y, t) => {
+const d = (x, y, t) => {
     context.beginPath();
     context.moveTo(x, y + tileSize);
     context.lineTo(x + tileSize, y + tileSize);
@@ -100,17 +92,27 @@ document.addEventListener('keydown', (e) => {
     main();
 });
 
-let patternIndex = 4;
+let patternIndex = 0;
 const patterns = [
-    sequential([tileA, tileD, tileB, tileC]),
-    square2x2([tileA, tileD, tileB, tileC]),
-    square2x2([tileA, tileC, tileC, tileA]),
-    square2x2([tileD, tileB, tileB, tileD]),
-    square4x4([
-        tileC, tileB, tileA, tileD,
-        tileD, tileA, tileB, tileC,
-        tileA, tileD, tileC, tileB,
-        tileB, tileC, tileD, tileA,
+    sequential([a, d, b, c]),
+    square(2, [a, d, b, c]), // circles
+    square(2, [a, c, c, a]), // lines top-left to bottom-right
+    square(2, [d, b, b, d]), // lines bottom-left to top-right
+    square(4, [ // rotating barbells
+        c, b, a, d,
+        d, a, b, c,
+        a, d, c, b,
+        b, c, d, a,
+    ]),
+    square(8, [ // diamonds
+		b, d, b, d, a, c, a, c,
+		d, b, d, b, c, a, c, a,
+		b, d, b, d, a, c, a, c,
+		d, b, d, b, c, a, c, a,
+		c, a, c, a, d, b, d, b,
+		a, c, a, c, b, d, b, d,
+		c, a, c, a, d, b, d, b,
+		a, c, a, c, b, d, b, d,
     ])
 ];
 
