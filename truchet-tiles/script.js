@@ -94,6 +94,22 @@ document.addEventListener('keydown', (e) => {
 
 let patternIndex = 0;
 const patterns = [
+	square(4, [ // waves
+		a, c, b, d,
+		c, a, d, b,
+		a, c, b, d,
+		c, a, d, b,
+	]),
+	square(8, [ // large waves
+		a, c, a, c, b, d, b, d,
+		c, a, c, a, d, b, d, b,
+		a, c, a, c, b, d, b, d,
+		c, a, c, a, d, b, d, b,
+		a, c, a, c, b, d, b, d,
+		c, a, c, a, d, b, d, b,
+		a, c, a, c, b, d, b, d,
+		c, a, c, a, d, b, d, b,
+	]),
     sequential([a, d, b, c]),
     square(2, [a, d, b, c]), // circles
     square(2, [a, c, c, a]), // lines top-left to bottom-right
@@ -119,9 +135,9 @@ const patterns = [
 const main = () => {
     drawTiledImage(patterns[patternIndex]);
 };
-const img = new Image();
-img.addEventListener('load', function() {
-	sourceContext.drawImage(img, 0, 0, width, height);
+const image = new Image();
+image.addEventListener('load', function() {
+	sourceContext.drawImage(image, 0, 0, width, height);
 	main();
 });
-img.src = '/assets/images/me.jpg';
+image.src = '/assets/images/me.jpg';
