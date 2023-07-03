@@ -4,62 +4,63 @@ const canvas = document.getElementById("canvas");
 const context = canvas.getContext("2d");
 const width = canvas.width;
 const height = canvas.height;
-let tileSize = 30;
 
+let tileSize = 30;
 let tileIndex = 0;
+
 function sequential(drawFunctions) {
-    return (x, y, t) => {
-        drawFunctions[tileIndex % drawFunctions.length](x, y, t)
-        tileIndex++;
-    };
+	return (x, y, t) => {
+		drawFunctions[tileIndex % drawFunctions.length](x, y, t)
+		tileIndex++;
+	};
 }
 
 function square(size, drawFunctions) {
-    	return (x, y, t) => {
+	return (x, y, t) => {
 		let tileX = (x / tileSize) % size;
 		let tileY = (y / tileSize) % size;
-        drawFunctions[tileY * size + tileX](x, y, t)
-    };
+		drawFunctions[tileY * size + tileX](x, y, t)
+	};
 }
 
 const a = (x, y, t) => {
-    context.beginPath();
-    context.moveTo(x, y);
-    context.lineTo(x, y + tileSize);
-    context.lineTo(x + tileSize, y + tileSize);
-    context.lineTo(x + tileSize * t, y + (1 - t) * tileSize);
-    context.closePath();
-    context.fill();
+	context.beginPath();
+	context.moveTo(x, y);
+	context.lineTo(x, y + tileSize);
+	context.lineTo(x + tileSize, y + tileSize);
+	context.lineTo(x + tileSize * t, y + (1 - t) * tileSize);
+	context.closePath();
+	context.fill();
 };
 
 const b = (x, y, t) => {
-    context.beginPath();
-    context.moveTo(x, y + tileSize);
-    context.lineTo(x, y);
-    context.lineTo(x + tileSize, y);
-    context.lineTo(x + tileSize * t, y + t * tileSize);
-    context.closePath();
-    context.fill();
+	context.beginPath();
+	context.moveTo(x, y + tileSize);
+	context.lineTo(x, y);
+	context.lineTo(x + tileSize, y);
+	context.lineTo(x + tileSize * t, y + t * tileSize);
+	context.closePath();
+	context.fill();
 };
 
 const c = (x, y, t) => {
-    context.beginPath();
-    context.moveTo(x, y);
-    context.lineTo(x + tileSize, y);
-    context.lineTo(x + tileSize, y + tileSize);
-    context.lineTo(x + tileSize * (1 - t), y + t * tileSize);
-    context.closePath();
-    context.fill();
+	context.beginPath();
+	context.moveTo(x, y);
+	context.lineTo(x + tileSize, y);
+	context.lineTo(x + tileSize, y + tileSize);
+	context.lineTo(x + tileSize * (1 - t), y + t * tileSize);
+	context.closePath();
+	context.fill();
 };
 
 const d = (x, y, t) => {
-    context.beginPath();
-    context.moveTo(x, y + tileSize);
-    context.lineTo(x + tileSize, y + tileSize);
-    context.lineTo(x + tileSize, y);
-    context.lineTo(x + tileSize * (1 - t), y + (1 - t) * tileSize);
-    context.closePath();
-    context.fill();
+	context.beginPath();
+	context.moveTo(x, y + tileSize);
+	context.lineTo(x + tileSize, y + tileSize);
+	context.lineTo(x + tileSize, y);
+	context.lineTo(x + tileSize * (1 - t), y + (1 - t) * tileSize);
+	context.closePath();
+	context.fill();
 };
 
 const diagonalsWithMaskImage = (x, y, t) => {
@@ -76,7 +77,7 @@ const diagonalsWithMaskImage = (x, y, t) => {
 	}
 	context.shadowColor = "black";
 	context.shadowBlur = 5;
-    context.stroke();
+	context.stroke();
 };
 
 const diamond = (x, y, t) => {
@@ -96,7 +97,7 @@ const diamond = (x, y, t) => {
 	}
 	context.shadowColor = "black";
 	context.shadowBlur = 5;
-    context.stroke();
+	context.stroke();
 };
 
 const rgbMean = (imageData) => {
@@ -111,27 +112,27 @@ const rgbMean = (imageData) => {
 }
 
 const drawTiledImage = (drawTile) => {
-    context.clearRect(0, 0, width, height);
+	context.clearRect(0, 0, width, height);
 
-    for (let y = 0; y < height; y += tileSize) {
-        for (let x = 0; x < width; x += tileSize) {
-            const tileData = sourceContext.getImageData(x, y, tileSize, tileSize).data;
-            const mean = rgbMean(tileData);
-            const t = Math.max(0.25, Math.min(0.75, 1 - mean / 255));
+	for (let y = 0; y < height; y += tileSize) {
+		for (let x = 0; x < width; x += tileSize) {
+			const tileData = sourceContext.getImageData(x, y, tileSize, tileSize).data;
+			const mean = rgbMean(tileData);
+			const t = Math.max(0.25, Math.min(0.75, 1 - mean / 255));
 
-            drawTile(x, y, t);
-        }
-    }
+			drawTile(x, y, t);
+		}
+	}
 };
 
 document.addEventListener('keydown', (e) => {
-    if (e.code === "KeyJ") tileSize++;
-    else if (e.code === "KeyK") tileSize--;
-    else if (e.code === "KeyI") patternIndex++;
-    else if (e.code === "KeyU") patternIndex--;
-    if (patternIndex < 0) patternIndex = patterns.length - 1;
-    if (patternIndex >= patterns.length) patternIndex = 0;
-    main();
+	if (e.code === "KeyJ") tileSize++;
+	else if (e.code === "KeyK") tileSize--;
+	else if (e.code === "KeyI") patternIndex++;
+	else if (e.code === "KeyU") patternIndex--;
+	if (patternIndex < 0) patternIndex = patterns.length - 1;
+	if (patternIndex >= patterns.length) patternIndex = 0;
+	main();
 });
 
 let patternIndex = 0;
@@ -154,17 +155,17 @@ const patterns = [
 		a, c, a, c, b, d, b, d,
 		c, a, c, a, d, b, d, b,
 	]),
-    sequential([a, d, b, c]),
-    square(2, [a, d, b, c]), // circles
-    square(2, [a, c, c, a]), // lines top-left to bottom-right
-    square(2, [d, b, b, d]), // lines bottom-left to top-right
-    square(4, [ // rotating barbells
-        c, b, a, d,
-        d, a, b, c,
-        a, d, c, b,
-        b, c, d, a,
-    ]),
-    square(8, [ // diamonds
+	sequential([a, d, b, c]),
+	square(2, [a, d, b, c]), // circles
+	square(2, [a, c, c, a]), // lines top-left to bottom-right
+	square(2, [d, b, b, d]), // lines bottom-left to top-right
+	square(4, [ // rotating barbells
+		c, b, a, d,
+		d, a, b, c,
+		a, d, c, b,
+		b, c, d, a,
+	]),
+	square(8, [ // diamonds
 		b, d, b, d, a, c, a, c,
 		d, b, d, b, c, a, c, a,
 		b, d, b, d, a, c, a, c,
@@ -173,11 +174,11 @@ const patterns = [
 		a, c, a, c, b, d, b, d,
 		c, a, c, a, d, b, d, b,
 		a, c, a, c, b, d, b, d,
-    ])
+	])
 ];
 
 const main = () => {
-    drawTiledImage(patterns[patternIndex]);
+	drawTiledImage(patterns[patternIndex]);
 };
 
 const image = new Image();
