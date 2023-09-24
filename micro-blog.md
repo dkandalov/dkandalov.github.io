@@ -3,6 +3,41 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2023/09/24
+I wish more #Kotlin assertion libraries had assertion functions as expressions so that they could be chained. For example:
+<kotlin>
+result.expectSuccess() equalTo 123
+httpResponse.expectStatus(OK).body.equalTo("{some json}")
+</kotlin>
+
+#### 2023/09/23
+This is your regular reminder that pull requests is a waste when working with people you know and trust (e.g. same company). Here is a more detailed reasoning by [@d_stepanovic](https://mastodon.social/@d_stepanovic) [https://vimeo.com/842233600](https://vimeo.com/842233600) (thanks to [@quii](https://mastodon.social/@quii@mastodon.cloud) for the link) #pullrequest #programming #softwareengineering #coding
+
+#### 2023/09/22
+You might have noticed that most meetings and conferences follow the same pattern of one person talking and everyone else listening. (Ok, maybe enterprise "agile" made standups and retros more widespread.) But is it the only way for a group of people to collaborate or share information? Not at all! Welcome Liberating Structures 👉 [https://www.liberatingstructures.com/ls-me](https://www.liberatingstructures.com/ls-me)
+
+#### 2023/09/21
+Random #IntelliJ tip. There is "Show Gradle Daemons" action which shows daemons with pid, status, etc. and lets you stop them. It's not in any menu, but you can invoke it via "Find Action" (cmd+shift+A or ctrl+shift+A). As with most tips it's probably a UX failure... I mean an opportunity for improvement 🙈
+
+#### 2023/09/20
+Here is another basic function I wish was in #Kotlin stdlib
+<kotlin>
+inline fun &lt;T : Any, R&gt; T?.ifNotNull(f: (T) -> R): R? = this?.let(f)
+</kotlin>
+
+This is really just `?.let` but I think `ifNotNull` follows the Kotlin way by being more explicit.
+
+#### 2023/09/19
+Not many people consider this but CONSTANTS DON'T NEED TO BE UPPERCASE. They're not the most important thing in the code and don't need the emphasis (e.g. unlike mutable global variables). The convention dates back to the early days of C and the need to distinguish symbolic constants defined as macros from variables 👉 [https://accu.org/journals/overload/22/121/wakely_1923](https://accu.org/journals/overload/22/121/wakely_1923) It's never too late to stop the cargo cult! Can we have it in #Kotlin 2.0 please? 😅
+
+#### 2023/09/18
+One of the basic functions I wish was in #Kotlin stdlib (originally by Duncan McGregor)
+<kotlin>
+fun &lt;T&gt; T.printed(): T = apply { println(this) }
+</kotlin>
+
+So you can do `foo.update().printed()` without extracting a variable and using a separate line for println().
+
 #### 2023/09/17
 Rick Beato has a great [YouTube channel](https://www.youtube.com/@RickBeato). In particular, "What Makes This Song Great?" videos, e.g. [Metallica - “Master of Puppets” Breakdown](https://www.youtube.com/watch?v=5EOHKfoDyrI). I'm wondering if there is something similar for #software analysing/appreciating/criticising well-known projects. Should John Carmack or Dave Farley do it? 😅
 
