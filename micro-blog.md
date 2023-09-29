@@ -3,6 +3,45 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2023/09/29
+The History of Cursor Keys [https://www.youtube.com/watch?v=BytowtVycc0](https://www.youtube.com/watch?v=BytowtVycc0) 
+Fun to see all the crazy cursor keys layouts from the past. 
+Although for software development I really prefer alt+IJKL, 
+see [https://github.com/dkandalov/ijkl-shortcuts-plugin](https://github.com/dkandalov/ijkl-shortcuts-plugin) 
+Everything else is suboptimal! 🙈
+
+#### 2023/09/28
+Most assertion libraries (in #Kotlin and other languages) reimplement language features (not, or, and, equals etc) 
+and standard library (contains, isEmpty, etc). I wish there was more effort to make tools like 
+[https://github.com/bnorm/kotlin-power-assert](https://github.com/bnorm/kotlin-power-assert) work really well.
+
+#### 2023/09/27
+To be fair, the previous example could use matcher composition where beSuccess() is not an expression 
+(it will be type-safe with #Kotlin contracts). Thanks to [@sf105](https://mastodon.social/@sf105@mastodonapp.uk) for pointing that out.
+<kotlin>
+val items = listOf(...)
+storage.upload(items) should beSuccess()
+storage.listAll() should (beSuccess() and equalTo(items))
+</kotlin>
+
+#### 2023/09/26
+A better example of `Result.expectSuccess()` used as an expression. 
+If Result is treated like checked exception, it should be ok to handle it in any part of the test 🤔
+<kotlin>
+val items = listOf(...)
+storage.upload(items).expectSuccess()
+storage.listAll().expectSuccess() shouldEqual items
+</kotlin>
+
+#### 2023/09/25
+Thinking about the example with `Result.expectSuccess()` a bit more complete test might look like this:
+<kotlin>
+val expected = random&lt;Foo&gt;()
+val actual = Foo.parse(expected.toJson()).expectSuccess()
+actual equalTo expected
+</kotlin>
+Which pushes one of the assertions into the "when" step 🤔
+
 #### 2023/09/24
 I wish more #Kotlin assertion libraries had assertion functions as expressions so that they could be chained. For example:
 <kotlin>
