@@ -3,6 +3,32 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2023/10/07
+What about namespace "pollution" by extension functions in #Kotlin? E.g. a library with `fun Any?.print()` (yes, it's a #kotest #rant again) will add `print()` to code completion popup for all objects. Sure, IDE can deprioritise it, but maybe don't do it in the first place?
+
+#### 2023/10/06
+More #kotest #rants... `shouldHaveSize()` is helpful enough to print the whole (actual) list when sizes don't match. Good idea unless the list contains large data classes. Good luck scrolling around Gradle output for the failure message. OTOH, it could be symptom of a bad test 🤔
+
+#### 2023/10/05
+Another #kotest #rant is that most of its matchers don’t show diff window in IntelliJ with JUnit5 runner. It tries but most matchers throw `AssertionError` (no diff) and some `AssertionFailedError` (has diff) 🤷😒 Makes you wonder if kotest authors actually use it via IntelliJ.
+
+#### 2023/10/04
+Kotest has `eventually()` function which retries lambda until it succeeds or times out. Not the best idea to use it across all tests in the first place, but in addition kotest prints stack trace from the first and the last failure, so you end up scrolling down 🤦‍ #kotest #rant
+
+#### 2023/10/03
+Thinking about comments I'm definitely in the camp of avoiding comments in the code unless it's really necessary. It's better to have a good variable/function name or a test case to explain a subtle detail. This includes test case names which look like wordy comments 🙈
+
+#### 2023/10/02
+If you care about how the source code is formatted, how variables/functions/etc. are named, then it might be worth caring as much about comments. Re-read them after writing, use spell checker and maybe start comments with a capital letter (as if it was a sentence because it is)?
+
+#### 2023/10/01
+Another interesting idea is to have stack traces with granularity down to expression/statement instead of just line number. They might need to be aware of the testing library to trace creation of matchers, etc. Not easy to implement for #Kotlin on the JVM and even harder for Kotlin multiplatform 🙈
+
+#### 2023/09/30
+In many environments where we run tests (locally, CI pipelines) we have access to the source code. When a test fails, why not use it to show code of the failed line/paragraph before the failure message? 🤔
+
+As couple people have pointed out there is [https://github.com/laech/java-stacksrc](https://github.com/laech/java-stacksrc). I haven't tried it yet, but it looks promising.
+
 #### 2023/09/29
 The History of Cursor Keys [https://www.youtube.com/watch?v=BytowtVycc0](https://www.youtube.com/watch?v=BytowtVycc0) 
 Fun to see all the crazy cursor keys layouts from the past. 
