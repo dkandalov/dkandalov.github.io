@@ -3,6 +3,47 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2023/10/16
+I wonder if #Kotlin contracts could capture lambda flavours and maybe visualise them in IDE 🤔 E.g. `let` runs lambda once, `?.let` maybe once, `forEach` many times, `executor.submit{}` runs on a different thread later. (Also haven't heard much about contracts for a while.)
+
+#### 2023/10/15
+To be fair, with `?:` extracted into a function and using `let` with reference is an interesting alternative to if/else. Thanks to [@natpryce](https://mastodon.social/@natpryce) for suggestion.
+
+<kotlin>
+fun Int?.toJson(): JsonNode =
+    this?.let(::IntNode).orNullNode()
+
+fun JsonNode?.orNullNode(): JsonNode =
+    this ?: NullNode.instance
+</kotlin>
+
+=== Reply from [@natpryce](https://mastodon.social/@natpryce) ===
+
+Nice. And to avoid duplicating logic, you could define:
+
+<kotlin>
+fun &lt;T : Any&gt; T?.toJson(toNode: (T) -&gt; JsonNode): JsonNode =
+    this?.let(toNode).orNullNode()
+</kotlin>
+
+And then define:
+<kotlin>
+fun Int?.toJson() = toJson(::IntNode)
+… etc …
+</kotlin>
+
+#### 2023/10/14
+Which of these Kotlin one-liners do you prefer?
+<kotlin>
+fun Int?.toJson() = if (this != null) IntNode(this) else NullNode.instance
+</kotlin>
+or
+<kotlin>
+fun Int?.toJson() = this?.let { IntNode(it) } ?: NullNode.instance
+</kotlin>
+
+I'm in favour of if/else, `?.let` is overrated and can be against the "grain" of Kotlin 😬🙈
+
 #### 2023/10/13
 In case you haven't seen it yet, here is a perfect Friday video content: [The Art of Code](https://www.youtube.com/watch?v=6avJHaC3C2U) by [Dylan Beattie](https://mastodon.social/@dylanbeattie@hachyderm.io) (the classic recording at [NDC London](https://ndclondon.com)).
 
