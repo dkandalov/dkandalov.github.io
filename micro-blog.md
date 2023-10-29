@@ -3,6 +3,47 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2023/10/29
+To be clear, I suggest projectional editor for #Kotlin/#Java not just for formatting, but for overall code layout and how we experience working with codebases. For example, "navigation" could show functions next to each other, or maybe hide private fields or some "obvious" types.
+
+#### 2023/10/27
+Since it's nearly impossible to "win" any code style/formatting argument, could we have a projectional editor for #Kotlin/#Java, e.g. as an IntelliJ plugin please. It has to be clever though to project into the "current code style" in text format 🧐
+
+#### 2023/10/26
+I wonder how much code layout (let’s say just within a file) affects how we think about programs. Is there any research? 🤔🔬 What if changing the layout could shift overall project design to be less data centric for example?
+
+#### 2023/10/25
+Thinking about details first/last in #Kotlin classes, the default style is neither. It seems to be guided by object initialisation and execution order (init fields, invoke constructor, public/private functions). As a reader you're supposed to play the role of a computer I guess 🤷
+
+#### 2023/10/24
+Timeless question: define details first or last? In particular, in a #Kotlin file should data classes used in an interface be defined before or after the interface? If details last, then shouldn't all fields/properties be at the bottom of the class? Do you, should you care?
+
+=== Reply from [Jordan Stewart](https://twitter.com/damaged) ===
+
+Most important thing first. Probably not quite right, I like to _think_ of it as similar to writing’s "inverted pyramid" —
+[https://en.m.wikipedia.org/wiki/Inverted_pyramid_(journalism)](https://en.m.wikipedia.org/wiki/Inverted_pyramid_(journalism))
+
+=== The hill I'm happy to join [Chris Oldwood](https://twitter.com/chrisoldwood) on ===
+
+![](../assets/images/micro-blog/2023-10-24.png)
+
+#### 2023/10/23
+This is a somewhat obvious thing to say but if you use randomly generated objects in tests, you really need to have a seed. Otherwise, it's a lot of fun with not very reproducible failures and builds. Also don't assume that two random values are not equal 🙈
+
+#### 2023/10/22
+Thinking about namespace pollution in #Kotlin via extension functions, is `fun Iterable<T>.foldResult() {...}` a good idea? The problem is that `foldResult` will appear in the auto-completion list for any Iterable even if it's not using Result type 🤔 [https://github.com/fork-handles/...iterables.kt](https://github.com/fork-handles/forkhandles/blob/d3dae418025d737cf91ae589e284c6ae48ea9e0c/result4k/core/src/main/kotlin/dev/forkhandles/result4k/iterables.kt#L30)
+
+#### 2023/10/20
+In #kotest tests are just functions. So they can be extracted into other extension functions like this:
+<kotlin>
+fun FunSpec.someTests() {
+    test("1") {...}
+    test("2") {...}
+}
+</kotlin>
+
+Clever but the problem is that you can't run just one test from IDE 😒 Use abstract class instead? #UXfail
+
 #### 2023/10/19
 Back to #kotest rants. Because kotest has “built in coroutine support at every level” when an assertion fails, you can’t navigate to the matcher source code from the stack trace (Kotlin coroutines are stackless). So good luck if the error message is not very clear.
 
