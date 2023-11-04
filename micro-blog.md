@@ -3,6 +3,24 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2023/11/04
+Overall, `eventually {...}` in tests is a code smell, similar to `delay(5.seconds)` waiting for the clock to move forward. There are ways to avoid it, and it's ultimately your choice. Continuous integration is not supposed to be "continuous" because the build takes 24 hours.
+
+#### 2023/11/03
+To be fair to projects with `eventually {...}` in tests, it can be hard to control concurrency or change design with tech decisions made a while ago and the code tied to a framework that does its own thing. You just end up copy-pasting `eventually` in the name of consistency 😿
+
+#### 2023/11/02
+There is no magic avoiding `eventually {...}` in tests. The basic answer is to have control over concurrency (like controlling time with the Clock). If it's the code you can modify, then change its design. If it's an external technology, wrap it in a minimal API and use a fake.
+
+#### 2023/11/01
+Another problem with `eventually {...}` is that it’s easy to sprinkle tests with it but can be really hard to remove because the design won’t let you control concurrency and it’s hard to refactor with the build being slow and flaky. It’s a trap! 😒 #testing #rant
+
+#### 2023/10/31
+The reason why using `eventually {...}` in tests is not a good idea is that it will make your build slow and non-deterministic. Retries will slow down passing tests, timeouts will make failures even slower, and failure messages will read like "something didn't happen on time" 🤷
+
+#### 2023/10/30
+If you use something like `eventually {...}` function all over the tests (which retries with timeout the lambda until it succeeds), the chances are you're doing it wrong. Ideally, refactor concurrency you're waiting for out of the core logic and test concurrent things separately.
+
 #### 2023/10/29
 To be clear, I suggest projectional editor for #Kotlin/#Java not just for formatting, but for overall code layout and how we experience working with codebases. For example, "navigation" could show functions next to each other, or maybe hide private fields or some "obvious" types.
 
