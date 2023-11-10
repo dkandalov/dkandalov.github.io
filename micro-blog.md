@@ -3,6 +3,24 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2023/11/11
+Old startup idea: "Twitter" for codebases where you could follow/like/reply to functions/classes/files/branches/people. A similar thing suggested by [Kent Beck](https://mastodon.social/@kentbeck@hachyderm.io): [https://tidyfirst.substack.com/p/idea-codefeed](https://tidyfirst.substack.com/p/idea-codefeed). Does anyone want to do a proof-of-concept? Maybe in #Kotlin? KMP? 😱🙈
+
+#### 2023/11/10
+Somewhat surprisingly, the "unimportant implementation details" like using "eventually {...}" in tests can have a cascading effect via slow CI/deployment on software design, people behaviour, and organisation overall. Similarly, a slow compiler/IDE is never about time.
+
+#### 2023/11/09
+Another possible side effect of slow CI/deployment is over engineering. Some of it is a rational response to not being able to fix things quickly. Some, I suspect, is keeping yourself entertained which is then post-rationalised to be necessary.
+
+#### 2023/11/07
+Working in an environment with slow CI/deployment, it's not impossible to be upset when someone breaks deployed software and it takes hours to fix. So, if you're not careful, this creates peer pressure on the team, and maybe you get a bit of pressure from yourself.
+
+#### 2023/11/06
+Slow CI builds increase the time it takes to fix things after deployment. At the same time, larger code changes (encouraged by slow CI) are more likely to have problems. That creates a higher stake environment in which you really don't want to make a mistake 😓
+
+#### 2023/11/05
+The problem with slow CI is not just the time it takes but also the behaviours it encourages. Waiting a couple of hours for a minor change seems like a waste, so it's tempting to batch up a few changes or do something else in parallel, which increases work-in-progress.
+
 #### 2023/11/04
 Overall, `eventually {...}` in tests is a code smell, similar to `delay(5.seconds)` waiting for the clock to move forward. There are ways to avoid it, and it's ultimately your choice. Continuous integration is not supposed to be "continuous" because the build takes 24 hours.
 
