@@ -3,6 +3,21 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2023/11/18
+Another deceitful metaphor is technical debt. The problem is that it implies the predictability of debt. In practice, it's often a trap with no clear way out (like piling up pieces in Tetris). Compounded by the sunken cost fallacy, the "debt" is even less likely to be untangled.
+
+#### 2023/11/16
+In case anyone needs a podcast recommendation, [Troubleshooting Agile](https://podcasts.apple.com/gb/podcast/troubleshooting-agile/id1327456890) is one of my all-time favourite and probably not very well-known podcasts. Thank you, [Jeffrey Fredrick](https://x.com/Jtf) and [Douglas Squirrel](https://x.com/douglassquirrel), for producing great content! See also [https://agileconversations.com](https://agileconversations.com)
+
+#### 2023/11/15
+Another annoyingly bad metaphor is #git blame. It doesn't explain how the tool works and suggests harmful behaviour. Even worse, the command itself is too surface-level and not good at finding commit with the actual change 🙄 (I mostly use "Show History for Selection" in #IntelliJ)
+
+#### 2023/11/14
+On the topic of wrong metaphors, I'm still annoyed that most #git projects used a tree-branching metaphor mixed with master/slave, and when there was a chance to change the "industry standard", most went for "main" (maybe related to pipes 🤷) instead of "trunk" 😒
+
+#### 2023/11/12
+In case you happen to be in Berlin in a couple of weeks, I'll be at [GDG DevFest](https://devfest.berlin) presenting the Gilded Rose [refactoring kata](https://github.com/dkandalov/gilded-rose). Come say hi. I'm also happy to pair on the kata and maybe record it (as I used to do pre-pandemic).
+
 #### 2023/11/11
 Old startup idea: "Twitter" for codebases where you could follow/like/reply to functions/classes/files/branches/people. A similar thing suggested by [Kent Beck](https://mastodon.social/@kentbeck@hachyderm.io): [https://tidyfirst.substack.com/p/idea-codefeed](https://tidyfirst.substack.com/p/idea-codefeed). Does anyone want to do a proof-of-concept? Maybe in #Kotlin? KMP? 😱🙈
 
