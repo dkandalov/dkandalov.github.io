@@ -3,6 +3,69 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2023/12/04
+[@sebi_io](https://twitter.com/sebi_io) and I will be pair programming #AdventOfCode day 4 in #Kotlin later today 👉 <https://www.youtube.com/watch?v=I0nCFMDkPNo> Come join us live! Nothing is scripted but hopefully, there will be some refactoring 🙃
+
+#### 2023/12/02
+Short-lived pull requests are fine from the CI point of view. But if they're so short, why bother with the PR bureaucracy? What about reviewing commits and fixing anything that's wrong? Maybe even talk to the author of the code 🙈
+
+#### 2023/12/01
+This is your regular reminder that long-lived pull requests are missing the whole point of CI. Great video by [@davefarley77](https://mastodon.social/@davefarley77@techhub.social) 👉 <https://www.youtube.com/watch?v=v4Ijkq6Myfc>
+
+#### 2023/11/29
+In case you missed it, there is a new book by [@kentbeck](https://mastodon.social/@kentbeck@hachyderm.io) [Tidy First?: A Personal Exercise in Empirical Software Design](https://www.ebooks.com/en-gb/book/211127822/tidy-first/kent-beck) 🥳
+
+#### 2023/11/28
+When using Result/Either type in #Kotlin, it can be tricky to make sure they are always handled. Could we please get annotations to mark types that cannot be ignored? AFAIK this functionality has been in #Rust for years! See <https://youtrack.jetbrains.com/issue/KT-12719>
+
+#### 2023/11/26
+Do you know any good resources (blogposts, tutorials, katas or videos) about using Result/Either types in #Kotlin?
+
+<img src="../assets/images/micro-blog/2023-11-26.png" width="50%" height="50%"/>
+
+=== Answers ===
+
+- <https://arrow-kt.io/learn/typed-errors/either-and-ior>
+- <https://arrow-kt.io/learn/typed-errors/working-with-typed-errors/>
+- [Kotlin Design Patterns and Best Practices](https://www.amazon.co.uk/Kotlin-Design-Patterns-Best-Practices-dp-1801815720/dp/1801815720) but 3rd edition!
+- In case I'm going to read this again, there are blog posts by Duncan McGregor here <http://www.oneeyedmen.com/failure-is-not-an-option-part-6.html>
+- I should write one myself!
+
+#### 2023/11/25
+If you are/were at the #devfestberlin2023 today, you can find the slides and code from my talk here <https://github.com/dkandalov/gilded-rose>.
+
+#### 2023/11/24
+Fundamentally, #Kotlin coroutines is compiler transforming code into a state machine. They are in stdlib, e.g. Sequence builder. Nothing to do with async. And there are async coroutines in kotlinx.coroutines built on top. Both are "coroutines". Obviously, not so obvious.
+
+<img src="../assets/images/micro-blog/2023-11-24.png" width="50%" height="50%"/>
+
+#### 2023/11/22
+I wish #Kotlin stdlib had Flow-like API with onStart/onComplete/catch/etc. for Sequence/Iterable. And maybe cancellation by making them AutoClosable (?) 🙈🤔 (I’m sure there are some good discussions on youtrack, slack and Kotlin forum.)
+
+#### 2023/11/21
+How wrong is it to use #Kotlin Flow with this? 😬
+
+<kotlin>
+fun runOnTheCurrentThread(block: suspend () -&gt; Unit) =
+    block.startCoroutine(NoOp)
+
+object NoOp : Continuation&lt;Unit&gt; {
+    override val context = EmptyCoroutineContext
+    override fun resumeWith(result: Result&lt;Unit&gt;) {}
+}
+</kotlin>
+
+=== Reply from [Simon Vergauwen](https://twitter.com/vergauwen_simon) ===
+
+Pretty bad, because context preservation breaks with EmptyCC.
+Otherwise it'd be similar to `GlobalScope.launch(NonCancellable + Dipsatchers.Default) { }`.
+
+#### 2023/11/20
+Another idea is to have more terms than just "tech debt." For example, distinguish it from "tech underinvestment" as suggested by [@natpryce](https://mastodon.social/@natpryce). Maybe a separate term for code ageing, when code becomes obsolete because of programming language and technology changes.
+
+#### 2023/11/19
+It's unfortunate that "technical debt" is the only widespread term we have. Maybe "technical shortcuts" is a bit more descriptive and less metaphorical 🤔 I also like a bit more opinionated "unsuitable code" by [@lukesleeman](https://mastodon.social/@lukesleeman@aus.social).
+
 #### 2023/11/18
 Another deceitful metaphor is technical debt. The problem is that it implies the predictability of debt. In practice, it's often a trap with no clear way out (like piling up pieces in Tetris). Compounded by the sunken cost fallacy, the "debt" is even less likely to be untangled.
 
