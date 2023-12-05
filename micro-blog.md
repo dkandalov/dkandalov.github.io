@@ -70,7 +70,7 @@ It's unfortunate that "technical debt" is the only widespread term we have. Mayb
 Another deceitful metaphor is technical debt. The problem is that it implies the predictability of debt. In practice, it's often a trap with no clear way out (like piling up pieces in Tetris). Compounded by the sunken cost fallacy, the "debt" is even less likely to be untangled.
 
 #### 2023/11/16
-In case anyone needs a podcast recommendation, [Troubleshooting Agile](https://podcasts.apple.com/gb/podcast/troubleshooting-agile/id1327456890) is one of my all-time favourite and probably not very well-known podcasts. Thank you, [Jeffrey Fredrick](https://x.com/Jtf) and [Douglas Squirrel](https://x.com/douglassquirrel), for producing great content! See also [https://agileconversations.com](https://agileconversations.com)
+In case anyone needs a podcast recommendation, [Troubleshooting Agile](https://podcasts.apple.com/gb/podcast/troubleshooting-agile/id1327456890) is one of my all-time favourite and probably not very well-known podcasts. Thank you, [Jeffrey Fredrick](https://x.com/Jtf) and [Douglas Squirrel](https://x.com/douglassquirrel), for producing great content! See also <https://agileconversations.com>
 
 #### 2023/11/15
 Another annoyingly bad metaphor is #git blame. It doesn't explain how the tool works and suggests harmful behaviour. Even worse, the command itself is too surface-level and not good at finding commit with the actual change 🙄 (I mostly use "Show History for Selection" in #IntelliJ)
@@ -82,7 +82,7 @@ On the topic of wrong metaphors, I'm still annoyed that most #git projects used 
 In case you happen to be in Berlin in a couple of weeks, I'll be at [GDG DevFest](https://devfest.berlin) presenting the Gilded Rose [refactoring kata](https://github.com/dkandalov/gilded-rose). Come say hi. I'm also happy to pair on the kata and maybe record it (as I used to do pre-pandemic).
 
 #### 2023/11/11
-Old startup idea: "Twitter" for codebases where you could follow/like/reply to functions/classes/files/branches/people. A similar thing suggested by [Kent Beck](https://mastodon.social/@kentbeck@hachyderm.io): [https://tidyfirst.substack.com/p/idea-codefeed](https://tidyfirst.substack.com/p/idea-codefeed). Does anyone want to do a proof-of-concept? Maybe in #Kotlin? KMP? 😱🙈
+Old startup idea: "Twitter" for codebases where you could follow/like/reply to functions/classes/files/branches/people. A similar thing suggested by [Kent Beck](https://mastodon.social/@kentbeck@hachyderm.io): <https://tidyfirst.substack.com/p/idea-codefeed>. Does anyone want to do a proof-of-concept? Maybe in #Kotlin? KMP? 😱🙈
 
 #### 2023/11/10
 Somewhat surprisingly, the "unimportant implementation details" like using "eventually {...}" in tests can have a cascading effect via slow CI/deployment on software design, people behaviour, and organisation overall. Similarly, a slow compiler/IDE is never about time.
@@ -135,7 +135,7 @@ Timeless question: define details first or last? In particular, in a #Kotlin fil
 === Reply from [Jordan Stewart](https://twitter.com/damaged) ===
 
 Most important thing first. Probably not quite right, I like to _think_ of it as similar to writing’s "inverted pyramid" —
-[https://en.m.wikipedia.org/wiki/Inverted_pyramid_(journalism)](https://en.m.wikipedia.org/wiki/Inverted_pyramid_(journalism))
+<https://en.m.wikipedia.org/wiki/Inverted_pyramid_(journalism)>
 
 === The hill I'm happy to join [Chris Oldwood](https://twitter.com/chrisoldwood) on ===
 
@@ -214,7 +214,7 @@ In case you haven't seen it yet, here is a perfect Friday video content: [The Ar
 
 
 #### 2023/10/12
-This is your regular reminder that pull requests are a waste in a typical company environment. PRs make you cosplay continuous integration instead of actually doing it. See this blog post by [Benji Weber](https://mastodon.social/@benjiweber) for details [https://benjiweber.co.uk/blog/2020/02](https://benjiweber.co.uk/blog/2020/02).
+This is your regular reminder that pull requests are a waste in a typical company environment. PRs make you cosplay continuous integration instead of actually doing it. See this blog post by [Benji Weber](https://mastodon.social/@benjiweber) for details <https://benjiweber.co.uk/blog/2020/02>.
 
 #### 2023/10/11
 Would you rather have a feature/tool which depends on some non-public API (and can break in the future without notice) or not have the feature/tool at all? I'd choose the first option. Also in my experience some public APIs end up as volatile as internal ones 🤷🤔
@@ -246,19 +246,19 @@ Another interesting idea is to have stack traces with granularity down to expres
 #### 2023/09/30
 In many environments where we run tests (locally, CI pipelines) we have access to the source code. When a test fails, why not use it to show code of the failed line/paragraph before the failure message? 🤔
 
-As couple people have pointed out there is [https://github.com/laech/java-stacksrc](https://github.com/laech/java-stacksrc). I haven't tried it yet, but it looks promising.
+As couple people have pointed out there is <https://github.com/laech/java-stacksrc>. I haven't tried it yet, but it looks promising.
 
 #### 2023/09/29
-The History of Cursor Keys [https://www.youtube.com/watch?v=BytowtVycc0](https://www.youtube.com/watch?v=BytowtVycc0) 
+The History of Cursor Keys <https://www.youtube.com/watch?v=BytowtVycc0> 
 Fun to see all the crazy cursor keys layouts from the past. 
 Although for software development I really prefer alt+IJKL, 
-see [https://github.com/dkandalov/ijkl-shortcuts-plugin](https://github.com/dkandalov/ijkl-shortcuts-plugin) 
+see <https://github.com/dkandalov/ijkl-shortcuts-plugin> 
 Everything else is suboptimal! 🙈
 
 #### 2023/09/28
 Most assertion libraries (in #Kotlin and other languages) reimplement language features (not, or, and, equals etc) 
 and standard library (contains, isEmpty, etc). I wish there was more effort to make tools like 
-[https://github.com/bnorm/kotlin-power-assert](https://github.com/bnorm/kotlin-power-assert) work really well.
+<https://github.com/bnorm/kotlin-power-assert> work really well.
 
 #### 2023/09/27
 To be fair, the previous example could use matcher composition where beSuccess() is not an expression 
@@ -295,10 +295,10 @@ httpResponse.expectStatus(OK).body.equalTo("{some json}")
 </kotlin>
 
 #### 2023/09/23
-This is your regular reminder that pull requests is a waste when working with people you know and trust (e.g. same company). Here is a more detailed reasoning by [@d_stepanovic](https://mastodon.social/@d_stepanovic) [https://vimeo.com/842233600](https://vimeo.com/842233600) (thanks to [@quii](https://mastodon.social/@quii@mastodon.cloud) for the link) #pullrequest #programming #softwareengineering #coding
+This is your regular reminder that pull requests is a waste when working with people you know and trust (e.g. same company). Here is a more detailed reasoning by [@d_stepanovic](https://mastodon.social/@d_stepanovic) <https://vimeo.com/842233600> (thanks to [@quii](https://mastodon.social/@quii@mastodon.cloud) for the link) #pullrequest #programming #softwareengineering #coding
 
 #### 2023/09/22
-You might have noticed that most meetings and conferences follow the same pattern of one person talking and everyone else listening. (Ok, maybe enterprise "agile" made standups and retros more widespread.) But is it the only way for a group of people to collaborate or share information? Not at all! Welcome Liberating Structures 👉 [https://www.liberatingstructures.com/ls-me](https://www.liberatingstructures.com/ls-me)
+You might have noticed that most meetings and conferences follow the same pattern of one person talking and everyone else listening. (Ok, maybe enterprise "agile" made standups and retros more widespread.) But is it the only way for a group of people to collaborate or share information? Not at all! Welcome Liberating Structures 👉 <https://www.liberatingstructures.com/ls-me>
 
 #### 2023/09/21
 Random #IntelliJ tip. There is "Show Gradle Daemons" action which shows daemons with pid, status, etc. and lets you stop them. It's not in any menu, but you can invoke it via "Find Action" (cmd+shift+A or ctrl+shift+A). As with most tips it's probably a UX failure... I mean an opportunity for improvement 🙈
@@ -312,7 +312,7 @@ inline fun &lt;T : Any, R&gt; T?.ifNotNull(f: (T) -> R): R? = this?.let(f)
 This is really just `?.let` but I think `ifNotNull` follows the Kotlin way by being more explicit.
 
 #### 2023/09/19
-Not many people consider this but CONSTANTS DON'T NEED TO BE UPPERCASE. They're not the most important thing in the code and don't need the emphasis (e.g. unlike mutable global variables). The convention dates back to the early days of C and the need to distinguish symbolic constants defined as macros from variables 👉 [https://accu.org/journals/overload/22/121/wakely_1923](https://accu.org/journals/overload/22/121/wakely_1923) It's never too late to stop the cargo cult! Can we have it in #Kotlin 2.0 please? 😅
+Not many people consider this but CONSTANTS DON'T NEED TO BE UPPERCASE. They're not the most important thing in the code and don't need the emphasis (e.g. unlike mutable global variables). The convention dates back to the early days of C and the need to distinguish symbolic constants defined as macros from variables 👉 <https://accu.org/journals/overload/22/121/wakely_1923> It's never too late to stop the cargo cult! Can we have it in #Kotlin 2.0 please? 😅
 
 #### 2023/09/18
 One of the basic functions I wish was in #Kotlin stdlib (originally by Duncan McGregor)
@@ -331,7 +331,7 @@ Does the "Small advice" in [this talk](https://www.youtube.com/watch?v=eRWoTgYbU
 There is "Public API declaration with implicit return type" inspection in "Kotlin->Other problems" disabled in the default profile. If it's really going to make difference and is recommended in general, should it be enabled then?
 
 #### 2023/09/15
-I'm pretty sure I read a few years ago that #Mastodon (social network) was named after Mastodon (a metal band). However, most articles I can find now are saying Mastodon (social network) was named after the animal. Does anyone know more of the backstory? [https://www.youtube.com/watch?v=s6WGNd8QR-](https://www.youtube.com/watch?v=s6WGNd8QR-)
+I'm pretty sure I read a few years ago that #Mastodon (social network) was named after Mastodon (a metal band). However, most articles I can find now are saying Mastodon (social network) was named after the animal. Does anyone know more of the backstory? <https://www.youtube.com/watch?v=s6WGNd8QR->
 
 #### 2023/09/14
 Videos from JVM Language Summit 2023 [https://www.youtube.com/playlist?list=PLX8CzqL3ArzW90jKUCf4H6xCKpStxsOzp](https://www.youtube.com/playlist?list=PLX8CzqL3ArzW90jKUCf4H6xCKpStxsOzp) I enjoyed ["The Challenges of Introducing Virtual Threads to the Java Platform"](https://www.youtube.com/watch?v=WsCJYQDPrrE) 🙂
@@ -353,7 +353,7 @@ inline fun &lt;reified T&gt; strictMock(): T =
 </kotlin>
 
 #### 2023/09/11
-If you're interested in #Kotlin, [KotlinConf](https://kotlinconf.com) on May 23-24 next year will be a good excuse to visit Copenhagen. It's the same venue as in 2019 which was quite nice. And don't forget the best way to get the ticket is by submitting a talk [https://sessionize.com/kotlinconf-2024](https://sessionize.com/kotlinconf-2024) 🙈 (As always, you don't really need to be an expert in the field to do a good talk!)
+If you're interested in #Kotlin, [KotlinConf](https://kotlinconf.com) on May 23-24 next year will be a good excuse to visit Copenhagen. It's the same venue as in 2019 which was quite nice. And don't forget the best way to get the ticket is by submitting a talk <https://sessionize.com/kotlinconf-2024> 🙈 (As always, you don't really need to be an expert in the field to do a good talk!)
 
 #### 2023/09/10
 Super slow search for #Kotlin data class components in IntelliJ is a massive contributor for me not enjoying Kotlin as much as I could. It feels that problems like this one are too fundamental to not be fixed on day one 😐 Unreliable/slow search defeats the whole point of IDEs.
