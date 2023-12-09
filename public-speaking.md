@@ -8,6 +8,7 @@ permalink: public-speaking
 
 | Dates | Event | Talk |
 | --- | --- | --- |
+| 4 December | [Advent of Code 2023](https://adventofcode.com/2023) | [Advent of Code 2023 in Kotlin Day 4](https://www.youtube.com/watch?v=I0nCFMDkPNo) |
 | 7 August | [The Developers' Bakery Podcast](https://thebakery.dev) | [LivePlugin with Dmitry Kandalov](https://thebakery.dev/64) |
 | 14 April | [KotlinConf](https://kotlinconf.com/speakers/9aa1160b-ce4f-4992-a1ad-b6da7d62c033) | [Gilded Rose Refactoring Kata](https://www.youtube.com/watch?v=AxxNHKCldzA) |
 {:.post-table}
