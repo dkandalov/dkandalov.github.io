@@ -3,6 +3,53 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2023/12/18
+If you agree with the analogy between navigating a codebase and browsing websites, then learning from web usability to apply it to software design would make sense. For example, "Don't Make Me Think" by Steve Krug is an old but good book on the topic <https://www.goodreads.com/book/show/18197267-don-t-make-me-think-revisited>
+
+#### 2023/12/17
+I wonder if "reading" code is a good analogy for any large enough codebase (and, if not, it might be leading us in the wrong direction). Yes, we read words on the screen, but overall it's closer to browsing the Internet than reading a book 🤔 "Navigability" vs "readability"?
+
+=== Reply from [Estrella Kowalski](https://twitter.com/kowalski17324) ===
+
+I think it's a good analogy. Code is a form of written communication, and reading it is a way to understand it.
+
+=== My reply ===
+
+Yes, it's definitely reading because most programs are text-based. And it's also a different kind of reading, e.g. compared to books one difference is that it's not sequential. "I was reading the Internet" sounds odd, so maybe there could be a term for "reading" codebases.
+
+=== Reply from [Estrella Kowalski](https://twitter.com/kowalski17324) ===
+
+I think "navigating" is a good term for it.
+
+#### 2023/12/14
+It felt like I didn't do much refactoring during [Advent of Code 2023 in Kotlin Day 4 stream](https://www.youtube.com/watch?v=I0nCFMDkPNo) so I made an attempt at making a #refactoring golf based on the exercise <https://github.com/dkandalov/aoc-golf-day4-2023> Let me know if it's usable 🙈
+
+#### 2023/12/10
+I still regret I didn't make it to this gig by Alpha Male Tea Party in 2017 <https://www.youtube.com/watch?v=YwPta95y9_o> 😅 I had to prioritise and be at [@ACCUConf](https://mastodon.social/@ACCUConf) in Bristol instead. Similar to the band, it's not the most known conference (outside the C++ world) but highly recommended regardless of the programming language you use.
+
+#### 2023/12/09
+Good to see that #IntelliJ got a new "Lift function call out of 'when'" (refactoring) inspection since I did the Gilded Rose talk at KotlinConf <https://www.youtube.com/watch?v=AxxNHKCldzA> Thank you, [Toshiaki Kameyama](https://github.com/t-kameyama) 🙏
+
+#### 2023/12/08
+I don't have a cat to take a photo with the "Tidy First?" book #TidyCat But there is a TCR Bar in London 😅 To be clear, in this case, TCR stands for Tottenham Court Road, not "test && commit || revert". Are there any rich geeks to open TDD Bar in London, maybe in Shoreditch? 🧐 /cc [@kentbeck](https://mastodon.social/@kentbeck@hachyderm.io)
+
+<img src="../assets/images/micro-blog/2023-12-08.png" width="80%" height="80%"/>
+
+#### 2023/12/07
+Thinking about copy-paste issues, #Microsoft is the winner. Formatting issues, broken shortcuts and copy-paste doing nothing at all. Unbelievable! It worked better 20 years ago. Should there be a consumer protection law, so that big companies are obligated to fix basic bugs? 🤔
+
+#### 2023/12/06
+(Summoning the power of social media 🪄🎅) When you copy text/code, and then paste it, you expect to see exactly the same code/text. Unfortunately, this is not the case when editing #Kotlin in #IntelliJ. Could this issue be moved out of the backlog (aka "never") please <https://youtrack.jetbrains.com/issue/KTIJ-10687/Copy-Paste-should-preserve-static-imports>
+
+<img src="../assets/images/micro-blog/2023-12-06.png" width="30%" height="30%"/>
+
+=== Update ===
+
+It worked! The issue is going to be fixed in Intellij 2024.1 🥳
+
+#### 2023/12/05
+Why do you need a pull request to revert the last merged pull request (assuming nothing else was committed)? 😒 Not really asking the question but answers are welcome.
+
 #### 2023/12/04
 [@sebi_io](https://twitter.com/sebi_io) and I will be pair programming #AdventOfCode day 4 in #Kotlin later today 👉 <https://www.youtube.com/watch?v=I0nCFMDkPNo> Come join us live! Nothing is scripted but hopefully, there will be some refactoring 🙃
 
