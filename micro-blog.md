@@ -3,6 +3,24 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2023/12/24
+Given browsing is like a code navigation analogy, browsers could also borrow a few things from IDEs/editors. For example, the old idea of a website map, i.e. a tree structure for navigation. Or why we still can't bookmark any line on a website? 🤷
+
+#### 2023/12/23
+We browse websites with their original styling (ignoring Safari reader view and Opera local CSS since they're not too popular.) At the same time, codebases don't have any styling at all. What if they did, so we could see the code exactly the same way as authors?
+
+#### 2023/12/22
+Continuing with code navigation is similar to the web browsing analogy, all browsers have navigation history sorted by time, which you can also search and filter. Why is it not a norm for text editors/IDEs? 🧐
+
+#### 2023/12/21
+Discovered today a great talk by [@emeryberger](https://mastodon.social/@emeryberger@discuss.systems) "Performance Matters" <https://www.youtube.com/watch?v=r-TLSBdHe1A> TLDR it's easy to misattribute performance changes due to memory layout, etc. Profilers are not designed for concurrency. See <https://github.com/ccurtsinger/stabilizer> and <https://github.com/plasma-umass/coz>
+
+#### 2023/12/20
+I don't think there is an action in #IntelliJ to open a declaration in a new split on the right. Using macro (Edit Source, Move Tab Right) works but has too much visual noise. OTOH, there is an underrated (thinking about myself) "Show Type Definition" action that shows a popup.
+
+#### 2023/12/19
+Another application of "code navigation is like browsing" is for IDEs/editors and web browsers to learn from each other. For example, Arc browser on alt+click opens a link in a new right split. Unlike VS Code which on alt+cmd+click keeps only one right split. Why the difference?
+
 #### 2023/12/18
 If you agree with the analogy between navigating a codebase and browsing websites, then learning from web usability to apply it to software design would make sense. For example, "Don't Make Me Think" by Steve Krug is an old but good book on the topic <https://www.goodreads.com/book/show/18197267-don-t-make-me-think-revisited>
 
