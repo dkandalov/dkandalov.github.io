@@ -3,6 +3,12 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2023/12/27
+It would be great to have use cases for tracking user navigation on codebases. If you're using #IntelliJ-based IDE on a project big enough to benefit from usage/navigation tracking, please let me know, and I might tweak this plugin <https://github.com/dkandalov/activity-tracker> so that it works well for your project.
+
+#### 2023/12/26
+Another application of web browsing to codebases might be to track user navigation. If you know the most viewed areas, common navigation patterns, etc., then you can improve the areas that matter. Or maybe discover that some people have tacit knowledge that's worth sharing.
+
 #### 2023/12/24
 Given browsing is like a code navigation analogy, browsers could also borrow a few things from IDEs/editors. For example, the old idea of a website map, i.e. a tree structure for navigation. Or why we still can't bookmark any line on a website? 🤷
 
