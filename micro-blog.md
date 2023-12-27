@@ -97,7 +97,7 @@ Do you know any good resources (blogposts, tutorials, katas or videos) about usi
 === Answers ===
 
 - <https://arrow-kt.io/learn/typed-errors/either-and-ior>
-- <https://arrow-kt.io/learn/typed-errors/working-with-typed-errors/>
+- <https://arrow-kt.io/learn/typed-errors/working-with-typed-errors>
 - [Kotlin Design Patterns and Best Practices](https://www.amazon.co.uk/Kotlin-Design-Patterns-Best-Practices-dp-1801815720/dp/1801815720) but 3rd edition!
 - In case I'm going to read this again, there are blog posts by Duncan McGregor here <http://www.oneeyedmen.com/failure-is-not-an-option-part-6.html>
 - I should write one myself!
