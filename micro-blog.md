@@ -3,6 +3,15 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2023/12/31
+Not a new idea, but I wonder if the web (similar to how we browse code) could be more about structured data and less about styles. It might be too late for HTML, but what if browsers rendered markdown 🤔 This also solves the light/dark mode "problem" with local rendering.
+
+#### 2023/12/30
+Similar to how we might see ads on websites, maybe we could have "ads" in codebases showing links to related code or well-known bugs/pitfalls/etc related to the code on the screen. Like inspections in #IntelliJ but less focused on the specific line of code 🧐
+
+#### 2023/12/28
+To be clear, when I suggest tracking user navigation on codebases, it's not just about improving the IDE/editor experience, but about improving the code (or how we think about it) in the context of the current project and people. Or at least learning about it based on data.
+
 #### 2023/12/27
 It would be great to have use cases for tracking user navigation on codebases. If you're using #IntelliJ-based IDE on a project big enough to benefit from usage/navigation tracking, please let me know, and I might tweak this plugin <https://github.com/dkandalov/activity-tracker> so that it works well for your project.
 
