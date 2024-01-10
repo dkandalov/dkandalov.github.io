@@ -3,6 +3,30 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/01/10
+I drafted a couple of Kotlin "tidyings" <https://dmitrykandalov.com/tidy-kotlin>. I think it might be good to get some feedback before writing more. What could go wrong with posting a draft on social media... 😑
+
+#### 2024/01/09
+Library to make Data-Oriented programming in Kotlin easier by extracting typed values from dynamic data structures such as Maps <https://github.com/fork-handles/forkhandles/blob/trunk/data4k/README.md> 👈 Looks interesting and reminds me of <https://github.com/uberto/kondor-json>
+
+#### 2024/01/08
+Following analogy between websites and codebases: compiler bug => can't render a valid web page; IDE navigation bug => can't follow a valid URL. From this point of view, navigation issues are fundamental and should have one of the highest priorities 🧐
+
+#### 2024/01/07
+I find "code smell" as a metaphor quite descriptive. Like smells, it's often an immediate uncontrolled reaction, and I can be rigid about preferences. I wish though I could be more flexible and absorb the context in which the code was written. Maybe another metaphor could help? 🤔
+
+#### 2024/01/05
+[KT-17206](https://youtrack.jetbrains.com/issue/KT-17206) NoSuchMethodError happens with dependencies SomeTest->SomeClass->Util, where Util from test shadows Util from main. The same issue exists in Java, but in #Kotlin it's easier to forget that files are always classes. And it's compounded by tools not showing classpath 😔 This must be even more confusing for #Kotlin multiplatform when not targeting JVM #leakyabstraction
+
+#### 2024/01/04
+To be specific about [KT-17206](https://youtrack.jetbrains.com/issue/KT-17206), extract a couple of test functions into Util.kt. #IntelliJ is happy. #Kotlin compiles the code. But when running tests, they fail with NoSuchMethodError. The reason is that there is already UtilKt class in the main code. See <https://github.com/dkandalov/hello-KT-17206/blob/main/src/test/kotlin/test/SomeTest.kt>
+
+#### 2024/01/02
+It's one of those days when after making a trivial change, I get a baffling NoSuchMethodError. Luckily, by now I have an intuition to remember this #Kotlin issue <https://youtrack.jetbrains.com/issue/KT-17206> so it doesn't take hours to fix. Good to see it's being rediscovered years later for #KMP <https://youtrack.jetbrains.com/issue/KT-63940> 🙈
+
+#### 2024/01/01
+If you need a podcast recommendation, Oddly Influenced by [@marick](https://mastodon.social/@marick@mstdn.social) is an excellent one <https://podcast.oddly-influenced.dev> "A podcast about how people have applied ideas from outside software to software." Makes you realise the software world doesn't exist in isolation.
+
 #### 2023/12/31
 Not a new idea, but I wonder if the web (similar to how we browse code) could be more about structured data and less about styles. It might be too late for HTML, but what if browsers rendered markdown 🤔 This also solves the light/dark mode "problem" with local rendering.
 
