@@ -7,6 +7,8 @@ permalink: tidy-kotlin
 
 This blog post is intended to be a catalog of Kotlin tidyings based on my experience of writing server-side Kotlin. The term "tidying" is inspired by the ["Tidy First?" book](https://www.oreilly.com/library/view/tidy-first/9781098151232) and essentially means a small refactoring. Some of them are specific to Kotlin, while others are applicable to any programming language.
 
+These are not rules but more of a set of suggestions on how to improve the code. Each tyding mentions reasons bihind it. Let me know if some reasons are missing or if you disagree with them. Be aware that depending on the context it might be better to avoid or delay tidying.
+
 I plan to keep this list updated so it might naturally evolve over time.
 
 ### Contents
@@ -15,7 +17,7 @@ I plan to keep this list updated so it might naturally evolve over time.
 3. [Keep variables close to their usages](#keep-variables-close-to-their-usages)
 4. [Inline variables with single usage](#inline-variables-with-single-usage)
 5. [Put parameters on one or separate lines](#put-parameters-on-one-or-separate-lines)
-6. [Stop CONSTANT SHOUTING](#stop-constant-shouting)
+6. [Stop the CONSTANT SHOUTING](#stop-constant-shouting)
 7. ...
 
 
@@ -74,12 +76,13 @@ In this example, putting higher-level abstraction first saved us from skimming f
 
 ### Maximum privacy
 
-The idea of maximum privacy is to keep all declarations (values, functions or classes) as private as possible.
+The idea of maximum privacy is to keep values, functions and classes as private as possible.
 There are a few reasons for that:
- - Private declaration is easier to understand (or guess what it means) because the context in which it's used is limited.
- - It's easier to modify (or delete) because modifying code without understanding is not ideal.
- - It's also easier for compiler/IDE/editor to type check or analyse because there are fewer places to check (especially for `private` declarations).
- - Reduce coupling. As the codebase evolves fewer usages pull the design of the function/class in different directions, so there is less design tension.
+ - Private declaration is easier to understand because the context in which it's used is limited and it's likely to have fewer usages to analyse.
+ - Because it's easier to understand, it's easier to modify (or delete). With fewer usages, there are fewer things that can go wrong when we change the function/class.
+ - It's also easier for the compiler/IDE/editor to type check or analyse the code because there are fewer places to check.
+ - Reduced coupling. As the codebase evolves private code is less likely to be used and pull the design of the function/class in various directions, so there is less design tension.
+ - Namespace pollution. Unnecessarily public functions/classes show up in auto-completion making it harder to choose the right function/class.
  - Specific to Kotlin support in IntelliJ, when searching for short public names and fields of data classes can be really (unusably) slow, so you'll have to resort to pure text search.
 
 Imagine we open a file with the code below and try to understand what it's doing. The `FruitStoreInTheCloud` class somewhat makes sense. It stores apples/bananas and returns an ID on success. The `handle()` function is a bit of a mystery though. The name is too generic, its type signature is not particularly revealing and its implementation ([collapsed](https://www.jetbrains.com/help/rider/Code_Folding.html) in the code below) makes us wonder if it's mostly redundant. We try `Find Usages`, but the name is too generic and the IDE search doesn't finish in a reasonable time. We get bored wondering if the search will ever finish. Text search finishes quickly with too many results to be sure they all match the same `handle()` function. We try the final trick of leaning on the compiler. We make the function `private` and compile the project. Luckily, it just works meaning that the `handle()` function is not used anywhere else, so running `FruitStoreInTheCloudTests` should be enough to validate our tidying if we choose to go ahead with it. We could've saved some time and a few WTFs if only the function was `private` in the first place.
@@ -158,7 +161,7 @@ Interestingly, this tidying implies that, for example, a single usage of a magic
 
 Moving variables close to their usages is often a good idea but it's not a fixed rule. Sometimes it might be worth moving all/most declarations to some outer scope and see if it reveals a better structure of the code. It is an exploration.
 
-Similar to a few other tydings this one is fractal. While the examples above discuss low-level abstractions, it's possible to apply the same principles at the class/file/module/service/application/architectural level.
+Similar to a few other tidyings this one is fractal. While the examples above discuss low-level abstractions, it's possible to apply the same principles at the class/file/module/service/application/architectural level.
 
 
 ### Inline variables with single usage
@@ -167,5 +170,28 @@ TDB
 ### Put parameters on one or separate lines
 TDB
 
-### Stop CONSTANT SHOUTING
-TDB
+
+### Stop the CONSTANT SHOUTING
+
+Constants should be lowercase following the same convention as `val`s and `var`s. I realise this tidying contradicts [Kotlin coding conventions](https://kotlinlang.org/docs/coding-conventions.html#property-names) but there are NO GOOD REASONS for constant names to be uppercase other than history. 
+
+As a short summary of the [Stop the Constant Shouting](https://accu.org/journals/overload/22/121/wakely_1923) article by Jonathan Wakely (which heavily inspired this tidying), in the C programming language it's common to use macros in cases when we would use a constant in Kotlin. This is because initially constants were not part of the language and even now they have limitations. Using uppercase for macros makes sense because they're not normal code and it was good for macros to STAND_OUT_IN_THE_CODE, especially at the time when clever code editors/IDEs didn't exist. The coding style for constants (actually macros) was copied from C to C++, to Java, and then to Kotlin.
+
+As you might have noticed in the text above, uppercase text REALLY draws our attention. At the same time constants are one of the most boring parts of the code. They don't change and don't have any important side-effects, unlike, for example, `System.exit(1)`. Yet we use the most expressive text style for constant names. There is an argument that the uppercase convention is too widespread to ignore. But I'm not convinced that familiarity outweighs the harm done by unnecessary screaming uppercase. The accidental code style for constants needs to be fixed and the sooner the easier it will be.
+
+Instead of SHOUTING CONSTANTS:
+<kotlin>
+companion object {
+    private const val INITIAL_BUFFER_SIZE = 8192
+}
+private val buffer = ByteArray(INITIAL_BUFFER_SIZE)
+</kotlin>
+you can use lowercase:
+<kotlin>
+companion object {
+    private const val initialBufferSize = 8192
+}
+private val buffer = ByteArray(initialBufferSize)
+</kotlin>
+
+As a side note, in the example above it would be good to [inline single usage constant](#inline-variables-with-single-usage) and explain the reasons for choosing number 8192 (no particular reason is still useful information). Often extracting a magic number into a constant doesn't make the number less magic.
