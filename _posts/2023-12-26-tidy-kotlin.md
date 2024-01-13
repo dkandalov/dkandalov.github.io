@@ -165,10 +165,10 @@ Similar to a few other tidyings this one is fractal. While the examples above di
 
 
 ### Inline variables with single usage
-TDB
+...
 
 ### Put parameters on one or separate lines
-TDB
+...
 
 
 ### Stop the CONSTANT SHOUTING
