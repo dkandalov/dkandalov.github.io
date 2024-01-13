@@ -17,7 +17,7 @@ I plan to keep this list updated so it might naturally evolve over time.
 3. [Keep variables close to their usages](#keep-variables-close-to-their-usages)
 4. [Inline variables with single usage](#inline-variables-with-single-usage)
 5. [Put parameters on one or separate lines](#put-parameters-on-one-or-separate-lines)
-6. [Stop the CONSTANT SHOUTING](#stop-constant-shouting)
+6. [Stop the CONSTANT SHOUTING](#stop-the-constant-shouting)
 7. ...
 
 
