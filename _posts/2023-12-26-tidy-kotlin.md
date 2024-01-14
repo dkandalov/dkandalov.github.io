@@ -1,15 +1,14 @@
 ---
-draft: true
 permalink: tidy-kotlin
 ---
-
-<i>==== This is work-in-progress. Feel free to share the link but be aware that the content will change. Feedback is welcome via email or social media. ====</i>
 
 This blog post is intended to be a catalog of Kotlin tidyings based on my experience of writing server-side Kotlin. The term "tidying" is inspired by the ["Tidy First?" book](https://www.oreilly.com/library/view/tidy-first/9781098151232) and essentially means a small refactoring. Some of them are specific to Kotlin, while others are applicable to any programming language.
 
 These are not rules but more of a set of suggestions on how to improve the code. Each tyding mentions reasons bihind it. Let me know if some reasons are missing or if you disagree with them. Be aware that depending on the context it might be better to avoid or delay tidying.
 
 I plan to keep this list updated so it might naturally evolve over time.
+
+<i>==== This is work-in-progress. Feel free to share the link but be aware that the content will change. Feedback is welcome via email or social media. ====</i>
 
 ### Contents
 1. [High-level abstractions first](#high-level-abstractions-first)
@@ -161,7 +160,7 @@ Interestingly, this tidying implies that, for example, a single usage of a magic
 
 Moving variables close to their usages is often a good idea but it's not a fixed rule. Sometimes it might be worth moving all/most declarations to some outer scope and see if it reveals a better structure of the code. It is an exploration.
 
-Similar to a few other tidyings this one is fractal. While the examples above discuss low-level abstractions, it's possible to apply the same principles at the class/file/module/service/application/architectural level.
+Similar to a few other tidyings this one is fractal. While the examples above discuss low-level abstractions, it's possible to apply the same principles at the class, file, module, service, application, or architectural level.
 
 
 ### Inline variables with single usage
@@ -175,9 +174,9 @@ Similar to a few other tidyings this one is fractal. While the examples above di
 
 Constants should be lowercase following the same convention as `val`s and `var`s. I realise this tidying contradicts [Kotlin coding conventions](https://kotlinlang.org/docs/coding-conventions.html#property-names) but there are NO GOOD REASONS for constant names to be uppercase other than history. 
 
-As a short summary of the [Stop the Constant Shouting](https://accu.org/journals/overload/22/121/wakely_1923) article by Jonathan Wakely (which heavily inspired this tidying), in the C programming language it's common to use macros in cases when we would use a constant in Kotlin. This is because initially constants were not part of the language and they still have limitations. Using uppercase for macros made sense because they're not normal code so it wasn't a bad idea for macros to STAND_OUT_IN_THE_CODE, especially at the time when smart code editors and IDEs didn't exist. The coding style for constants (actually macros) was copied from C to C++, to Java, and then to Kotlin.
+As a short summary of the [Stop the Constant Shouting](https://accu.org/journals/overload/22/121/wakely_1923) article by Jonathan Wakely (which heavily inspired this tidying), in the C programming language it's common to use macros in cases when we would use a constant in Kotlin. This is because initially constants were not part of the language and even now they still have limitations. Using uppercase for macros made sense because they're not normal code so it wasn't a bad idea for macros to STAND_OUT_IN_THE_CODE, especially at the time when smart code editors and IDEs didn't exist. The coding style for constants (actually macros) was copied from C to C++, to Java, and then to Kotlin.
 
-As you might have noticed in the text above, uppercase text REALLY DRAWS OUR ATTENTION. At the same time constants are one of the most boring parts of the code. They don't change and don't have any important side-effects (unlike, for example, `System.exit(1)`). Yet we use the most expressive text style for constant names. There is an argument that the uppercase convention is too widespread to ignore. I'm not convinced though that familiarity outweighs the harm done by unnecessary screaming uppercase. The accidental code style for constants needs to be fixed and the sooner the easier it will be.
+As you might have noticed, uppercase text REALLY DRAWS OUR ATTENTION. At the same time constants are one of the most boring parts of the code. They don't change and don't have any important side-effects (unlike, for example, `System.exit(1)`). Yet we use the most expressive text style for constants. There is an argument that the uppercase convention is too widespread to ignore. I'm not convinced though that familiarity outweighs the harm done by unnecessary screaming uppercase. The accidental code style for constants needs to be fixed and the sooner the easier it will be.
 
 Instead of SHOUTING CONSTANTS:
 <kotlin>
