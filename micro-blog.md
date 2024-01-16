@@ -3,6 +3,37 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/01/15
+<kotlin>
+object Foo
+
+val Foo.bar: String get() = "str"
+
+fun main() {
+    Foo.bar // Alt+enter "Add import" intention does nothing
+}
+</kotlin>
+<https://youtrack.jetbrains.com/issue/KTIJ-18028> #Kotlin #backlog 😔
+
+#### 2024/01/14
+Another interesting historical speculation is that the camelCase naming style became popular because of the lack of an underscore key on some of the old keyboards <http://exampler.com/blog/2012/05/15/speculation-about-the-origin-of-camelcase>. Surprisingly, there aren't many studies to know if camelCase is better or worse for reading identifiers <https://en.wikipedia.org/wiki/Camel_case#Readability_studies>.
+
+#### 2024/01/13
+I did a small write-up on my favourite topic of SHOUTING_CONSTANTS <https://dmitrykandalov.com/tidy-kotlin#stop-the-constant-shouting>. TLDR there are no good reasons for uppercase constants other than history.
+
+#### 2024/01/12
+If you are in London next Tuesday (16th January), come say hi at eXtreme Tuesday Club (XTC). It's a great #openspace meetup! Will be hosted for the first time in East London hipsterlands 👉 <https://www.meetup.com/extreme-tuesday-club-xtc/events/297787737>
+
+#### 2024/01/11
+I wonder if making variables/functions/classes/etc. as private as possible is considered to be a form of encapsulation. Or “encapsulation” is too specific to OO and something like “information hiding” is better for non-OO code?
+
+=== Reply from [Orchun Kolcu](https://mastodon.social/@orchun@hachyderm.io) ===
+
+I don't think encapsulation is OO specific (and although people will argue otherwise, information hiding is just what you achieve by encapsulating decisions), but there needs to be a capsule/abstraction you can point to as the end result.
+
+So maybe outside that context, it's just minimizing visibility or "hidden by default".
+
+
 #### 2024/01/10
 I drafted a couple of Kotlin "tidyings" <https://dmitrykandalov.com/tidy-kotlin>. I think it might be good to get some feedback before writing more. What could go wrong with posting a draft on social media... 😑
 
