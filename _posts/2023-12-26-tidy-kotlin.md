@@ -15,9 +15,10 @@ I plan to keep this list updated so it might naturally evolve over time.
 2. [Maximum privacy](#maximum-privacy)
 3. [Keep variables close to their usages](#keep-variables-close-to-their-usages)
 4. [Inline variables with single usage](#inline-variables-with-single-usage)
-5. [Put parameters on one or separate lines](#put-parameters-on-one-or-separate-lines)
-6. [Stop the CONSTANT SHOUTING](#stop-the-constant-shouting)
-7. ...
+5. [Remove argument names when all types are distinct](#remove-argument-names-when-all-types-are-distinct)
+6. [Put parameters on one line](#put-parameters-on-one-line)
+7. [Stop the CONSTANT SHOUTING](#stop-the-constant-shouting)
+8. ...
 
 
 ### High-level abstractions first
@@ -41,7 +42,7 @@ interface FruitStore {
     fun store(bananas: List&lt;Banana&gt;): Result&lt;StorageId&gt; 6️⃣ 👀
 }
 
-class FruitStoreInTheCloud : FruitStore {
+class FruitStoreInTheCloud(...) : FruitStore {
     override fun store(apples: List&lt;Apple&gt;): Result&lt;StorageId&gt; {...}
     override fun store(bananas: List&lt;Banana&gt;): Result&lt;StorageId&gt; {...}
 }
@@ -102,7 +103,7 @@ Looking at this tidying from the [code as data](https://en.wikipedia.org/wiki/Co
 
 ### Keep variables close to their usages
 
-Keep variables (both `val`s and `var`s) close to where you use them. This is a simple way of saying to declare variables in the innermost scope and within the minimum amount of lines/statements from usages. The main goal of this tidying is higher code cohesion. More specifically the benefits are:
+Keep variables (both `val`s and `var`s) close to where you use them. This is a simple way of saying to declare variables in the innermost scope and within the minimum amount of lines/statements from usages. The main goal of this tidying is higher code cohesion or more specifically:
 - Reduced cognitive load while reading code. With fewer things to remember, you can focus on other aspects of the code.
 - Discover/communicate that variables are only related to a specific scope. Since a smaller scope can provide a higher privacy level, you also get the benefits of [Maximum privacy](#maximum-privacy).
 - Discover/communicate dependencies. As soon as you try moving a variable, it will "pull" on all the variables/functions that are using it. You might find that they can all be moved into a smaller scope. This is a way to organise code into "clusters".
@@ -164,6 +165,50 @@ Similar to a few other tidyings this one is fractal. While the examples above di
 
 
 ### Inline variables with single usage
+
+Variables (both `val`s and `var`s) with single usage are often better off inlined. The reasons are:
+- Inlined variables are obviously not used elsewhere in the code, so we save time and effort by not checking if there are other usages.
+- To communicate the structure of nested objects or function calls.
+- The order of variable initialisation doesn't dictate how variables are ordered in the code, so it's easier to have [high-level abstractions first](#high-level-abstractions-first).
+- Extracting a single usage variable made sense in Java to give the argument a name. Kotlin has named arguments that have the same expressiveness (unless you want to have a name different from the parameter).
+
+To illustrate how inlining variables can help, imagine we are trying to figure out how exactly `FruitStoreInTheCloud()` is constructed. We search for the usages of the constructor (by invoking "Show Usages" before the first "(") and end up in the following code at point 1️⃣. We would like to see how the constructor arguments are created, so we navigate to `uri` declaration which takes us to point 2️⃣. URI construction looks ok, but it's not clear if `uri` might be used elsewhere in the function. We search for `uri` usages. There is only one usage, so we end up back at point 1️⃣. We repeat the same process for `credentials` navigating to point 3️⃣ and back to 1️⃣ (it's the only usage). Navigation is a bit more tricky with `config` because we first go to point 4️⃣, then to `connectionTimeout` 5️⃣ and back, then to `retryAttempts` 6️⃣ and back. This is a lot of non-linear navigation for the construction of two nested objects!
+
+To be fair, we could've been more efficient by using the "Highlight Usages in File" action on all variables and visually checking the editor scrollbar area if there are any matches outside of visible code. It's still not worth it though considering that all usages can be inlined.
+
+<kotlin>
+val uri = Uri("https://fruite.cloud")                      2️⃣
+val credentials = Credentials(...)                         3️⃣
+val connectionTimeout = 10.seconds                         5️⃣
+val retryAttempts = 3                                      6️⃣
+val config = Config(connectionTimeout, retryAttempts)      4️⃣
+val store = FruitStoreInTheCloud(uri, credentials, config) 1️⃣ 👀 😵‍💫
+
+doSomething()
+doSomethingElse()
+...
+</kotlin>
+After inlining variable usages, we can follow the constructor arguments points 1️⃣ to 6️⃣ in a linear way. We don't need to guess if the variables are used elsewhere. And it's nice that indentation at points 5️⃣ and 6️⃣ communicates the nested structure of objects.
+<kotlin>
+val store = FruitStoreInTheCloud(       1️⃣ 👀 
+    uri = Uri("https://fruite.cloud"),  2️⃣
+    credentials = Credentials(...),     3️⃣
+    config = Config(                    4️⃣
+        connectionTimeout = 10.seconds, 5️⃣
+        retryAttempts = 3               6️⃣
+    )
+)
+doSomething()
+doSomethingElse()
+...
+</kotlin>
+
+As a side note, the `FruitStoreInTheCloud()` constructor in the example above has arguments with distinct types, so it might be ok to [remove argument names](#remove-argument-names-when-all-types-are-distinct).
+
+What if some of the arguments have multiple usages (for example, if `uri` was passed to a function), is it still worth inlining variables with single usage? I would argue that it's almost always worth trying. Reduced scope is likely to pay off the inconsistency of declaring arguments both in place and as variables.
+
+
+### Remove argument names when all types are distinct
 ...
 
 ### Put parameters on one or separate lines
