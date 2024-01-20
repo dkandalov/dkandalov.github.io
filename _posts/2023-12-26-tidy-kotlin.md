@@ -4,14 +4,14 @@ permalink: tidy-kotlin
 
 This blog post is intended to be a catalog of Kotlin tidyings based on my experience of writing server-side Kotlin. The term "tidying" is inspired by the ["Tidy First?" book](https://www.oreilly.com/library/view/tidy-first/9781098151232) and essentially means a small refactoring. Some of them are specific to Kotlin, while others are applicable to any programming language.
 
-These are not rules but more of a set of suggestions on how to improve the code. Each tyding mentions reasons bihind it. Let me know if some reasons are missing or if you disagree with them. Be aware that depending on the context it might be better to avoid or delay tidying.
+These are not rules but suggestions on how to improve the code. Be aware, this is not a comprehensive list, so there are always other forces affecting the design (e.g. objects' lifetime or [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)), including non-technical forces like code style preferences of other people or priorities of the project. Depending on the context it might be better to avoid or delay tidying. 
 
-I plan to keep this list updated so it might naturally evolve over time.
+I plan to keep this catalog updated so it might naturally evolve over time. Each tyding mentions reasons bihind it. Let me know if some reasons are missing or if you disagree with them.
 
 <i>==== This is work-in-progress. Feel free to share the link but be aware that the content will change. Feedback is welcome via email or social media. ====</i>
 
 ### Contents
-1. [High-level abstractions first](#high-level-abstractions-first)
+1. [High-level declarations first](#high-level-declarations-first)
 2. [Maximum privacy](#maximum-privacy)
 3. [Keep variables close to their usages](#keep-variables-close-to-their-usages)
 4. [Inline variables with single usage](#inline-variables-with-single-usage)
@@ -21,9 +21,9 @@ I plan to keep this list updated so it might naturally evolve over time.
 8. ...
 
 
-### High-level abstractions first
+### High-level declarations first
 
-The main motivation for this tidying is to improve the navigability of the codebase.
+Declare high-level interfaces, classes, functions, or properties before implementation details. A more formal way to think about it might be by presenting code as a directed graph, where nodes are declarations and edges point from the declaration to its usages. The code should be ordered so that all edges point to the beginning of the file (unless there are circular dependencies). The main motivation for this tidying is to improve the navigability of the codebase.
 
 Let's assume we're mostly familiar with the codebase and would like to remind ourselves what `FruitStore` interface looks like. 
 We open `FruitStore.kt` containing the following code. We have to skim the file from points 1️⃣ to 4️⃣ until we finally get to the `FruitStore` interface at points 5️⃣&nbsp;and&nbsp;6️⃣.
@@ -76,7 +76,7 @@ In this example, putting higher-level abstraction first saved us from skimming f
 
 ### Maximum privacy
 
-The idea of maximum privacy is to keep values, functions and classes as private as possible.
+Make values, functions and classes as private as possible.
 There are a few reasons for that:
  - Private declaration is easier to understand because the context in which it's used is limited and it's likely to have fewer usages to analyse.
  - Because it's easier to understand, it's easier to modify (or delete). With fewer usages, there are fewer things that can go wrong when we change the function/class.
@@ -166,10 +166,10 @@ Similar to a few other tidyings this one is fractal. While the examples above di
 
 ### Inline variables with single usage
 
-Variables (both `val`s and `var`s) with single usage are often better off inlined. The reasons are:
+Variables (both `val`s and `var`s) with single usage are often better off inlined. You might think of it as an extreme version of [keeping variables close to their usages](#keep-variables-close-to-their-usages), so some of the motivations overlap. The reasons to inline single usage are:
 - Inlined variables are obviously not used elsewhere in the code, so we save time and effort by not checking if there are other usages.
 - To communicate the structure of nested objects or function calls.
-- The order of variable initialisation doesn't dictate how variables are ordered in the code, so it's easier to have [high-level abstractions first](#high-level-abstractions-first).
+- The order of variable initialisation doesn't dictate how variables are ordered in the code, so it's easier to have [high-level declarations first](#high-level-declarations-first).
 - Extracting a single usage variable made sense in Java to give the argument a name. Kotlin has named arguments that have the same expressiveness (unless you want to have a name different from the parameter).
 
 To illustrate how inlining variables can help, imagine we are trying to figure out how exactly `FruitStoreInTheCloud()` is constructed. We search for the usages of the constructor (by invoking "Show Usages" before the first "(") and end up in the following code at point 1️⃣. We would like to see how the constructor arguments are created, so we navigate to `uri` declaration which takes us to point 2️⃣. URI construction looks ok, but it's not clear if `uri` might be used elsewhere in the function. We search for `uri` usages. There is only one usage, so we end up back at point 1️⃣. We repeat the same process for `credentials` navigating to point 3️⃣ and back to 1️⃣ (it's the only usage). Navigation is a bit more tricky with `config` because we first go to point 4️⃣, then to `connectionTimeout` 5️⃣ and back, then to `retryAttempts` 6️⃣ and back. This is a lot of non-linear navigation for the construction of two nested objects!
@@ -211,6 +211,7 @@ What if some of the arguments have multiple usages (for example, if `uri` was pa
 ### Remove argument names when all types are distinct
 ...
 
+
 ### Put parameters on one or separate lines
 ...
 
@@ -239,3 +240,5 @@ private val buffer = ByteArray(initialBufferSize)
 </kotlin>
 
 As a side note, in the example above it would be good to [inline single usage constant](#inline-variables-with-single-usage) and explain the reasons for choosing number 8192 (no particular reason is still useful information). Often extracting a magic number into a constant doesn't make the number less magic.
+
+Once constants follow the same naming convention as variables, it's easier to change constants to variables and the other way round because we don't need to update all usages.
