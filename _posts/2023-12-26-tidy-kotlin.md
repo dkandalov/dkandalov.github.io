@@ -17,13 +17,18 @@ I plan to keep this catalog updated so it might naturally evolve over time. Each
 4. [Inline variables with single usage](#inline-variables-with-single-usage)
 5. [Remove argument names when all types are distinct](#remove-argument-names-when-all-types-are-distinct)
 6. [Put parameters on one line](#put-parameters-on-one-line)
-7. [Stop the CONSTANT SHOUTING](#stop-the-constant-shouting)
-8. ...
+7. [Put arguments on one line](#put-arguments-on-one-line)
+8. [Stop the CONSTANT SHOUTING](#stop-the-constant-shouting)
+9. [Use tiny types](#use-tiny-types)
+10. [Pass arguments in the order of declaration](#pass-arguments-in-the-order-of-declaration)
+11. ...
 
 
 ### High-level declarations first
 
-Declare high-level interfaces, classes, functions, or properties before implementation details. A more formal way to think about it might be by presenting code as a directed graph, where nodes are declarations and edges point from the declaration to its usages. The code should be ordered so that all edges point to the beginning of the file (unless there are circular dependencies). The main motivation for this tidying is to improve the navigability of the codebase.
+Declare high-level interfaces, classes, functions, or properties before implementation details. A more formal way to think about it is by presenting code as a directed graph, where nodes are declarations and edges point from the declaration to its usages. The code should be ordered so that all edges point to the beginning of the file (unless there are circular dependencies). With the edges pointing up, declarations at the top of the file will be visually higher, matching the "high/low-level" metaphor.
+
+The main motivation for this tidying is to improve the navigability of the codebase.
 
 Let's assume we're mostly familiar with the codebase and would like to remind ourselves what `FruitStore` interface looks like. 
 We open `FruitStore.kt` containing the following code. We have to skim the file from points 1️⃣ to 4️⃣ until we finally get to the `FruitStore` interface at points 5️⃣&nbsp;and&nbsp;6️⃣.
@@ -209,10 +214,28 @@ What if some of the arguments have multiple usages (for example, if `uri` was pa
 
 
 ### Remove argument names when all types are distinct
+When all arguments (and parameters) have distinct incompatible types, named arguments might be redundant and can be removed. Named arguments help with accidentally passing value to the wrong parameter when types are the same. If all types are different, this is not a problem as it will be noticed by the compiler. Assuming that argument values have descriptive names, named arguments don't bring any benefits to justify verbosity. This is more likely to be the case when using [tiny types](#use-tiny-types).
+
+For example, given that `uri`, `credentials`, and `config` all have different types, argument names can be removed in the code below. Once removed, we end up with one argument per line and can [put them on one line](#put-arguments-on-one-line).
+<kotlin>
+val store = FruitStoreInTheCloud(
+    uri = uri,
+    credentials = credentials,
+    config = config
+)
+...
+</kotlin>
+The code after tidying:
+<kotlin>
+val store = FruitStoreInTheCloud(uri, credentials, config)
+...
+</kotlin>
+
+
+### Put parameters on one line
 ...
 
-
-### Put parameters on one or separate lines
+### Put arguments on one line
 ...
 
 
@@ -242,3 +265,14 @@ private val buffer = ByteArray(initialBufferSize)
 As a side note, in the example above it would be good to [inline single usage constant](#inline-variables-with-single-usage) and explain the reasons for choosing number 8192 (no particular reason is still useful information). Often extracting a magic number into a constant doesn't make the number less magic.
 
 Once constants follow the same naming convention as variables, it's easier to change constants to variables and the other way round because we don't need to update all usages.
+
+
+### Use tiny types
+
+...
+
+
+### Pass arguments in the order of declaration
+
+...
+
