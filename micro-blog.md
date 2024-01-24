@@ -3,6 +3,35 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/01/24
+Random #IntelliJ tip. If you see a yellow/red notification panel at the top of the editor with some actions as links, instead of using the mouse to click the links, you can trigger the actions via the alt+enter popup window. For example, "Setup SDK" in the screenshot below.
+
+<img src="../assets/images/micro-blog/2024-01-24.png" width="80%" height="80%"/>
+
+#### 2024/01/23
+I've seen people doing this in #Java and #Kotlin:
+<kotlin>
+if (list.isNotEmpty()) {
+    list.forEach { ... }
+}
+</kotlin>
+Premature optimisation or prudent code avoiding `Iterator` allocation?
+
+#### 2024/01/22
+Pedantic alert 🤓🚨 Are there any docs saying that #Kotlin `val` actually means "value"? It's "local property" in the spec <https://kotlinlang.org/spec/declarations.html#local-property-declaration>. "Property" in the grammar <https://kotlinlang.org/docs/reference/grammar.html#propertyDeclaration>. And "read-only local variable" in the documentation <https://kotlinlang.org/docs/basic-syntax.html#variables>.
+
+#### 2024/01/20
+I did the NO_SCREAMING_SNAKE_CONSTANTS lightning talk at the last XTC meetup. An interesting observation is that with the same style, it's easier to change `val`s to `const`s or back without updating all usages. And a suggestion to try uppercase for vars and mutable data instead 😯
+
+#### 2024/01/19
+Programming language terminology is a mess. People say "variable" meaning unmodifiable reference to immutable data, e.g. String `val` in #Kotlin. 🙈 Or it can be a modifiable reference to mutable data. How new joiners are supposed to make sense of this? 🤷‍ We need better terms!
+
+#### 2024/01/18
+I did a small write up suggesting to inline all single usage “variables” in #Kotlin <https://dmitrykandalov.com/tidy-kotlin#inline-variables-with-single-usage> because there are pretty much no downsides to that (except if it needs a better name or object requires longer lifetime obviously).
+
+#### 2024/01/17
+I wish there was an #IntelliJ feature to search files and class names in git (or VCS) history. And maybe code history text search as well (e.g. based on 'git log -S')?
+
 #### 2024/01/15
 <kotlin>
 object Foo
