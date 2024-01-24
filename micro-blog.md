@@ -18,7 +18,7 @@ if (list.isNotEmpty()) {
 Premature optimisation or prudent code avoiding `Iterator` allocation?
 
 #### 2024/01/22
-Pedantic alert 🤓🚨 Are there any docs saying that #Kotlin `val` actually means "value"? It's "local property" in the spec <https://kotlinlang.org/spec/declarations.html#local-property-declaration>. "Property" in the grammar <https://kotlinlang.org/docs/reference/grammar.html#propertyDeclaration>. And "read-only local variable" in the documentation <https://kotlinlang.org/docs/basic-syntax.html#variables>.
+Pedantic alert 🤓🚨 Are there any docs saying that #Kotlin `val` actually means "value"? It's "local property" in [the language spec](https://kotlinlang.org/spec/declarations.html#local-property-declaration). "Property" in [the grammar](https://kotlinlang.org/docs/reference/grammar.html#propertyDeclaration). And "read-only local variable" in [the documentation](https://kotlinlang.org/docs/basic-syntax.html#variables).
 
 #### 2024/01/20
 I did the NO_SCREAMING_SNAKE_CONSTANTS lightning talk at the last XTC meetup. An interesting observation is that with the same style, it's easier to change `val`s to `const`s or back without updating all usages. And a suggestion to try uppercase for vars and mutable data instead 😯
