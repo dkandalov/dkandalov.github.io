@@ -3,6 +3,15 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/01/27
+One lesson that I learned from the Twitter takeover is that if I care about the content I publish on social networks, I shouldn't rely on them to keep it or make it available. Everything I wrote on Twitter/Mastodon/LinkedIn in the last couple of months is also available in my blog <https://dmitrykandalov.com/micro-blog>.
+
+#### 2024/01/26
+Having approval/snapshot tests for calculated cells in notebooks could be really useful. The hardest part is to show meaningful diffs for complex and visual data. Maybe a feature for [@KotlinForData](https://twitter.com/KotlinForData) one day :) (I found <https://github.com/ploomber/nbsnapshot>, but it's not quite what I'd expect.)
+
+#### 2024/01/25
+If #Java/#Kotlin libraries, ideally, shouldn't have global side effects (e.g., print to stdout or create a global thread pool), then maybe they should also avoid logging via global API. And instead, configure logger as a function (or object) explicitly passed into library API 🤔
+
 #### 2024/01/24
 Random #IntelliJ tip. If you see a yellow/red notification panel at the top of the editor with some actions as links, instead of using the mouse to click the links, you can trigger the actions via the alt+enter popup window. For example, "Setup SDK" in the screenshot below.
 
@@ -16,6 +25,10 @@ if (list.isNotEmpty()) {
 }
 </kotlin>
 Premature optimisation or prudent code avoiding `Iterator` allocation?
+
+=== Reply from [Brian Ziman](https://mastodon.social/@BrianZiman) ===
+
+Definitely a premature optimization. ArrayList doesn't allocate an iterator at all, nor does Guava's ImmutableList. I would guess most "good" classes have a pretty optimized forEach() method. If you're relying on the default implementation of Iterable.forEach() in some other less performant type, then this trivial optimization probably doesn't buy you anything at all, but costs you readability.
 
 #### 2024/01/22
 Pedantic alert 🤓🚨 Are there any docs saying that #Kotlin `val` actually means "value"? It's "local property" in [the language spec](https://kotlinlang.org/spec/declarations.html#local-property-declaration). "Property" in [the grammar](https://kotlinlang.org/docs/reference/grammar.html#propertyDeclaration). And "read-only local variable" in [the documentation](https://kotlinlang.org/docs/basic-syntax.html#variables).
