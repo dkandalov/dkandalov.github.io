@@ -4,7 +4,7 @@ permalink: tidy-kotlin
 
 This blog post is intended to be a catalog of Kotlin tidyings based on my experience of writing server-side Kotlin. The term "tidying" is inspired by the ["Tidy First?" book](https://www.oreilly.com/library/view/tidy-first/9781098151232) and essentially means a small refactoring. Some of them are specific to Kotlin, while others are applicable to any programming language.
 
-These are not rules but suggestions on how to improve the code. Be aware, this is not a comprehensive list, so there are always other forces affecting the design (e.g. objects' lifetime or [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)), including non-technical forces like code style preferences of other people or priorities of the project. Depending on the context it might be better to avoid or delay tidying. 
+These are not rules but suggestions on how to improve the code. Be aware, this is not a comprehensive list, so there are always other forces affecting the design (e.g. objects' lifetime or [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)), including non-technical forces like code style preferences of other people or priorities of the project. Depending on the context it might be better to avoid or delay tidying.
 
 I plan to keep this catalog updated so it might naturally evolve over time. Each tyding mentions reasons bihind it. Let me know if some reasons are missing or if you disagree with them.
 
@@ -232,7 +232,7 @@ val store = FruitStoreInTheCloud(uri, credentials, config)
 ...
 </kotlin>
 
-Note that there is a "Remove all argument names" intention which can be invoked via the `Alt+Enter` popup menu or assigned its own shortcut.
+Note that in IntelliJ there is a "Remove all argument names" intention which can be invoked via the `Alt+Enter` popup menu or assigned its own shortcut.
 
 
 ### Put parameters on one line
@@ -258,7 +258,7 @@ data class Password(val value: String)
 data class Credentials(val user: String, val password: Password)
 </kotlin>
 
-Note that there is a "Put parameters on one line" intention which can be invoked via the `Alt+Enter` popup menu or assigned its own shortcut.
+Note that in IntelliJ there is a "Put parameters on one line" intention which can be invoked via the `Alt+Enter` popup menu or assigned its own shortcut.
 
 ### Put arguments on one line
 When a function or constructor invocation has only a few arguments, put them on one line. How few is enough to justify the tidying is subjective and depends on the length of argument names (especially with named arguments), the surrounding code, readers' attention span, etc. The motivation is to have "optimal" information density on the screen.
@@ -280,7 +280,7 @@ val credentials = Credentials(user = "Bob", password = password)
 </kotlin>
 The next tidying might be to [inline single usage](#inline-variables-with-single-usage) of `password` or to [remove argument names](#remove-argument-names-when-all-types-are-distinct).
 
-Note that there is a "Put arguments on one line" intention which can be invoked via the `Alt+Enter` popup menu or assigned its own shortcut.
+Note that in IntelliJ there is a "Put arguments on one line" intention which can be invoked via the `Alt+Enter` popup menu or assigned its own shortcut.
 
 
 ### Put parameters/arguments on separate lines
