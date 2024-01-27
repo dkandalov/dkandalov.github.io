@@ -17,7 +17,8 @@ I plan to keep this catalog updated so it might naturally evolve over time. Each
 4. [Inline variables with single usage](#inline-variables-with-single-usage)
 5. [Remove argument names when all types are distinct](#remove-argument-names-when-all-types-are-distinct)
 6. [Put parameters on one line](#put-parameters-on-one-line)
-7. [Put arguments on one line](#put-arguments-on-one-line)
+6. [Put arguments on one line](#put-arguments-on-one-line)
+7. [Put parameters/arguments on separate lines](#put-parametersarguments-on-separate-lines)
 8. [Stop the CONSTANT SHOUTING](#stop-the-constant-shouting)
 9. [Use tiny types](#use-tiny-types)
 10. [Pass arguments in the order of declaration](#pass-arguments-in-the-order-of-declaration)
@@ -150,7 +151,7 @@ fruits.forEach { fruit ->             │
 doSomething()                         │
 doSomethingElse()                    ─┘
 </kotlin>
-After the tidy up the code looks like this:
+After the tidy-up the code looks like this:
 <kotlin>
 fruits.forEach { fruit ->
     val type = Blended               ─┐ 👀
@@ -231,11 +232,58 @@ val store = FruitStoreInTheCloud(uri, credentials, config)
 ...
 </kotlin>
 
+Note that there is a "Remove all argument names" intention which can be invoked via the `Alt+Enter` popup menu or assigned its own shortcut.
+
 
 ### Put parameters on one line
-...
+
+When a function or class constructor declaration has only a few parameters, put them on one line. How few is enough to justify the tidying is subjective and depends on the length of parameter names, the length and complexity of parameter types, the length of the default values, the surrounding code, readers' attention span, etc. The motivation is to have "optimal" information density on the screen.
+
+With one or two parameters per line, the information density per line is a bit low, so we might end up scrolling the source code up and down a lot, reading it almost as a single column.
+<kotlin>
+data class Password(
+    val value: String
+)
+
+data class Credentials(
+    val user: String,
+    val password: Password
+)
+</kotlin>
+
+Putting class or function parameters on a single line will increase the information density and can make it easier to skim. 
+<kotlin>
+data class Password(val value: String)
+
+data class Credentials(val user: String, val password: Password)
+</kotlin>
+
+Note that there is a "Put parameters on one line" intention which can be invoked via the `Alt+Enter` popup menu or assigned its own shortcut.
 
 ### Put arguments on one line
+When a function or constructor invocation has only a few arguments, put them on one line. How few is enough to justify the tidying is subjective and depends on the length of argument names (especially with named arguments), the surrounding code, readers' attention span, etc. The motivation is to have "optimal" information density on the screen.
+
+One or two arguments on separate lines are often a good opportunity for the tidy-up. You might also notice in the example below that arguments are vertically misaligned with constructors, so we have to read the code from right to left. Sometimes this is inevitable, but in this case, it's easy to fix by putting arguments on one line.
+<kotlin>
+val password = Password( ↙️ 👀
+    "********"     
+)
+val credentials = Credentials( ↙️ 👀
+    user = "Bob",
+    password = password
+)
+</kotlin>
+The code after tidying:
+<kotlin>
+val password = Password("********")
+val credentials = Credentials(user = "Bob", password = password)
+</kotlin>
+The next tidying might be to [inline single usage](#inline-variables-with-single-usage) of `password` or to [remove argument names](#remove-argument-names-when-all-types-are-distinct).
+
+Note that there is a "Put arguments on one line" intention which can be invoked via the `Alt+Enter` popup menu or assigned its own shortcut.
+
+
+### Put parameters/arguments on separate lines
 ...
 
 
