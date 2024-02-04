@@ -3,8 +3,31 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/02/04
+For the first time in ages, I'm happy to accept a cookie 😋 And it was a really tasty one!<br/> Thank you, Firefox! #fosdem
+
+<img src="../assets/images/micro-blog/2024-02-04.jpg" width="80%" height="80%"/>
+
+#### 2024/02/03
+Interesting talk by Alan Bateman about virtual threads limitations and future plans <https://fosdem.org/2024/schedule/event/fosdem-2024-3255-virtual-thread-s-next-steps> #fosdem
+
+#### 2024/02/02
+A bit of a boring topic, but it seems there is a tendency to extract a CONSTANT whenever there is a "special" value in the code. I would prefer a local variable just because it's in line with making definitions as private as possible. I wonder if there is a CONSTANT_CARGO_CULT? 🧐
+
+#### 2024/02/01
+As an example of build script testing in Gradle, it could be a task to unit test isolated parts of the build script (pure functions, simple tasks) or to sanity check output/artefacts (size, basic structure of artefact, actual dependencies, etc.) of more complex tasks.
+
+#### 2024/01/31
+I will be in Brussels at [@fosdem](https://mastodon.social/@fosdem@fosstodon.org) for the next couple of days. Happy to meet if you're also there and maybe do a code kata or chat about #Kotlin 🙂
+
+#### 2024/01/30
+Given the complexity of build scripts, how is it, not a thing to write automated tests for the build itself 🤷‍
+
+#### 2024/01/29
+I doubt it's a new idea, but why not make #Twitter features into Internet standards (instead of another social network)? For example, a tweet could be content with URI, reply - a relation to another URL, following - something similar to RSS, likes - a generic rating system, etc.
+
 #### 2024/01/27
-One lesson that I learned from the Twitter takeover is that if I care about the content I publish on social networks, I shouldn't rely on them to keep it or make it available. Everything I wrote on Twitter/Mastodon/LinkedIn in the last couple of months is also available in my blog <https://dmitrykandalov.com/micro-blog>.
+One lesson I learned from the Twitter takeover is that if I care about the content I publish on social networks, I shouldn't rely on them to keep it or make it available. Everything I wrote on Twitter/Mastodon/LinkedIn in the last couple of months is also available in my blog <https://dmitrykandalov.com/micro-blog>.
 
 #### 2024/01/26
 Having approval/snapshot tests for calculated cells in notebooks could be really useful. The hardest part is to show meaningful diffs for complex and visual data. Maybe a feature for [@KotlinForData](https://twitter.com/KotlinForData) one day :) (I found <https://github.com/ploomber/nbsnapshot>, but it's not quite what I'd expect.)
