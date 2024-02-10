@@ -9,7 +9,7 @@ One of the coolest features in #IntelliJ 2024 for me are the charts 💪📈 I g
 <img src="../assets/images/micro-blog/2024-02-09.png" width="80%" height="80%"/>
 
 #### 2024/02/08
-Turns out #Kotlin get/set operators can have many parameters of any type 🧐 For example:
+Turns out #Kotlin get/set operators can have multiple parameters of any type 🧐 For example:
 <kotlin>
 operator fun &lt;T&gt; List&lt;T&gt;.get(i: Int, f: () -&gt; Int): List&lt;T&gt; = ...
 operator fun &lt;T&gt; List&lt;T&gt;.get(vararg indices: Int): List&lt;T&gt; = ...
