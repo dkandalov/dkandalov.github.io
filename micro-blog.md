@@ -3,6 +3,33 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/02/09
+One of the coolest features in #IntelliJ 2024 for me are the charts 💪📈 I guess they work on any "data" content, but CSV file support is the killer feature because they are so easy to produce in a few lines of code.
+
+<img src="../assets/images/micro-blog/2024-02-09.png" width="80%" height="80%"/>
+
+#### 2024/02/08
+Turns out #Kotlin get/set operators can have many parameters of any type 🧐 For example:
+<kotlin>
+operator fun &lt;T&gt; List&lt;T&gt;.get(i: Int, f: () -&gt; Int): List&lt;T&gt; = ...
+operator fun &lt;T&gt; List&lt;T&gt;.get(vararg indices: Int): List&lt;T&gt; = ...
+</kotlin>
+
+Which can be used like this:
+<kotlin>
+list[0, { 123 }]
+list[0, 2, 4]
+</kotlin>
+
+#### 2024/02/07
+The missing #IntelliJ intention to generate named arguments in Kotlin is a feature that I wanted for years but never even bothered looking up on YouTrack. Makes me wonder if the votes on issues skew toward the most irritating or shiny but not necessarily the most useful ones 🤔
+
+#### 2024/02/06
+One of the #Kotlin plugin features that I'd expect from day one is an intention to generate named arguments for function/constructor invocations. Seems like a good ratio between the effort to implement and productivity impact. But it's in the backlog <https://youtrack.jetbrains.com/issue/KTIJ-16676> 😕
+
+#### 2024/02/05
+On the topic of browsers, I use Firefox as a default browser (configured to clear cookies and other data on restart) and Chrome when I need to be logged in. Firefox Focus on iOS. Quite happy with it. Chrome is the new IE 🙈
+
 #### 2024/02/04
 For the first time in ages, I'm happy to accept a cookie 😋 And it was a really tasty one!<br/> Thank you, Firefox! #fosdem
 
