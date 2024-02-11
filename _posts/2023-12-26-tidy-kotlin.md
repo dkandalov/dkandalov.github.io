@@ -261,6 +261,46 @@ data class Credentials(val user: String, val password: Password)
 Note that in IntelliJ there is a "Put parameters on one line" intention, which can be invoked via the `Alt+Enter` popup menu or assigned its own shortcut.
 
 
+### Put parameters on separate lines
+When a function or class constructor declaration has too many parameters, put them on one line. How many is too many is subjective and depends on the length of parameter names, the length and complexity of parameter types, the length of the default values, the surrounding code, etc. Too many parameters can also be a good point to ask ourselves if some of them should be extracted into a separate class.
+
+For example, having five constructor parameters might be too much for a single line.
+<kotlin>
+class FruitStoreInTheCloud(val uri: Uri, val user: String, val password: Password, val connectionTimeout: Duration, val retryAttempts: Int = 5)
+</kotlin>
+
+So we can try putting them on separate lines.
+<kotlin>
+class FruitStoreInTheCloud(
+val uri: Uri,
+val user: String,
+val password: Password,
+val connectionTimeout: Duration,
+val retryAttempts: Int = 5
+)
+</kotlin>
+
+It might be tempting to group some of the related parameters and put them on one line. The problem with this layout is that it is more irregular than one parameter per line.
+<kotlin>
+class FruitStoreInTheCloud(
+val uri: Uri,
+val user: String, val password: Password,
+val connectionTimeout: Duration, val retryAttempts: Int = 5
+)
+</kotlin>
+
+What we really mean by grouping parameters is that there is cohesion and each group might be better expressed as a separate class. With only three parameters in the constructor, we might consider [putting them on one line](#put-parameters-on-one-line) (never mind the irony).
+<kotlin>
+class FruitStoreInTheCloud(
+val uri: Uri,
+val credentials: Credentials,
+val config: Config
+)
+</kotlin>
+
+Note that in IntelliJ there is a “Put parameters on separate lines” intention, which can be invoked via the `Alt+Enter` popup menu or assigned its own shortcut.
+
+
 ### Put arguments on one line
 When a function or constructor invocation has only a few arguments, put them on one line. How few is enough to justify the tidying is subjective and depends on the length of argument names (especially with named arguments), the surrounding code, readers' attention span, etc. The motivation is to have "optimal" information density on the screen.
 
@@ -283,45 +323,6 @@ The next tidying might be to [inline single usage](#inline-variables-with-single
 
 Note that in IntelliJ there is a "Put arguments on one line" intention, which can be invoked via the `Alt+Enter` popup menu or assigned its own shortcut.
 
-
-### Put parameters on separate lines
-When a function or class constructor declaration has too many parameters, put them on one line. How many is too many is subjective and depends on the length of parameter names, the length and complexity of parameter types, the length of the default values, the surrounding code, etc. Too many parameters can also be a good point to ask ourselves if some of them should be extracted into a separate class.
-
-For example, having five constructor parameters might be too much for a single line.
-<kotlin>
-class FruitStoreInTheCloud(val uri: Uri, val user: String, val password: Password, val connectionTimeout: Duration, val retryAttempts: Int = 5)
-</kotlin>
-
-So we can try putting them on separate lines.
-<kotlin>
-class FruitStoreInTheCloud(
-    val uri: Uri,
-    val user: String,
-    val password: Password,
-    val connectionTimeout: Duration,
-    val retryAttempts: Int = 5
-)
-</kotlin>
-
-It might be tempting to group some of the related parameters and put them on one line. The problem with this layout is that it is more irregular than one parameter per line.
-<kotlin>
-class FruitStoreInTheCloud(
-    val uri: Uri,
-    val user: String, val password: Password,
-    val connectionTimeout: Duration, val retryAttempts: Int = 5
-)
-</kotlin>
-
-What we really mean by grouping parameters is that there is cohesion and each group might be better expressed as a separate class. With only three parameters in the constructor, we might consider [putting them on one line](#put-parameters-on-one-line) (never mind the irony). 
-<kotlin>
-class FruitStoreInTheCloud(
-    val uri: Uri,
-    val credentials: Credentials,
-    val config: Config
-)
-</kotlin>
-
-Note that in IntelliJ there is a “Put parameters on separate lines” intention, which can be invoked via the `Alt+Enter` popup menu or assigned its own shortcut.
 
 ### Stop the CONSTANT SHOUTING
 
