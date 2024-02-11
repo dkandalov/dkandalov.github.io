@@ -280,7 +280,7 @@ class FruitStoreInTheCloud(
 )
 </kotlin>
 
-It might be tempting to group some of the related parameters and put them on one line. The problem with this layout is that it is more irregular than one parameter per line.
+Since some of the parameters are related, we might be tempted to group them.
 <kotlin>
 class FruitStoreInTheCloud(
     val uri: Uri,
@@ -289,7 +289,7 @@ class FruitStoreInTheCloud(
 )
 </kotlin>
 
-What we really mean by grouping parameters is that there is cohesion and each group might be better expressed as a separate class.
+The problem with this layout is that it is more irregular than one parameter per line. What we really mean by grouping the parameters is that there is cohesion and each group could be expressed as a separate class.
 <kotlin>
 class FruitStoreInTheCloud(
     val uri: Uri,
