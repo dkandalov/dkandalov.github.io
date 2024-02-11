@@ -262,7 +262,7 @@ Note that in IntelliJ there is a "Put parameters on one line" intention, which c
 
 
 ### Put parameters on separate lines
-When a function or class constructor declaration has too many parameters, put them on one line. How many is too many is subjective and depends on the length of parameter names, the length and complexity of parameter types, the length of the default values, the surrounding code, etc. Too many parameters can also be a good point to ask ourselves if some of them should be extracted into a separate class.
+When a function or class constructor declaration has too many parameters, put them on separate line. How many is too many is subjective and depends on the length of parameter names, the length and complexity of parameter types, the length of the default values, the surrounding code, etc. Too many parameters can also be a good point to ask ourselves if some of them should be extracted into a separate class.
 
 For example, having five constructor parameters might be too much for a single line.
 <kotlin>
@@ -289,7 +289,7 @@ class FruitStoreInTheCloud(
 )
 </kotlin>
 
-What we really mean by grouping parameters is that there is cohesion and each group might be better expressed as a separate class. With only three parameters in the constructor, we might consider [putting them on one line](#put-parameters-on-one-line) (never mind the irony).
+What we really mean by grouping parameters is that there is cohesion and each group might be better expressed as a separate class.
 <kotlin>
 class FruitStoreInTheCloud(
     val uri: Uri,
@@ -297,6 +297,7 @@ class FruitStoreInTheCloud(
     val config: Config
 )
 </kotlin>
+And with only three parameters in the constructor, we might consider [putting them on one line](#put-parameters-on-one-line) (never mind the irony).
 
 Note that in IntelliJ there is a “Put parameters on separate lines” intention, which can be invoked via the `Alt+Enter` popup menu or assigned its own shortcut.
 
