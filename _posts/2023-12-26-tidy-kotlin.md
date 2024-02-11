@@ -272,29 +272,29 @@ class FruitStoreInTheCloud(val uri: Uri, val user: String, val password: Passwor
 So we can try putting them on separate lines.
 <kotlin>
 class FruitStoreInTheCloud(
-val uri: Uri,
-val user: String,
-val password: Password,
-val connectionTimeout: Duration,
-val retryAttempts: Int = 5
+    val uri: Uri,
+    val user: String,
+    val password: Password,
+    val connectionTimeout: Duration,
+    val retryAttempts: Int = 5
 )
 </kotlin>
 
 It might be tempting to group some of the related parameters and put them on one line. The problem with this layout is that it is more irregular than one parameter per line.
 <kotlin>
 class FruitStoreInTheCloud(
-val uri: Uri,
-val user: String, val password: Password,
-val connectionTimeout: Duration, val retryAttempts: Int = 5
+    val uri: Uri,
+    val user: String, val password: Password,
+    val connectionTimeout: Duration, val retryAttempts: Int = 5
 )
 </kotlin>
 
 What we really mean by grouping parameters is that there is cohesion and each group might be better expressed as a separate class. With only three parameters in the constructor, we might consider [putting them on one line](#put-parameters-on-one-line) (never mind the irony).
 <kotlin>
 class FruitStoreInTheCloud(
-val uri: Uri,
-val credentials: Credentials,
-val config: Config
+    val uri: Uri,
+    val credentials: Credentials,
+    val config: Config
 )
 </kotlin>
 
