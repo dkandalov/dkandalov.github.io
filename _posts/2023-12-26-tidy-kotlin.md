@@ -2,11 +2,11 @@
 permalink: tidy-kotlin
 ---
 
-This blog post is intended to be a catalog of Kotlin tidyings based on my experience of writing server-side Kotlin. The term "tidying" is inspired by the ["Tidy First?" book](https://www.oreilly.com/library/view/tidy-first/9781098151232) and essentially means a small refactoring. Some of them are specific to Kotlin, while others are applicable to any programming language.
+This blog post is a catalog of Kotlin tidyings based on my experience of writing server-side Kotlin. The term "tidying" is inspired by the ["Tidy First?" book](https://www.oreilly.com/library/view/tidy-first/9781098151232) and essentially means a small refactoring. Some of them are specific to Kotlin, while others are applicable to any programming language. I plan to keep this catalog updated so it might naturally evolve over time.
 
-These are not rules but suggestions on how to improve the code. Be aware, this is not a comprehensive list, so there are always other forces affecting the design (e.g. objects' lifetime or [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)), including non-technical forces like code style preferences of other people or priorities of the project. Depending on the context it might be better to avoid or delay tidying.
+Be aware these are not rules but suggestions on how to improve the code. It's also not a comprehensive list, so there are other forces affecting the design not mentioned here. These forces can be technical, for example, objects' lifetime or [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself), and non-technical, for example,   code style preferences of other people or priorities of the project. Depending on the context it might be better to avoid or delay tidying.
 
-I plan to keep this catalog updated so it might naturally evolve over time. Each tyding mentions reasons bihind it. Let me know if some reasons are missing or if you disagree with them.
+Many of these tidyings are about code style and formatting, which are sometimes regarded as cursory issues. While it's true that projects always have more significant issues, and it's possible to read and navigate the code presented in any sensible way, the main premise of the tidyings is that fixing small things does matter. One reason is that small fixes are more likely to happen than bigger ones because they normally require a limited amount of effort and it's easier to see the end state. Instead of planning a large-scale improvement at some point later, which might never happen, we can benefit from small improvements of code ergonomics now, which will accumulate over time. Another reason to fix small and seemingly insignificant code issues is that the interaction with the code via tydings gives us more of a tactile experience of the code, which can help us discover better design, and really understand the code and its changeability constraints. Finally, some of the issues are bigger than they seem to be or they act as gatekeepers for bigger refactorings. By tidying we can unlock a bigger area of improvement or get an insight to ask the right question.
 
 <i>==== This is work-in-progress. Feel free to share the link but be aware that the content will change. Feedback is welcome via email or social media. ====</i>
 
@@ -20,7 +20,7 @@ I plan to keep this catalog updated so it might naturally evolve over time. Each
 6. [Put arguments on one line](#put-arguments-on-one-line)
 7. [Put parameters/arguments on separate lines](#put-parametersarguments-on-separate-lines)
 8. [Stop the CONSTANT SHOUTING](#stop-the-constant-shouting)
-9. [Use tiny types](#use-tiny-types)
+9. [Consider using tiny types](#consider-using-tiny-types)
 10. [Pass arguments in the order of declaration](#pass-arguments-in-the-order-of-declaration)
 11. ...
 
@@ -315,7 +315,7 @@ As a side note, in the example above it would be good to [inline single usage co
 Once constants follow the same naming convention as variables, it's easier to change constants to variables and the other way round because we don't need to update all usages.
 
 
-### Use tiny types
+### Consider using tiny types
 
 ...
 
