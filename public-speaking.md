@@ -4,6 +4,13 @@ title: Public speaking
 permalink: public-speaking
 ---
 
+### 2024
+
+| Dates | Event | Talk |
+| --- | --- | --- |
+| 23-24 May | [KotlinConf](https://kotlinconf.com) | Refactoring to Expressive Kotlin |
+{:.post-table}
+
 ### 2023
 
 | Dates | Event | Talk |
@@ -11,7 +18,7 @@ permalink: public-speaking
 | 4 December | [Advent of Code 2023](https://adventofcode.com/2023) | [Advent of Code 2023 in Kotlin Day 4](https://www.youtube.com/watch?v=I0nCFMDkPNo) |
 | 25 November | [GDG DevFest Berlin](https://devfest.berlin) | Gilded Rose Refactoring Kata |
 | 7 August | [The Developers' Bakery Podcast](https://thebakery.dev) | [LivePlugin with Dmitry Kandalov](https://thebakery.dev/64) |
-| 14 April | [KotlinConf](https://kotlinconf.com/speakers/9aa1160b-ce4f-4992-a1ad-b6da7d62c033) | [Gilded Rose Refactoring Kata](https://www.youtube.com/watch?v=AxxNHKCldzA) |
+| 14 April | [KotlinConf](https://kotlinconf.com) | [Gilded Rose Refactoring Kata](https://www.youtube.com/watch?v=AxxNHKCldzA) |
 {:.post-table}
 
 ### 2022
