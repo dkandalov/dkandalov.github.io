@@ -3,6 +3,12 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/02/12
+I wonder if it might be a useful feature to have import "affinity" so that if there are few imports in a file from a particular package, more things are auto-imported from the package. Or maybe it already exists? (Please don't suggest auto-import exclusions in #IntelliJ 🙃)
+
+#### 2024/02/10
+I wrote a couple more sections in the Tidy #Kotlin about putting parameters/arguments on one/separate lines <https://dmitrykandalov.com/tidy-kotlin>
+
 #### 2024/02/09
 One of the coolest features in #IntelliJ 2024 for me are the charts 💪📈 I guess they work on any "data" content, but CSV file support is the killer feature because they are so easy to produce in a few lines of code.
 
