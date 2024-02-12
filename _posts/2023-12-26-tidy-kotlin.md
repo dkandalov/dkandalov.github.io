@@ -215,7 +215,7 @@ What if some of the arguments have multiple usages (for example, if `uri` was pa
 
 
 ### Remove argument names when all types are distinct
-When all arguments (and parameters) have distinct incompatible types, named arguments might be redundant and can be removed. Named arguments help with accidentally passing value to the wrong parameter when types are the same. If all types are different, this is not a problem as it will be noticed by the compiler. Assuming that argument values have descriptive names, named arguments don't bring any benefits to justify verbosity. This is more likely to be the case when using [tiny types](#use-tiny-types).
+When all arguments (and parameters) have distinct incompatible types, named arguments might be redundant and can be removed. Named arguments help with accidentally passing value to the wrong parameter when types are the same. But if all types are different, this is not a problem as it will be noticed by the compiler. Assuming that argument values have descriptive names, named arguments don't bring any benefits to justify verbosity. This is more likely to be the case when using [tiny types](#use-tiny-types).
 
 For example, given that `uri`, `credentials`, and `config` all have different types, argument names can be removed in the code below. Once removed, we end up with one argument per line and can [put them on one line](#put-arguments-on-one-line).
 <kotlin>
@@ -262,7 +262,7 @@ Note that in IntelliJ there is a "Put parameters on one line" intention, which c
 
 
 ### Put parameters on separate lines
-When a function or class constructor declaration has too many parameters, put them on separate line. How many is too many is subjective and depends on the length of parameter names, the length and complexity of parameter types, the length of the default values, the surrounding code, etc. Too many parameters can also be a good point to ask ourselves if some of them should be extracted into a separate class.
+When a function or class constructor declaration has too many parameters, put them on separate lines. How many is too many is subjective and depends on the length of parameter names, the length and complexity of parameter types, the length of the default values, the surrounding code, etc. Too many parameters can also be a good point to ask ourselves if some of them should be extracted into a separate class.
 
 For example, having five constructor parameters might be too much for a single line.
 <kotlin>
