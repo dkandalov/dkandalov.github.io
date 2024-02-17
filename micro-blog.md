@@ -3,10 +3,36 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/02/16
+Similar to having code coverage turned on by default when running tests, maybe the performance profiler should be enabled by default when running code locally (and maybe some other environments). I'm sure I heard that idea at LJC unconference year ago 🤔
+
+#### 2024/02/15
+Thinking about code coverage, maybe instead of a separate feature, it should be the default behaviour when running tests (definitely during the development cycle) 🧐 There will be performance overhead, but it might be ok for many projects since the build is already super-slow 🙈
+
+=== Reply from [Eugen Martynov](https://twitter.com/jack_martynov) (redacted) ===
+
+So the case is about teams that collect coverage only. Frankly speaking, I know tons of people who write tests after code, so for them it is kinda obvious. As another reminder to write tests, maybe. Recently, I saw rare cases for projects without tests. Pet projects have tests.
+
+=== My reply (redacted) ===
+
+I would say not collecting but actually seeing in IDE which lines have coverage. This can be useful for both test-first and test-after.
+Yes, sometimes it feels obvious which lines are executed and then the reality surprises me 😵‍💫
+
+I never found collecting code coverage super-useful, but maybe I haven't seen it used right.
+
+While I remember, here is an old video by [@sandromancuso](https://twitter.com/sandromancuso) showing how code coverage can be used during development <https://www.youtube.com/watch?v=_NnElPO5BU0>.
+
+
+#### 2024/02/14
+#IntelliJ has a popup window with recent run/debug "configurations" (alt+shift+F9 or F10). This is really cool and makes at least part of the top panel obsolete once you know the shortcuts. But there seems to be nothing similar for running with code coverage and profiler 🤨
+
+#### 2024/02/13
+Another idea is to bring the auto-completion of "object." from class-oriented to functional code. For example, when using http4k if I type `Request(` maybe #IntelliJ could show a dropdown with the values of the Method enum because it's the only possible first parameter 🤔 #Kotlin
+
 #### 2024/02/12
 I wonder if it might be a useful feature to have import "affinity" so that if there are few imports in a file from a particular package, more things are auto-imported from the package. Or maybe it already exists? (Please don't suggest auto-import exclusions in #IntelliJ 🙃)
 
-#### 2024/02/10
+#### 2024/02/11
 I wrote a couple more sections in the Tidy #Kotlin about putting parameters/arguments on one/separate lines <https://dmitrykandalov.com/tidy-kotlin>
 
 #### 2024/02/09
