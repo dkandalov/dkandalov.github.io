@@ -184,7 +184,7 @@ To illustrate how inlining variables can help, imagine we are trying to figure o
 To be fair, we could've been more efficient by using the "Highlight Usages in File" action on all variables and visually checking the editor scrollbar area if there are any matches outside of visible code. It's still not worth it though considering that all usages can be inlined.
 
 <kotlin>
-val uri = Uri("https://fruite.cloud")                      2️⃣
+val uri = Uri("https://fruit.cloud")                       2️⃣
 val credentials = Credentials(...)                         3️⃣
 val connectionTimeout = 10.seconds                         5️⃣
 val retryAttempts = 3                                      6️⃣
@@ -198,7 +198,7 @@ doSomethingElse()
 After inlining variable usages, we can follow the constructor arguments points 1️⃣ to 6️⃣ in a linear way. We don't need to guess if the variables are used elsewhere. And it's nice that indentation at points 5️⃣ and 6️⃣ communicates the nested structure of objects.
 <kotlin>
 val store = FruitStoreInTheCloud(       1️⃣ 👀 
-    uri = Uri("https://fruite.cloud"),  2️⃣
+    uri = Uri("https://fruit.cloud"),   2️⃣
     credentials = Credentials(...),     3️⃣
     config = Config(                    4️⃣
         connectionTimeout = 10.seconds, 5️⃣
@@ -243,7 +243,7 @@ IntelliJ can help us by showing names as [inlay hints](https://www.jetbrains.com
 
 For example, given the following constructor, the meaning of empty strings and numbers `10` and `3` is not very clear without looking up the `FruitStoreInTheCloud` declaration or using IDE support.
 <kotlin>
-val store = FruitStoreInTheCloud("https://fruite.cloud", "", "", 10, 3)
+val store = FruitStoreInTheCloud("https://fruit.cloud", "", "", 10, 3)
 ...
 </kotlin>
 
@@ -251,7 +251,7 @@ The code after tidying makes the meaning of the arguments more obvious.
 
 <kotlin>
 val store = FruitStoreInTheCloud(
-    url = "https://fruite.cloud",
+    url = "https://fruit.cloud",
     user = "", 
     password = "",
     connectionTimeout = 10,
