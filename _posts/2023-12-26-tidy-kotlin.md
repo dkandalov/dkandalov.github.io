@@ -19,8 +19,8 @@ Many of these tidyings are about code style and formatting, which are sometimes 
 6. [Add argument names when types are the same or generic](#add-argument-names-when-types-are-the-same-or-generic)
 7. [Pass arguments in the order of parameter declaration](#pass-arguments-in-the-order-of-parameter-declaration)
 8. [Put parameters on one line](#put-parameters-on-one-line)
-9. [Put parameters on separate lines](#put-parameters-on-separate-lines)
-10. [Put arguments on one line](#put-arguments-on-one-line)
+9. [Put arguments on one line](#put-arguments-on-one-line)
+10. [Put parameters on separate lines](#put-parameters-on-separate-lines)
 11. [Stop the CONSTANT SHOUTING](#stop-the-constant-shouting)
 12. [Consider using tiny types](#consider-using-tiny-types)
 13. ...
@@ -295,6 +295,29 @@ data class Credentials(val user: String, val password: Password)
 Note that in IntelliJ there is a "Put parameters on one line" intention, which can be invoked via the `Alt+Enter` popup menu or assigned its own shortcut.
 
 
+### Put arguments on one line
+When a function or constructor invocation has only a few arguments, put them on one line. How few is enough to justify the tidying is subjective and depends on the length of argument names (especially with named arguments), the surrounding code, readers' attention span, etc. The motivation is to have "optimal" information density on the screen.
+
+One or two arguments on separate lines are often a good opportunity for the tidy-up. You might notice in the example below that arguments are vertically misaligned with constructors, so we have to read the code from right to left. Sometimes this is inevitable, but in this case, it's easy to fix by putting arguments on one line.
+<kotlin>
+val password = Password( ↙️ 👀
+    "********"     
+)
+val credentials = Credentials( ↙️ 👀
+    user = "Bob",
+    password = password
+)
+</kotlin>
+The code after tidying:
+<kotlin>
+val password = Password("********")
+val credentials = Credentials(user = "Bob", password = password)
+</kotlin>
+The next tidying might be to [inline single usage](#inline-variables-with-single-usage) of `password` or to [remove argument names](#remove-argument-names-when-all-types-are-distinct).
+
+Note that in IntelliJ there is a "Put arguments on one line" intention, which can be invoked via the `Alt+Enter` popup menu or assigned its own shortcut.
+
+
 ### Put parameters on separate lines
 When a function or class constructor declaration has too many parameters, put them on separate lines. How many is too many is subjective and depends on the length of parameter names, the length and complexity of parameter types, the length of the default values, the surrounding code, etc. Too many parameters can also be a good point to ask ourselves if some of them should be extracted into a separate class.
 
@@ -334,29 +357,6 @@ class FruitStoreInTheCloud(
 And with only three parameters in the constructor, we might consider [putting them on one line](#put-parameters-on-one-line) (never mind the irony).
 
 Note that in IntelliJ there is a “Put parameters on separate lines” intention, which can be invoked via the `Alt+Enter` popup menu or assigned its own shortcut.
-
-
-### Put arguments on one line
-When a function or constructor invocation has only a few arguments, put them on one line. How few is enough to justify the tidying is subjective and depends on the length of argument names (especially with named arguments), the surrounding code, readers' attention span, etc. The motivation is to have "optimal" information density on the screen.
-
-One or two arguments on separate lines are often a good opportunity for the tidy-up. You might notice in the example below that arguments are vertically misaligned with constructors, so we have to read the code from right to left. Sometimes this is inevitable, but in this case, it's easy to fix by putting arguments on one line.
-<kotlin>
-val password = Password( ↙️ 👀
-    "********"     
-)
-val credentials = Credentials( ↙️ 👀
-    user = "Bob",
-    password = password
-)
-</kotlin>
-The code after tidying:
-<kotlin>
-val password = Password("********")
-val credentials = Credentials(user = "Bob", password = password)
-</kotlin>
-The next tidying might be to [inline single usage](#inline-variables-with-single-usage) of `password` or to [remove argument names](#remove-argument-names-when-all-types-are-distinct).
-
-Note that in IntelliJ there is a "Put arguments on one line" intention, which can be invoked via the `Alt+Enter` popup menu or assigned its own shortcut.
 
 
 ### Stop the CONSTANT SHOUTING
