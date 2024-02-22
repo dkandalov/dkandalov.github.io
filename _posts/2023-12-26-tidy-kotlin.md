@@ -15,14 +15,15 @@ Many of these tidyings are about code style and formatting, which are sometimes 
 2. [Maximum privacy](#maximum-privacy)
 3. [Keep variables close to their usages](#keep-variables-close-to-their-usages)
 4. [Inline variables with single usage](#inline-variables-with-single-usage)
-5. [Remove argument names when all types are distinct](#remove-argument-names-when-all-types-are-distinct)
-6. [Put parameters on one line](#put-parameters-on-one-line)
-7. [Put parameters on separate lines](#put-parameters-on-separate-lines)
-8. [Put arguments on one line](#put-arguments-on-one-line)
-9. [Stop the CONSTANT SHOUTING](#stop-the-constant-shouting)
-10. [Consider using tiny types](#consider-using-tiny-types)
-11. [Pass arguments in the order of declaration](#pass-arguments-in-the-order-of-declaration)
-12. ...
+5. [Remove argument names when their types are distinct](#remove-argument-names-when-their-types-are-distinct)
+6. [Add argument names when types are the same or generic](#add-argument-names-when-types-are-the-same-or-generic)
+7. [Pass arguments in the order of parameter declaration](#pass-arguments-in-the-order-of-parameter-declaration)
+8. [Put parameters on one line](#put-parameters-on-one-line)
+9. [Put parameters on separate lines](#put-parameters-on-separate-lines)
+10. [Put arguments on one line](#put-arguments-on-one-line)
+11. [Stop the CONSTANT SHOUTING](#stop-the-constant-shouting)
+12. [Consider using tiny types](#consider-using-tiny-types)
+13. ...
 
 
 ### High-level declarations first
@@ -214,8 +215,8 @@ As a side note, the `FruitStoreInTheCloud()` constructor in the example above ha
 What if some of the arguments have multiple usages (for example, if `uri` was passed to a function), is it still worth inlining variables with single usage? I would argue that it's almost always worth trying. Reduced scope is likely to pay off the inconsistency of declaring arguments both in place and as variables.
 
 
-### Remove argument names when all types are distinct
-When all arguments (and parameters) have distinct incompatible types, named arguments might be redundant and can be removed. Named arguments help with accidentally passing value to the wrong parameter when types are the same. But if all types are different, this is not a problem as it will be noticed by the compiler. Assuming that argument values have descriptive names, named arguments don't bring any benefits to justify verbosity. This is more likely to be the case when using [tiny types](#use-tiny-types).
+### Remove argument names when their types are distinct
+When all arguments have distinct incompatible types, named arguments might be redundant and can be removed. Named arguments can help with accidentally passing value to the wrong parameter when types are the same. But if all types are different, this is not a problem as it will be checked by the compiler. Assuming that argument values have descriptive names, named arguments don't bring any benefits to justify verbosity. This is more likely to be the case when using [tiny types](#use-tiny-types).
 
 For example, given that `uri`, `credentials`, and `config` all have different types, argument names can be removed in the code below. Once removed, we end up with one argument per line and can [put them on one line](#put-arguments-on-one-line).
 <kotlin>
@@ -233,6 +234,39 @@ val store = FruitStoreInTheCloud(uri, credentials, config)
 </kotlin>
 
 Note that in IntelliJ there is a "Remove all argument names" intention, which can be invoked via the `Alt+Enter` popup menu or assigned its own shortcut.
+
+
+### Add argument names when types are the same or generic
+When arguments have the same or generic types, add argument names to make them distinct and clarify their meaning. One reason is that it can take some effort to tell the difference between the arguments of the same type. This is error-prone because we can pass values in the wrong order or introduce a bug while reordering parameters. Another reason is that generic types don't communicate the meaning of the value, so it's harder to understand the code without IDE/editor help, which is also an invitation for subtle bugs.
+
+IntelliJ can help us by showing names as [inlay hints](https://www.jetbrains.com/help/idea/inlay-hints.html) or [parameter information](https://www.jetbrains.com/help/idea/viewing-reference-information.html#view-parameter-info) at the cursor. The inlay hints are useful, but they don't provide the guarantees of the compiler. And because you can't know if the reader of the code will have hints enabled, it's safer to assume nothing. Parameter information is displayed in a popup window, so we might end up checking every argument while the popup is visible or try remembering the order. Either way, it's a bit too much effort. 
+
+For example, given the following constructor, the meaning of empty strings and numbers `10` and `3` is not very clear without looking up the `FruitStoreInTheCloud` declaration or using IDE support.
+<kotlin>
+val store = FruitStoreInTheCloud("https://fruite.cloud", "", "", 10, 3)
+...
+</kotlin>
+
+The code after tidying makes the meaning of the arguments more obvious.
+
+<kotlin>
+val store = FruitStoreInTheCloud(
+    url = "https://fruite.cloud",
+    user = "", 
+    password = "",
+    connectionTimeout = 10,
+    retryAttempts = 3
+)
+...
+</kotlin>
+
+Argument names have increased the length of the line to the point that we had to [put parameters on separate line](#put-parameters-on-separate-lines). So while the argument names made the code less error-prone and more understandable, they did it at the cost of verbosity. It's up to us to decide if it was worth it or if there is another avenue for tidying, e.g. introducing [tiny types](#consider-using-tiny-types).
+
+Note that in IntelliJ there is an "Add names to call arguments" intention, which can be invoked via the `Alt+Enter` popup menu or assigned its own shortcut.
+
+
+### Pass arguments in the order of parameter declaration
+...
 
 
 ### Put parameters on one line
@@ -354,11 +388,6 @@ Once constants follow the same naming convention as variables, it's easier to ch
 
 
 ### Consider using tiny types
-
-...
-
-
-### Pass arguments in the order of declaration
 
 ...
 
