@@ -3,6 +3,41 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/02/23
+Random #IntelliJ/#Gradle tip to balance out the rants. You can assign a keyboard shortcut to the "Execute Gradle Task" action (I have it as cmd+shift+G, G for Gradle). The action has auto-completion and hints for all Gradle tasks and flags! 😌
+
+=== Reply from [Martin Bonnin](https://twitter.com/martinbonnin) ===
+
+I started using none of the generated accessors lately => no magic.
+Now I just wish IDEA/Gradle could determine the buildscript classpath without the build.gradle.kts and that would fix the chicken and egg red underlines forever.
+
+
+#### 2024/02/22
+Unpopular opinion, but I'm still not convinced by #Kotlin in #Gradle builds. It's slower. IntelliJ occasionally makes the whole script red. Build scripts are more verifiable with Kotlin but not more comprehensible. It's still a matter of copying random snippets from the Internet 😬🙈
+
+#### 2024/02/21
+Another #Gradle/#IntelliJ rant is the console output. When running tests, why do I need to see all the "> Task..." and the classic "Deprecated Gradle features were used..." but can't see the command used to run the tests? 🤨
+
+=== Reply from [Chris James](https://twitter.com/quii) ===
+
+Oh god this drives me mad too
+
+*Tries to teach TDD*
+
+1. Write the failing test
+2. Run it
+3. Scroll past the bullshit to see the actual output you're interested in
+4. Write enough code to make it pass
+5. Run test again
+6. Scroll past the bullshit to see the actual output you're interested in
+
+=== My reply ===
+
++1 To clarify I’d rather not see any Gradle output in tests output but if it’s already there, I wish it included the command.
+
+#### 2024/02/20
+It feels that running code/tests was faster 10+ years ago via #IntelliJ built-in runners than it is today via #Gradle. Not sure if it's IntelliJ or Gradle itself or both. I wonder if it's worth digging out an old version of IntelliJ to prove the point 🧐 (or be embarrassed)
+
 #### 2024/02/16
 Similar to having code coverage turned on by default when running tests, maybe the performance profiler should be enabled by default when running code locally (and maybe some other environments). I'm sure I heard that idea at LJC unconference year ago 🤔
 
