@@ -6,14 +6,23 @@ permalink: /micro-blog/
 #### 2024/02/23
 Random #IntelliJ/#Gradle tip to balance out the rants. You can assign a keyboard shortcut to the "Execute Gradle Task" action (I have it as cmd+shift+G, G for Gradle). The action has auto-completion and hints for all Gradle tasks and flags! 😌
 
+=== Reply from [Михаило Љевћенко](https://twitter.com/TheMishkun) ===
+
+Even better it has "Run anything" dialog where if you type "gradle" you ll also get autocomplete, but you can also run "run cofigurations" and other things from it.
+
+Pro tip: hold shift to run with debugger
+
+=== My reply ===
+
+I somehow never got into the "Run anything" dialog even though it's definitely a more explorable UX 🤔 For Gradle, I'd rather use a shortcut than type "gradel" and misspell it 🙃 The same for run configs. Or maybe these are excuses and I just find double ctrl a bit awkward.
+
+#### 2024/02/22
+Unpopular opinion, but I'm still not convinced by #Kotlin in #Gradle builds. It's slower. IntelliJ occasionally makes the whole script red. Build scripts are more verifiable with Kotlin but not more comprehensible. It's still a matter of copying random snippets from the Internet 😬🙈
+
 === Reply from [Martin Bonnin](https://twitter.com/martinbonnin) ===
 
 I started using none of the generated accessors lately => no magic.
 Now I just wish IDEA/Gradle could determine the buildscript classpath without the build.gradle.kts and that would fix the chicken and egg red underlines forever.
-
-
-#### 2024/02/22
-Unpopular opinion, but I'm still not convinced by #Kotlin in #Gradle builds. It's slower. IntelliJ occasionally makes the whole script red. Build scripts are more verifiable with Kotlin but not more comprehensible. It's still a matter of copying random snippets from the Internet 😬🙈
 
 #### 2024/02/21
 Another #Gradle/#IntelliJ rant is the console output. When running tests, why do I need to see all the "> Task..." and the classic "Deprecated Gradle features were used..." but can't see the command used to run the tests? 🤨
