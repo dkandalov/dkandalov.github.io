@@ -17,7 +17,7 @@ Many of these tidyings are about code style and formatting, which are sometimes 
 4. [Inline variables with single usage](#inline-variables-with-single-usage)
 5. [Remove argument names when their types are distinct](#remove-argument-names-when-their-types-are-distinct)
 6. [Add argument names when types are the same or generic](#add-argument-names-when-types-are-the-same-or-generic)
-7. [Pass arguments in the order of parameter declaration](#pass-arguments-in-the-order-of-parameter-declaration)
+7. [Pass named arguments in the order of parameter declaration](#pass-named-arguments-in-the-order-of-parameter-declaration)
 8. [Put parameters on one line](#put-parameters-on-one-line)
 9. [Put arguments on one line](#put-arguments-on-one-line)
 10. [Put parameters on separate lines](#put-parameters-on-separate-lines)
@@ -265,8 +265,38 @@ Argument names have increased the length of the line to the point that we had to
 Note that in IntelliJ there is an "Add names to call arguments" intention, which can be invoked via the `Alt+Enter` popup menu or assigned its own shortcut.
 
 
-### Pass arguments in the order of parameter declaration
+### Pass named arguments in the order of parameter declaration
+Pass named arguments in function/constructor invocations in the same order as parameter declaration. The reason is that if parameters are declared in a meaningful order, then arguments can only benefit from following it. Consistent ordering can also be useful when comparing multiple function/constructor invocations by doing a visual comparison or textual diff. Finally, because the "Change signature" refactoring automatically reorders arguments to be in the order of parameters even on an unrelated change, it is beneficial to have arguments in this order so that the refactoring is not mixed with the argument reordering.
+
+For example, given the following invocations of the `Config` constructor, it's not obvious what the differences are between them.
+<kotlin>
+val config = Config(
+    retryAttempts = 10,
+    callTimeout = INFINITE,
+    connectionTimeout = 3.seconds
+)
 ...
+val anotherConfig = Config(
+    connectionTimeout = 10.seconds,
+    retryAttempts = 3, 
+    callTimeout = 5.minutes
+)
+</kotlin>
+
+With the arguments arranged in the same order, it's easier to notice the differences (and maybe ask ourselves why these differences exist).
+<kotlin>
+val config = Config(
+    connectionTimeout = 3.seconds,
+    callTimeout = INFINITE,
+    retryAttempts = 10
+)                                  
+...                                
+val anotherConfig = Config(
+    connectionTimeout = 10.seconds,
+    callTimeout = 5.minutes,
+    retryAttempts = 3
+)
+</kotlin>
 
 
 ### Put parameters on one line
