@@ -3,6 +3,23 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/02/26
+Thinking of too many #Gradle downloads (because of many minor versions), the most appealing solution is to make core Gradle smaller and "finish" it, so it will naturally need fewer releases. And, hopefully, less API churn, so the build scripts from five years ago are valid today.
+
+#### 2024/02/25
+Another #Gradle rant is the amount of Gradle versions I end up downloading. It seems like each project has a slightly different version in gradle-wrapper. I have 16 Gradle versions on a relatively new laptop. Does it have to be this way?
+
+=== Reply from [joschi](https://twitter.com/joschi83) ===
+
+That's the whole point of the Gradle wrapper (and Maven wrapper if you're using it), allowing for completely reproducible builds.
+Even better if you're using Gradle and Maven toolchains to download and use a specific JDK.
+
+Also, are you working on a Raspberry Pi 1 or something? Disk space is cheap. 😅
+
+=== My reply ===
+
+Yes, reproducible builds are non-negotiable. The question is if the experience could be better :) I agree about disk space, although it's funny downloading +100Mb to compile a few classes. It's the download time (opening an old project on a train), IntelliJ indexing, etc.
+
 #### 2024/02/23
 Random #IntelliJ/#Gradle tip to balance out the rants. You can assign a keyboard shortcut to the "Execute Gradle Task" action (I have it as cmd+shift+G, G for Gradle). The action has auto-completion and hints for all Gradle tasks and flags! 😌
 
