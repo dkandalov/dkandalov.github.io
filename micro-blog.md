@@ -3,6 +3,18 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/03/01
+Great talk by [Clare Sudbery](https://mastodon.social/@claresudbery) "Continuous Integration: That’s Not What They Meant" <https://www.youtube.com/watch?v=Ms3J6_-6-fk> 🤩 And this is your regular reminder that pull requests are a waste.
+
+#### 2024/02/29
+Here is my daily bread and butter 🍞🧈 being taken away in the form of #IntelliJ not finding #Kotlin property usages in the constructor unless it's a named argument :( #whybacklog <https://youtrack.jetbrains.com/issue/KTIJ-11262>
+
+#### 2024/02/28
+Not sure what The Internet thinks about it, but I prefer named arguments in #Kotlin to be passed in the order of parameter declaration. If you disagree, please make sure I know about it 🙈 <https://dmitrykandalov.com/tidy-kotlin#pass-named-arguments-in-the-order-of-parameter-declaration>
+
+#### 2024/02/27
+It's good that build tools care about build reproducibility, but unless you rebuild artifacts at some point later and compare checksums, you cannot assume that the build is actually reproducible (because the environment, pipelines, etc. do change over time).
+
 #### 2024/02/26
 Thinking of too many #Gradle downloads (because of many minor versions), the most appealing solution is to make core Gradle smaller and "finish" it, so it will naturally need fewer releases. And, hopefully, less API churn, so the build scripts from five years ago are valid today.
 
