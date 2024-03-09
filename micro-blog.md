@@ -3,8 +3,11 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/03/09
+FYI Sweary Lightweight Agile Planning https://slap.pm and SFW version https://slap.pm/bowdlerised #NoEstimates Good planning advice on one page of text, which you can read in under 2 minutes.
+
 #### 2024/03/08
-I like the idea (can't remember the source) that not all tech decisions need to have economical rational behind them. For example, it might be worth tidying up the code not because it will make us more productive in the future but because we enjoy a better working environment.
+I like the idea (can't remember the source) that not all tech decisions need to have economical rationale behind them. For example, it might be worth tidying up the code not because it will make us more productive in the future but because we enjoy a better working environment.
 
 === Reply from [Vladimir Dolzhenko](https://twitter.com/dolzhenko) ===
 
