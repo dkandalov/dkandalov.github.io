@@ -3,6 +3,34 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/03/08
+I like the idea (can't remember the source) that not all tech decisions need to have economical rational behind them. For example, it might be worth tidying up the code not because it will make us more productive in the future but because we enjoy a better working environment.
+
+=== Reply from [Vladimir Dolzhenko](https://twitter.com/dolzhenko) ===
+
+<https://plugins.jetbrains.com/plugin/8575-nyan-progress-bar> right?
+
+=== My reply ===
+
+Yes, I guess overall it's about doing something because you feel like it, not because there is a convincing case for it to be useful or monetisable. The Nyan progress bar is on the artistic/performance meme side of it 🌈
+
+=== Reply from [Ivan Moore](https://twitter.com/ivanrmoore) ===
+
+I think there is economic rationale behind this though. Better working environment = higher morale = better motivated people = more productive.
+
+=== My reply ===
+
+I agree. I guess the point is that it doesn't need to have an economic rationale. People having meaningful lives is valuable on its own regardless of the productivity 🤔
+
+#### 2024/03/07
+I like the idea from the [Happy Path Programming podcast](https://podcasters.spotify.com/pod/show/happypathprogramming) (yes, it's a recommendation 😉) that creating a major build tool is so hard that people never do it again, and the knowledge is lost. But maybe someone should do it, so we finally get a perfect build tool for the JVM. An idea for Amper? 🙈
+
+#### 2024/03/05
+Looking recently into OAuth/OpenID, I'm tempted to create a diagram explaining the interactions, even though it's "yet another monad tutorial" territory. The reason is that I found most diagrams incomplete or confusing. Not a good thing from a security point of view 🤔
+
+#### 2024/03/04
+"Yet another emoji support" is one of my favourite #IntelliJ plugins <https://github.com/shiraji/yet-another-emoji-support> 😅 It adds emoji auto-complete similar to Slack which I wish was the default everywhere. Not sure if the plugin works in the latest IJ though, I have a local fork 😱🙈
+
 #### 2024/03/01
 Great talk by [Clare Sudbery](https://mastodon.social/@claresudbery) "Continuous Integration: That’s Not What They Meant" <https://www.youtube.com/watch?v=Ms3J6_-6-fk> 🤩 And this is your regular reminder that pull requests are a waste.
 
