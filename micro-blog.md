@@ -3,6 +3,29 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/03/13
+To be fair, in #IntelliJ it's easy to write a naive expansion to word boundaries (see attached snippet for LivePlugin). What's hard is to make it work in all contexts with other selection expansion handlers (it doesn't). And given enough users, someone will always be upset 👍
+
+<img src="../assets/images/micro-blog/2024-03-13.png"/>
+
+#### 2024/03/12
+I thought plain text #IntelliJ selection expansion first selects "valid id", then text surrounded by spaces, then wider context. Turns out it's a combination of `PlainTextLineSelectioner`, `NaturalLanguageTextSelectioner` and `WordSelectioner` (actually java id "selectioner"), which don't expand to `a [b=1|23] c`. And I'm not going to debug VSCode 🙅
+
+#### 2024/03/11
+The rabbit hole of the day is exploring selection expansion in different editors, e.g.
+```
+foo a=a|aa bar
+foo a=[a|aa] bar
+[foo a=a|aa bar]
+```
+
+I wish there was also this selection:
+```
+foo [a=a|aa] bar
+```
+
+I didn't find a simple answer/solution, unfortunately.
+
 #### 2024/03/09
 FYI Sweary Lightweight Agile Planning <https://slap.pm> and SFW version <https://slap.pm/bowdlerised> #NoEstimates Good planning advice on one page of text, which you can read in under 2 minutes.
 
