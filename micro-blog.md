@@ -13,16 +13,16 @@ I thought plain text #IntelliJ selection expansion first selects "valid id", the
 
 #### 2024/03/11
 The rabbit hole of the day is exploring selection expansion in different editors, e.g.
-```
+<plain-text>
 foo a=a|aa bar
 foo a=[a|aa] bar
 [foo a=a|aa bar]
-```
+</plain-text>
 
 I wish there was also this selection:
-```
+<plain-text>
 foo [a=a|aa] bar
-```
+</plain-text>
 
 I didn't find a simple answer/solution, unfortunately.
 
