@@ -3,6 +3,63 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/03/16
+One solution for the coding interviews could be for everyone to do them on a regular basis in the spirit of code katas. But when I ask people I know from the big tech to do it on a weekend, they are not very keen and imply it's a waste of time. Something doesn't add up here 🧐
+
+#### 2024/03/15
+It might seem weird today, but puzzle-focused interviews were a norm in the tech industry 20+ years ago. With the pinnacle of the ["How Would You Move Mount Fuji?"](https://www.goodreads.com/book/show/205266.How_Would_You_Move_Mount_Fuji_Microsoft_s_Cult_of_the_Puzzle_How_the_World_s_Smartest_Companies_Select_the_Most_Creative_Thinkers) book. I hope in 20 years we will look back at the current hiring process with the same amount of disbelief #progress
+
+<img src="../assets/images/micro-blog/2024-03-15.png" width="80%" height="80%"/>
+
+#### 2024/03/14
+Here are some old ideas to make coding interviews more fair. Do an actual pair programming session, in which nobody knows the problem or solution. Do it on a "neutral" territory. No hard time limit. In big companies randomly interview existing employees to measure the baseline.
+
+=== Reply from [Jean-Michel](https://twitter.com/jm_fayard) ===
+
+The obvious principle behind that: Being a good candidat should be a second job <https://dev.to/jmfayard/how-to-not-answer-where-do-you-see-yourself-in-5-years-398m>
+
+
+> Being a good candidate should not be a second job.
+Remember back of the day where we didn't care much about usuability. We had our software, it was not perfect but it worked. Users complained that it was hard to use. From our side we complained that they were too lazy to RTFM.
+> Thing went on and on, and then we realized that the user is not trained or paid to use our software.
+> We are the professional and it's our job to think about usability and make sure we understand the user so much that we will remove the obstacles on her path before she can see it.
+> <br/>
+> The same principle holds in a job interview.
+> The candidate is neither trained nor paid to be a good candidate.
+> Her real job is to be a good developer, and that's what the interview should be all about.
+> The interviewer is the professional, he is paid for that, he can prepare things in advance. That's his job to think about what makes candidates uncomfortable for no value to the company. And get those obstacles out of the way.
+
+
+=== Reply from [Dave H](https://twitter.com/thinkfoo) ===
+
+I like the idea. Choosing that neutral territory again and again could be tricky though.
+
+A benefit for the interviewee of working on the companies actual codebase is it's an opportunity for them to learn if the organisations code is an environment they want to work in
+
+Do both?
+
+=== My reply ===
+
+This is a good point. It’s easy to run out of neutral spaces even in a big city. Might still be worth it compared to a corporate environment where you can’t walk on your own and need a “permission” to drink water or go to the toilet.
+
+Yes! Working on a real codebase is another good idea 🙂 Maybe even pay for it.
+
+Obviously, I don’t mean any of the ideas are easy or feasible to implement. But they highlight issues with the current process.
+
+=== Reply from [Михаило Љевћенко](https://twitter.com/TheMishkun) ===
+
+This idea does not scale. Imagine how many new tasks covering the required set of skills you need to craft in medium-large companies?
+
+Good coding interviews already resemble pair programming. Yes, interviewer done that task dozens of times, but that advantage can be neutralized by selecting everyday tasks as interview tasks.
+
+If you hire a backend dev, make them do a CRUD app with some specific of your domain. They've too done cruds dozens if not hundreds of times. So the fact that interviewer done this particular task shouldn't matter.
+
+=== My reply ===
+
+I suspect that interviewers who are very familiar with the problem can be affected by [attribution](https://en.wikipedia.org/wiki/Attribution_bias) and [self-serving](https://en.wikipedia.org/wiki/Self-serving_bias) biases. And since knowing about the bias doesn't make you less biased, something else needs to change.
+
+
+
 #### 2024/03/13
 To be fair, in #IntelliJ it's easy to write a naive expansion to word boundaries (see attached snippet for LivePlugin). What's hard is to make it work in all contexts with other selection expansion handlers (it doesn't). And given enough users, someone will always be upset 👍
 
