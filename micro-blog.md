@@ -9,6 +9,8 @@ One solution for the coding interviews could be for everyone to do them on a reg
 #### 2024/03/15
 It might seem weird today, but puzzle-focused interviews were a norm in the tech industry 20+ years ago. With the pinnacle of the ["How Would You Move Mount Fuji?"](https://www.goodreads.com/book/show/205266.How_Would_You_Move_Mount_Fuji_Microsoft_s_Cult_of_the_Puzzle_How_the_World_s_Smartest_Companies_Select_the_Most_Creative_Thinkers) book. I hope in 20 years we will look back at the current hiring process with the same amount of disbelief #progress
 
+(To be clear the diagram is not to scale or be exhaustive, e.g. it ignores the randomness of the hiring process.)
+
 <img src="../assets/images/micro-blog/2024-03-15.png" width="80%" height="80%"/>
 
 #### 2024/03/14
