@@ -3,8 +3,52 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/03/25
+Nothing radically new here, but in #Kotlin you can change the order of function/constructor calls in the code to match the execution order with scope or extension functions. For example:
+<kotlin>
+println(qix(bar(foo(123))))
+</kotlin>
+👇
+<kotlin>
+foo(123).let(::bar).let(::qix).also(::println)
+</kotlin>
+
+#### 2024/03/23
+In terms of less local code ergonomics, e.g. "reading" a function, in addition to eye/mouse/cursor tracking it might be interesting to capture navigation like finding usages, which arguments are passed in, etc. The complexity of navigation could correlate with worse ergonomics? 🤔
+
+#### 2024/03/21
+In terms of the “local” code ergonomics for an expression/statement which fits on a few lines, what about eye/mouse/cursor tracking to measure overall distance, path overlap, hot spots, amount of jumps, etc.? This could be a more concrete thing to compare “readability” 🤔
+
+=== Reply from [Louis CAD](https://twitter.com/Louis_CAD) ===
+
+How much you need to navigate and jump your eyes off to understand things, and how many questions you need to ask yourself when reasoning about what happens in the code.
+
+=== My reply ===
+
+Not easy to measure the amount of questions though. Maybe some statistical (AI) magic dust can interpret emotions on the webcam 🙃
+
+=== Reply from [Louis CAD](https://twitter.com/Louis_CAD) ===
+
+You can ask someone to write the questions they have in mind. Mutable references, and unstructured concurrency are the first offenders. Then, there's the "Why was this named like that?".
+
+=== My reply ===
+
+Hm, I was thinking more about lower-level measurements. Questions could be a good way to interpret the results though 🤔 (The problem with asking people questions is figuring out if they actually had this thought or they think they did but actually didn't.)
+
+#### 2024/03/20
+Code "readability" has such a wide meaning that I genuinely have no idea what it really means. I suspect it often means "the code that we like" or "we did our best to not make a mess" 🙈 I wonder if thinking about code "ergonomics" could lead to more concrete terms? 🤔
+
+#### 2024/03/18
+I doubt it's a new idea, but I wonder if, similar to NP problems, the information on the Internet could/should be made hard to fake and easy to verify (via digital signature, trust network, etc. #noblockchainsplease) 🤔
+
 #### 2024/03/16
 One solution for the coding interviews could be for everyone to do them on a regular basis in the spirit of code katas. But when I ask people I know from the big tech to do it on a weekend, they are not very keen and imply it's a waste of time. Something doesn't add up here 🧐
+
+=== Reply from [Alexey Soshin](https://twitter.com/alexey_soshin) ===
+
+Before looking for solutions, someone needs to admit the problem.
+
+As things stand now, there are more than enough people willing and able to solve any ridiculous interview question.
 
 #### 2024/03/15
 It might seem weird today, but puzzle-focused interviews were a norm in the tech industry 20+ years ago. With the pinnacle of the ["How Would You Move Mount Fuji?"](https://www.goodreads.com/book/show/205266.How_Would_You_Move_Mount_Fuji_Microsoft_s_Cult_of_the_Puzzle_How_the_World_s_Smartest_Companies_Select_the_Most_Creative_Thinkers) book. I hope in 20 years we will look back at the current hiring process with the same amount of disbelief #progress
