@@ -34,8 +34,26 @@ foo(123).let(::bar).let(::qix).also(::println)
 #### 2024/03/27
 Can anyone recommend good eye tracking hardware/software suitable for recording the area/letters user is looking at on the screen? 🤔 I thought eye tracking was mostly a "solved" problem but after a bit of search I'm more confused than before.
 
+=== Update ===
+
+I found <https://www.tobii.com/products/eye-trackers/screen-based/tobii-pro-spark> for £2600 and <https://pupil-labs.com/products/core> for €3440. Given the prices, I'm not in a rush to order one.
+
 #### 2024/03/26
 I wonder if people use #Kotlin scope functions in some idiosyncratic way that doesn't match coding conventions <https://kotlinlang.org/docs/scope-functions.html> 🤔 I think I tend to use `also` only for non-essential side effects and avoid `run` and `with` if possible.
+
+=== Reply from [Simon Vergauwen](https://twitter.com/vergauwen_simon) ===
+
+I almost never use run, or with. I rarely use also, typically for (temp) logging.
+
+let I also use sparingly, for ?.let(::Reference) and similar but definitely not always.
+
+So I refrain from these most of the time.
+
+=== Reply from [Uberto Barbini](https://twitter.com/ramtop) ===
+
+I use with only when I need something in scope to get ext functions on something else.
+
+Run is nice sometimes as a let on receiver, but the name is unfortunate
 
 #### 2024/03/25
 Nothing radically new here, but in #Kotlin you can change the order of function/constructor calls in the code to match the execution order with scope or extension functions. For example:
