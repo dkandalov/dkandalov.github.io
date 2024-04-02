@@ -3,6 +3,40 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/04/02
+I wish there was more usability testing on APIs. Nothing fancy. Just watch someone with good knowledge of the programming language and technology complete a couple of tasks (no hints, no judgment). This might be enough to find pain points and avoid the curse of knowledge.
+
+#### 2024/03/31
+In case you missed it, there is <https://kotlintoday.com> by [@kotlin_magazine](https://mastodon.social/@kotlin_magazine) 😅 #Kotlin
+
+<img src="../assets/images/micro-blog/2024-03-31.jpeg" width="80%" height="80%"/>
+
+#### 2024/03/30
+Clarifying the point about ::functionReference in #Kotlin. The line between "variables" and functions is blurry anyway, and it's possible to reference a function without "::" 🤷‍
+
+<kotlin>
+fun main() = foo(f1)
+val f1 = fun() {}
+fun foo(f: () -> Unit) = f()
+</kotlin>
+
+#### 2024/03/29
+I wonder why #Kotlin needs "::" before function references, is it for faster parsing or there is a deeper reason? 🧐
+
+<kotlin>
+foo(123).let(bar).let(qix).also(println)
+</kotlin>
+vs
+<kotlin>
+foo(123).let(::bar).let(::qix).also(::println)
+</kotlin>
+
+#### 2024/03/27
+Can anyone recommend good eye tracking hardware/software suitable for recording the area/letters user is looking at on the screen? 🤔 I thought eye tracking was mostly a "solved" problem but after a bit of search I'm more confused than before.
+
+#### 2024/03/26
+I wonder if people use #Kotlin scope functions in some idiosyncratic way that doesn't match coding conventions <https://kotlinlang.org/docs/scope-functions.html> 🤔 I think I tend to use `also` only for non-essential side effects and avoid `run` and `with` if possible.
+
 #### 2024/03/25
 Nothing radically new here, but in #Kotlin you can change the order of function/constructor calls in the code to match the execution order with scope or extension functions. For example:
 <kotlin>
