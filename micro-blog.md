@@ -3,8 +3,40 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/04/06
+In programming, it's important to name things right, so it's "core human", not "soft" skills. (Image by [Susan David, Ph.D.](https://twitter.com/SusanDavid_PhD), discovered via [Compassionate Coding](https://twitter.com/compassioncode).)
+
+<img src="../assets/images/micro-blog/2024-04-06.png" width="80%" height="80%"/>
+
+#### 2024/04/05
+Happy to confirm that #IntelliJ 2024.1 preserves #Kotlin imports after copy-paste 🙏🥳🍻 <https://youtrack.jetbrains.com/issue/KTIJ-10687>
+
+#### 2024/04/04
+Given that in #Kotlin `apply` and `with` are often used for configuring objects, it would be interesting to try restricting `this` to only one immediate receiver 🧐 Maybe with something like [`@DslMarker`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-dsl-marker).
+
+=== Reply from [Uberto Barbini](https://twitter.com/ramtop) ===
+
+It's not already like that? I mean you need to qualify it for refer to the other receivers
+
+=== My reply ===
+
+You're right, `this` can only refer to immediate receiver or has to be qualified 😳 What I mean is accessing several contexts via implicit `this`
+
+<kotlin>
+12.apply {
+    "".apply {
+        uppercase() // current receiver
+        shr(1) // outer receiver
+        foo // class field
+    }
+}
+</kotlin>
+
+#### 2024/04/03
+The usability of APIs is not just typing the right code. It's also the amount of friction or help from the compiler/IDE/editor at every step, being able to "guess" the right thing to do, navigating to and understanding the source code, finding documentation/examples online, etc.
+
 #### 2024/04/02
-I wish there was more usability testing on APIs. Nothing fancy. Just watch someone with good knowledge of the programming language and technology complete a couple of tasks (no hints, no judgment). This might be enough to find pain points and avoid the curse of knowledge.
+I wish there was more usability testing on APIs. Nothing fancy. Just watch someone with good knowledge of the programming language and technology complete a couple of tasks (no hints, no judgment). This might be enough to find pain points and avoid the [curse of knowledge](https://en.wikipedia.org/wiki/Curse_of_knowledge).
 
 #### 2024/03/31
 In case you missed it, there is <https://kotlintoday.com> by [@kotlin_magazine](https://mastodon.social/@kotlin_magazine) 😅 #Kotlin
@@ -701,6 +733,11 @@ Clever but the problem is that you can't run just one test from IDE 😒 Use abs
 
 #### 2023/10/19
 Back to #kotest rants. Because kotest has “built in coroutine support at every level” when an assertion fails, you can’t navigate to the matcher source code from the stack trace (Kotlin coroutines are stackless). So good luck if the error message is not very clear.
+
+=== Reply from [James Ward](https://twitter.com/_JamesWard) ===
+
+I wonder if Stacktrace Recovery could help:
+<https://github.com/Kotlin/kotlinx.coroutines/blob/master/docs/topics/debugging.md#stacktrace-recovery>
 
 #### 2023/10/18
 Random #IntelliJ tip. You can select multiple items in lists/trees and apply action to all of them. E.g. select files in project view, press enter and all selected files will be open. The same works with find/show usages. Or abstract function can be implemented on all classes by using "select all" via ctrl/cmd+A, then "enter" 👌
