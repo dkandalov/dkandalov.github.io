@@ -3,6 +3,18 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/04/11
+Are there good articles about tiny types (aka micro types)? Also, what does make a type "tiny"? I guess it's about narrow usage in the domain, e.g. Date or Money are not tiny even if they wrap a single primitive value 🤔
+
+#### 2024/04/10
+In case you need a #Kotlin client for Amazon S3, you might want to try <https://github.com/http4k/http4k-connect/tree/master/amazon/s3> 🙃 It's minimal but easy to extend/test, and you control the HTTP client it uses! #http4k
+
+#### 2024/04/09
+As an example of why bother with allocation stack traces, imagine seeing this line in #Kotlin stack trace FooKt$compose$1.invoke(foo.kt:42). With many usages of compose() in the project, it can be hard to find the right one and the functions it composed (and so on recursively).
+
+#### 2024/04/08
+Unlikely to be a new idea, but it could be useful to have object allocation stack traces in a debugger. Then the allocation stack traces might include objects that also have allocation stack traces... and that's almost profiling 🤔 #whynot
+
 #### 2024/04/06
 In programming, it's important to name things right, so it's "core human", not "soft" skills. (Image by [Susan David, Ph.D.](https://twitter.com/SusanDavid_PhD), discovered via [Compassionate Coding](https://twitter.com/compassioncode).)
 
