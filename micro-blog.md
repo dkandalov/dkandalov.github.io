@@ -9,6 +9,19 @@ Are there good articles about tiny types (aka micro types)? Also, what does make
 #### 2024/04/10
 In case you need a #Kotlin client for Amazon S3, you might want to try <https://github.com/http4k/http4k-connect/tree/master/amazon/s3> 🙃 It's minimal but easy to extend/test, and you control the HTTP client it uses! #http4k
 
+=== Reply from [Володимир Стельмащук](https://twitter.com/smallstells) ===
+
+In case you need a #Kotlin client for S3 , just use the official one <https://docs.aws.amazon.com/sdk-for-kotlin/latest/developer-guide/kotlin_s3_code_examples.html>
+
+=== My reply ===
+
+Sure. Java client also works just fine. The difference is the amount/size of dependencies and testability. Also the official Kotlin SDK is all "suspend" which some people might not need/want 🤷
+
+=== Reply from [dav1d d](https://twitter.com/tarkaTheRotter) ===
+
+I haven't looked at it deeply, but it seems like the official sdk might obsfucate the end client from you, thus rendering it untestable in a non-in-memory fashion? The Java SDK did allow for replacement of the http client so you could decorate it with observability etc..
+
+
 #### 2024/04/09
 As an example of why bother with allocation stack traces, imagine seeing this line in #Kotlin stack trace FooKt$compose$1.invoke(foo.kt:42). With many usages of compose() in the project, it can be hard to find the right one and the functions it composed (and so on recursively).
 
@@ -19,6 +32,10 @@ Unlikely to be a new idea, but it could be useful to have object allocation stac
 In programming, it's important to name things right, so it's "core human", not "soft" skills. (Image by [Susan David, Ph.D.](https://twitter.com/SusanDavid_PhD), discovered via [Compassionate Coding](https://twitter.com/compassioncode).)
 
 <img src="../assets/images/micro-blog/2024-04-06.png" width="80%" height="80%"/>
+
+=== Reply from [gavr](https://twitter.com/gavr123456789) ===
+
+it seems to me that soft skills is the same generalization as hard skills, they could also be unpacked into a diagram from a bunch of components
 
 #### 2024/04/05
 Happy to confirm that #IntelliJ 2024.1 preserves #Kotlin imports after copy-paste 🙏🥳🍻 <https://youtrack.jetbrains.com/issue/KTIJ-10687>
