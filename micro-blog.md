@@ -3,6 +3,16 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/04/15
+One way to make `(Auto)Closable` in Java/Kotlin safer could be a compiler check that it's been closed. Something similar to `@Nullable`/`@NotNull` annotation or <https://youtrack.jetbrains.com/issue/KT-12719>. (To be fair, there is a Java inspection for `AutoClosable` in IntelliJ, but this is not generic enough.)
+
+
+#### 2024/04/13
+Why JDK has (Auto)Closable interfaces but nothing like Disposable (e.g. see <https://github.com/JetBrains/intellij-community/blob/idea/222.3739.54/platform/util/src/com/intellij/openapi/Disposable.java>; not to be confused with IDisposable in C#) or similar pattern to pass the parent resource owner as a parameter so that it's harder forget to close the Closable? 🧐
+
+#### 2024/04/12
+On the topic of dark vs light editor themes, the correct answer is of course "it depends". They're all fine and at some point, I had auto-switching using <https://github.com/mikereedell/sunrisesunsetlib-java>. I wish there were responsive colour schemes so that OS could gradually shift colours through the day.
+
 #### 2024/04/11
 Are there good articles about tiny types (aka micro types)? Also, what does make a type "tiny"? I guess it's about narrow usage in the domain, e.g. Date or Money are not tiny even if they wrap a single primitive value 🤔
 
