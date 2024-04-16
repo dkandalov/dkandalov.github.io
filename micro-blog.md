@@ -8,6 +8,9 @@ Typical #IntelliJ dilemma. There are two identical entries in the auto-complete 
 
 <img src="../assets/images/micro-blog/2024-04-16.png" width="80%" height="80%"/>
 
+#### 2024/04/15
+One way to make `(Auto)Closable` in Java/Kotlin safer could be a compiler check that it's been closed. Something similar to `@Nullable`/`@NotNull` annotation or <https://youtrack.jetbrains.com/issue/KT-12719>. (To be fair, there is a Java inspection for `AutoClosable` in IntelliJ, but this is not generic enough.)
+
 === Reply from [Simon Vergauwen](https://twitter.com/vergauwen_simon) ===
 
 How would that be possible to track? I use a DSL for that, I released it as a 1 file library in Arrow.
@@ -17,9 +20,6 @@ Hmm, KDoc missing from Dokka. <https://apidocs.arrow-kt.io/arrow-autoclose/arrow
 === My reply ===
 
 For Kotlin, the same (or similar) way IntelliJ finds unused Deferred. Just for reference <https://github.com/JetBrains/intellij-community/blob/b45abaca53c20b199c70365aad548150b6ea5e7a/plugins/kotlin/idea/src/org/jetbrains/kotlin/idea/inspections/coroutines/DeferredResultUnusedInspection.kt#L17> and `AbstractResultUnusedChecker` is easy to configure.
-
-#### 2024/04/15
-One way to make `(Auto)Closable` in Java/Kotlin safer could be a compiler check that it's been closed. Something similar to `@Nullable`/`@NotNull` annotation or <https://youtrack.jetbrains.com/issue/KT-12719>. (To be fair, there is a Java inspection for `AutoClosable` in IntelliJ, but this is not generic enough.)
 
 #### 2024/04/13
 Why JDK has `(Auto)Closable` interfaces but nothing like `Disposable` (e.g. see <https://github.com/JetBrains/intellij-community/blob/idea/222.3739.54/platform/util/src/com/intellij/openapi/Disposable.java>; not to be confused with `IDisposable` in C#) or similar pattern to pass the parent resource owner as a parameter so that it's harder to forget to close the `Closable`? 🧐
