@@ -19,7 +19,7 @@ Hmm, KDoc missing from Dokka. <https://apidocs.arrow-kt.io/arrow-autoclose/arrow
 
 === My reply ===
 
-For Kotlin, the same (or similar) way IntelliJ finds unused Deferred. Just for reference <https://github.com/JetBrains/intellij-community/blob/b45abaca53c20b199c70365aad548150b6ea5e7a/plugins/kotlin/idea/src/org/jetbrains/kotlin/idea/inspections/coroutines/DeferredResultUnusedInspection.kt#L17> and `AbstractResultUnusedChecker` is easy to configure.
+For Kotlin, the same (or similar) way IntelliJ finds unused Deferred. Just for reference `DeferredResultUnusedInspection` [source code](https://github.com/JetBrains/intellij-community/blob/b45abaca53c20b199c70365aad548150b6ea5e7a/plugins/kotlin/idea/src/org/jetbrains/kotlin/idea/inspections/coroutines/DeferredResultUnusedInspection.kt#L17) and `AbstractResultUnusedChecker` is easy to configure.
 
 #### 2024/04/13
 Why JDK has `(Auto)Closable` interfaces but nothing like `Disposable` (e.g. see <https://github.com/JetBrains/intellij-community/blob/idea/222.3739.54/platform/util/src/com/intellij/openapi/Disposable.java>; not to be confused with `IDisposable` in C#) or similar pattern to pass the parent resource owner as a parameter so that it's harder to forget to close the `Closable`? 🧐
