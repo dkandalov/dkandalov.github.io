@@ -3,6 +3,11 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/04/18
+Code editors with AI assistance should be equipped with two pedals. "Less AI" pedal: I know what I'm doing, just let me type the code! "Moar AI" pedal: keep hallucinations coming, I have a blank page problem.
+
+<img src="../assets/images/micro-blog/2024-04-18.webp" width="80%" height="80%"/>
+
 #### 2024/04/16
 Typical #IntelliJ dilemma. There are two identical entries in the auto-complete popup. Do I spend an hour (or more) investigating and reporting it on YouTrack to find that it's already fixed, or it's been a known bug for years? Or move on pretending nothing happened? 😬🙈
 
@@ -19,7 +24,7 @@ Hmm, KDoc missing from Dokka. <https://apidocs.arrow-kt.io/arrow-autoclose/arrow
 
 === My reply ===
 
-For Kotlin, the same (or similar) way IntelliJ finds unused Deferred. Just for reference `DeferredResultUnusedInspection` [source code](https://github.com/JetBrains/intellij-community/blob/b45abaca53c20b199c70365aad548150b6ea5e7a/plugins/kotlin/idea/src/org/jetbrains/kotlin/idea/inspections/coroutines/DeferredResultUnusedInspection.kt#L17) and `AbstractResultUnusedChecker` is easy to configure.
+For Kotlin, the same (or similar) way IntelliJ finds unused `Deferred`. Just for reference `DeferredResultUnusedInspection` [source code](https://github.com/JetBrains/intellij-community/blob/b45abaca53c20b199c70365aad548150b6ea5e7a/plugins/kotlin/idea/src/org/jetbrains/kotlin/idea/inspections/coroutines/DeferredResultUnusedInspection.kt#L17) and `AbstractResultUnusedChecker` is easy to configure.
 
 #### 2024/04/13
 Why JDK has `(Auto)Closable` interfaces but nothing like `Disposable` (e.g. see <https://github.com/JetBrains/intellij-community/blob/idea/222.3739.54/platform/util/src/com/intellij/openapi/Disposable.java>; not to be confused with `IDisposable` in C#) or similar pattern to pass the parent resource owner as a parameter so that it's harder to forget to close the `Closable`? 🧐
