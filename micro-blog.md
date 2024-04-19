@@ -3,6 +3,24 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/04/20
+Here is a "one-liner" plugin for #IntelliJ I use before presentations (it needs #LivePlugin to run, but you get the idea 🙃):
+
+<kotlin>
+registerAction("Clear Editor History") {
+    EditorHistoryManager.getInstance(it.project ?: return@registerAction)
+        .removeAllFiles()
+}
+</kotlin>
+
+#### 2024/04/19
+In case you want to try an alternative JSON (de)serialization library for #Kotlin, Kondor <https://github.com/uberto/kondor-json> by
+[@ramtop](https://twitter.com/ramtop) is great. No annotation magic, just functions explicitly defining the mapping. No external dependencies. As fast as Jackson.
+
+=== Reply from [Nat Pryce](https://mastodon.social/@natpryce) ===
+
+It’s a great library and especially useful when you need to select a format dynamically, via HTTP content negotiation or version info within a file, for example. Which, given enough time, is always.
+
 #### 2024/04/18
 Code editors with AI assistance should be equipped with two pedals. "Less AI" pedal: I know what I'm doing, just let me type the code! "Moar AI" pedal: keep hallucinations coming, I have a blank page problem.
 
