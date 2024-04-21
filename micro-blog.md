@@ -3,6 +3,27 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/04/21
+Another #LivePlugin making #Kotlin first in the new file popup <https://youtrack.jetbrains.com/issue/IDEA-171273> 🙄
+
+<kotlin>
+val newKotlinFile = actionManager.getAction("Kotlin.NewFile")
+(actionManager.getAction(GROUP_NEW) as DefaultActionGroup).let {
+    it.remove(newKotlinFile)
+    it.add(newKotlinFile, FIRST)
+}
+</kotlin>
+
+=== Reply from [Simon Vergauwen](https://twitter.com/vergauwen_simon) ===
+
+You sold me on LivePlugin, going to take that for a spin.
+
+Do you have a repo, or blog, or any reference where I can see some of your code, and utilities?
+
+=== My reply ===
+
+🥳 <https://github.com/dkandalov/live-plugin> The examples, might be out-of-date (because IntelliJ API changes) and might need to be updated to include the ones I actually use...
+
 #### 2024/04/20
 Here is a "one-liner" plugin for #IntelliJ I use before presentations (it needs #LivePlugin to run, but you get the idea 🙃):
 
