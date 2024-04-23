@@ -3,6 +3,19 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/04/23
+Another example of #Kotlin APIs affected by IDE is unusably slow "Find/Show Usages" on widely used functions (with short names maybe 🤔). I've seen it happening with `from()` and `invoke()`. Not great for classes extending function types. (Sorry, can't find the right YouTrack issue.)
+
+#### 2024/04/22
+One example of #Kotlin API usability affected by IDE is the navigation of the `invoke()` function. In the code below, you can only "Jump To Source" (or ctrl+click) on the last closing paren.
+
+<kotlin>
+class Foo: (Int) -&gt; Unit {
+    override fun invoke(n: Int) {}
+}
+Foo()(n = 123)
+</kotlin>
+
 #### 2024/04/21
 Another #LivePlugin making #Kotlin first in the new file popup <https://youtrack.jetbrains.com/issue/IDEA-171273> 🙄
 
