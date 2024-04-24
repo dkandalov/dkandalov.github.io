@@ -3,6 +3,13 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/04/24
+Another example of #Kotlin APIs affected by IDE is type aliases support. In the code below, the “Specify return type explicitly” intention expands the alias instead of using `Foo` (it works with simple aliases though).
+<kotlin>
+typealias Foo = () -&gt; Int
+fun bar(foo: Foo): () -&gt; Int = foo
+</kotlin>
+
 #### 2024/04/23
 Another example of #Kotlin APIs affected by IDE is unusably slow "Find/Show Usages" on widely used functions (with short names maybe 🤔). I've seen it happening with `from()` and `invoke()`. Not great for classes extending function types. (Sorry, can't find the right YouTrack issue.)
 
