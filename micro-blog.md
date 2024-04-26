@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/04/26
+Me ranting about #Kotlin API design affected by IDE functionality might be a good example of code not existing on its own, but being a part of a sociotechnical system in which some people might want to use all IDE features. At the same time, it's always a trade-off, and if creating an API is impossible without a degraded experience for some users, then it might be worth it anyway. I wonder if it is (was) the case for C++ STL for example 🧐 
+
 #### 2024/04/25
 Yet another example of #Kotlin APIs interacting with IDE support is that you can't easily find subtypes of type aliases or function types. Not a massive deal on its own (unless you really need it), but these things can accumulate.
 <kotlin>
