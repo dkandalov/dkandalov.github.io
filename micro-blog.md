@@ -3,6 +3,18 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/04/25
+Yet another example of #Kotlin APIs interacting with IDE support is that you can't easily find subtypes of type aliases or function types. Not a massive deal on its own (unless you really need it), but these things can accumulate.
+<kotlin>
+typealias Foo = () -> Int
+object MyFoo : Foo {...}
+</kotlin>
+
+=== Reply from [Uberto Barbini](https://twitter.com/ramtop) ===
+
+this is big peeve of mine! I like typealiases but their usage are hard to find.
+My #1 feature for IntelliJ would be a Hoogle-like api search engine where you can put a signature and get all functions with that signature (or places where they are needed)
+
 #### 2024/04/24
 Another example of #Kotlin APIs affected by IDE is type aliases support. In the code below, the “Specify return type explicitly” intention expands the alias instead of using `Foo` (it works with simple aliases though).
 <kotlin>
