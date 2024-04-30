@@ -3,6 +3,37 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/04/30
+I'm witnessing some Kotlin design hacks 🙈
+
+<kotlin>
+class Foo private constructor() {
+    companion object {
+        operator fun invoke(): Foo? = ... // 👈 nullable "constructor"
+    }
+}
+</kotlin>
+But the following doesn't compile 🤨
+<kotlin>
+@jvmname("bar")
+fun Foo(): Foo? = null
+</kotlin>
+
+
+#### 2024/04/29
+I understand that all people are different and there is neurodiversity, but I struggle to understand how people don't notice lots of (squiggly yellow) warnings in the editor. Or reversing the question, why am I so bothered by them? 🤔
+
+#### 2024/04/27
+It might be a false memory, but I think it was possible in #IntelliJ to configure the build so that it doesn't open a tool window every time compilation fails. I wonder what happened to it 🤔
+
+=== Reply from [Ivan Canet](https://twitter.com/ivcanet) ===
+
+Isn't that in the run configuration settings? IIRC you can decide whether the view opens or not
+
+=== My reply ===
+
+Yes, there is a setting in the run config, but that's for running, not building. So if there is a compilation error, #IntelliJ opens Build tool window regardless of the run config.
+
 #### 2024/04/26
 Me ranting about #Kotlin API design affected by IDE functionality might be a good example of code not existing on its own, but being a part of a sociotechnical system in which some people might want to use all IDE features. At the same time, it's always a trade-off, and if creating an API is impossible without a degraded experience for some users, then it might be worth it anyway. I wonder if it is (was) the case for C++ STL for example 🧐 
 
