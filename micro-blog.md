@@ -15,7 +15,7 @@ class Foo private constructor() {
 </kotlin>
 But the following doesn't compile 🤨
 <kotlin>
-@jvmname("bar")
+@JvmName("bar")
 fun Foo(): Foo? = null
 </kotlin>
 
