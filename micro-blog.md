@@ -3,6 +3,12 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/05/02
+When editing a file/class, I might not want to be distracted by its existing warnings. Here is an #IntelliJ plugin prototype to suppress inspections until the next commit 👉 <https://gist.github.com/dkandalov/590bdf339efe643a124e43082bed22d1> #LivePlugin (Maybe "Distraction Free" mode could do something like that 🙄)
+
+#### 2024/05/01
+Short notice but if you happen to be in London on 2nd May and would like to see some pre-KotlinConf talks, this might be a good event <https://www.meetup.com/source-talks-on-kotlin/events/299930315>
+
 #### 2024/04/30
 I'm witnessing some Kotlin design hacks 🙈
 
