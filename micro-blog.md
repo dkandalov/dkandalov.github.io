@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/05/03
+There is an interesting analogy between #Kotlin scope functions and imports, for example `with(foo) {...}` is almost like a scoped version of `import foo.*`. I wish the analogy was closer though and nested `withs` disallowed resolution ambiguity, or you could define a package object.
+
 #### 2024/05/02
 When editing a file/class, I might not want to be distracted by its existing warnings. Here is an #IntelliJ plugin prototype to suppress inspections until the next commit 👉 <https://gist.github.com/dkandalov/590bdf339efe643a124e43082bed22d1> #LivePlugin (Maybe "Distraction Free" mode could do something like that 🙄)
 
