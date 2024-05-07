@@ -3,8 +3,27 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/05/07
+Of all modern testing libraries for #Kotlin <https://strikt.io> is the one I enjoyed using the most. It's sad to see it not under active development anymore <https://github.com/robfletcher/strikt/graphs/contributors>. Makes me wonder if there are good models to "give away" or let someone "inherit" the project.
+
+#### 2024/05/05
+Living in an information bubble as we all do, I wonder how many people heard of refactoring golf? 🧐
+
+=== Reply from [David Denton](https://www.linkedin.com/in/denton-david) ===
+
+You might need to find out how many people understand what refactoring is before we start talking about competitive refactoring...
+
+
 #### 2024/05/03
 There is an interesting analogy between #Kotlin scope functions and imports, for example `with(foo) {...}` is almost like a scoped version of `import foo.*`. I wish the analogy was closer though and nested `withs` disallowed resolution ambiguity, or you could define a package object.
+
+=== Reply from [Ivan Canet](https://twitter.com/ivcanet) ===
+
+What would a package object do? What would it be used for?
+
+=== My reply ===
+
+Everything objects/classes can do and packages cannot 🙈 Initialization, extending an interface, being used as an expression, reflection and probably other things.
 
 #### 2024/05/02
 When editing a file/class, I might not want to be distracted by its existing warnings. Here is an #IntelliJ plugin prototype to suppress inspections until the next commit 👉 <https://gist.github.com/dkandalov/590bdf339efe643a124e43082bed22d1> #LivePlugin (Maybe "Distraction Free" mode could do something like that 🙄)
@@ -33,6 +52,13 @@ fun Foo(): Foo? = null
 
 #### 2024/04/29
 I understand that all people are different and there is neurodiversity, but I struggle to understand how people don't notice lots of (squiggly yellow) warnings in the editor. Or reversing the question, why am I so bothered by them? 🤔
+
+=== Reply from [Görge](https://mastodon.social/@goerge@social.devteams.at) ===
+
+I believe, that a lot of people are overwhelmed of the possibilities and visual clues of an IDE. So maybe it’s just selective perception so that don’t “see” the warnings. Maybe it’s also a matter of education. “They” just don’t know that the warnings are there to help.
+
+To the reverse question: Same here. I did learn it the hard way. From the C/C++ Compiler warnings over the first hints in JBuilder and later eclipse to the rich code flow analysis based IDEA hint. It makes me a better programmer if I read and understand the warnings.
+As we’re taking care of our coworkers, we want them to learn, too.
 
 #### 2024/04/27
 It might be a false memory, but I think it was possible in #IntelliJ to configure the build so that it doesn't open a tool window every time compilation fails. I wonder what happened to it 🤔
