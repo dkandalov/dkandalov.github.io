@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/05/12
+I still miss Java `static` in #Kotlin to indicate that the function doesn't use class fields. Companion objects are a bit too indented, and moving the function out of the class distorts the "ownership." So I think I mostly just leave these functions in the class 🤔
+
 #### 2024/05/10
 This is a good old reminder that actually talking to (or working with) people is better than pull requests <https://dragan-stepanovic.github.io/2020/11/16/pr-size-cannot-be-reduced.html> #noPRs
 
@@ -10,7 +13,7 @@ This is a good old reminder that actually talking to (or working with) people is
 An old bugbear of mine is the Gradle test runner in #IntelliJ that doesn't run disabled tests. Classic JUnit runner can do it, so it looks like a regression bug to me (probably >10 years old). Things like that make me doubt Gradle should be the default way to build projects.
 
 #### 2024/05/08
-I thought that comments that duplicate what the code says were an artefact of the past (or would only be done by people new to programming). I guess `ContinuationScope` in the JDK proves me wrong <https://github.com/openjdk/jdk/blob/42b1d858d15fd06de9ce41b08b430b12724652e9/src/java.base/share/classes/jdk/internal/vm/ContinuationScope.java#L33> 🙈
+I thought that comments that duplicate what the code says were an artefact of the past (or would only be done by people new to programming). I guess [`ContinuationScope`](https://github.com/openjdk/jdk/blob/42b1d858d15fd06de9ce41b08b430b12724652e9/src/java.base/share/classes/jdk/internal/vm/ContinuationScope.java#L33) in the JDK proves me wrong 🙈
 
 #### 2024/05/07
 Of all modern testing libraries for #Kotlin <https://strikt.io> is the one I enjoyed using the most. It's sad to see it not under active development anymore <https://github.com/robfletcher/strikt/graphs/contributors>. Makes me wonder if there are good models to "give away" or let someone "inherit" the project.
