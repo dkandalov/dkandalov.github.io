@@ -3,8 +3,19 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/05/13
+If Java `static` existed in #Kotlin, an interesting way to think about it could be as a "context rejector" (opposed to context receivers).
+
 #### 2024/05/12
 I still miss Java `static` in #Kotlin to indicate that the function doesn't use class fields. Companion objects are a bit too indented, and moving the function out of the class distorts the "ownership." So I think I mostly just leave these functions in the class 🤔
+
+=== Reply from [Șocâte Dīxit](https://twitter.com/SocateDixit) ===
+
+Is it not the case that, strictly speaking, a function doesn't have an owner (unlike a method), but maybe a namespace ?
+
+=== My reply ===
+
+I don't think Java or Kotlin language specification has the concept of ownership (<https://docs.oracle.com/javase/specs/jls/se17/jls17.pdf>, <https://kotlinlang.org/spec/pdf/kotlin-spec.pdf>). So it's probably fair to say that I made this term up to explain how I think about the code 🤷‍
 
 #### 2024/05/10
 This is a good old reminder that actually talking to (or working with) people is better than pull requests <https://dragan-stepanovic.github.io/2020/11/16/pr-size-cannot-be-reduced.html> #noPRs
