@@ -3,6 +3,16 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/05/15
+This #Kotlin code compiles in file/object/function but doesn't compile in a class. It would be a more regular design if `{}` always had implicit access to the outer scope or classes couldn't access the outer scope by default 🤔
+
+<kotlin>
+val foo = 123
+class Bar {
+    fun bar() = foo
+}
+</kotlin>
+
 #### 2024/05/13
 If Java `static` existed in #Kotlin, an interesting way to think about it could be as a "context rejector" (opposed to context receivers).
 
