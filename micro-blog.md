@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/05/16
+I wonder what program structure could look like if files/packages followed the same rules as nested scopes and all definitions from "parent" files/packages were available by default 🧐 If that's a bad idea, why is it a good/ok idea at the function level?
+
 #### 2024/05/15
 This #Kotlin code compiles in file/object/function but doesn't compile in a class. It would be a more regular design if `{}` always had implicit access to the outer scope or classes couldn't access the outer scope by default 🤔
 
@@ -15,6 +18,15 @@ class Bar {
 
 #### 2024/05/13
 If Java `static` existed in #Kotlin, an interesting way to think about it could be as a "context rejector" (opposed to context receivers).
+
+=== Reply from [Marcin Szałomski](https://twitter.com/baldram) ===
+
+Scala 3 has an annotation for that. There's an ongoing KEEP regarding statics in Kotlin.<br/>
+<https://github.com/Kotlin/KEEP/pull/347>
+
+=== My reply ===
+
+Thank you! Just for the record, I'm not suggesting to add `static` keyword to Kotlin 🙃 I miss some of its usages in Java but answering the question if it's worth changing the language design to add `static` is a completely different endeavour.
 
 #### 2024/05/12
 I still miss Java `static` in #Kotlin to indicate that the function doesn't use class fields. Companion objects are a bit too indented, and moving the function out of the class distorts the "ownership." So I think I mostly just leave these functions in the class 🤔
