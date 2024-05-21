@@ -3,6 +3,27 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/05/21
+This might be trivial, but here is one way to avoid Impl, Prod, and similar postfixes in class names in #Kotlin:
+<kotlin>
+interface Foo {
+    fun foo(n: Int): Int
+}
+fun Foo(bar: Int) = object : Foo {
+    override fun foo(n: Int) = bar + n
+}
+fun FakeFoo() = ...
+</kotlin>
+
+#### 2024/05/19
+I’m not sure about the origins of the concept of long-term support releases in software, but I wish it was also applied to physical consumer products. For example, when I buy shoes, I’d like to know if I’ll be able to purchase exactly the same pair in a couple of years.
+
+#### 2024/05/18
+Friday content you do need: "2022 - Non-Euclidean Doom: what happens to a game when pi is not 3.14159…" <https://www.youtube.com/watch?v=_ZSFRWJCUY4>
+
+#### 2024/05/17
+Friday content you don't need: "We need to talk about Gradle" <https://www.youtube.com/watch?v=lKIZA8PiQ3Y> by [Duncan McGregor](https://twitter.com/duncanmcg) #gradle #softwaresucks
+
 #### 2024/05/16
 I wonder what program structure could look like if files/packages followed the same rules as nested scopes and all definitions from "parent" files/packages were available by default 🧐 If that's a bad idea, why is it a good/ok idea at the function level?
 
@@ -893,7 +914,7 @@ It's unfortunate that "technical debt" is the only widespread term we have. Mayb
 Another deceitful metaphor is technical debt. The problem is that it implies the predictability of debt. In practice, it's often a trap with no clear way out (like piling up pieces in Tetris). Compounded by the sunken cost fallacy, the "debt" is even less likely to be untangled.
 
 #### 2023/11/16
-In case anyone needs a podcast recommendation, [Troubleshooting Agile](https://podcasts.apple.com/gb/podcast/troubleshooting-agile/id1327456890) is one of my all-time favourite and probably not very well-known podcasts. Thank you, [Jeffrey Fredrick](https://x.com/Jtf) and [Douglas Squirrel](https://x.com/douglassquirrel), for producing great content! See also <https://agileconversations.com>
+In case anyone needs a podcast recommendation, [Troubleshooting Agile](https://podcasts.apple.com/gb/podcast/troubleshooting-agile/id1327456890) is one of my all-time favourite and probably not very well-known podcasts. Thank you, [Jeffrey Fredrick](https://twitter.com/Jtf) and [Douglas Squirrel](https://twitter.com/douglassquirrel), for producing great content! See also <https://agileconversations.com>
 
 #### 2023/11/15
 Another annoyingly bad metaphor is #git blame. It doesn't explain how the tool works and suggests harmful behaviour. Even worse, the command itself is too surface-level and not good at finding commit with the actual change 🙄 (I mostly use "Show History for Selection" in #IntelliJ)
