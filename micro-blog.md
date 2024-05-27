@@ -3,6 +3,12 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/05/26
+Since someone asked, this is the #LivePlugin I used to have a proper test progress bar in presentation mode at #KotlinConf <https://gist.github.com/dkandalov/765232732a0ef7d2937861fcb035b804> (a bit more code than you'd expect 🤷‍)
+
+#### 2024/05/23
+Thank you to all who came to the refactoring talk Duncan McGregor and I did today at #KotlinConf. You can find the resources we mentioned here <https://java-to-kotlin.dev/2024/05/23/kotlinconf-resources.html> The video stream is available here <https://www.youtube.com/watch?v=YfiAkmJARe4&t=14861s>
+
 #### 2024/05/21
 This might be trivial, but here is one way to avoid Impl, Prod, and similar postfixes in class names in #Kotlin:
 <kotlin>
