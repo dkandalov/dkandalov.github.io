@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/05/27
+I haven't seen all the talks at #KotlinConf but this one is likely to be the best one this year: Revamping and Extending Kotlin's Type System by [@rossetate](https://twitter.com/rossetate) <https://www.youtube.com/watch?v=xW39RKtwolA&t=18183s> (I sat next to Ross during the keynote but had no idea who he was 🤦)
+
 #### 2024/05/26
 Since someone asked, this is the #LivePlugin I used to have a proper test progress bar in presentation mode at #KotlinConf <https://gist.github.com/dkandalov/765232732a0ef7d2937861fcb035b804> (a bit more code than you'd expect 🤷‍)
 
