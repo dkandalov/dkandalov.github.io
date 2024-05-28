@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/05/28
+I'm watching the #KotlinConf talks I didn't attend, and here is a good one by [Martin Bonnin](https://twitter.com/martinbonnin) <https://www.youtube.com/watch?v=xW39RKtwolA&t=26267s>. Tiny correction, this is the right Result4k link <https://github.com/fork-handles/forkhandles/tree/trunk/result4k> (although KT-68296 is likely to be the future anyway <https://youtrack.jetbrains.com/issue/KT-68296>).
+
 #### 2024/05/27
 I haven't seen all the talks at #KotlinConf but this one is likely to be the best talk this year: Revamping and Extending Kotlin's Type System by [@rossetate](https://twitter.com/rossetate) <https://www.youtube.com/watch?v=xW39RKtwolA&t=18183s> (I sat next to Ross during the keynote but had no idea who he was 🤦)
 
