@@ -3,17 +3,20 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/05/29
+Another great (lightning) talk from #KotlinConf is "Kotlin + Power-Assert = ❤️" by [Brian Norman](https://mastodon.social/@bnorm@kotlin.social) <https://www.youtube.com/live/G8pS1FzZlhk?t=17597s>. I hope Power-Assert becoming a standard Kotlin plugin means it will get more attention, all the good features/fixes, and IDE integration ☺️
+
 #### 2024/05/28
-I'm watching the #KotlinConf talks I didn't attend, and here is a good one by [Martin Bonnin](https://twitter.com/martinbonnin) <https://www.youtube.com/watch?v=xW39RKtwolA&t=26267s>. Tiny correction, this is the right Result4k link <https://github.com/fork-handles/forkhandles/tree/trunk/result4k> (although KT-68296 is likely to be the future anyway <https://youtrack.jetbrains.com/issue/KT-68296>).
+I'm watching the #KotlinConf talks I didn't attend, and here is a good one by [Martin Bonnin](https://twitter.com/martinbonnin) <https://www.youtube.com/watch?v=xW39RKtwolA&t=26267s>. Tiny correction, this is the right Result4k link <https://github.com/fork-handles/forkhandles/tree/trunk/result4k> (although [KT-68296](https://youtrack.jetbrains.com/issue/KT-68296) is likely to be the future anyway).
 
 #### 2024/05/27
-I haven't seen all the talks at #KotlinConf but this one is likely to be the best talk this year: Revamping and Extending Kotlin's Type System by [@rossetate](https://twitter.com/rossetate) <https://www.youtube.com/watch?v=xW39RKtwolA&t=18183s> (I sat next to Ross during the keynote but had no idea who he was 🤦)
+I haven't seen all the talks at #KotlinConf but this one is likely to be the best talk this year: "Revamping and Extending Kotlin's Type System" by [Ross Tate](https://twitter.com/rossetate) <https://www.youtube.com/watch?v=xW39RKtwolA&t=18183s> (I sat next to Ross during the keynote but had no idea who he was 🤦)
 
 #### 2024/05/26
 Since someone asked, this is the #LivePlugin I used to have a proper test progress bar in presentation mode at #KotlinConf <https://gist.github.com/dkandalov/765232732a0ef7d2937861fcb035b804> (a bit more code than you'd expect 🤷‍)
 
 #### 2024/05/23
-Thank you to all who came to the refactoring talk Duncan McGregor and I did today at #KotlinConf. You can find the resources we mentioned here <https://java-to-kotlin.dev/2024/05/23/kotlinconf-resources.html> The video stream is available here <https://www.youtube.com/watch?v=YfiAkmJARe4&t=14861s>
+Thank you to all who came to the refactoring talk Duncan McGregor and I did today at #KotlinConf. You can find the resources we mentioned here <https://java-to-kotlin.dev/2024/05/23/kotlinconf-resources.html>. The video stream is available here <https://www.youtube.com/watch?v=YfiAkmJARe4&t=14861s>
 
 #### 2024/05/21
 This might be trivial, but here is one way to avoid Impl, Prod, and similar postfixes in class names in #Kotlin:
