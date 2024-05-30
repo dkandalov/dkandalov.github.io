@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/05/30
+Overthinking power-assert, there will always be expressions too convoluted for diagrams and objects too large or meaningless to render. One extreme could be to save a "debugger view" of relevant objects and show it in IDE on the assertion failure.
+
 #### 2024/05/29
 Another great (lightning) talk from #KotlinConf is "Kotlin + Power-Assert = ❤️" by [Brian Norman](https://mastodon.social/@bnorm@kotlin.social) <https://www.youtube.com/live/G8pS1FzZlhk?t=17597s>. I hope Power-Assert becoming a standard Kotlin plugin means it will get more attention, all the good features/fixes, and IDE integration ☺️
 
