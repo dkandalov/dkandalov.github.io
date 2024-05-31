@@ -3,11 +3,14 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/05/31
+Overthinking power-assert a bit more, maybe it should deliberately limit the complexity of expressions it handles by default. Because tests are also about discovering the design and ways we think about the problem, and without matchers, we might be pushed into pure tech thinking.
+
 #### 2024/05/30
 Overthinking power-assert, there will always be expressions too convoluted for diagrams and objects too large or meaningless to render. One extreme could be to save a "debugger view" of relevant objects and show it in IDE on the assertion failure.
 
 #### 2024/05/29
-Another great (lightning) talk from #KotlinConf is "Kotlin + Power-Assert = ❤️" by [Brian Norman](https://mastodon.social/@bnorm@kotlin.social) <https://www.youtube.com/live/G8pS1FzZlhk?t=17597s>. I hope Power-Assert becoming a standard Kotlin plugin means it will get more attention, all the good features/fixes, and IDE integration ☺️
+Another great (lightning) talk from #KotlinConf is "Kotlin + Power-Assert = ❤️" by [Brian Norman](https://mastodon.social/@bnorm@kotlin.social) <https://www.youtube.com/live/G8pS1FzZlhk?t=17597s>. I hope Power-Assert becoming a standard Kotlin plugin means it will get more attention, all the good features/fixes, and IDE integration 🙂
 
 #### 2024/05/28
 I'm watching the #KotlinConf talks I didn't attend, and here is a good one by [Martin Bonnin](https://twitter.com/martinbonnin) <https://www.youtube.com/watch?v=xW39RKtwolA&t=26267s>. Tiny correction, this is the right Result4k link <https://github.com/fork-handles/forkhandles/tree/trunk/result4k> (although [KT-68296](https://youtrack.jetbrains.com/issue/KT-68296) is likely to be the future anyway).
