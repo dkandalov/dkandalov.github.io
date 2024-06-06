@@ -3,14 +3,17 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/06/05
+I like the recent optimisations in #IntelliJ (it feels faster). Not indexing external libraries could be done better though. When you open unindexed file and ask IDE to index it, the file is just closed. And there is no obvious way to turn off the feature I didn't ask for 🤷‍
+
 #### 2024/06/03
-If you happen to be in London on June next Thursday (6th June), come say "hi" and chat about KotlinConf at the #Kotlin meetup <https://www.meetup.com/kotlin-london/events/300882149> :)
+If you happen to be in London next Thursday (6th June), come say "hi" and chat about KotlinConf at the #Kotlin meetup <https://www.meetup.com/kotlin-london/events/300882149> :)
 
 #### 2024/06/02
 Would you consider a bunch of value classes and pure functions that manipulate these classes an internal DSL? (Assuming the functions don't do anything fancy with nested lambdas etc.)
 
 #### 2024/06/01
-Not sure if this #KotlinConf talk inspired me to write Fleet plugins https://youtube.com/live/G8pS1FzZlhk?t=4410s. As if editor/IDE APIs and language AST weren't hard enough, why should I bother with transactional distributed database reactive queries and coroutines structured concurrency on top?
+Not sure if this #KotlinConf talk inspired me to write Fleet plugins <https://youtube.com/live/G8pS1FzZlhk?t=4410s>. As if editor/IDE APIs and language AST weren't hard enough, why should I bother with transactional distributed database reactive queries and coroutines structured concurrency on top?
 
 #### 2024/05/31
 Overthinking power-assert a bit more, maybe it should deliberately limit the complexity of expressions it handles by default. Because tests are also about discovering the design and ways we think about the problem, and without matchers, we might be pushed into pure tech thinking.
