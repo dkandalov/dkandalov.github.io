@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/06/08
+"Perfectionist is a euphemism for having a massive ego... you don't like things that puncture your ego like being wrong" 👈 I really like this quote from the best non-Kotlin talk at #KotlinConf by [Dan North](https://twitter.com/tastapod) <https://www.youtube.com/watch?v=xW39RKtwolA&t=176s>
+
 #### 2024/06/05
 I like the recent optimisations in #IntelliJ (it feels faster). Not indexing external libraries could be done better though. When you open unindexed file and ask IDE to index it, the file is just closed. And there is no obvious way to turn off the feature I didn't ask for 🤷‍
 
