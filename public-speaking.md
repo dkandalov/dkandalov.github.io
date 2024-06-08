@@ -9,6 +9,7 @@ permalink: public-speaking
 | Dates | Event | Talk |
 | --- | --- | --- |
 | 23-24 May | [KotlinConf](https://kotlinconf.com) | Refactoring to Expressive Kotlin |
+| 6 June | [Kotlin London Meetup](https://www.meetup.com/kotlin-london/events/300882149) | Kotlin Conf Global |
 {:.post-table}
 
 ### 2023
