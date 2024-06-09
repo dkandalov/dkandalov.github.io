@@ -10,6 +10,7 @@ permalink: public-speaking
 | --- | --- | --- |
 | 23-24 May | [KotlinConf](https://kotlinconf.com) | Refactoring to Expressive Kotlin |
 | 6 June | [Kotlin London Meetup](https://www.meetup.com/kotlin-london/events/300882149) | Kotlin Conf Global |
+| 10-13 October | [Socrates BE](https://socratesbe.org) | TBC |
 {:.post-table}
 
 ### 2023
