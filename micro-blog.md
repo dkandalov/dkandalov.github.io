@@ -4,9 +4,25 @@ permalink: /micro-blog/
 ---
 
 #### 2024/06/09
-I like the "perfectionism is ego" idea regardless of whether it's true, partially true, or wrong because it hints at a bigger idea of questioning our "basic" narratives and patterns. Using a geek metaphor, it's like debugging our behaviour and going through its Git history.
+I wonder if there is a good reason #Kotlin doesn't create a class for anonymous objects 🤔
+
+<kotlin>
+val config = object {
+    val foo = 1
+    val bar = 2
+}
+object Config {
+    val foo = 1
+    val bar = 2
+}
+config.foo // doesn't compile
+Config.foo // compiles
+</kotlin>
 
 #### 2024/06/08
+I like the "perfectionism is ego" idea regardless of whether it's true, partially true, or wrong because it hints at a bigger idea of questioning our "basic" narratives and patterns. Using a geek metaphor, it's like debugging our behaviour and going through its Git history.
+
+#### 2024/06/07
 "Perfectionist is a euphemism for having a massive ego... you don't like things that puncture your ego like being wrong" 👈 I really like this quote from the best non-Kotlin talk at #KotlinConf by [Dan North](https://twitter.com/tastapod) <https://www.youtube.com/watch?v=xW39RKtwolA&t=176s>
 
 #### 2024/06/05
