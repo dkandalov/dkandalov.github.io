@@ -19,6 +19,30 @@ config.foo // doesn't compile
 Config.foo // compiles
 </kotlin>
 
+=== Reply from [Alejandro Serrano](https://twitter.com/trupill) ===
+
+The problem here is that `config` needs to get a type, and given that the type of the `object` is anonymous, the compiler assigns `Any`. As a result, `foo` and `bar` are not accessible.
+
+=== My reply ===
+
+You're right, what I should've said is why Kotlin doesn't define a named class for top level anonymous objects but does it for local objects (as mentioned by
+[pablisco](https://twitter.com/pablisc0)).
+
+=== Reply from [pablisco](https://twitter.com/pablisc0) ===
+
+In fact, given that reassigning a local object var is not supported, it could make sense to deprecate anonymous objects and support local object singletons instead 🤔 It may match expectations more closely, IMHO
+
+<kotlin>
+var test = object {
+    val meh = ""
+}
+println(test.meh)
+
+test = object { // Type mismatch. Required: ``. Found: ``.
+    
+}
+</kotlin>
+
 #### 2024/06/08
 I like the "perfectionism is ego" idea regardless of whether it's true, partially true, or wrong because it hints at a bigger idea of questioning our "basic" narratives and patterns. Using a geek metaphor, it's like debugging our behaviour and going through its Git history.
 
