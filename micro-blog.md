@@ -43,6 +43,25 @@ test = object { // Type mismatch. Required: ``. Found: ``.
 }
 </kotlin>
 
+=== My reply ===
+
+Ooh, I like the reassignment attempt 😀 I guess the reassignment of anonymous objects is basically a request for structural types 🤔
+
+Not sure about deprecating anonymous objects though. They are like anonymous classes in Java and are used quite a lot.
+
+To be fair to anonymous objects this works just fine:
+<kotlin>
+fun main() {
+    fun foo() = object {
+        val meh = ""
+    }
+    var test = foo()
+    println(test.meh)
+
+    test = foo()
+}
+</kotlin>
+
 #### 2024/06/08
 I like the "perfectionism is ego" idea regardless of whether it's true, partially true, or wrong because it hints at a bigger idea of questioning our "basic" narratives and patterns. Using a geek metaphor, it's like debugging our behaviour and going through its Git history.
 
