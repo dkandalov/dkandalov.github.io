@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/06/11
+TIL about <https://zed.dev> new code editor from the creators of Atom. It's early days, but I like the emphasis on the performance and collaborative editing. It would be interesting to see what extension development is like. (For context, I was just getting into Atom when MS bought it ⚰️)
+
 #### 2024/06/09
 I wonder if there is a good reason #Kotlin doesn't create a class for anonymous objects 🤔
 
