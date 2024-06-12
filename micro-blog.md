@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/06/12
+Quoting [zed.dev](https://zed.dev): "When you move the cursor or type a character, you should see pixels on the next refresh of your display—every time. Even sub-perceptual pauses add up over the course of a day to create unnecessary stress." Such a contrast to a typical fully remote and laggy corporate desktop environment.
+
 #### 2024/06/11
 TIL about <https://zed.dev> new code editor from the creators of Atom. It's early days, but I like the emphasis on the performance and collaborative editing. It would be interesting to see what extension development is like. (For context, I was just getting into Atom when MS bought it ⚰️)
 
