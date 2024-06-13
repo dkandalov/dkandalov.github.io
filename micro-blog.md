@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/06/13
+The dreadful experience of laggy corporate virtual desktops makes me question the rationale behind it. Cost "reduction" of the cloud? Security concerns? I wish a highly responsive environment was the norm. Maybe it needs lobbying. A law making it a health-and-safety concern? 🤔
+
 #### 2024/06/12
 Quoting [zed.dev](https://zed.dev): "When you move the cursor or type a character, you should see pixels on the next refresh of your display—every time. Even sub-perceptual pauses add up over the course of a day to create unnecessary stress." Such a contrast to a typical fully remote and laggy corporate desktop environment.
 
