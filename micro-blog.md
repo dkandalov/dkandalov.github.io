@@ -3,8 +3,30 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/06/14
+Another problem with (mostly web) UIs is the jitter. Do we need a cultural shift to make it unacceptable? 🧐 For example, this issue 
+<https://youtrack.jetbrains.com/issue/IJPL-133305/Lag-when-searching-for-file-class> (picking on #IntelliJ only because I use it a lot :)) Or pretty much any website, just watch the screen!
+
 #### 2024/06/13
 The dreadful experience of laggy corporate virtual desktops makes me question the rationale behind it. Cost "reduction" of the cloud? Security concerns? I wish a highly responsive environment was the norm. Maybe it needs lobbying. A law making it a health-and-safety concern? 🤔
+
+=== Reply from [Peter Lawrey](https://twitter.com/PeterLawrey) ===
+
+It's harder to measure the reduced productivity than the reduced cost of the equipment & support.
+
+=== My reply ===
+
+Also people who make the decision are not affected as much, so everything might look ok to them.
+
+I agree this is probably what's happening, but it sounds like "it's harder to measure public health than profits, so we'll go with the profits" which is unlikely to change on its own.
+
+=== Reply from [Uberto Barbini](https://twitter.com/ramtop) ===
+
+TBF, when they works I find them great. Much better than a physical locked down laptop.
+
+=== My reply ===
+
+When every micro-interaction with UI depends on the network latency, it's unlikely to actually work (unless you have wired connection to the server). We won't be aware of every tiny lag but it affects the experience, our behaviour and probably wellbeing. Similar to air quality.
 
 #### 2024/06/12
 Quoting [zed.dev](https://zed.dev): "When you move the cursor or type a character, you should see pixels on the next refresh of your display—every time. Even sub-perceptual pauses add up over the course of a day to create unnecessary stress." Such a contrast to a typical fully remote and laggy corporate desktop environment.
