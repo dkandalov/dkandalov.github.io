@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/06/15
+A good example of a web UI jitter is Google search. Search for "123", then search for "1234". Watch All/Images/Videos/... tabs flicker. If logged in, your avatar and Google apps will flicker. If not logged in, "Sign in" jumps left and right. Even in Chrome. Not impressive 🤷💰
+
 #### 2024/06/14
 Another problem with (mostly web) UIs is the jitter. Do we need a cultural shift to make it unacceptable? 🧐 For example, this issue 
 <https://youtrack.jetbrains.com/issue/IJPL-133305/Lag-when-searching-for-file-class> (picking on #IntelliJ only because I use it a lot :)) Or pretty much any website, just watch the screen!
