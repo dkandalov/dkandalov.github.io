@@ -3,6 +3,10 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/06/17
+I love this meme by [Jason Gorman](https://mastodon.social/@jasongorman@mastodon.cloud) 😂
+<img src="../assets/images/micro-blog/2024-06-17.png" width="80%" height="80%"/>
+
 #### 2024/06/15
 A good example of a web UI jitter is Google search. Search for "123", then search for "1234". Watch All/Images/Videos/... tabs flicker. If logged in, your avatar and Google apps will flicker. If not logged in, "Sign in" jumps left and right. Even in Chrome. Not impressive 🤷💰
 
