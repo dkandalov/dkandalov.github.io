@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/06/18
+Code editors usually have actions to navigate up/down functions but what about "paragraphs"? Which could mean a bunch of statements without empty lines or braces between them. Or maybe big enough bulks of expressions? 🤔
+
 #### 2024/06/17
 I love this meme by [Jason Gorman](https://mastodon.social/@jasongorman@mastodon.cloud) 😂
 <img src="../assets/images/micro-blog/2024-06-17.png" width="80%" height="80%"/>
