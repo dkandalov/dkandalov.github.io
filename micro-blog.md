@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/06/21
+Are there any good developer surveys about pull-request preferences? Something like the range between "I do PRs with myself" and "PRs is a waste" with breakdown by various attributes. (Asking to learn how much of a minority I am, or maybe not.)
+
 #### 2024/06/18
 Code editors usually have actions to navigate up/down functions but what about "paragraphs"? Which could mean a bunch of statements without empty lines or braces between them. Or maybe big enough bulks of expressions? 🤔
 
