@@ -3,8 +3,16 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/06/22
+I wrote this #IntelliJ mini-plugin to navigate to the previous/next paragraph a while ago <https://gist.github.com/dkandalov/56482a6b1d5b00702d66545c7c303eb9> but for some reason, it didn't stick 🤔 It also needs some refactoring to improve the code and covert it Kotlin! #LivePlugin
+
 #### 2024/06/21
 Are there any good developer surveys about pull-request preferences? Something like the range between "I do PRs with myself" and "PRs is a waste" with breakdown by various attributes. (Asking to learn how much of a minority I am, or maybe not.)
+
+=== Reply from [@sleepyfox](https://mastodon.social/@sleepyfox@hachyderm.io) ===
+
+Last year there were a whole raft of "Pull requests are slowing your engineering department down!" articles.
+My own take on how to make PRs useful: <https://gist.github.com/sleepyfox/53ce08ab81515cdc5494f1358f609401>
 
 #### 2024/06/18
 Code editors usually have actions to navigate up/down functions but what about "paragraphs"? Which could mean a bunch of statements without empty lines or braces between them. Or maybe big enough bulks of expressions? 🤔
