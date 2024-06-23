@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/06/23
+Here is an updated #Kotlin version of paragraph navigation actions for #IntelliJ <https://gist.github.com/dkandalov/fc8638d21d4ba8b48aec5b25f565c726> (interesting amount of details like scroll to caret, etc.) It still doesn't match my intuition though. Maybe it should include indentation in some way 🤔 #LivePlugin
+
 #### 2024/06/22
 I wrote this #IntelliJ mini-plugin to navigate to the previous/next paragraph a while ago <https://gist.github.com/dkandalov/56482a6b1d5b00702d66545c7c303eb9> but for some reason, it didn't stick 🤔 It also needs some refactoring to improve the code and covert it Kotlin! #LivePlugin
 
