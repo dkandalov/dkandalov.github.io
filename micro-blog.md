@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/06/24
+Arguably, for code navigation instead of left/right moving to the previous/next character, the default should be previous/next word instead. I have happily used it for years (with an alternative alt+ijkl layout). How is that not a thing in every talk about developer productivity?
+
 #### 2024/06/23
 Here is an updated #Kotlin version of paragraph navigation actions for #IntelliJ <https://gist.github.com/dkandalov/fc8638d21d4ba8b48aec5b25f565c726> (interesting amount of details like scroll to caret, etc.) It still doesn't match my intuition though. Maybe it should include indentation in some way 🤔 #LivePlugin
 
