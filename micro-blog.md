@@ -6,8 +6,31 @@ permalink: /micro-blog/
 #### 2024/06/25
 Similar to code navigation to the previous/next word being really useful (it should be the default!), it feels like something is missing for moving vertically 🤔 Because going up/down one line is too slow, up/down method is too fast, up/down a page is too unstructured.
 
+=== Reply from [Benji Weber](https://twitter.com/benjiweber) ===
+
+Like intellij's `Move Caret Forward/Back a Paragraph` action?
+
+=== My reply ===
+
+Yes, something like that. The problem is that this action, and similar actions in other editors, are about moving to an empty line, not a paragraph (and I don't have a precise definition of what "paragraph" might mean in the context of a programming language).
+Probably some kind of mix with `Move Caret to Code Block End/Start` action could work. Need to experiment more with what feels right for me.
+
+=== Reply from [Stylianos Gakis](https://twitter.com/GakisStylianos) ===
+
+I sometimes use a shortcut to go up to the nearest opening bracket. Another thing I do in big classes is to press F12 I think? And get a list of functions inside the class I am in, and move with arrows to the one I wanna go to.
+
+=== My reply ===
+
+I never got used to navigation to the nearest opening/closing bracket. Probably worth another try! 🤔 Yes, file structure (cmd+F12 on mac) is an option and hs good usages but it's more high-level and "breaks" the flow with popup window.
+
+Thinking about it as a uniform navigation in all dimensions (which might not be a good idea btw), I guess it's about finding the analogy for word boundaries and the start/end of the line with vertical navigation.
+
 #### 2024/06/24
 Arguably, for code navigation instead of left/right moving to the previous/next character, the default should be previous/next word instead. I have happily used it for years (with an alternative alt+ijkl layout). How is that not a thing in every talk about developer productivity?
+
+=== Reply from [Ted M. Young](https://twitter.com/jitterted) ===
+
+I dunno, but I've seen folks hold down the arrow key to get to the beginning/end of a line instead of using the home/end key (equivalent). I guess it was easier when there was a dedicated key, now maybe folks aren't even aware that there's such a shortcut?
 
 #### 2024/06/23
 Here is an updated #Kotlin version of paragraph navigation actions for #IntelliJ <https://gist.github.com/dkandalov/fc8638d21d4ba8b48aec5b25f565c726> (interesting amount of details like scroll to caret, etc.) It still doesn't match my intuition though. Maybe it should include indentation in some way 🤔 #LivePlugin
