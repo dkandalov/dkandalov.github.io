@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/06/25
+Similar to code navigation to the previous/next word being really useful (it should be the default!), it feels like something is missing for moving vertically 🤔 Because going up/down one line is too slow, up/down method is too fast, up/down a page is too unstructured.
+
 #### 2024/06/24
 Arguably, for code navigation instead of left/right moving to the previous/next character, the default should be previous/next word instead. I have happily used it for years (with an alternative alt+ijkl layout). How is that not a thing in every talk about developer productivity?
 
