@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/06/26
+Another idea for vertical movement in code editors is to have an "infinite scroll" by showing the "previous" or "next" file, where the order might be the order of files in the project file tree of the editor/IDE.
+
 #### 2024/06/25
 Similar to code navigation to the previous/next word being really useful (it should be the default!), it feels like something is missing for moving vertically 🤔 Because going up/down one line is too slow, up/down method is too fast, up/down a page is too unstructured.
 
@@ -21,7 +24,7 @@ I sometimes use a shortcut to go up to the nearest opening bracket. Another thin
 
 === My reply ===
 
-I never got used to navigation to the nearest opening/closing bracket. Probably worth another try! 🤔 Yes, file structure (cmd+F12 on mac) is an option and hs good usages but it's more high-level and "breaks" the flow with popup window.
+I never got used to navigation to the nearest opening/closing bracket. Probably worth another try! 🤔 Yes, file structure (cmd+F12 on mac) is an option and has good usages, but it's more high-level and "breaks" the flow with popup window.
 
 Thinking about it as a uniform navigation in all dimensions (which might not be a good idea btw), I guess it's about finding the analogy for word boundaries and the start/end of the line with vertical navigation.
 
