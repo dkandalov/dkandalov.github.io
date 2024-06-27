@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/06/27
+Following the spatial navigation metaphor in code editors, what should be the third dimension, i.e. moving into and out of the code? 🧐 My intuition is that moving into is like zooming into function/class definition(s), and out is finding usages, or should it be a folder view?
+
 #### 2024/06/26
 Another idea for vertical movement in code editors is to have an "infinite scroll" by showing the "previous" or "next" file, where the order might be the order of files in the project file tree of the editor/IDE.
 
@@ -15,7 +18,7 @@ Like intellij's `Move Caret Forward/Back a Paragraph` action?
 
 === My reply ===
 
-Yes, something like that. The problem is that this action, and similar actions in other editors, are about moving to an empty line, not a paragraph (and I don't have a precise definition of what "paragraph" might mean in the context of a programming language).
+Yes, something like that. The problem is that this action, and similar actions in other editors, are about moving to an empty line, not a paragraph (and I don't have a precise definition of what   "paragraph" might mean in the context of a programming language).
 Probably some kind of mix with `Move Caret to Code Block End/Start` action could work. Need to experiment more with what feels right for me.
 
 === Reply from [Stylianos Gakis](https://twitter.com/GakisStylianos) ===
