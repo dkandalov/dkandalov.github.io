@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/06/28
+It seems we are mostly editing code in files as a whole and arranging them in tabs. Could this be different/better? Do you know about any experiments? For example, a "tiled" editor space, where each tile is a projection to a text range corresponding to a field/function/class.
+
 #### 2024/06/27
 Following the spatial navigation metaphor in code editors, what should be the third dimension, i.e. moving into and out of the code? 🧐 My intuition is that moving into is like zooming into function/class definition(s), and out is finding usages, or should it be a folder view?
 
