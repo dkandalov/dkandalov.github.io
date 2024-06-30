@@ -3,6 +3,12 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/06/30
+Random #IntelliJ tip: you can use the "Compare With..." action (ctrl/cmd+D) to compare any two or even three (!) selected files in the project view.
+
+#### 2024/06/29
+TIL #IntelliJ “Quick Documentation” action (F1 or ctrl+J) works in the project view and for files it shows file size, creation and modification time. I wish it worked on folders but very useful anyway.
+
 #### 2024/06/28
 It seems we are mostly editing code in files as a whole and arranging them in tabs. Could this be different/better? Do you know about any experiments? For example, a "tiled" editor space, where each tile is a projection to a text range corresponding to a field/function/class.
 
