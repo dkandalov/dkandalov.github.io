@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/07/01
+Another random #IntelliJ tip: "Compare With..." action (ctrl/cmd+D) can compare and synchronize folders and compare archive files like .jar and .zip. BTW you can select two or more files with ctrl/cmd+click.
+
 #### 2024/06/30
 Random #IntelliJ tip: you can use the "Compare With..." action (ctrl/cmd+D) to compare any two or even three (!) selected files in the project view.
 
