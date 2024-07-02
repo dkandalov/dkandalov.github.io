@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/07/02
+Here is another attempt at paragraph navigation actions (this time mostly based on indentation) <https://gist.github.com/dkandalov/6bd16ac80ee69739f9b81b665bb93768>. Not a very well-factored code as it still doesn't feel right anyway.
+
 #### 2024/07/01
 Another random #IntelliJ tip: "Compare With..." action (ctrl/cmd+D) can compare and synchronize folders and compare archive files like .jar and .zip. BTW you can select two or more files with ctrl/cmd+click.
 
