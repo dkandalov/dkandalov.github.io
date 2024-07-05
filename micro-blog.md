@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/07/05
+"Continuous Integration is not a Server. It is the integration of our minds." <https://blog.gypsydave5.com/posts/2024/7/5/continuous-integration-is-not-a-server/> by [David Wickes](https://twitter.com/gypsydave5).
+
 #### 2024/07/04
 As a reminder for myself that the "right" technology, writing tests first or some magic thing, doeтэе guarantee a "good" design. Only making an actual code change later can prove how "good" the design was. Should we speculatively attempt the most likely changes from time to time?
 
