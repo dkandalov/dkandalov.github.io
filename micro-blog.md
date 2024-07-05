@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/07/04
+As a reminder for myself that the "right" technology, writing tests first or some magic thing, doeтэе guarantee a "good" design. Only making an actual code change later can prove how "good" the design was. Should we speculatively attempt the most likely changes from time to time?
+
 #### 2024/07/02
 Here is another attempt at paragraph navigation actions (this time mostly based on indentation) <https://gist.github.com/dkandalov/6bd16ac80ee69739f9b81b665bb93768>. Not a very well-factored code as it still doesn't feel right anyway.
 
