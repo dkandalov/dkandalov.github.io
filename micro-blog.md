@@ -3,11 +3,14 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/07/06
+I wouldn't expect many people to notice that in the "Refactoring to Expressive Kotlin" talk https://www.youtube.com/watch?v=p5WylVjtzBQ&t=2269s I used a few intentions with the 🙈 emoji. These are custom intentions I wrote specifically for the talk. Wish #IntelliJ had them out-of-the-box though.
+
 #### 2024/07/05
 "Continuous Integration is not a Server. It is the integration of our minds." <https://blog.gypsydave5.com/posts/2024/7/5/continuous-integration-is-not-a-server/> by [David Wickes](https://twitter.com/gypsydave5).
 
 #### 2024/07/04
-As a reminder for myself that the "right" technology, writing tests first or some magic thing, doeтэе guarantee a "good" design. Only making an actual code change later can prove how "good" the design was. Should we speculatively attempt the most likely changes from time to time?
+As a reminder for myself that the "right" technology, writing tests first or some magic thing, doesn't guarantee a "good" design. Only making an actual code change later can prove how "good" the design was. Should we speculatively attempt the most likely changes from time to time?
 
 #### 2024/07/02
 Here is another attempt at paragraph navigation actions (this time mostly based on indentation) <https://gist.github.com/dkandalov/6bd16ac80ee69739f9b81b665bb93768>. Not a very well-factored code as it still doesn't feel right anyway.
