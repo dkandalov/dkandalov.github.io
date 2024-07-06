@@ -4,7 +4,7 @@ permalink: /micro-blog/
 ---
 
 #### 2024/07/06
-I wouldn't expect many people to notice that in the "Refactoring to Expressive Kotlin" talk https://www.youtube.com/watch?v=p5WylVjtzBQ&t=2269s I used a few intentions with the 🙈 emoji. These are custom intentions I wrote specifically for the talk. Wish #IntelliJ had them out-of-the-box though.
+I wouldn't expect many people to notice that in the "Refactoring to Expressive Kotlin" talk <https://www.youtube.com/watch?v=p5WylVjtzBQ&t=2269s> I used a few intentions with the 🙈 emoji. These are custom intentions I wrote specifically for the talk. Wish #IntelliJ had them out-of-the-box though.
 
 #### 2024/07/05
 "Continuous Integration is not a Server. It is the integration of our minds." <https://blog.gypsydave5.com/posts/2024/7/5/continuous-integration-is-not-a-server/> by [David Wickes](https://twitter.com/gypsydave5).
