@@ -3,8 +3,19 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/07/07
+You can also find an earlier version of the "Refactoring to Expressive Kotlin" talk here <https://youtube.com/watch?v=UwM3b5D4FjU> that covers more topics (for better or worse).
+
 #### 2024/07/06
 I wouldn't expect many people to notice that in the "Refactoring to Expressive Kotlin" talk <https://www.youtube.com/watch?v=p5WylVjtzBQ&t=2269s> I used a few intentions with the 🙈 emoji. These are custom intentions I wrote specifically for the talk. Wish #IntelliJ had them out-of-the-box though.
+
+=== Reply from [Márton Braun](https://mastodon.social/@zsmb13@androiddev.social) ===
+
+Do you have a list of these somewhere, are they perhaps open source?
+
+=== My reply ===
+
+It's convert apply to let, let to apply, convert secondary constructor to top level function, move extension function to class. The source code is here <https://github.com/dmcg/gilded-rose-tdd/blob/537de53f9b56b7c173683db0ebb2729def92bcfb/.live-plugins/plugin.kts#L35> (it's only a project-specific prototype, please don't judge :))
 
 #### 2024/07/05
 "Continuous Integration is not a Server. It is the integration of our minds." <https://blog.gypsydave5.com/posts/2024/7/5/continuous-integration-is-not-a-server/> by [David Wickes](https://twitter.com/gypsydave5).
