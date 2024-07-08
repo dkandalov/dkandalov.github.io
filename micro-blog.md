@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/07/08
+There is a great book [Stumbling on Happiness](https://en.wikipedia.org/wiki/Stumbling_on_Happiness) by [Daniel Gilbert](https://twitter.com/DanTGilbert) describing how we fail to predict what will make us happy due to cognitive biases. It's tempting to draw an analogy with software development. Are we lacking observations of our actual experience and chasing the wrong goals?
+
 #### 2024/07/07
 You can also find an earlier version of the "Refactoring to Expressive Kotlin" talk here <https://youtube.com/watch?v=UwM3b5D4FjU> that covers more topics (for better or worse).
 
