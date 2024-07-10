@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/07/10
+Random #IntelliJ tip: you can use extend and shrink selection actions (and the keyboard shortcuts) in UI trees, e.g. to select files in the project view!
+
 #### 2024/07/08
 There is a great book [Stumbling on Happiness](https://en.wikipedia.org/wiki/Stumbling_on_Happiness) by [Daniel Gilbert](https://twitter.com/DanTGilbert) describing how we fail to predict what will make us happy due to cognitive biases. It's tempting to draw an analogy with software development. Are we lacking observations of our actual experience and chasing the wrong goals?
 
