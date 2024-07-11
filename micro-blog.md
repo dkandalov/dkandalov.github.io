@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/07/11
+There is a difference between what we think, what we say, what we do, how things work out, and how we interpret what happened (and all of these are probably interleaved). It seems that a lot of software design is based on what we say, so this could be an opportunity to improve 🤔
+
 #### 2024/07/10
 Random #IntelliJ tip: you can use extend and shrink selection actions (and the keyboard shortcuts) in UI trees, e.g. to select files in the project view!
 
