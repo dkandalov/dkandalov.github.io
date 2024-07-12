@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/07/12
+I'm sure it has been posted in some other #Kotlin news already but "Data class copy function to have the same visibility as constructor" in K2 is worth mentioning again 🎉 <https://kotlinlang.org/docs/whatsnew-eap.html#data-class-copy-function-to-have-the-same-visibility-as-constructor>
+
 #### 2024/07/11
 There is a difference between what we think, what we say, what we do, how things work out, and how we interpret what happened (and all of these are probably interleaved). It seems that a lot of software design is based on what we say, so this could be an opportunity to improve 🤔
 
