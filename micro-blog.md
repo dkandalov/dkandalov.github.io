@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/07/13
+Similar to "stumbling on software design" there often is a gap between what software development seems to be when you start compared to what you end up doing. I bet it's a natural tendency for any discipline, but are there any studies?
+
 #### 2024/07/12
 I'm sure it has been posted in some other #Kotlin news already but "Data class copy function to have the same visibility as constructor" in K2 is worth mentioning again 🎉 <https://kotlinlang.org/docs/whatsnew-eap.html#data-class-copy-function-to-have-the-same-visibility-as-constructor>
 
