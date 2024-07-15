@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/07/15
+If you happen to be in London tomorrow (16th July), come to the eXtreme Tuesday Club (XTC) London's oldest agile meetup. It will be hosted again in East London hipsterlands 🧐 <https://www.meetup.com/extreme-tuesday-club-xtc/events/301157888>
+
 #### 2024/07/13
 Similar to "stumbling on software design" there often is a gap between what software development seems to be when you start compared to what you end up doing. I bet it's a natural tendency for any discipline, but are there any studies?
 
