@@ -3,6 +3,18 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/07/16
+Interestingly, IntelliJ has an intention for #Kotlin to import object extension functions, but it doesn't work. Could it be a sign of a missing language feature rather than an IDE bug?
+
+<kotlin>
+object Foo
+fun Foo.bar() = 1
+
+fun main() {
+    Foo.bar() // <-- "Add import" does nothing
+}
+</kotlin>
+
 #### 2024/07/15
 If you happen to be in London tomorrow (16th July), come to the eXtreme Tuesday Club (XTC) London's oldest agile meetup. It will be hosted again in East London hipsterlands 🧐 <https://www.meetup.com/extreme-tuesday-club-xtc/events/301157888>
 
