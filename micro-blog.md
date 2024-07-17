@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/07/17
+One of the interesting discussions at XTC yesterday was "Are backlogs bad?". I like the idea that increasing backlog size needs cost/benefit analysis. Is it about capturing knowledge (e.g. bugs) or is it trying to predict the future? Will it age quickly and become a distraction?
+
 #### 2024/07/16
 Interestingly, IntelliJ has an intention for #Kotlin to import object extension functions, but it doesn't work. Could it be a sign of a missing language feature rather than an IDE bug?
 
