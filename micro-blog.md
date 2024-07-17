@@ -15,6 +15,8 @@ fun main() {
 }
 </kotlin>
 
+Just for reference I created <https://youtrack.jetbrains.com/issue/KT-69957> (I bet there is a duplicate issue which didn't manage to find)
+
 #### 2024/07/15
 If you happen to be in London tomorrow (16th July), come to the eXtreme Tuesday Club (XTC) London's oldest agile meetup. It will be hosted again in East London hipsterlands 🧐 <https://www.meetup.com/extreme-tuesday-club-xtc/events/301157888>
 
