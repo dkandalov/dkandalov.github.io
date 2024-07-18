@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/07/18
+If there are extension functions/properties in #Kotlin, should there be extension classes and objects?
+
 #### 2024/07/17
 One of the interesting discussions at XTC yesterday was "Are backlogs bad?". I like the idea that increasing backlog size needs cost/benefit analysis. Is it about capturing knowledge (e.g. bugs) or is it trying to predict the future? Will it age quickly and become a distraction?
 
