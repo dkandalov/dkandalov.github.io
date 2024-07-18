@@ -6,6 +6,24 @@ permalink: /micro-blog/
 #### 2024/07/18
 If there are extension functions/properties in #Kotlin, should there be extension classes and objects?
 
+=== Reply from [Garth Gilmour](https://twitter.com/GarthGilmour) ===
+
+Do you mean as in Ruby? Would that not require a lot of runtime magic, instead of just compiler sleight of hand?
+
+=== My reply ===
+
+Not like in Ruby because as you say it would be against the grain of Kotlin. But to be clear, I don't know what I mean exactly 🙃 I just take an existing language concept and try applying it more uniformly.
+
+If you think about context parameters (ex "context receivers") as a generalisation of extension functions, then extension classes might be equivalent to context parameters for classes. And I just found an answer here <https://github.com/Kotlin/KEEP/blob/context-parameters/proposals/context-parameters.md#qa-about-design-decisions> TLDR it's too complex.
+
+=== Reply from [Robert Chatley](https://twitter.com/rchatley) ===
+
+Isn’t that called inheritance?
+
+=== My reply ===
+
+I guess the main difference with inheritance is that there is no subtyping 🤔 The closest proposed feature for Kotlin is/was [contextual classes](https://github.com/Kotlin/KEEP/blob/context-parameters/proposals/context-receivers.md#contextual-classes-and-contextual-constructors) (And there might be terminology clash between "extends" keyword in Java and "extension" functions in Kotlin.) 
+
 #### 2024/07/17
 One of the interesting discussions at XTC yesterday was "Are backlogs bad?". I like the idea that increasing backlog size needs cost/benefit analysis. Is it about capturing knowledge (e.g. bugs) or is it trying to predict the future? Will it age quickly and become a distraction?
 
