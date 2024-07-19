@@ -3,6 +3,19 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/07/19
+I don't remember if I ever really needed it, but you can have higher-order extension functions in #Kotlin. For example:
+
+<kotlin>
+fun f(): Int.() -> Int =
+    { this + 1 }
+
+fun main() {
+    val extF = f()
+    require(42.extF() == 43)
+}
+</kotlin>
+
 #### 2024/07/18
 If there are extension functions/properties in #Kotlin, should there be extension classes and objects?
 
