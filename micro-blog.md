@@ -3,6 +3,10 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/07/22
+There is a nice feature in #IntelliJ to rename variable/function by changing its name and using alt+enter to invoke the 
+rename refactoring <https://www.jetbrains.com/help/idea/rename-refactorings.html#inplace_rename>. But it only works on definitions, not usages 🤷‍ So I can't just forget about the rename refactoring shortcut.
+
 #### 2024/07/19
 I don't remember if I ever really needed it, but you can have higher-order extension functions in #Kotlin. For example:
 
