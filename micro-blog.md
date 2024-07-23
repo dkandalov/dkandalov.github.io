@@ -3,6 +3,14 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/07/23
+It's interesting that some classes in #Kotlin have special treatment for platform types 🤔
+<kotlin>
+java.util.concurrent.atomic.AtomicReference&lt;Int&gt;().set(null) // ok
+java.util.Hashtable&lt;Int, Int&gt;().put(null, null) // ok
+java.util.ArrayList&lt;Int&gt;().add(null) // doesn't compile
+</kotlin>
+
 #### 2024/07/22
 There is a nice feature in #IntelliJ to rename variable/function by changing its name and using alt+enter to invoke the 
 rename refactoring <https://www.jetbrains.com/help/idea/rename-refactorings.html#inplace_rename>. But it only works on definitions, not usages 🤷‍ So I can't just forget about the rename refactoring shortcut.
