@@ -3,6 +3,13 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/07/24
+#Kotlin shows a "declaration has type inferred from a platform call" warning for top-level declarations like this one even though it's not nullable:
+<kotlin>
+val foo = java.time.Duration.ZERO
+</kotlin>
+Why not enhance platform types with external annotations (which could be bundled for JDK)?
+
 #### 2024/07/23
 It's interesting that some classes in #Kotlin have special treatment for platform types 🤔
 <kotlin>
