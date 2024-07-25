@@ -3,6 +3,16 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/07/25
+I really like the "Unused symbol" inspection in #IntelliJ. Except when it's a bit too random and project-specific 🤷‍#Kotlin
+<kotlin>
+val f = 1 // ok
+val fo = 1 // unused
+val foo = 1 // ok
+val fooo = 1 // ok
+val foooo = 1 // unused
+</kotlin>
+
 #### 2024/07/24
 #Kotlin shows a "declaration has type inferred from a platform call" warning for top-level declarations like this one even though it's not nullable:
 <kotlin>
