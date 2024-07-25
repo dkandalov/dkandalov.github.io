@@ -4,7 +4,7 @@ permalink: /micro-blog/
 ---
 
 #### 2024/07/25
-I really like the "Unused symbol" inspection in #IntelliJ. Except when it's a bit too random and project-specific 🤷‍#Kotlin
+I really like the "Unused symbol" inspection in #IntelliJ. Except when it's a bit too random and project-specific 🤷‍ #Kotlin
 <kotlin>
 val f = 1 // ok
 val fo = 1 // unused
