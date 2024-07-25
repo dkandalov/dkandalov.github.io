@@ -12,6 +12,7 @@ val foo = 1 // ok
 val fooo = 1 // ok
 val foooo = 1 // unused
 </kotlin>
+None of the above top-level vals are used in the project.
 
 #### 2024/07/24
 #Kotlin shows a "declaration has type inferred from a platform call" warning for top-level declarations like this one even though it's not nullable:
