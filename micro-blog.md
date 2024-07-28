@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/07/28
+Someone (maybe a company making software development tools, e.g. [JetBrains](https://twitter.com/jetbrains) 😉) should do research and design properly ergonomic keyboard shortcuts for code editors. It's tiring to see different and mostly "accidental" shortcuts everywhere.
+
 #### 2024/07/25
 I really like the "Unused symbol" inspection in #IntelliJ. Except when it's a bit too random and project-specific 🤷‍ #Kotlin
 <kotlin>
