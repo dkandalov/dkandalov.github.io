@@ -3,8 +3,29 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/07/31
+#IntelliJ trivia: some shortcuts in the default keyboard layout most likely come from <https://en.wikipedia.org/wiki/File_manager#Orthodox_file_managers>, and were probably intended to be intuitive for the users at the time. For example: F4 - edit file, F5 - copy file, F6 - move file, shift+F6 - rename file.
+
 #### 2024/07/28
 Someone (maybe a company making software development tools, e.g. [JetBrains](https://twitter.com/jetbrains) 😉) should do research and design properly ergonomic keyboard shortcuts for code editors. It's tiring to see different and mostly "accidental" shortcuts everywhere.
+
+=== Reply from [breadsmasher](https://mastodon.social/@breadsmasher@lemmy.world) ===
+
+You can literally pick from a list of various different keyboard maps <https://www.jetbrains.com/help/idea/configuring-keyboard-and-mouse-shortcuts.html>. [Relevant XKDC](https://xkcd.com/927)
+
+=== My reply ===
+
+Yes, and AFAIK none of them are based on any research or actual design. The XKCD is really valid. Maybe it should be a coordinated attempt by couple popular text editors.
+
+You can't standardise everything, but the basic most common actions could be. There is already a small subset which works across the majority of editors, ctrl/cmd+ZXCV for example.
+
+=== Reply from [breadsmasher](https://mastodon.social/@breadsmasher@lemmy.world) ===
+
+The entire QWERTY layout as far as I remember wasn’t based on any design or research
+
+=== Reply from [thisisnotgoingwell](https://mastodon.social/@thisisnotgoingwell@programming.dev) ===
+
+That’s wrong. Qwerty was eventually chosen by the inventor because it was the most efficient design. <https://interestingengineering.com/innovation/history-and-evolution-of-qwerty-keyboard>
 
 #### 2024/07/25
 I really like the "Unused symbol" inspection in #IntelliJ. Except when it's a bit too random and project-specific 🤷‍ #Kotlin
