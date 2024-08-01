@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/08/01
+Random #IntelliJ tip. There is copy/paste history (ctrl/cmd+shift+V), so you can copy two or more pieces of code from the source file(s), then navigate to the destination and paste from history one by one or several items at once (and it works with multiple cursors too!) 👌
+
 #### 2024/07/31
 #IntelliJ trivia: some shortcuts in the default keyboard layout most likely come from <https://en.wikipedia.org/wiki/File_manager#Orthodox_file_managers>, and were probably intended to be intuitive for the users at the time. For example: F4 - edit file, F5 - copy file, F6 - move file, shift+F6 - rename file.
 
