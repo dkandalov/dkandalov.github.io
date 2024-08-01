@@ -6,6 +6,18 @@ permalink: /micro-blog/
 #### 2024/08/01
 Random #IntelliJ tip. There is copy/paste history (ctrl/cmd+shift+V), so you can copy two or more pieces of code from the source file(s), then navigate to the destination and paste from history one by one or several items at once (and it works with multiple cursors too!) 👌
 
+=== Reply from [Oliver Weiler](https://twitter.com/helpermethod) ===
+
+On Mac you can also use <https://maccy.app> to have this functionality everywhere, not only IntelliJ.
+
+=== My reply ===
+
+Thank you! Just tried maccy and it seems like it doesn't paste sometimes 🙈 Also £10 on App Store but free via brew, not sure what that means 🤔
+
+I like the idea though and can only wonder why it's still not the default functionality of all OS.
+
+BTW, to emphasise the point in IntelliJ you can do multi-select in the copy history and paste all selected items at the same time. For a single cursor, they are concatenated. For multiple, one item is pasted for each cursor.
+
 #### 2024/07/31
 #IntelliJ trivia: some shortcuts in the default keyboard layout most likely come from <https://en.wikipedia.org/wiki/File_manager#Orthodox_file_managers>, and were probably intended to be intuitive for the users at the time. For example: F4 - edit file, F5 - copy file, F6 - move file, shift+F6 - rename file.
 
