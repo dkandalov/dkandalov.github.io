@@ -3,6 +3,10 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/08/02
+
+["Beyond the Hype: A Realistic Look at Large Language Models"](https://www.youtube.com/watch?v=Pv0cfsastFs) is a nice talk about LLMs by [Jodie Burchell](https://mastodon.social/@t_redactyl@fosstodon.org). Especially, the "are LLMs intelligent" section which is also available here as blog post with more details <https://t-redactyl.io/blog/2024/07/are-llms-on-the-path-to-agi.html>.
+
 #### 2024/08/01
 Random #IntelliJ tip. There is copy/paste history (ctrl/cmd+shift+V), so you can copy two or more pieces of code from the source file(s), then navigate to the destination and paste from history one by one or several items at once (and it works with multiple cursors too!) 👌
 
