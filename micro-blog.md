@@ -3,8 +3,10 @@ layout: post
 permalink: /micro-blog/
 ---
 
-#### 2024/08/02
+#### 2024/08/03
+In case you never heard about it, there is [Coffee Compiler Club](https://www.youtube.com/watch?v=1DsAO5zQ1OM&list=PL05j31Knswhn7RLk-VKHZ6RI4e9D4d-6e&index=200) run by [Cliff Click](https://mastodon.social/@cliffc@hachyderm.io). I would describe it as an open-space online meetup related to programming languages and compiler things. Pretty much what Internet is supposed to be :)
 
+#### 2024/08/02
 ["Beyond the Hype: A Realistic Look at Large Language Models"](https://www.youtube.com/watch?v=Pv0cfsastFs) is a nice talk about LLMs by [Jodie Burchell](https://mastodon.social/@t_redactyl@fosstodon.org). Especially, the "are LLMs intelligent" section which is also available here as blog post with more details <https://t-redactyl.io/blog/2024/07/are-llms-on-the-path-to-agi.html>.
 
 #### 2024/08/01
