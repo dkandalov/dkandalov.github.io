@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/08/06
+It's probably an unpopular opinion, but having #IntelliJ config files and all dependencies checked into version control was good enough for most projects. I wish there were better tools for downloading/updating dependencies and maybe a build tool (e.g. Amper) to build projects.
+
 #### 2024/08/03
 In case you never heard about it, there is [Coffee Compiler Club](https://www.youtube.com/watch?v=1DsAO5zQ1OM&list=PL05j31Knswhn7RLk-VKHZ6RI4e9D4d-6e&index=200) run by [Cliff Click](https://mastodon.social/@cliffc@hachyderm.io). I would describe it as an open-space online meetup related to programming languages and compiler things. Pretty much what Internet is supposed to be :)
 
