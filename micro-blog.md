@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/08/07
+I just uploaded a new version of the QuickFix plugin for #IntelliJ that adds an action to apply the topmost intention/inspection because life is too short to press 'alt+enter, enter' all the time. See 👉 <https://github.com/dkandalov/quick-fix>
+
 #### 2024/08/06
 It's probably an unpopular opinion, but having #IntelliJ config files and all dependencies checked into version control was good enough for most projects. I wish there were better tools for downloading/updating dependencies and maybe a build tool (e.g. Amper) to build projects.
 
