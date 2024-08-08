@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/08/08
+One thing I'm currently exploring in the #IntelliJ QuickFix plugin is default reordering for intention/inspections. We care about the most relevant auto-completion results to be at the top, so why not have the same for context actions?
+
 #### 2024/08/07
 I just uploaded a new version of the QuickFix plugin for #IntelliJ that adds an action to apply the topmost intention/inspection because life is too short to press 'alt+enter, enter' all the time. See 👉 <https://github.com/dkandalov/quick-fix>
 
