@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/08/09
+Random #IntelliJ tip. You can see version control history for selected text by doing alt+enter and choosing "Show history for selection" intention. The functionality existed for years, but I guess it's more discoverable this way and easier than remembering custom shortcuts.
+
 #### 2024/08/08
 One thing I'm currently exploring in the #IntelliJ QuickFix plugin is default reordering for intention/inspections. We care about the most relevant auto-completion results to be at the top, so why not have the same for context actions?
 
