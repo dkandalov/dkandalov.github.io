@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/08/10
+It's interesting to see more actions (refactoring, code transformations, and settings) in the #IntelliJ alt+enter popup window. Would it eventually include all available actions though? Maybe yes, and similar to the code completion, only with the most relevant actions at the top.
+
 #### 2024/08/09
 Random #IntelliJ tip. You can see version control history for selected text by doing alt+enter and choosing "Show history for selection" intention. The functionality existed for years, but I guess it's more discoverable this way and easier than remembering custom shortcuts.
 
