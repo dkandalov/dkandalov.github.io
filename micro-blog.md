@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/08/11
+Random #IntelliJ tip. You can turn off native file chooser dialog (because IntelliJ dialog is just better) in IDE `Registry` with `ide.mac/win.file.chooser.native` property or in the latest versions in `Advanced Settings` with "Use native file chooser dialog on Windows/macOS" checkbox.
+
 #### 2024/08/10
 It's interesting to see more actions (refactoring, code transformations, and settings) in the #IntelliJ alt+enter popup window. Would it eventually include all available actions though? Maybe yes, and similar to the code completion, only with the most relevant actions at the top.
 
