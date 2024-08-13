@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/08/13
+I wish there were editor/IDE extensions to detect conflicts with other branches or local changes of other developers in real time, i.e. as soon as you type the code. Maybe the lack of these extensions means that people want to be left alone more than doing actual CI 🤔
+
 #### 2024/08/11
 Random #IntelliJ tip. You can turn off native file chooser dialog (because IntelliJ dialog is just better) in IDE `Registry` with `ide.mac/win.file.chooser.native` property or in the latest versions in `Advanced Settings` with "Use native file chooser dialog on Windows/macOS" checkbox.
 
