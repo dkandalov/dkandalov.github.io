@@ -3,6 +3,21 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/08/15
+Another example of `invoke()` navigation not fully supported in #Kotlin (including K2) 😿
+<kotlin>
+interface Foo : (Int) -&gt; String
+
+class Bar : Foo {
+    override fun invoke(i: Int) = ""
+}
+
+fun main() {
+    val foo: Foo = Bar()
+    foo(123) // No way to navigate to invoke implementation
+}
+</kotlin>
+
 #### 2024/08/13
 I wish there were editor/IDE extensions to detect conflicts with other branches or local changes of other developers in real time, i.e. as soon as you type the code. Maybe the lack of these extensions means that people want to be left alone more than doing actual CI 🤔
 
