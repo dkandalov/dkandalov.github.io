@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/08/16
+It seems widely recognised that software development is a team effort, but most focus is still on individual people. There are not many stories about software teams (unlike, for example, sports like football). Hiring a team is not really a thing.
+
 #### 2024/08/15
 Another example of `invoke()` navigation not fully supported in #Kotlin (including K2) 😿
 <kotlin>
