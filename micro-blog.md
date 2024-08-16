@@ -18,6 +18,10 @@ fun main() {
 }
 </kotlin>
 
+=== Reply from [Eduard-Cristian Boloș](https://mastodon.social/@EdyBolos@androiddev.social) ===
+
+This one is so annoying, that I stoped using the invoke operator. I prefer being more vorbose, but have navigation working.
+
 #### 2024/08/13
 I wish there were editor/IDE extensions to detect conflicts with other branches or local changes of other developers in real time, i.e. as soon as you type the code. Maybe the lack of these extensions means that people want to be left alone more than doing actual CI 🤔
 
