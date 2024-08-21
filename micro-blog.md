@@ -3,6 +3,14 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/08/21
+Today's puzzler. #Kotlin plugin says smart cast won't work (and suggests a loop of "fixes") but it does. That's because the latest #Kotlin plugin doesn't understand Kotlin 2.0 without (beta) K2 mode 🙄 
+<kotlin>
+class Foo(val a: (() -&gt; Unit)?)
+val foo = Foo {}
+if (foo.a != null) foo.a()
+</kotlin>
+
 #### 2024/08/16
 It seems widely recognised that software development is a team effort, but most focus is still on individual people. There are not many stories about software teams (unlike, for example, sports like football). Hiring a team is not really a thing.
 
