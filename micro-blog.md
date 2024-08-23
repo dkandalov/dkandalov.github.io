@@ -3,11 +3,14 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/08/23
+In case you would like to click subscribe and ring the bell (or whatever that messed up YouTube workflow is), [Duncan McGregor](https://twitter.com/duncanmcg) is rebranding his channel to "Pairing with Duncan" <https://www.youtube.com/watch?v=MccT-XORptQ>
+
 #### 2024/08/22
 I'm really sorry to be late to the party of people who discovered that Firefox shows expired cookies in the dev tools <https://stackoverflow.com/questions/60732831/firefox-still-shows-expired-cokies-in-debugging-screen>. (It can be really confusing considering that expiration time is in GMT, and I am in the BST time zone.)
 
 #### 2024/08/21
-Today's puzzler. #Kotlin plugin says smart cast won't work (and suggests a loop of "fixes") but it does. That's because the latest #Kotlin plugin doesn't understand Kotlin 2.0 without (beta) K2 mode 🙄 
+Today's puzzler. #Kotlin plugin says smart cast won't work with `invoke` (and suggests a loop of "fixes") but it does. That's because the latest #Kotlin plugin doesn't understand Kotlin 2.0 without (beta) K2 mode 🙄 
 <kotlin>
 class Foo(val a: (() -&gt; Unit)?)
 val foo = Foo {}
