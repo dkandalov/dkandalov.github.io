@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/08/25
+It took me only a couple of days to figure out why #LivePlugin compilation stopped working in #Kotlin 1.9 🙈 Turns out it was a bug fix, and coincidentally I found a comprehensive list of #Kotlin [language features](https://github.com/JetBrains/kotlin/blob/3a1e8ade670bc33af6084042a0ca73e33e288412/compiler/util/src/org/jetbrains/kotlin/config/LanguageVersionSettings.kt#L267) (which could've saved me couple of days).
+
 #### 2024/08/23
 In case you would like to click subscribe and ring the bell (or whatever that messed up YouTube workflow is), [Duncan McGregor](https://twitter.com/duncanmcg) is rebranding his channel to "Pairing with Duncan" <https://www.youtube.com/watch?v=MccT-XORptQ>
 
