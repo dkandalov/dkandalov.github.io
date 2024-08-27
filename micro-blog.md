@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/08/27
+A modified Brian Kernighan quote for the AI hype wave. Debugging is twice as hard as writing a program in the first place. So if a chatbot generated some code for you that you would not be able to write, then how will you ever debug it? With a debugging bot?
+
 #### 2024/08/25
 It took me only a couple of days to figure out why #LivePlugin compilation stopped working in #Kotlin 1.9 🙈 Turns out it was a bug fix, and coincidentally I found a comprehensive list of #Kotlin [language features](https://github.com/JetBrains/kotlin/blob/3a1e8ade670bc33af6084042a0ca73e33e288412/compiler/util/src/org/jetbrains/kotlin/config/LanguageVersionSettings.kt#L267) (which could've saved me couple of days).
 
