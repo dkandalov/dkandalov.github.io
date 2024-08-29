@@ -3,8 +3,11 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/08/29
+TIL about "disagreeable givers" (via [@TShootingAgile](https://twitter.com/TShootingAgile) <https://soundcloud.com/troubleshootingagile/disagreeable-givers>). So if you see me ranting about Kotlin or IntelliJ, you now know what it is :)
+
 #### 2024/08/28
-Great talk by [Brian Goetz](https://twitter.com/BrianGoetz) "Valhalla - Where Are We?" <https://www.youtube.com/watch?v=IF9l8fYfSnI> (thanks to [Uberto Barbini](https://twitter.com/ramtop) for mentioning it). TLDR it's just value classes and null restricted types 🤩 #JVMLS #OpenJDK
+Great talk by [Brian Goetz](https://twitter.com/BrianGoetz) "Valhalla - Where Are We?" <https://www.youtube.com/watch?v=IF9l8fYfSnI> (thanks to [Uberto Barbini](https://twitter.com/ramtop) for mentioning it). TLDR after 10 years it's now just value classes and null restricted types 🤩 #JVMLS #OpenJDK
 
 #### 2024/08/27
 A modified Brian Kernighan quote for the AI hype wave. Debugging is twice as hard as writing a program in the first place. So if a chatbot generated some code for you that you would not be able to write, then how will you ever debug it? With a debugging bot?
