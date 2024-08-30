@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/08/30
+#Gradle: "There were failing tests. See report at: file://.../index.html". And of course, it's in the "clouds", so it's a click-ops task to get the file out of it, or the Docker image has been just deleted 🤬 Maybe printing a test summary to an HTML file is not a good default?
+
 #### 2024/08/29
 TIL about "disagreeable givers" (via [@TShootingAgile](https://twitter.com/TShootingAgile) <https://soundcloud.com/troubleshootingagile/disagreeable-givers>). So if you see me ranting about Kotlin or IntelliJ, you now know what it is :)
 
