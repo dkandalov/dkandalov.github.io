@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/09/02
+Good old #Gradle integration in #IntelliJ showing error messages twice <https://youtrack.jetbrains.com/issue/IDEA-221469>. I've definitely seen it before, but I'm probably institutionalised enough to expect strange things from Gradle, and just silently suffered for years.
+
 #### 2024/08/30
 #Gradle: "There were failing tests. See report at: file://.../index.html". And of course, it's in the "clouds", so it's a click-ops task to get the file out of it, or the Docker image has been just deleted 🤬 Maybe printing a test summary to an HTML file is not a good default?
 
