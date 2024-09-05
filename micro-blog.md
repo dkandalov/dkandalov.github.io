@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/09/05
+Random #IntelliJ tip (and a reminder for myself). When IntelliJ starts using a lot of CPU and you are about to express your outrage, remember that you can try the "Activity Monitor..." action so the outrage can be expressed in the right direction (or a plugin).
+
 #### 2024/09/02
 Good old #Gradle integration in #IntelliJ showing error messages twice <https://youtrack.jetbrains.com/issue/IDEA-221469>. I've definitely seen it before, but I'm probably institutionalised enough to expect strange things from Gradle, and just silently suffered for years.
 
