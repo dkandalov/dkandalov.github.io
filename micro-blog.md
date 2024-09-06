@@ -120,11 +120,11 @@ You can't standardise everything, but the basic most common actions could be. Th
 
 === Reply from [breadsmasher](https://mastodon.social/@breadsmasher@lemmy.world) ===
 
-The entire QWERTY layout as far as I remember wasn’t based on any design or research
+The entire QWERTY layout as far as I remember wasn't based on any design or research
 
 === Reply from [thisisnotgoingwell](https://mastodon.social/@thisisnotgoingwell@programming.dev) ===
 
-That’s wrong. Qwerty was eventually chosen by the inventor because it was the most efficient design. <https://interestingengineering.com/innovation/history-and-evolution-of-qwerty-keyboard>
+That's wrong. Qwerty was eventually chosen by the inventor because it was the most efficient design. <https://interestingengineering.com/innovation/history-and-evolution-of-qwerty-keyboard>
 
 #### 2024/07/25
 I really like the "Unused symbol" inspection in #IntelliJ. Except when it's a bit too random and project-specific 🤷‍ #Kotlin
@@ -184,7 +184,7 @@ If you think about context parameters (ex "context receivers") as a generalisati
 
 === Reply from [Robert Chatley](https://twitter.com/rchatley) ===
 
-Isn’t that called inheritance?
+Isn't that called inheritance?
 
 === My reply ===
 
@@ -255,7 +255,7 @@ Another random #IntelliJ tip: "Compare With..." action (ctrl/cmd+D) can compare 
 Random #IntelliJ tip: you can use the "Compare With..." action (ctrl/cmd+D) to compare any two or even three (!) selected files in the project view.
 
 #### 2024/06/29
-TIL #IntelliJ “Quick Documentation” action (F1 or ctrl+J) works in the project view and for files it shows file size, creation and modification time. I wish it worked on folders but very useful anyway.
+TIL #IntelliJ "Quick Documentation" action (F1 or ctrl+J) works in the project view and for files it shows file size, creation and modification time. I wish it worked on folders but very useful anyway.
 
 #### 2024/06/28
 It seems we are mostly editing code in files as a whole and arranging them in tabs. Could this be different/better? Do you know about any experiments? For example, a "tiled" editor space, where each tile is a projection to a text range corresponding to a field/function/class.
@@ -461,7 +461,7 @@ fun FakeFoo() = ...
 </kotlin>
 
 #### 2024/05/19
-I’m not sure about the origins of the concept of long-term support releases in software, but I wish it was also applied to physical consumer products. For example, when I buy shoes, I’d like to know if I’ll be able to purchase exactly the same pair in a couple of years.
+I'm not sure about the origins of the concept of long-term support releases in software, but I wish it was also applied to physical consumer products. For example, when I buy shoes, I'd like to know if I'll be able to purchase exactly the same pair in a couple of years.
 
 #### 2024/05/18
 Friday content you do need: "2022 - Non-Euclidean Doom: what happens to a game when pi is not 3.14159…" <https://www.youtube.com/watch?v=_ZSFRWJCUY4>
@@ -571,10 +571,10 @@ I understand that all people are different and there is neurodiversity, but I st
 
 === Reply from [Görge](https://mastodon.social/@goerge@social.devteams.at) ===
 
-I believe, that a lot of people are overwhelmed of the possibilities and visual clues of an IDE. So maybe it’s just selective perception so that don’t “see” the warnings. Maybe it’s also a matter of education. “They” just don’t know that the warnings are there to help.
+I believe, that a lot of people are overwhelmed of the possibilities and visual clues of an IDE. So maybe it's just selective perception so that don't "see" the warnings. Maybe it's also a matter of education. "They" just don't know that the warnings are there to help.
 
 To the reverse question: Same here. I did learn it the hard way. From the C/C++ Compiler warnings over the first hints in JBuilder and later eclipse to the rich code flow analysis based IDEA hint. It makes me a better programmer if I read and understand the warnings.
-As we’re taking care of our coworkers, we want them to learn, too.
+As we're taking care of our coworkers, we want them to learn, too.
 
 #### 2024/04/27
 It might be a false memory, but I think it was possible in #IntelliJ to configure the build so that it doesn't open a tool window every time compilation fails. I wonder what happened to it 🤔
@@ -603,7 +603,7 @@ this is big peeve of mine! I like typealiases but their usage are hard to find.
 My #1 feature for IntelliJ would be a Hoogle-like api search engine where you can put a signature and get all functions with that signature (or places where they are needed)
 
 #### 2024/04/24
-Another example of #Kotlin APIs affected by IDE is type aliases support. In the code below, the “Specify return type explicitly” intention expands the alias instead of using `Foo` (it works with simple aliases though).
+Another example of #Kotlin APIs affected by IDE is type aliases support. In the code below, the "Specify return type explicitly" intention expands the alias instead of using `Foo` (it works with simple aliases though).
 <kotlin>
 typealias Foo = () -&gt; Int
 fun bar(foo: Foo): () -&gt; Int = foo
@@ -659,7 +659,7 @@ In case you want to try an alternative JSON (de)serialization library for #Kotli
 
 === Reply from [Nat Pryce](https://mastodon.social/@natpryce) ===
 
-It’s a great library and especially useful when you need to select a format dynamically, via HTTP content negotiation or version info within a file, for example. Which, given enough time, is always.
+It's a great library and especially useful when you need to select a format dynamically, via HTTP content negotiation or version info within a file, for example. Which, given enough time, is always.
 
 #### 2024/04/18
 Code editors with AI assistance should be equipped with two pedals. "Less AI" pedal: I know what I'm doing, just let me type the code! "Moar AI" pedal: keep hallucinations coming, I have a blank page problem.
@@ -817,7 +817,7 @@ foo(123).let(::bar).let(::qix).also(::println)
 In terms of less local code ergonomics, e.g. "reading" a function, in addition to eye/mouse/cursor tracking it might be interesting to capture navigation like finding usages, which arguments are passed in, etc. The complexity of navigation could correlate with worse ergonomics? 🤔
 
 #### 2024/03/21
-In terms of the “local” code ergonomics for an expression/statement which fits on a few lines, what about eye/mouse/cursor tracking to measure overall distance, path overlap, hot spots, amount of jumps, etc.? This could be a more concrete thing to compare “readability” 🤔
+In terms of the "local" code ergonomics for an expression/statement which fits on a few lines, what about eye/mouse/cursor tracking to measure overall distance, path overlap, hot spots, amount of jumps, etc.? This could be a more concrete thing to compare "readability" 🤔
 
 === Reply from [Louis CAD](https://twitter.com/Louis_CAD) ===
 
@@ -886,11 +886,11 @@ Do both?
 
 === My reply ===
 
-This is a good point. It’s easy to run out of neutral spaces even in a big city. Might still be worth it compared to a corporate environment where you can’t walk on your own and need a “permission” to drink water or go to the toilet.
+This is a good point. It's easy to run out of neutral spaces even in a big city. Might still be worth it compared to a corporate environment where you can't walk on your own and need a "permission" to drink water or go to the toilet.
 
 Yes! Working on a real codebase is another good idea 🙂 Maybe even pay for it.
 
-Obviously, I don’t mean any of the ideas are easy or feasible to implement. But they highlight issues with the current process.
+Obviously, I don't mean any of the ideas are easy or feasible to implement. But they highlight issues with the current process.
 
 === Reply from [Михаило Љевћенко](https://twitter.com/TheMishkun) ===
 
@@ -961,7 +961,7 @@ Looking recently into OAuth/OpenID, I'm tempted to create a diagram explaining t
 "Yet another emoji support" is one of my favourite #IntelliJ plugins <https://github.com/shiraji/yet-another-emoji-support> 😅 It adds emoji auto-complete similar to Slack which I wish was the default everywhere. Not sure if the plugin works in the latest IJ though, I have a local fork 😱🙈
 
 #### 2024/03/01
-Great talk by [Clare Sudbery](https://mastodon.social/@claresudbery) "Continuous Integration: That’s Not What They Meant" <https://www.youtube.com/watch?v=Ms3J6_-6-fk> 🤩 And this is your regular reminder that pull requests are a waste.
+Great talk by [Clare Sudbery](https://mastodon.social/@claresudbery) "Continuous Integration: That's Not What They Meant" <https://www.youtube.com/watch?v=Ms3J6_-6-fk> 🤩 And this is your regular reminder that pull requests are a waste.
 
 #### 2024/02/29
 Here is my daily bread and butter 🍞🧈 being taken away in the form of #IntelliJ not finding #Kotlin property usages in the constructor unless it's a named argument :( #whybacklog <https://youtrack.jetbrains.com/issue/KTIJ-11262>
@@ -1028,7 +1028,7 @@ Oh god this drives me mad too
 
 === My reply ===
 
-+1 To clarify I’d rather not see any Gradle output in tests output but if it’s already there, I wish it included the command.
++1 To clarify I'd rather not see any Gradle output in tests output but if it's already there, I wish it included the command.
 
 #### 2024/02/20
 It feels that running code/tests was faster 10+ years ago via #IntelliJ built-in runners than it is today via #Gradle. Not sure if it's IntelliJ or Gradle itself or both. I wonder if it's worth digging out an old version of IntelliJ to prove the point 🧐 (or be embarrassed)
@@ -1152,7 +1152,7 @@ I did the NO_SCREAMING_SNAKE_CONSTANTS lightning talk at the last XTC meetup. An
 Programming language terminology is a mess. People say "variable" meaning unmodifiable reference to immutable data, e.g. String `val` in #Kotlin. 🙈 Or it can be a modifiable reference to mutable data. How new joiners are supposed to make sense of this? 🤷‍ We need better terms!
 
 #### 2024/01/18
-I did a small write up suggesting to inline all single usage “variables” in #Kotlin <https://dmitrykandalov.com/tidy-kotlin#inline-variables-with-single-usage> because there are pretty much no downsides to that (except if it needs a better name or object requires longer lifetime obviously).
+I did a small write up suggesting to inline all single usage "variables" in #Kotlin <https://dmitrykandalov.com/tidy-kotlin#inline-variables-with-single-usage> because there are pretty much no downsides to that (except if it needs a better name or object requires longer lifetime obviously).
 
 #### 2024/01/17
 I wish there was an #IntelliJ feature to search files and class names in git (or VCS) history. And maybe code history text search as well (e.g. based on 'git log -S')?
@@ -1179,7 +1179,7 @@ I did a small write-up on my favourite topic of SHOUTING_CONSTANTS <https://dmit
 If you are in London next Tuesday (16th January), come say hi at eXtreme Tuesday Club (XTC). It's a great #openspace meetup! Will be hosted for the first time in East London hipsterlands 👉 <https://www.meetup.com/extreme-tuesday-club-xtc/events/297787737>
 
 #### 2024/01/11
-I wonder if making variables/functions/classes/etc. as private as possible is considered to be a form of encapsulation. Or “encapsulation” is too specific to OO and something like “information hiding” is better for non-OO code?
+I wonder if making variables/functions/classes/etc. as private as possible is considered to be a form of encapsulation. Or "encapsulation" is too specific to OO and something like "information hiding" is better for non-OO code?
 
 === Reply from [Orchun Kolcu](https://mastodon.social/@orchun@hachyderm.io) ===
 
@@ -1329,7 +1329,7 @@ Fundamentally, #Kotlin coroutines is compiler transforming code into a state mac
 <img src="../assets/images/micro-blog/2023-11-24.png" width="50%" height="50%"/>
 
 #### 2023/11/22
-I wish #Kotlin stdlib had Flow-like API with onStart/onComplete/catch/etc. for Sequence/Iterable. And maybe cancellation by making them AutoClosable (?) 🙈🤔 (I’m sure there are some good discussions on youtrack, slack and Kotlin forum.)
+I wish #Kotlin stdlib had Flow-like API with onStart/onComplete/catch/etc. for Sequence/Iterable. And maybe cancellation by making them AutoClosable (?) 🙈🤔 (I'm sure there are some good discussions on youtrack, slack and Kotlin forum.)
 
 #### 2023/11/21
 How wrong is it to use #Kotlin Flow with this? 😬
@@ -1398,7 +1398,7 @@ To be fair to projects with `eventually {...}` in tests, it can be hard to contr
 There is no magic avoiding `eventually {...}` in tests. The basic answer is to have control over concurrency (like controlling time with the Clock). If it's the code you can modify, then change its design. If it's an external technology, wrap it in a minimal API and use a fake.
 
 #### 2023/11/01
-Another problem with `eventually {...}` is that it’s easy to sprinkle tests with it but can be really hard to remove because the design won’t let you control concurrency and it’s hard to refactor with the build being slow and flaky. It’s a trap! 😒 #testing #rant
+Another problem with `eventually {...}` is that it's easy to sprinkle tests with it but can be really hard to remove because the design won't let you control concurrency and it's hard to refactor with the build being slow and flaky. It's a trap! 😒 #testing #rant
 
 #### 2023/10/31
 The reason why using `eventually {...}` in tests is not a good idea is that it will make your build slow and non-deterministic. Retries will slow down passing tests, timeouts will make failures even slower, and failure messages will read like "something didn't happen on time" 🤷
@@ -1413,7 +1413,7 @@ To be clear, I suggest projectional editor for #Kotlin/#Java not just for format
 Since it's nearly impossible to "win" any code style/formatting argument, could we have a projectional editor for #Kotlin/#Java, e.g. as an IntelliJ plugin please. It has to be clever though to project into the "current code style" in text format 🧐
 
 #### 2023/10/26
-I wonder how much code layout (let’s say just within a file) affects how we think about programs. Is there any research? 🤔🔬 What if changing the layout could shift overall project design to be less data centric for example?
+I wonder how much code layout (let's say just within a file) affects how we think about programs. Is there any research? 🤔🔬 What if changing the layout could shift overall project design to be less data centric for example?
 
 #### 2023/10/25
 Thinking about details first/last in #Kotlin classes, the default style is neither. It seems to be guided by object initialisation and execution order (init fields, invoke constructor, public/private functions). As a reader you're supposed to play the role of a computer I guess 🤷
@@ -1423,7 +1423,7 @@ Timeless question: define details first or last? In particular, in a #Kotlin fil
 
 === Reply from [Jordan Stewart](https://twitter.com/damaged) ===
 
-Most important thing first. Probably not quite right, I like to _think_ of it as similar to writing’s "inverted pyramid" —
+Most important thing first. Probably not quite right, I like to _think_ of it as similar to writing's "inverted pyramid" —
 <https://en.m.wikipedia.org/wiki/Inverted_pyramid_(journalism)>
 
 === The hill I'm happy to join [Chris Oldwood](https://twitter.com/chrisoldwood) on ===
@@ -1448,7 +1448,7 @@ fun FunSpec.someTests() {
 Clever but the problem is that you can't run just one test from IDE 😒 Use abstract class instead? #UXfail
 
 #### 2023/10/19
-Back to #kotest rants. Because kotest has “built in coroutine support at every level” when an assertion fails, you can’t navigate to the matcher source code from the stack trace (Kotlin coroutines are stackless). So good luck if the error message is not very clear.
+Back to #kotest rants. Because kotest has "built in coroutine support at every level" when an assertion fails, you can't navigate to the matcher source code from the stack trace (Kotlin coroutines are stackless). So good luck if the error message is not very clear.
 
 === Reply from [James Ward](https://twitter.com/_JamesWard) ===
 
@@ -1523,7 +1523,7 @@ What about namespace "pollution" by extension functions in #Kotlin? E.g. a libra
 More #kotest #rants... `shouldHaveSize()` is helpful enough to print the whole (actual) list when sizes don't match. Good idea unless the list contains large data classes. Good luck scrolling around Gradle output for the failure message. OTOH, it could be symptom of a bad test 🤔
 
 #### 2023/10/05
-Another #kotest #rant is that most of its matchers don’t show diff window in IntelliJ with JUnit5 runner. It tries but most matchers throw `AssertionError` (no diff) and some `AssertionFailedError` (has diff) 🤷😒 Makes you wonder if kotest authors actually use it via IntelliJ.
+Another #kotest #rant is that most of its matchers don't show diff window in IntelliJ with JUnit5 runner. It tries but most matchers throw `AssertionError` (no diff) and some `AssertionFailedError` (has diff) 🤷😒 Makes you wonder if kotest authors actually use it via IntelliJ.
 
 #### 2023/10/04
 Kotest has `eventually()` function which retries lambda until it succeeds or times out. Not the best idea to use it across all tests in the first place, but in addition kotest prints stack trace from the first and the last failure, so you end up scrolling down 🤦‍ #kotest #rant
@@ -1617,7 +1617,7 @@ fun &lt;T&gt; T.printed(): T = apply { println(this) }
 So you can do `foo.update().printed()` without extracting a variable and using a separate line for println().
 
 #### 2023/09/17
-Rick Beato has a great [YouTube channel](https://www.youtube.com/@RickBeato). In particular, "What Makes This Song Great?" videos, e.g. [Metallica - “Master of Puppets” Breakdown](https://www.youtube.com/watch?v=5EOHKfoDyrI). I'm wondering if there is something similar for #software analysing/appreciating/criticising well-known projects. Should John Carmack or Dave Farley do it? 😅
+Rick Beato has a great [YouTube channel](https://www.youtube.com/@RickBeato). In particular, "What Makes This Song Great?" videos, e.g. [Metallica - "Master of Puppets" Breakdown](https://www.youtube.com/watch?v=5EOHKfoDyrI). I'm wondering if there is something similar for #software analysing/appreciating/criticising well-known projects. Should John Carmack or Dave Farley do it? 😅
 
 #### 2023/09/16
 Does the "Small advice" in [this talk](https://www.youtube.com/watch?v=eRWoTgYbUqM&t=1498s) mean that explicitly specifying return type for public functions will noticeably improve compiler/IDE speed? If yes, it sounds like an inspection 🤔 #Kotlin #IntelliJ 
