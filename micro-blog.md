@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/09/06
+I know it's too late (and impossible) to fix the "stubs vs mocks vs fakes vs other things" terminology confusion, but I'm tired or stubs which fake an external service and mocks which return values without any checks (especially for data classes in #Kotlin).
+
 #### 2024/09/05
 Random #IntelliJ tip (and a reminder for myself). When IntelliJ starts using a lot of CPU and you are about to express your outrage, remember that you can try the "Activity Monitor..." action so the outrage can be expressed in the right direction (or a plugin).
 
