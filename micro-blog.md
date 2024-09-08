@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/09/08
+TIL #IntelliJ has an unfinished "Highlight Only Current Declaration" feature (only available in the [internal mode](https://plugins.jetbrains.com/docs/intellij/enabling-internal.html)) which greys out code/text outside the current scope. Looks very cool to me 🤩 With suppressed inspections, it could be the true distraction-free mode. 
+
 #### 2024/09/06
 I know it's too late (and impossible) to fix the "stubs vs mocks vs fakes vs other things" terminology confusion, but I'm tired or stubs which fake an external service and mocks which return values without any checks (especially for data classes in #Kotlin).
 
