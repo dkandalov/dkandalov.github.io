@@ -320,7 +320,7 @@ Code editors usually have actions to navigate up/down functions but what about "
 
 #### 2024/06/17
 I love this meme by [Jason Gorman](https://mastodon.social/@jasongorman@mastodon.cloud) 😂
-<img src="../assets/images/micro-blog/2024-06-17.png" width="80%" height="80%"/>
+<img src="../assets/images/micro-blog/2024-06-17.webp" width="80%" height="80%"/>
 
 #### 2024/06/15
 A good example of a web UI jitter is Google search. Search for "123", then search for "1234". Watch All/Images/Videos/... tabs flicker. If logged in, your avatar and Google apps will flicker. If not logged in, "Sign in" jumps left and right. Even in Chrome. Not impressive 🤷💰
@@ -550,7 +550,7 @@ Everything objects/classes can do and packages cannot 🙈 Initialization, exten
 #### 2024/05/02
 When editing a file/class, I might not want to be distracted by its existing warnings. Here is an #IntelliJ plugin prototype to suppress inspections until the next commit 👉 <https://gist.github.com/dkandalov/590bdf339efe643a124e43082bed22d1> #LivePlugin (Maybe "Distraction Free" mode could do something like that 🙄)
 
-<img src="../assets/images/micro-blog/2024-05-02.png" width="80%" height="80%"/>
+<img src="../assets/images/micro-blog/2024-05-02.webp" width="80%" height="80%"/>
 
 #### 2024/05/01
 Short notice but if you happen to be in London on 2nd May and would like to see some pre-KotlinConf talks, this might be a good event <https://www.meetup.com/source-talks-on-kotlin/events/299930315>
@@ -675,7 +675,7 @@ Code editors with AI assistance should be equipped with two pedals. "Less AI" pe
 #### 2024/04/16
 Typical #IntelliJ dilemma. There are two identical entries in the auto-complete popup. Do I spend an hour (or more) investigating and reporting it on YouTrack to find that it's already fixed, or it's been a known bug for years? Or move on pretending nothing happened? 😬🙈
 
-<img src="../assets/images/micro-blog/2024-04-16.png" width="80%" height="80%"/>
+<img src="../assets/images/micro-blog/2024-04-16.webp" width="80%" height="80%"/>
 
 #### 2024/04/15
 One way to make `(Auto)Closable` in Java/Kotlin safer could be a compiler check that it's been closed. Something similar to `@Nullable`/`@NotNull` annotation or <https://youtrack.jetbrains.com/issue/KT-12719>. (To be fair, there is a Java inspection for `AutoClosable` in IntelliJ, but this is not generic enough.)
@@ -724,7 +724,7 @@ Unlikely to be a new idea, but it could be useful to have object allocation stac
 #### 2024/04/06
 In programming, it's important to name things right, so it's "core human", not "soft" skills. (Image by [Susan David, Ph.D.](https://twitter.com/SusanDavid_PhD), discovered via [Compassionate Coding](https://twitter.com/compassioncode).)
 
-<img src="../assets/images/micro-blog/2024-04-06.png" width="80%" height="80%"/>
+<img src="../assets/images/micro-blog/2024-04-06.webp" width="80%" height="80%"/>
 
 === Reply from [gavr](https://twitter.com/gavr123456789) ===
 
@@ -763,7 +763,7 @@ I wish there was more usability testing on APIs. Nothing fancy. Just watch someo
 #### 2024/03/31
 In case you missed it, there is <https://kotlintoday.com> by [@kotlin_magazine](https://mastodon.social/@kotlin_magazine) 😅 #Kotlin
 
-<img src="../assets/images/micro-blog/2024-03-31.jpeg" width="80%" height="80%"/>
+<img src="../assets/images/micro-blog/2024-03-31.webp" width="80%" height="80%"/>
 
 #### 2024/03/30
 Clarifying the point about ::functionReference in #Kotlin. The line between "variables" and functions is blurry anyway, and it's possible to reference a function without "::" 🤷‍
@@ -861,7 +861,7 @@ It might seem weird today, but puzzle-focused interviews were a norm in the tech
 
 (To be clear the diagram is not to scale or be exhaustive, e.g. it ignores the randomness of the hiring process.)
 
-<img src="../assets/images/micro-blog/2024-03-15.png" width="80%" height="80%"/>
+<img src="../assets/images/micro-blog/2024-03-15.webp" width="80%" height="80%"/>
 
 #### 2024/03/14
 Here are some old ideas to make coding interviews more fair. Do an actual pair programming session, in which nobody knows the problem or solution. Do it on a "neutral" territory. No hard time limit. In big companies randomly interview existing employees to measure the baseline.
@@ -915,7 +915,7 @@ I suspect that interviewers who are very familiar with the problem can be affect
 #### 2024/03/13
 To be fair, in #IntelliJ it's easy to write a naive expansion to word boundaries (see attached snippet for LivePlugin). What's hard is to make it work in all contexts with other selection expansion handlers (it doesn't). And given enough users, someone will always be upset 👍
 
-<img src="../assets/images/micro-blog/2024-03-13.png"/>
+<img src="../assets/images/micro-blog/2024-03-13.webp"/>
 
 #### 2024/03/12
 I thought plain text #IntelliJ selection expansion first selects "valid id", then text surrounded by spaces, then wider context. Turns out it's a combination of `PlainTextLineSelectioner`, `NaturalLanguageTextSelectioner` and `WordSelectioner` (actually java id "selectioner"), which don't expand to `a [b=1|23] c`. And I'm not going to debug VSCode 🙅
@@ -1074,7 +1074,7 @@ I wrote a couple more sections in the Tidy #Kotlin about putting parameters/argu
 #### 2024/02/09
 One of the coolest features in #IntelliJ 2024 for me are the charts 💪📈 I guess they work on any "data" content, but CSV file support is the killer feature because they are so easy to produce in a few lines of code.
 
-<img src="../assets/images/micro-blog/2024-02-09.png" width="80%" height="80%"/>
+<img src="../assets/images/micro-blog/2024-02-09.webp" width="80%" height="80%"/>
 
 #### 2024/02/08
 Turns out #Kotlin get/set operators can have multiple parameters of any type 🧐 For example:
@@ -1101,7 +1101,7 @@ On the topic of browsers, I use Firefox as a default browser (configured to clea
 #### 2024/02/04
 For the first time in ages, I'm happy to accept a cookie 😋 And it was a really tasty one!<br/> Thank you, Firefox! #fosdem
 
-<img src="../assets/images/micro-blog/2024-02-04.jpg" width="80%" height="80%"/>
+<img src="../assets/images/micro-blog/2024-02-04.webp" width="80%" height="80%"/>
 
 #### 2024/02/03
 Interesting talk by Alan Bateman about virtual threads limitations and future plans <https://fosdem.org/2024/schedule/event/fosdem-2024-3255-virtual-thread-s-next-steps> #fosdem
@@ -1133,7 +1133,7 @@ If #Java/#Kotlin libraries, ideally, shouldn't have global side effects (e.g., p
 #### 2024/01/24
 Random #IntelliJ tip. If you see a yellow/red notification panel at the top of the editor with some actions as links, instead of using the mouse to click the links, you can trigger the actions via the alt+enter popup window. For example, "Setup SDK" in the screenshot below.
 
-<img src="../assets/images/micro-blog/2024-01-24.png" width="80%" height="80%"/>
+<img src="../assets/images/micro-blog/2024-01-24.webp" width="80%" height="80%"/>
 
 #### 2024/01/23
 I've seen people doing this in #Java and #Kotlin:
@@ -1281,7 +1281,7 @@ Good to see that #IntelliJ got a new "Lift function call out of 'when'" (refacto
 #### 2023/12/08
 I don't have a cat to take a photo with the "Tidy First?" book #TidyCat But there is a TCR Bar in London 😅 To be clear, in this case, TCR stands for Tottenham Court Road, not "test && commit || revert". Are there any rich geeks to open TDD Bar in London, maybe in Shoreditch? 🧐 /cc [@kentbeck](https://mastodon.social/@kentbeck@hachyderm.io)
 
-<img src="../assets/images/micro-blog/2023-12-08.png" width="80%" height="80%"/>
+<img src="../assets/images/micro-blog/2023-12-08.webp" width="80%" height="80%"/>
 
 #### 2023/12/07
 Thinking about copy-paste issues, #Microsoft is the winner. Formatting issues, broken shortcuts and copy-paste doing nothing at all. Unbelievable! It worked better 20 years ago. Should there be a consumer protection law, so that big companies are obligated to fix basic bugs? 🤔
@@ -1289,7 +1289,7 @@ Thinking about copy-paste issues, #Microsoft is the winner. Formatting issues, b
 #### 2023/12/06
 (Summoning the power of social media 🪄🎅) When you copy text/code, and then paste it, you expect to see exactly the same code/text. Unfortunately, this is not the case when editing #Kotlin in #IntelliJ. Could this issue be moved out of the backlog (aka "never") please <https://youtrack.jetbrains.com/issue/KTIJ-10687/Copy-Paste-should-preserve-static-imports>
 
-<img src="../assets/images/micro-blog/2023-12-06.png" width="30%" height="30%"/>
+<img src="../assets/images/micro-blog/2023-12-06.webp" width="30%" height="30%"/>
 
 === Update ===
 
@@ -1316,7 +1316,7 @@ When using Result/Either type in #Kotlin, it can be tricky to make sure they are
 #### 2023/11/26
 Do you know any good resources (blogposts, tutorials, katas or videos) about using Result/Either types in #Kotlin?
 
-<img src="../assets/images/micro-blog/2023-11-26.png" width="50%" height="50%"/>
+<img src="../assets/images/micro-blog/2023-11-26.webp" width="50%" height="50%"/>
 
 === Answers ===
 
@@ -1332,7 +1332,7 @@ If you are/were at the #devfestberlin2023 today, you can find the slides and cod
 #### 2023/11/24
 Fundamentally, #Kotlin coroutines is compiler transforming code into a state machine. They are in stdlib, e.g. Sequence builder. Nothing to do with async. And there are async coroutines in kotlinx.coroutines built on top. Both are "coroutines". Obviously, not so obvious.
 
-<img src="../assets/images/micro-blog/2023-11-24.png" width="50%" height="50%"/>
+<img src="../assets/images/micro-blog/2023-11-24.webp" width="50%" height="50%"/>
 
 #### 2023/11/22
 I wish #Kotlin stdlib had Flow-like API with onStart/onComplete/catch/etc. for Sequence/Iterable. And maybe cancellation by making them AutoClosable (?) 🙈🤔 (I'm sure there are some good discussions on youtrack, slack and Kotlin forum.)
@@ -1434,7 +1434,7 @@ Most important thing first. Probably not quite right, I like to _think_ of it as
 
 === The hill I'm happy to join [Chris Oldwood](https://twitter.com/chrisoldwood) on ===
 
-![](../assets/images/micro-blog/2023-10-24.png)
+![](../assets/images/micro-blog/2023-10-24.webp)
 
 #### 2023/10/23
 This is a somewhat obvious thing to say but if you use randomly generated objects in tests, you really need to have a seed. Otherwise, it's a lot of fun with not very reproducible failures and builds. Also don't assume that two random values are not equal 🙈
@@ -1463,7 +1463,7 @@ I wonder if Stacktrace Recovery could help:
 
 #### 2023/10/18
 Random #IntelliJ tip. You can select multiple items in lists/trees and apply action to all of them. E.g. select files in project view, press enter and all selected files will be open. The same works with find/show usages. Or abstract function can be implemented on all classes by using "select all" via ctrl/cmd+A, then "enter" 👌
-![](../assets/images/micro-blog/2023-10-18.png)
+![](../assets/images/micro-blog/2023-10-18.webp)
 
 #### 2023/10/17
 The reason lambda flavours in #Kotlin could be useful (e.g. with different/combined background colour in IDE) is that the meaning of indentation is diluted by "boring" let/apply/..., parameters on separate lines, nested functions, etc. Also .map() on collections vs Result type 😵
