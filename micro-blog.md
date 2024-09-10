@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/09/10
+It's one of those days when I'm once again disappointed by IDE not being able to find "implementations" of a typealias in #Kotlin (so I have to resort to find all usages). This is one of the reasons why I think typealiases should only be used within a limited scope (class/file).
+
 #### 2024/09/08
 TIL #IntelliJ has an unfinished "Highlight Only Current Declaration" feature (only available in the [internal mode](https://plugins.jetbrains.com/docs/intellij/enabling-internal.html)) which greys out code/text outside the current scope. Looks very cool to me 🤩 With suppressed inspections, it could be the true distraction-free mode. 
 
