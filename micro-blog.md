@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/09/11
+I occasionally see people coding in #IntelliJ and using Notepad++, VS Code or something else for notes. I wonder if that's because they're not aware of scratches, scratches have discoverability or usability issues, or they have a strong preference for another editor 🤔
+
 #### 2024/09/10
 It's one of those days when I'm once again disappointed by IDE not being able to find "implementations" of a typealias in #Kotlin (so I have to resort to find all usages). This is one of the reasons why I think typealiases should only be used within a limited scope (class/file).
 
