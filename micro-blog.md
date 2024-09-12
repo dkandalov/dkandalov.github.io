@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/09/12
+If you happen to be in London next Thursday (19th September), come say hi at the On #Kotlin meetup <https://www.meetup.com/source-talks-on-kotlin/events/302384401>. The format of six short talks is bound to be great, and it's near a couple of nice north London venues like Never For Ever and The Southampton Arms.
+
 #### 2024/09/11
 I occasionally see people coding in #IntelliJ and using Notepad++, VS Code or something else for notes. I wonder if that's because they're not aware of scratches, scratches have discoverability or usability issues, or they have a strong preference for another editor 🤔
 
