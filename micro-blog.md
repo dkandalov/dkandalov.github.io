@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/09/13
+TIL that GitFlow is not recommended by its author <https://nvie.com/posts/a-successful-git-branching-model>. And if you consider local code changes a branch, then the recommended GitHub flow is basically: make a change, review, commit 🧐🤷 (This is your overdue reminder that pull requests are a waste.)
+
 #### 2024/09/12
 If you happen to be in London next Thursday (19th September), come say hi at the On #Kotlin meetup <https://www.meetup.com/source-talks-on-kotlin/events/302384401>. The format of six short talks is bound to be great, and it's near a couple of nice north London venues like Never For Ever and The Southampton Arms.
 
