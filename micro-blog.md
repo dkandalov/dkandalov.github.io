@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/09/16
+There is an old idea to treat project file tree with usability in mind. Considering the most common usage patterns (once you know the project), do we really need build files, readme, gitignore, etc. at the project's root? Maybe there should be a convention to hide them a bit.
+
 #### 2024/09/13
 TIL that GitFlow is not recommended by its author <https://nvie.com/posts/a-successful-git-branching-model>. And if you consider local code changes a branch, then the recommended GitHub flow is basically: make a change, review, commit 🧐🤷 (This is your overdue reminder that pull requests are a waste.)
 
