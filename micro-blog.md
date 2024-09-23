@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/09/23
+Overheard at a meetup last week: the top 10 programming languages list is as meaningful as the top 10 bands/artists.
+
 #### 2024/09/16
 There is an old idea to treat project file tree with usability in mind. Considering the most common usage patterns (once you know the project), do we really need build files, readme, gitignore, etc. at the project's root? Maybe there should be a convention to hide them a bit.
 
