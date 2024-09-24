@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/09/24
+With all the money spent on CI/CD tools, how is it that it's still not a common practice to continuously pull non-conflicting changes from upstream into your local code? Similarly, why not auto-push all local changes that passed all tests?
+
 #### 2024/09/23
 Overheard at a meetup last week: the top 10 programming languages list is as meaningful as the top 10 bands/artists.
 
