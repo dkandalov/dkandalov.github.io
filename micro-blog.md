@@ -3,8 +3,27 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/09/26
+If there is one piece of advice (aka opinion) I have for developers, it is: Do. One. Thing. At. A. Time. (I'm too bored of seeing code not compiling for a couple of hours and commits that change seemingly everything everywhere.)
+
 #### 2024/09/24
 With all the money spent on CI/CD tools, how is it that it's still not a common practice to continuously pull non-conflicting changes from upstream into your local code? Similarly, why not auto-push all local changes that passed all tests?
+
+=== Reply from [Oliver Weiler](https://twitter.com/helpermethod) ===
+
+You don't push local changes in the first place because the dev machine may be "tainted" (it works on my machine).
+
+=== My reply ===
+
+If you knew that the dev machine is extremely unlikely to be "tainted" (e.g. it's virtualised), would you continuously push? I suspect most people wouldn't because of deeper (probably behavioural) reasons.
+
+=== Reply from [Oliver Weiler](https://twitter.com/helpermethod) ===
+
+I would never trust a dev machine. I've seen tons of builds break on the CI system because the dev machine had config files / external config / build artifacts not present on the CI system. Impossible to prevent.
+
+=== My reply ===
+
+Sure, ultimately I would not trust any machine or any single build. I’ve seen build systems being non-deterministic, dirty cache problems, supply chain problems, file system being corrupted, etc. Not many people are being paranoid in this space though.
 
 #### 2024/09/23
 Overheard at a meetup last week: the top 10 programming languages list is as meaningful as the top 10 bands/artists.
