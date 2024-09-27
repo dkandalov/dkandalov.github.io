@@ -3,8 +3,28 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/09/27
+Talking about one change at a time, I don't mean never to do large messy changes. There is a time and place, e.g. making yourself feel better (rationalised as "productive"). Or as an exploration and maybe part of the Mikado method. Just shelve the big change and do it again slowly.
+
 #### 2024/09/26
 If there is one piece of advice (aka opinion) I have for developers, it is: Do. One. Thing. At. A. Time. (I'm too bored of seeing code not compiling for a couple of hours and commits that change seemingly everything everywhere.)
+
+=== Reply from [samir, jobless immigrant scum](https://mastodon.functional.computer/@samir) ===
+
+I'd like to add something to this excellent advice.
+
+If you can't do one thing at a time, fix that.
+
+For example, if you can't do one thing at a time because the waiting time to merge is too long (perhaps because you're waiting for a review, or for your build to finish), that's your problem. Figure out how to make it faster until you no longer need to do two things at once.
+
+Oh, it's always a people problem. The build isn't slow because of technology, it's slow because no one cares.
+
+Similarly, you can't make people review in a more timely fashion with more code.
+
+You can't code your way out of the deadline pressure on the engineering team.
+
+Even purely technical solutions need organisational buy-in, or they'll just revert. You can add build caching if you want, but people will just find ways to make it slower.
+
 
 #### 2024/09/24
 With all the money spent on CI/CD tools, how is it that it's still not a common practice to continuously pull non-conflicting changes from upstream into your local code? Similarly, why not auto-push all local changes that passed all tests?
@@ -23,7 +43,7 @@ I would never trust a dev machine. I've seen tons of builds break on the CI syst
 
 === My reply ===
 
-Sure, ultimately I would not trust any machine or any single build. I’ve seen build systems being non-deterministic, dirty cache problems, supply chain problems, file system being corrupted, etc. Not many people are being paranoid in this space though.
+Sure, ultimately I would not trust any machine or any single build. I've seen build systems being non-deterministic, dirty cache problems, supply chain problems, file system being corrupted, etc. Not many people are being paranoid in this space though.
 
 #### 2024/09/23
 Overheard at a meetup last week: the top 10 programming languages list is as meaningful as the top 10 bands/artists.
