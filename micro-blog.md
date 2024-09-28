@@ -6,6 +6,14 @@ permalink: /micro-blog/
 #### 2024/09/28
 I wish there was an option in #IntelliJ to do a text search on the source code of the project libraries. It's already almost there... you can do the search, but you have to select a specific jar file in the project view "External Libraries".
 
+=== Reply from [Anton Keks](https://twitter.com/antonkeks) ===
+
+I think you can do it if you change the Scope in search dialog to Project and Libraries
+
+=== My reply ===
+
+Yes, thank you! Just choosing "Scope" in the "Find in Files" popup window defaults to "All places" which includes all libraries' source code. (It feels like I knew about this feature and discovering it for the third time 🙄)
+
 #### 2024/09/27
 Talking about one change at a time, I don't mean never to do large messy changes. There is a time and place, e.g. making yourself feel better (rationalised as "productive"). Or as an exploration and maybe part of the Mikado method. Just shelve the big change and do it again slowly.
 
