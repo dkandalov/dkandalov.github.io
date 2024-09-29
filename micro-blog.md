@@ -3,6 +3,11 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/09/29
+South Park Gnomes business plan: 1 - Collect underpants, 2 - ?, 3 - Profit. It was a nonsense joke in 1998 but is very real for companies today. [Activity Tracker plugin](https://github.com/dkandalov/activity-tracker) (which I just updated to work with the latest #IntelliJ IDEs) is similar except that you own the data. Please help with phase 2!
+
+<img src="../assets/images/micro-blog/2024-09-29.webp" width="80%" height="80%"/>
+
 #### 2024/09/28
 I wish there was an option in #IntelliJ to do a text search on the source code of the project libraries. It's already almost there... you can do the search, but you have to select a specific jar file in the project view "External Libraries".
 
