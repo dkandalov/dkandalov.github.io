@@ -3,8 +3,11 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/09/30
+One idea for the Activity Tracker plugin is to predict/assist with the next user action based on the project activity history, its current state, etc. Maybe this involves less guessing/variability than predicting the code I'm trying to write.
+
 #### 2024/09/29
-South Park Gnomes business plan: 1 - Collect underpants, 2 - ?, 3 - Profit. It was a nonsense joke in 1998 but is very real for companies today. [Activity Tracker plugin](https://github.com/dkandalov/activity-tracker) (which I just updated to work with the latest #IntelliJ IDEs) is similar except that you own the data. Please help with phase 2!
+South Park Gnomes business plan: 1 - Collect underpants, 2 - ?, 3 - Profit. It was a nonsense joke in 1998 but is very real for some companies today. [Activity Tracker plugin](https://github.com/dkandalov/activity-tracker) (which I just updated to work with the latest #IntelliJ IDEs) is similar except that you own the data. Please help with phase 2!
 
 <img src="../assets/images/micro-blog/2024-09-29.webp" width="80%" height="80%"/>
 
