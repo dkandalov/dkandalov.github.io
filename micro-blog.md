@@ -3,6 +3,17 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/10/01
+Another unfinished #Kotlin feature is find usages of fun interfaces, so code navigation and refactorings suffer. It's 10 years old and in the backlog 😥 <https://youtrack.jetbrains.com/issue/KTIJ-2367>
+
+<kotlin>
+fun interface Foo {
+    fun bar()
+}
+fun f(foo: Foo) = ...
+f {...} // 👈 Not a usage
+</kotlin>
+
 #### 2024/09/30
 One idea for the Activity Tracker plugin is to predict/assist with the next user action based on the project activity history, its current state, etc. Maybe this involves less guessing/variability than predicting the code I'm trying to write.
 
