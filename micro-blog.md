@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/10/02
+To be specific about #Kotlin fun interfaces missing usages, I was going to make this [Listener](https://github.com/dkandalov/limited-wip/blob/52871f3a11b1cd853713865e67b44023300e06e7/src/limitedwip/common/vcs/SuccessfulCheckin.kt#L28) `fun` but decided not to because I then won't be able to navigate to its usages, e.g. [here](https://github.com/dkandalov/limited-wip/blob/52871f3a11b1cd853713865e67b44023300e06e7/src/limitedwip/autorevert/components/AutorevertComponent.kt#L56). TLDR language features need properer IDE support.
+
 #### 2024/10/01
 Another unfinished #Kotlin feature is find usages of fun interfaces, so code navigation and refactorings suffer. It's 10 years old and in the backlog 😥 <https://youtrack.jetbrains.com/issue/KTIJ-2367>
 
