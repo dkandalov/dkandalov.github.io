@@ -3,8 +3,27 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/10/07
+I don't have a habit of using File Structure in #IntelliJ (maybe I need a better keyboard shortcut, sorry cmd/ctrl+F12 🙈), so I just noticed for #Kotlin it shows classes/functions/fields at the class level but only classes/functions and no vars at the function level. Asymmetry!
+
+<img src="../assets/images/micro-blog/2024-10-07.webp" width="80%" height="80%"/>
+
 #### 2024/10/03
 Given that #IntelliJ can highlight #Kotlin code with partially invalid syntax or failing type checks, and given that parts of the compiler are used for highlighting, does it mean that partial compilation of Kotlin code is not too hard to implement (at least within IDE)? 🤔
+
+=== Reply from [Martin Bonnin](https://mastodon.social/@mb@mbonnin.net) ===
+
+what would partial compilation do?
+
+=== My reply ===
+
+Compile parts of the source code that can be compiled, and leave the rest to fail at runtime.
+
+This could sometimes be useful during the development cycle. Eclipse Java compiler could do it to some degree. Although it felt a bit weird at the time and I might have shifted since then towards smaller steps to keep all the code compiling, so I can't really say I approve of the approach.
+
+=== Reply from [Martin Bonnin](https://mastodon.social/@mb@mbonnin.net) ===
+
+sounds a bit like JavaScript 😁
 
 #### 2024/10/02
 To be specific about #Kotlin fun interfaces missing usages, I was going to make this [Listener](https://github.com/dkandalov/limited-wip/blob/52871f3a11b1cd853713865e67b44023300e06e7/src/limitedwip/common/vcs/SuccessfulCheckin.kt#L28) `fun` but decided not to because I then won't be able to navigate to its usages, e.g. [here](https://github.com/dkandalov/limited-wip/blob/52871f3a11b1cd853713865e67b44023300e06e7/src/limitedwip/autorevert/components/AutorevertComponent.kt#L56). TLDR language features need properer IDE support.
