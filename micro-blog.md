@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/10/09
+I wish I could report some useful "AI" features for coding, but they are still too bad at guessing what I'm trying to do. What about variable/function names and noticing name inconsistencies? Matching the code style of the project? Or some other not-too-fancy low-hanging fruit 🤔
+
 #### 2024/10/07
 I don't have a habit of using File Structure in #IntelliJ (maybe I need a better keyboard shortcut, sorry cmd/ctrl+F12 🙈), so I just noticed for #Kotlin it shows classes/functions/fields at the class level but only classes/functions and no vars at the function level. Asymmetry!
 
