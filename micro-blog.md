@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/10/11
+TIL about [Baba Is You](https://en.wikipedia.org/wiki/Baba_Is_You) (see also [Mastodon](https://mastodon.gamedev.place/@BabaIsYou)) - a cool indie puzzle video game in which you need to redefine the game rules to win. Thanks to the mobbing (aka ensemble) session at SoCraTes Belgium (a very interesting communication exercise without coding).
+
 #### 2024/10/09
 I wish I could report some useful "AI" features for coding, but they are still too bad at guessing what I'm trying to do. What about variable/function names and noticing name inconsistencies? Matching the code style of the project? Or some other not-too-fancy low-hanging fruit 🤔
 
