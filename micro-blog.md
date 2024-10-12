@@ -3,8 +3,13 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/10/12
+FizzBuzz after one hour of mob programming (aka ensemble) at [SoCraTes Belgium](https://socratesbe.org) directed by [Duncan McGregor](https://twitter.com/duncanmcg). Not sure if this would pass any kind of coding interview 🤣 About to try Aider AI thing with [Tim Schraepen](https://twitter.com/TimSchraepen).
+
+<img src="../assets/images/micro-blog/2024-10-12.webp" width="80%" height="80%"/>
+
 #### 2024/10/11
-TIL about [Baba Is You](https://en.wikipedia.org/wiki/Baba_Is_You) (see also [Mastodon](https://mastodon.gamedev.place/@BabaIsYou)) - a cool indie puzzle video game in which you need to redefine the game rules to win. Thanks to the mobbing (aka ensemble) session at SoCraTes Belgium (a very interesting communication exercise without coding).
+TIL about [Baba Is You](https://en.wikipedia.org/wiki/Baba_Is_You) (see also [Mastodon](https://mastodon.gamedev.place/@BabaIsYou)) - a cool indie puzzle video game in which you need to redefine the game rules to win. Thanks to the mobbing (aka ensemble) session at [SoCraTes Belgium](https://socratesbe.org) (a very interesting communication exercise without coding).
 
 #### 2024/10/09
 I wish I could report some useful "AI" features for coding, but they are still too bad at guessing what I'm trying to do. What about variable/function names and noticing name inconsistencies? Matching the code style of the project? Or some other not-too-fancy low-hanging fruit 🤔
