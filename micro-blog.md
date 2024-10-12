@@ -4,7 +4,7 @@ permalink: /micro-blog/
 ---
 
 #### 2024/10/12
-FizzBuzz after one hour of mob programming (aka ensemble) at [SoCraTes Belgium](https://socratesbe.org) directed by [Duncan McGregor](https://twitter.com/duncanmcg). Not sure if this would pass any kind of coding interview 🤣 About to try Aider AI thing with [Tim Schraepen](https://twitter.com/TimSchraepen).
+FizzBuzz after one hour of mob programming (aka ensemble) at [SoCraTes Belgium](https://socratesbe.org) directed by [Duncan McGregor](https://twitter.com/duncanmcg). Not sure if this would pass any kind of coding interview 🤣 About to try [Aider AI](https://github.com/Aider-AI/aider) thing with [Tim Schraepen](https://twitter.com/TimSchraepen).
 
 <img src="../assets/images/micro-blog/2024-10-12.webp" width="80%" height="80%"/>
 
