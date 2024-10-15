@@ -3,8 +3,27 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/10/15
+For the benefit of anyone interested and as a reference for myself, here are some of the IntelliJ and related macOS settings I normally use [IntelliJ Settings](https://dmitrykandalov.com/intellij-settings) (updated today but not exhaustive). Should I write more about the reasons for all the settings?
+
 #### 2024/10/14
 One random takeaway from [SoCraTes Belgium](https://socratesbe.org) is to really try [Last Edit Location](https://www.jetbrains.com/help/idea/navigating-through-the-source-code.html#find_cursor_edit) (cmd+shift+backspace) for #IntelliJ navigation. Although there must be a maximum amount of actively used shortcuts before they take too much brain power and distract you from the actual problem.
+
+=== Reply from [Ted M. Young](https://twitter.com/jitterted) ===
+
+You can always learn one more shortcut! 😁
+
+(Just don't ask me what they are, only my fingers know.)
+
+Feel like it'd make a great game to see who knows the most shortcuts!
+
+=== My reply ===
+
+Yes, it's deciding at the moment which shortcut is better that can take energy. My sense is that there is a sweet spot between using *all* possible shortcuts for a particular activity (like navigation) and not knowing/using any.
+
+Maybe as a loose analogy with music, you don't need to play all possible notes.
+
+At the same time, how do you find the sweet spot? And learning new shortcuts until it's clearly too much then to dial down is probably a good strategy.
 
 #### 2024/10/12
 FizzBuzz after one hour of mob programming (aka ensemble) at [SoCraTes Belgium](https://socratesbe.org) directed by [Duncan McGregor](https://twitter.com/duncanmcg). Not sure if this would pass any kind of coding interview 🤣 About to try [Aider AI](https://github.com/Aider-AI/aider) thing with [Tim Schraepen](https://twitter.com/TimSchraepen).

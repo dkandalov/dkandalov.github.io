@@ -20,7 +20,7 @@ Last updated on 15th October 2024 for IntelliJ version `2021.2.4`.
      - disable `Show quick documentation on hover`
  - in `Editor > Inlay Hints`
      - enable all, and then disable with `Toggle Inlay Hints Globally` <br/>
-       (which with a shortcut is a better way show hint on-demand)
+       (which with a shortcut is a better to way show hints on-demand)
  - in `Appearance & Behavior > Appearance`
      - disable `Smooth scrolling` (so that the scrolling position is on the border between lines)
      - disable `System Settings > Updates > Show What's New in the editor after an IDE update`  
