@@ -4,7 +4,7 @@ permalink: /micro-blog/
 ---
 
 #### 2024/10/16
-Another plugin is off the deprecations treadmill of throwing exceptions 🙄 in the latest IDE versions https://github.com/dkandalov/limited-wip 👈 #IntelliJ plugin to limit your work-in-progress. It comes with change size watchdog, auto-revert, and TCR mode.
+Another plugin is off the treadmill of deprecations that throw exceptions in the latest IDE versions 🙄 #IntelliJ plugin to limit your work-in-progress <https://github.com/dkandalov/limited-wip>. It comes with change size watchdog, auto-revert, and TCR mode.
 
 #### 2024/10/15
 For the benefit of anyone interested and as a reference for myself, [here are](https://dmitrykandalov.com/intellij-settings) some of the #IntelliJ and related macOS settings I normally use (updated today but not exhaustive). Should I write more about the reasons for all the settings?
