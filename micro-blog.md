@@ -4,7 +4,7 @@ permalink: /micro-blog/
 ---
 
 #### 2024/10/17
-I updated my blog post about auto-revert https://dmitrykandalov.com/auto-revert. It made me wonder if there are more fundamental reasons for making large code changes other than lack of skills. Maybe something along the lines of anxiety, imposter syndrome, or boredom.
+I updated my [blog post](https://dmitrykandalov.com/auto-revert) about auto-revert. It made me wonder if there are more fundamental reasons for making large code changes other than lack of skills. Maybe something along the lines of anxiety, imposter syndrome, or boredom.
 
 #### 2024/10/16
 Another plugin is off the treadmill of deprecations that throw exceptions in the latest IDE versions 🙄 #IntelliJ plugin to limit your work-in-progress <https://github.com/dkandalov/limited-wip>. It comes with change size watchdog, auto-revert, and TCR mode.
