@@ -3,8 +3,15 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/10/18
+There is a #Kotlin intention to convert from member to extension function but not the other way round <https://youtrack.jetbrains.com/issue/KTIJ-12496>. If you're desperate enough, I [hacked the intention](https://github.com/dmcg/gilded-rose-tdd/blob/537de53f9b56b7c173683db0ebb2729def92bcfb/.live-plugins/plugin.kts#L159) (not production quality) for the KotlinConf talk with #LivePlugin. (Also on this topic, why refactoring intentions are not in the refactoring menu? 🤷)
+
 #### 2024/10/17
 I updated my [blog post](https://dmitrykandalov.com/auto-revert) about auto-revert. It made me wonder if there are more fundamental reasons for making large code changes other than lack of skills. Maybe something along the lines of anxiety, imposter syndrome, or boredom.
+
+=== Reply from [Peter Kofler](https://twitter.com/codecopkofler) ===
+
+Broken focus e.g. distractions, interruptions, ADHD. Novelty maybe related to boredom yes
 
 #### 2024/10/16
 Another plugin is off the treadmill of deprecations that throw exceptions in the latest IDE versions 🙄 #IntelliJ plugin to limit your work-in-progress <https://github.com/dkandalov/limited-wip>. It comes with change size watchdog, auto-revert, and TCR mode.
