@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/10/22
+If you haven't heard about the pomodoro technique, it's basically: focus on the task till 25-minute timer stops; if distracted, restart the timer; take breaks. You can try it in #IntelliJ IDEs using [this plugin](https://github.com/dkandalov/pomodoro-tm) (just updated for the latest versions).
+
 #### 2024/10/18
 There is a #Kotlin intention to convert from member to extension function but not the other way round <https://youtrack.jetbrains.com/issue/KTIJ-12496>. If you're desperate enough, I [hacked the intention](https://github.com/dmcg/gilded-rose-tdd/blob/537de53f9b56b7c173683db0ebb2729def92bcfb/.live-plugins/plugin.kts#L159) (not production quality) for the KotlinConf talk with #LivePlugin. (Also on this topic, why refactoring intentions are not in the refactoring menu? 🤷)
 
@@ -12,6 +15,10 @@ I updated my [blog post](https://dmitrykandalov.com/auto-revert) about auto-reve
 === Reply from [Peter Kofler](https://twitter.com/codecopkofler) ===
 
 Broken focus e.g. distractions, interruptions, ADHD. Novelty maybe related to boredom yes
+
+=== Reply from [Ivan “CLOVIS” Canet](https://twitter.com/ivcanet) ===
+
+That sounds interesting. I wonder if the time should be reset by green tests too.
 
 #### 2024/10/16
 Another plugin is off the treadmill of deprecations that throw exceptions in the latest IDE versions 🙄 #IntelliJ plugin to limit your work-in-progress <https://github.com/dkandalov/limited-wip>. It comes with change size watchdog, auto-revert, and TCR mode.
