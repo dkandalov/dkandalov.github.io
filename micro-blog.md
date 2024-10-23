@@ -3,8 +3,19 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/10/23
+Fun fact about the Pomodoro plugin for #IntelliJ (which I've supported for nearly 15 years) is that it was originally written for me by a colleague. At the time, I experimented with Pomodoro at work for a few months. A productive day turned out to be ~8 Pomodoros (<4 hours) 😱
+
 #### 2024/10/22
-If you haven't heard about the pomodoro technique, it's basically: focus on the task till 25-minute timer stops; if distracted, restart the timer; take breaks. You can try it in #IntelliJ IDEs using [this plugin](https://github.com/dkandalov/pomodoro-tm) (just updated for the latest versions).
+If you haven't heard about the pomodoro technique, it's basically: focus on the task till 25-minute timer stops; if distracted, restart the timer; take breaks. You can try it in #IntelliJ IDEs using [this plugin](https://github.com/dkandalov/pomodoro-tm) (just updated for the latest IDE versions).
+
+=== Reply from [Martin Bonnin](https://x.com/martinbonnin) ===
+
+Man, 25 minutes is the time it takes me to get in the zone 😅
+
+=== My reply ===
+
+You can do longer pomodoros! The point is to not be distracted by checking email and social media (during both pomodoro and breaks) 😉
 
 #### 2024/10/18
 There is a #Kotlin intention to convert from member to extension function but not the other way round <https://youtrack.jetbrains.com/issue/KTIJ-12496>. If you're desperate enough, I [hacked the intention](https://github.com/dmcg/gilded-rose-tdd/blob/537de53f9b56b7c173683db0ebb2729def92bcfb/.live-plugins/plugin.kts#L159) (not production quality) for the KotlinConf talk with #LivePlugin. (Also on this topic, why refactoring intentions are not in the refactoring menu? 🤷)
