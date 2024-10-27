@@ -3,11 +3,15 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/10/27
+If you need inspiration to find names for your variables and functions, why not try random search results? (Some joke about AI is missing here.) This is the source code <https://github.com/dkandalov/live-plugin/wiki/Google-auto-complete>. Please shout if you can make this auto-complete always work 🙈 #LivePlugin #Kotlin 
+
+<img src="../assets/images/micro-blog/2024-10-27.webp" width="80%" height="80%"/>
+
 #### 2024/10/24
 This is what Eclipse looks like on macOS these days 😵 I don't think it ever looked polished on Mac, but the 20+ year-old icons make me grateful for #IntelliJ UI evolution (even if it takes effort getting used to a new look and feel every couple of years).
 
 <img src="../assets/images/micro-blog/2024-10-24.webp" width="80%" height="80%"/>
-
 
 #### 2024/10/23
 Fun fact about the Pomodoro plugin for #IntelliJ (which I've supported for nearly 15 years) is that it was originally written for me by a colleague. At the time, I experimented with Pomodoro at work for a few months. A productive day turned out to be ~8 Pomodoros (<4 hours) 😱
