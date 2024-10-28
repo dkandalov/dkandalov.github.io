@@ -3,6 +3,11 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/10/28
+This is likely the oldest (years old) and the most used (by me) #IntelliJ action which I never published. It opens the "IDE Internal Errors" window, so you can move between errors and clear them <https://gist.github.com/dkandalov/0c3a0362d205abd369d363ac280f9d9c> #LivePlugin #Kotlin
+
+<img src="../assets/images/micro-blog/2024-10-28.webp" width="80%" height="80%"/>
+
 #### 2024/10/27
 If you need inspiration to find names for your variables and functions, why not try random search results? (Some joke about AI is missing here.) This is the source code <https://github.com/dkandalov/live-plugin/wiki/Google-auto-complete>. Please shout if you can make this auto-complete always work 🙈 #LivePlugin #Kotlin 
 
