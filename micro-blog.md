@@ -3,6 +3,11 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/10/29
+It only takes ~5 lines of code to remove editor notification panels in #IntelliJ <https://gist.github.com/dkandalov/3c3984ac39b51883920f019ff91f1351>. Because some panels can only be closed with the mouse (e.g. "Kotlin Scripting is in Beta"). Some cannot be closed at all (e.g. "Decompiled .class file") 🙄 #LivePlugin #Kotlin
+
+<img src="../assets/images/micro-blog/2024-10-29.webp" width="80%" height="80%"/>
+
 #### 2024/10/28
 This is likely the oldest (years old) and the most used (by me) #IntelliJ action which I never published. It opens the "IDE Internal Errors" window, so you can move between errors and clear them <https://gist.github.com/dkandalov/0c3a0362d205abd369d363ac280f9d9c> #LivePlugin #Kotlin
 
