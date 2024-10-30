@@ -3,6 +3,11 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/10/30
+I like to occasionally check what is going on in the #IntelliJ background tasks (and then hide the popup). While waiting for [IJPL-58948](https://youtrack.jetbrains.com/issue/IJPL-58948) to make it possible with built-in actions, here is a workaround in ~8 lines <https://gist.github.com/dkandalov/d326df86849a2a097d169b781ffbc0a4> #LivePlugin #Kotlin
+
+<img src="../assets/images/micro-blog/2024-10-30.webp" width="80%" height="80%"/>
+
 #### 2024/10/29
 It only takes ~5 lines of code to remove editor notification panels in #IntelliJ <https://gist.github.com/dkandalov/3c3984ac39b51883920f019ff91f1351>. Because some panels can only be closed with the mouse (e.g. "Kotlin Scripting is in Beta"). Some cannot be closed at all (e.g. "Decompiled .class file") 🙄 #LivePlugin #Kotlin
 
