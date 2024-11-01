@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/11/01
+I bet everyone knows this but anyway... there is a built-in calculator in #IntelliJ search <https://www.jetbrains.com/help/idea/searching-everywhere.html#calculator> (and in the spotlight search on macOS, and in many other places it seems 🙈)
+
 #### 2024/10/30
 I like to occasionally check what is going on in the #IntelliJ background tasks (and then hide the popup). While waiting for [IJPL-58948](https://youtrack.jetbrains.com/issue/IJPL-58948) to make it possible with built-in actions, here is a workaround in ~8 lines <https://gist.github.com/dkandalov/d326df86849a2a097d169b781ffbc0a4> #LivePlugin #Kotlin
 
