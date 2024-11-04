@@ -4,7 +4,7 @@ permalink: /micro-blog/
 ---
 
 #### 2024/11/04
-This is probably the longest #IntelliJ alt+enter menu I've seen in the wild! (At which point does it become too much? 🤷)
+This is probably the longest #IntelliJ alt+enter menu I've seen in the wild! (At which point does it become too long? 🤷)
 
 <img src="../assets/images/micro-blog/2024-11-04.webp" width="50%" height="50%"/>
 
