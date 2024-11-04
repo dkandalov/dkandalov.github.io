@@ -3,6 +3,12 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/11/04
+This is probably the longest #IntelliJ alt+enter menu I've seen in the wild! (At which point does it become too much? 🤷)
+
+<img src="../assets/images/micro-blog/2024-11-04.webp" width="50%" height="50%"/>
+
+
 #### 2024/11/01
 I bet everyone knows this but anyway... there is a built-in calculator in #IntelliJ search <https://www.jetbrains.com/help/idea/searching-everywhere.html#calculator> (and in the spotlight search on macOS, and in many other places it seems 🙈)
 
