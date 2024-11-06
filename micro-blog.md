@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/11/06
+Since the Twitter exodus has accelerated today, a reminder that everything I post is on my website (you're here 😊 and it's the primary source). I also post on [Mastodon](https://mastodon.social/@dkandalov), [Bluesky](https://bsky.app/profile/dmitrykandalov.bsky.social) and [LinkedIn](https://www.linkedin.com/in/kandalov) (I had no idea people actually read it 🤨)
+
 #### 2024/11/04
 This is probably the longest #IntelliJ alt+enter menu I've seen in the wild! (At which point does it become too long? 🤷)
 
