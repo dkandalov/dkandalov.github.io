@@ -3,6 +3,12 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/11/08
+Quote by [Dragan Stepanović](https://mastodon.social/@d_stepanovic/113126280939503982):
+> If 100% utilization of a server CPU is called outage (due to system unresponsiveness), what do we call it when a team and its members are at 100% utilization?
+
+I like the analogy, especially exploring what idle CPU means for teams. People being fully autonomous? Doing what feels right? Going for a walk? Also, what is busy-waiting CPU, organisational anxiety?
+
 #### 2024/11/06
 Since the Twitter exodus has accelerated today, a reminder that everything I post is on my website (you're here 😊 and it's the primary source). I also post on [Mastodon](https://mastodon.social/@dkandalov), [Bluesky](https://bsky.app/profile/dmitrykandalov.bsky.social) and [LinkedIn](https://www.linkedin.com/in/kandalov) (I had no idea people actually read it 🤨)
 
