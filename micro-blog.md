@@ -6,6 +6,16 @@ permalink: /micro-blog/
 #### 2024/11/09
 Is there something like [TLA+](https://lamport.azurewebsites.net/tla/tla.html) for hipsters that can run in a browser and maybe with JavaScript-like syntax? (I suspect the answer is "no", use CLI tla2tools.jar and Vim 🥸)
 
+=== Reply from [Alejandro Serrano](https://twitter.com/@trupill) ===
+
+Alloy does not run on the browser, but the syntax is much closer to JavaScript than TLA's
+
+=== Reply from [Ray Myers](https://www.linkedin.com/in/cadrlife) ===
+
+You might already be familiar with FizzBee? Kinda Python-like syntax. Personally I’d love something that integrates with Lean prover.
+
+<https://fizzbee.io/>
+
 #### 2024/11/08
 Quote by [Dragan Stepanović](https://mastodon.social/@d_stepanovic/113126280939503982):
 > If 100% utilization of a server CPU is called outage (due to system unresponsiveness), what do we call it when a team and its members are at 100% utilization?
@@ -55,7 +65,7 @@ Fun fact about the Pomodoro plugin for #IntelliJ (which I've supported for nearl
 #### 2024/10/22
 If you haven't heard about the pomodoro technique, it's basically: focus on the task till 25-minute timer stops; if distracted, restart the timer; take breaks. You can try it in #IntelliJ IDEs using [this plugin](https://github.com/dkandalov/pomodoro-tm) (just updated for the latest IDE versions).
 
-=== Reply from [Martin Bonnin](https://x.com/martinbonnin) ===
+=== Reply from [Martin Bonnin](https://twitter.com/martinbonnin) ===
 
 Man, 25 minutes is the time it takes me to get in the zone 😅
 
