@@ -3,6 +3,11 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/11/11
+The UI looks a bit wonky and there is no obvious keyboard shortcut for this diff popup (I tried hard in the past, let me know if it's there), but overall I really like the option to commit without ceremony! Could we also have "Commit without Dialog" action please 😬 #IntelliJ
+
+<img src="../assets/images/micro-blog/2024-11-11.webp" width="60%" height="60%"/>
+
 #### 2024/11/09
 Is there something like [TLA+](https://lamport.azurewebsites.net/tla/tla.html) for hipsters that can run in a browser and maybe with JavaScript-like syntax? (I suspect the answer is "no", use CLI tla2tools.jar and Vim 🥸)
 
