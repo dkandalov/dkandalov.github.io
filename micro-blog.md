@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/11/12
+Code style rant. Why shorten variable names, e.g. "req" instead of "request" (I thought modern code styles gravitate towards full words)? Why use names which don't match the type, e.g. "client" for a function which returns a client (I'm not asking for a "factory" though)?
+
 #### 2024/11/11
 The UI looks a bit wonky and there is no obvious keyboard shortcut for this diff popup (I tried hard in the past, let me know if it's there), but overall I really like the option to commit without ceremony! Could we also have "Commit without Dialog" action please 😬 #IntelliJ
 
