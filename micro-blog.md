@@ -6,6 +6,21 @@ permalink: /micro-blog/
 #### 2024/11/12
 Code style rant. Why shorten variable names, e.g. "req" instead of "request" (I thought modern code styles gravitate towards full words)? Why use names which don't match the type, e.g. "client" for a function which returns a client (I'm not asking for a "factory" though)?
 
+=== Reply from [David Denton](https://www.linkedin.com/in/denton-david) ===
+
+For variable names, I think there's a balance to be had to trade off around brevity - IMO "req" in the context of an HTTP call is clearly a request... whereas "r" is too terse and not clear (could be response).
+
+In terms of functions, what happens with naming if you are returning an anonymous object which implements an behavioural interface - eg. Iterable? And what is the difference between that method and a "proper" constructor? Should the caller even know that it is a concrete type being returned?
+
+In Kotlin, there are (at least) 6 different forms of writing a function... arguably being able to switch between them without the caller being aware of the implementation of that function is just another form of abstraction (albeit a meta one because it's about the language and not the functionality). Each of those forms is useful in a particular context and it's nice to be able to have that choice as long as it doesn't impact readability.
+
+=== My reply ===
+
+Yes, variable names should be on the shorter end (compared to functions and classes) but I would prefer not to go shorter than the words used in spoken language. For example, "app" for "application" is ok because people actually say "app". I haven't heard anyone saying "req" or "resp" though (maybe it's worth a try 😅).
+
+I agree that names don't need to reflect implementation details, and I'm happy to use function as a wider concept in Kotlin. I meant that a function named "client" doesn't make it clear that it creates a new client. And If you extract a variable, what do you call it, a "client" again: "val client = client()" 🤷
+
+
 #### 2024/11/11
 The UI looks a bit wonky and there is no obvious keyboard shortcut for this diff popup (I tried hard in the past, let me know if it's there), but overall I really like the option to commit without ceremony! Could we also have "Commit without Dialog" action please 😬 #IntelliJ
 
