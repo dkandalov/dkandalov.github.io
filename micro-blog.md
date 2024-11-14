@@ -3,6 +3,19 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/11/14
+Are there any good reasons why #Kotlin fun interfaces can't be passed to functions expecting function parameters? For example:
+
+<kotlin>
+fun interface Foo {
+    fun foo(): Int
+}
+fun callFun(f: () -> Int) = f()
+
+callFun(Foo()) ❌
+</kotlin>
+
+
 #### 2024/11/12
 Code style rant. Why shorten variable names, e.g. "req" instead of "request" (I thought modern code styles gravitate towards full words)? Why use names which don't match the type, e.g. "client" for a function which returns a client (I'm not asking for a "factory" though)?
 
