@@ -15,6 +15,33 @@ fun callFun(f: () -> Int) = f()
 callFun(Foo()) ❌
 </kotlin>
 
+=== Reply from [Anton Arhipov](https://twitter.com/antonarhipov) ===
+
+You can't do `Foo()`, but it would be something like `Foo { 1 }`.
+
+It feels logical to do such mapping/conversion, but probably is related to how the types work. This looks like a structural typing / duck typing in Golang
+
+=== My reply ===
+
+Yes, not the most clear code example. I could make it work with: `fun Foo() = Foo { 123 }` 🙈
+
+Here is a bit longer example to show the asymmetry:
+
+<kotlin>
+val f = { 1 }
+val foo = Foo { 2 }
+
+callFun { 123 }
+callFunI { 123 }
+
+callFun(f)
+callFunI(f)
+
+callFun(foo) ❌
+callFunI(foo)
+</kotlin>
+
+Thinking about it a bit more, the whole point of fun interfaces is to look like functions (with shorter syntax) but still be a named type, i.e. not compatible with other types. Otherwise, it will be like a typealias. So everything works as it should!
 
 #### 2024/11/12
 Code style rant. Why shorten variable names, e.g. "req" instead of "request" (I thought modern code styles gravitate towards full words)? Why use names which don't match the type, e.g. "client" for a function which returns a client (I'm not asking for a "factory" though)?
