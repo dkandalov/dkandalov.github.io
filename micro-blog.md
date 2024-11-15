@@ -4,7 +4,7 @@ permalink: /micro-blog/
 ---
 
 #### 2024/11/15
-Great "Understanding Gradle" video https://www.youtube.com/watch?v=7AxDwkRVkuA by [Duncan McGregor](https://www.youtube.com/@PairingWithDuncan). I have learned new things. (On this topic, can we please have a simpler and better building tool for #Kotlin 🙏 #amper)
+Great "Understanding Gradle" video <https://www.youtube.com/watch?v=7AxDwkRVkuA> by [Duncan McGregor](https://www.youtube.com/@PairingWithDuncan). I have learned new things. (On this topic, can we please have a simpler and better building tool for #Kotlin 🙏 #amper)
 
 #### 2024/11/14
 Are there any good reasons why #Kotlin fun interfaces can't be passed to functions expecting function parameters? For example:
