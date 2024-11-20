@@ -4,7 +4,7 @@ permalink: /micro-blog/
 ---
 
 #### 2024/11/20
-I wish there were an IDE inspection for #Kotlin to detect default parameters that are never overwritten. For example, a class with `val clock: Clock = Clock.systemUTC()` as a constructor parameter should probably be passed a clock shared by the app or fixed clock in tests.
+I wish there were an IDE inspection for #Kotlin to detect default parameters that are never overwritten. For example, a class with `val clock: Clock = Clock.systemUTC()` as a constructor parameter should probably be passed a clock shared by the app at some point or passed fixed clock in tests.
 
 #### 2024/11/19
 I recently (re)discovered the "Previous/Next Occurrence of the Word at Caret" action in #IntelliJ. I'm still thinking how/if it can be useful for me, but it's funny that if you go to the previous word occurrence, then F3 ("Find Next / Move to Next Occurrence") goes backward 🤓 
