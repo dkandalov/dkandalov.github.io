@@ -3,8 +3,16 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/11/20
+I wish there were an IDE inspection for #Kotlin to detect default parameters that are never overwritten. For example, a class with `val clock: Clock = Clock.systemUTC()` as a constructor parameter should probably be passed a clock shared by the app or fixed clock in tests.
+
 #### 2024/11/19
 I recently (re)discovered the "Previous/Next Occurrence of the Word at Caret" action in #IntelliJ. I'm still thinking how/if it can be useful for me, but it's funny that if you go to the previous word occurrence, then F3 ("Find Next / Move to Next Occurrence") goes backward 🤓 
+
+=== Reply from [PattaFeuFeu](https://mastodon.social/@PattaFeuFeu@chaos.social) ===
+
+I first thought "How do you _not_ use that three thousand times a day," but then I realised what you mean is not Next/Previous highlighted usage (⌃⌥ ↑ / ↓ for my keybinding).
+I wonder if I could find any use for "Word at Caret" but cannot think of any.
 
 #### 2024/11/16
 The analogy between music and software isn't really fair but if I had to bet, I would bet on "AI" making software even more widespread and even lower quality than it is now, similar to what happened to the music industry, see the rant by Rick Beato ["The Real Reason Why Music Is Getting Worse"](https://www.youtube.com/watch?v=1bZ0OSEViyo).
@@ -155,7 +163,7 @@ I updated my [blog post](https://dmitrykandalov.com/auto-revert) about auto-reve
 
 Broken focus e.g. distractions, interruptions, ADHD. Novelty maybe related to boredom yes
 
-=== Reply from [Ivan “CLOVIS” Canet](https://twitter.com/ivcanet) ===
+=== Reply from [Ivan "CLOVIS" Canet](https://twitter.com/ivcanet) ===
 
 That sounds interesting. I wonder if the time should be reset by green tests too.
 
