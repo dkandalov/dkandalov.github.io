@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/11/21
+This blog post by [Jon Ayre](https://bsky.app/profile/jonayre.uk) summarises so well everything you need to know about performance reviews, etc. <https://jonayre.uk/blog/2022/08/25/stop-managing-performance>. My TLDR would be "weaknesses are the flip side of strengths", "embrace diversity" and "reward teams rather than individuals" (not that it's easy or common).
+
 #### 2024/11/20
 I wish there were an IDE inspection for #Kotlin to detect default parameters that are never overwritten. For example, a class with `val clock: Clock = Clock.systemUTC()` as a constructor parameter should probably be passed a clock shared by the app at some point or passed fixed clock in tests.
 
@@ -13,6 +16,10 @@ I recently (re)discovered the "Previous/Next Occurrence of the Word at Caret" ac
 
 I first thought "How do you _not_ use that three thousand times a day," but then I realised what you mean is not Next/Previous highlighted usage (⌃⌥ ↑ / ↓ for my keybinding).
 I wonder if I could find any use for "Word at Caret" but cannot think of any.
+
+=== My reply ===
+
+Thank you :) This provides a good opportunity for another mini-rant 🙈 "Next/Previous Highlighted Usage" works well with the "Highlight on Caret Movement: Usages of element" option turned on. But it doesn't do anything after the "Highlight Usages in File" action. Maybe all these "next usage" actions should be unified into one.
 
 #### 2024/11/16
 The analogy between music and software isn't really fair but if I had to bet, I would bet on "AI" making software even more widespread and even lower quality than it is now, similar to what happened to the music industry, see the rant by Rick Beato ["The Real Reason Why Music Is Getting Worse"](https://www.youtube.com/watch?v=1bZ0OSEViyo).
