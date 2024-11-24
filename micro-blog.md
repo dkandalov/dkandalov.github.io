@@ -3,8 +3,11 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/11/24
+I updated the Gist for paragraph navigation in #IntelliJ so that it respects folded regions <https://gist.github.com/dkandalov/6bd16ac80ee69739f9b81b665bb93768> #LivePlugin (I'm not too happy with how the navigation feels, but it's better than the built-in paragraph navigation.) 
+
 #### 2024/11/22
-A random thought that maybe [sociotechnical systems](https://en.wikipedia.org/wiki/Sociotechnical_system) could be extended to people interactions outside of the workplace including friends and immediate family. This would model the reality more closely.
+A random thought that maybe [sociotechnical systems](https://en.wikipedia.org/wiki/Sociotechnical_system) could be extended to people interactions outside the workplace including friends and immediate family. This would model the reality more closely.
 
 #### 2024/11/21
 This blog post by [Jon Ayre](https://bsky.app/profile/jonayre.uk) summarises so well everything you need to know about performance reviews, etc. <https://jonayre.uk/blog/2022/08/25/stop-managing-performance>. My TLDR would be "weaknesses are the flip side of strengths", "embrace diversity" and "reward teams rather than individuals" (not that it's easy or common).
