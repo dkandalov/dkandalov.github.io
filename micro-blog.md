@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/11/25
+It's one of those freediving into #IntelliJ processing of key events days (trying to fix <https://github.com/dkandalov/ijkl-shortcuts-plugin>). If you wonder how much code it takes to handle a single key press, you might enjoy skimming [IdeKeyEventDispatcher#dispatchKeyEvent](https://github.com/JetBrains/intellij-community/blob/55a5cc91f5d13eb0df2cd12d74c677b9b6a2f6c6/platform/platform-impl/src/com/intellij/openapi/keymap/impl/IdeKeyEventDispatcher.kt#L211) and [IdeEventQueue#dispatchEvent](https://github.com/JetBrains/intellij-community/blob/839bf0cf90bf61633db7e56923ff9cb900538531/platform/platform-impl/src/com/intellij/ide/IdeEventQueue.kt#L241).
+
 #### 2024/11/24
 I updated the Gist for paragraph navigation in #IntelliJ so that it respects folded regions <https://gist.github.com/dkandalov/6bd16ac80ee69739f9b81b665bb93768> #LivePlugin (I'm not too happy with how the navigation feels, but it's better than the built-in paragraph navigation.) 
 
