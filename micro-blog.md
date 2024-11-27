@@ -9,6 +9,14 @@ permalink: /micro-blog/
 #### 2024/11/26
 I'm pretty sure I can see #IntelliJ "Run to Cursor" not working in #Kotlin (i.e. the debugger doesn't stop on the line) if I do it across a couple of coroutines and callbacks, but it works if I do it one coroutine boundary at a time. My expectation: it's a coroutine thing with a good reason why it's not working and/or a 7-year-old bug 😬 Should/can I be bothered debugging the debugger? (And, of course, starting a sentence with "pretty sure" is a big warning sign... It could be me getting it all wrong.)
 
+=== Reply from [Vladimir Parfinenko](https://twitter.com/cypok) ===
+
+Or it's "won't fix, works as intended". :)
+
+Unfortunately, that's how it works by default for many years. You can find more details with comments from the original authors of IDEA's debugger here: <https://youtrack.jetbrains.com/issue/IDEA-101463/Run-to-Cursor-to-a-line-in-another-thread-doesnt-work-and-furthermore-makes-breakpoints-in-the-second-thread-to-stop-working>
+
+Meanwhile, I prefer "suspend thread" breakpoints which don't have this binding to the single thread while stepping/run-to-cursor.
+
 #### 2024/11/25
 It's one of those freediving into #IntelliJ processing of key events days (trying to fix <https://github.com/dkandalov/ijkl-shortcuts-plugin>). If you wonder how much code it takes to handle a single key press, you might enjoy skimming [IdeKeyEventDispatcher#dispatchKeyEvent](https://github.com/JetBrains/intellij-community/blob/55a5cc91f5d13eb0df2cd12d74c677b9b6a2f6c6/platform/platform-impl/src/com/intellij/openapi/keymap/impl/IdeKeyEventDispatcher.kt#L211) and [IdeEventQueue#dispatchEvent](https://github.com/JetBrains/intellij-community/blob/839bf0cf90bf61633db7e56923ff9cb900538531/platform/platform-impl/src/com/intellij/ide/IdeEventQueue.kt#L241).
 
