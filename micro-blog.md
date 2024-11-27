@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/11/27
+"By far two of the worst things are PRs and microservices..." 👈 If you disagree, check the reasoning by [Anton Keks](https://twitter.com/antonkeks) <https://www.youtube.com/watch?v=4Hc1lEuyLng&t=1094s>.
+
 #### 2024/11/26
 I'm pretty sure I can see #IntelliJ "Run to Cursor" not working in #Kotlin (i.e. the debugger doesn't stop on the line) if I do it across a couple of coroutines and callbacks, but it works if I do it one coroutine boundary at a time. My expectation: it's a coroutine thing with a good reason why it's not working and/or a 7-year-old bug 😬 Should/can I be bothered debugging the debugger? (And, of course, starting a sentence with "pretty sure" is a big warning sign... It could be me getting it all wrong.)
 
