@@ -3,6 +3,11 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/11/28
+Here is an example of how #IntelliJ inspections/intentions (aka refactoring suggestions) can guide you to a better code and why I prefer "forEach" to "for" loops in #Kotlin. And don't get me started on the meaning of "retry" and [UPPERCASE CARGO CULT](https://dmitrykandalov.com/tidy-kotlin#stop-the-constant-shouting).
+
+<img src="../assets/images/micro-blog/2024-11-29.webp" width="80%" height="80%"/>
+
 #### 2024/11/27
 "By far two of the worst things are PRs and microservices..." 👈 If you disagree, check the reasoning by [Anton Keks](https://twitter.com/antonkeks) <https://www.youtube.com/watch?v=4Hc1lEuyLng&t=1094s>.
 
