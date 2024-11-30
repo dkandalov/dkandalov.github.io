@@ -3,8 +3,15 @@ layout: post
 permalink: /micro-blog/
 ---
 
-#### 2024/11/28
+#### 2024/11/30
+TIL there is "promote.suggested.refactoring.in.editor" in #IntelliJ Advanced Settings (see <https://youtrack.jetbrains.com/issue/IJPL-164043>). I'm not convinced by the visual design, but it is amazing UX from key presses point of view! Feels like there is an overlap with [Quick Fix](https://github.com/dkandalov/quick-fix) 🤔
+
+<img src="../assets/images/micro-blog/2024-11-30.webp" width="80%" height="80%"/>
+
+#### 2024/11/29
 Here is an example of how #IntelliJ inspections/intentions (aka refactoring suggestions) can guide you to a better code and why I prefer "forEach" to "for" loops in #Kotlin. And don't get me started on the meaning of "retry" and [UPPERCASE CARGO CULT](https://dmitrykandalov.com/tidy-kotlin#stop-the-constant-shouting).
+
+I realised after publishing that the code example would be better off with `if (f()) return` instead of just `f()`.
 
 <img src="../assets/images/micro-blog/2024-11-29.webp" width="80%" height="80%"/>
 
