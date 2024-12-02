@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/12/02
+Function with one-line expression is great. Class/interface with a single method is fine. A file with a single class is good. A file with a single function is a bit wrong. A package with a single file also feels wrong. I wonder why it's not uniform and what would make it so 🤔
+
 #### 2024/12/01
 Lots of good ideas here: [Why Can't We Make Simple Software?](https://www.youtube.com/watch?v=czzAVuVz7u4) by [Peter van Hardenberg](https://twitter.com/pvh) (I wish it mentioned <https://en.wikipedia.org/wiki/Cynefin_framework> in the beginning though.)
 
