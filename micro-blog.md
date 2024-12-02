@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/12/01
+Lots of good ideas here: [Why Can't We Make Simple Software?](https://www.youtube.com/watch?v=czzAVuVz7u4) by [Peter van Hardenberg](https://twitter.com/pvh) (I wish it mentioned <https://en.wikipedia.org/wiki/Cynefin_framework> in the beginning though.)
+
 #### 2024/11/30
 TIL there is "promote.suggested.refactoring.in.editor" in #IntelliJ Advanced Settings (see <https://youtrack.jetbrains.com/issue/IJPL-164043>). I'm not convinced by the visual design, but it is amazing UX from key presses point of view! Feels like there is an overlap with [Quick Fix](https://github.com/dkandalov/quick-fix) 🤔
 
@@ -119,6 +122,14 @@ Yes, variable names should be on the shorter end (compared to functions and clas
 
 I agree that names don't need to reflect implementation details, and I'm happy to use function as a wider concept in Kotlin. I meant that a function named "client" doesn't make it clear that it creates a new client. And If you extract a variable, what do you call it, a "client" again: "val client = client()" 🤷
 
+=== Update ===
+
+For some reason this post got a bit of attention (42K impressions, 145 comments) on LinkedIn. Mostly from the people who I don't know at all. I genuinely had no idea people actually read technical content on LinkedIn and care enough to reply. At least I don't. I read all the comments. I'm not going to reply because I don't think there an expectation that I should, and it would take too much effort to have a meaningful conversation with everyone.
+
+What I have learned by reading the comments:
+ - Most of the focus was on "req" and "res". Likely, my second "question" about naming functions was not very clear.
+ - Sarcastic comments. According to a chatbot aka "AI" (not to be trusted) my original post was "critical, frustrated, opinionated". So ignoring the content, emotionally these comments matched the post. I can only be sorry for the people who felt threatened in any way. It was not my intention. (The intention was to see what David Denton thinks 🙈)
+ - There are more "silos" in software developers than I realised. For example, "req, res, cb, and many others, are conventional" and "`req` is basically a standard" gets a reply "WTF does "cb" mean?" 😂
 
 #### 2024/11/11
 The UI looks a bit wonky and there is no obvious keyboard shortcut for this diff popup (I tried hard in the past, let me know if it's there), but overall I really like the option to commit without ceremony! Could we also have "Commit without Dialog" action please 😬 #IntelliJ
