@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/12/03
+What about instead of "AI" trying to guess the code I want to type (and being bad at it because it's fundamentally a gamble), it would notice inconsistencies like this one: `val twoHoursAgo = now.minus(1, HOURS)`? And maybe similar problems with comments?
+
 #### 2024/12/02
 Function with one-line expression is great. Class/interface with a single method is fine. A file with a single class is good. A file with a single function is a bit wrong. A package with a single file also feels wrong. I wonder why it's not uniform and what would make it so 🤔
 
