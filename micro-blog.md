@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/12/04
+Interestingly, copy-pasting code across projects in #Kotlin seems harder because of multiple classes/functions per file and extension functions. Copying a file takes unnecessary code that might not compile, and finding/copying extension functions from various places is tedious.
+
 #### 2024/12/03
 What about instead of "AI" trying to guess the code I want to type (and being bad at it because it's fundamentally a gamble), it would notice inconsistencies like this one: `val twoHoursAgo = now.minus(1, HOURS)`? And maybe similar problems with comments?
 
