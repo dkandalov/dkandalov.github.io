@@ -3,11 +3,22 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/12/05
+Importing a class in #Kotin (or Java) is like a wildcard import of all its members. Top-level overloaded functions are all imported with a single import (a bit like wildcard). But wildcard imports from objects are not allowed 🤷 Confusing. Should wildcards be the default?
+
+The best argument against wildcards is the name clashes introduced in imported packages (see <https://www.javadude.com/posts/20040522-import-on-demand-is-evil>), but is it a real problem, especially if you do incremental updates? I'm also aware that Android people will never say "yes" (e.g. see <https://github.com/android/kotlin-guides/issues/65>) 🙈
+
 #### 2024/12/04
 Interestingly, copy-pasting code across projects in #Kotlin seems harder because of multiple classes/functions per file and extension functions. Copying a file takes unnecessary code that might not compile, and finding/copying extension functions from various places is tedious.
 
 #### 2024/12/03
 What about instead of "AI" trying to guess the code I want to type (and being bad at it because it's fundamentally a gamble), it would notice inconsistencies like this one: `val twoHoursAgo = now.minus(1, HOURS)`? And maybe similar problems with comments?
+
+=== Reply from [Orchun Kolcu](https://mastodon.social/@orchun@hachyderm.io) ===
+
+Someone had pointed out how Tesla's efforts would have been actually useful if the model was watching out in the background for danger, not trying to do a better job than you driving.
+
+We either need a different architecture though, or figure out how to make local inference extremely performant.
 
 #### 2024/12/02
 Function with one-line expression is great. Class/interface with a single method is fine. A file with a single class is good. A file with a single function is a bit wrong. A package with a single file also feels wrong. I wonder why it's not uniform and what would make it so 🤔
