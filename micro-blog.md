@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/12/06
+When talking about AI to people outside the software realm, it's probably best summarised as "personalised horoscope based on web search" to avoid inflated expectations (although horoscopes is a dangerous territory).
+
 #### 2024/12/05
 Importing a class in #Kotin (or Java) is like a wildcard import of all its members. Top-level overloaded functions are all imported with a single import (a bit like wildcard). But wildcard imports from objects are not allowed 🤷 Confusing. Should wildcards be the default?
 
