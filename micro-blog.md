@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/12/07
+Nice video by Duncan McGregor exploring test runners situation in IntelliJ and how they lie to us about the test duration <https://www.youtube.com/watch?v=tvCSZgN1g_w>. And thank you, Duncan, for the #LivePlugin ad at the end of the video!
+
 #### 2024/12/06
 When talking about AI to people outside the software realm, it's probably best summarised as "personalised horoscope based on web search" to avoid inflated expectations (although horoscopes is a dangerous territory).
 
