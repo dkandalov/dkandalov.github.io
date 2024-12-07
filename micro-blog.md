@@ -14,6 +14,37 @@ Importing a class in #Kotin (or Java) is like a wildcard import of all its membe
 
 The best argument against wildcards is the name clashes introduced in imported packages (see <https://www.javadude.com/posts/20040522-import-on-demand-is-evil>), but is it a real problem, especially if you do incremental updates? I'm also aware that Android people will never say "yes" (e.g. see <https://github.com/android/kotlin-guides/issues/65>) 🙈
 
+=== Reply from [David Denton](https://www.linkedin.com/in/denton-david) ===
+
+Given that:
+1. the IDE folds away all imports by default
+2. The risk associated with name clashes
+3. The inability to look at a piece of code with a wildcard and be able to see where a class came from
+
+... I see absolutely zero reason to use wildcards. You can configure the editor config to ban them as well so the IDE will play ball on reformat
+
+=== My reply ===
+
+1. I think this is a neutral argument that works with any import code style.
+2. Yes. The question I have is if this problem is real/frequent enough.
+3. Not sure if this applies to IDEs/editors (because you can always navigate to the definition), but for reviewing code (or PRs) in a web browser this is a legitimate use case (with a caveat that plain text has other problems like no hints for inferred types).
+
+I agree imports that specify the exact dependencies to be used by the compiler is a good thing because it reduces the scope for errors. My post was a bit provocative, and I'm not really trying to defend wildcards.
+
+OTOH, if imports are a type of dependencies, then from the consistency point of view Gradle/Maven dependencies should not bring all packages (as a wildcard) by default. And with functional code style wildcards seem to improve developer experience by making importing every single function less painful. (I mean if IDEs did a better job this wouldn't/shouldn't be a good reason.)  
+
+I also think Michele made a good point about cohesion, so if packages were more cohesive, it would make more sense to import everything by default 🤔🤷
+
+=== Reply from [Michele Bertolino](https://www.linkedin.com/in/michele-bertolino-653346204/) ===
+
+A class is a highly cohesive unit, so it doesn't make sense to me to use "part" of it. Maybe you are referring to static members, in that case it makes sense to use "import static Color.BLUE" if I only need the blue color
+
+=== My reply ===
+
+No, I did mean a class. I'm just picking on imports having different rules for different entities.
+
+I agree that classes are cohesive units, so maybe the problem is that packages are not 🤔 Then I wonder why at some level of abstraction we give up and say "it's not cohesive any more".
+
 #### 2024/12/04
 Interestingly, copy-pasting code across projects in #Kotlin seems harder because of multiple classes/functions per file and extension functions. Copying a file takes unnecessary code that might not compile, and finding/copying extension functions from various places is tedious.
 
@@ -150,8 +181,9 @@ I agree that names don't need to reflect implementation details, and I'm happy t
 
 === Update ===
 
-For some reason this post got a bit of attention (42K impressions, 145 comments) on LinkedIn. Mostly from the people who I don't know at all. I genuinely had no idea people actually read technical content on LinkedIn and care enough to reply. At least I don't. I read all the comments. I'm not going to reply because I don't think there an expectation that I should, and it would take too much effort to have a meaningful conversation with everyone.
+For some reason this post got a bit of attention (42K impressions, 145 comments) on LinkedIn. Mostly from the people who I don't know at all. I genuinely had no idea people actually read technical content on LinkedIn and care enough to reply. At least I don't. I read all the comments, and I'm not going to reply because I don't think there an expectation that I will, and it would take too much effort to have a meaningful conversation with everyone.
 
+TODO
 What I have learned by reading the comments:
  - Most of the focus was on "req" and "res". Likely, my second "question" about naming functions was not very clear.
  - Sarcastic comments. According to a chatbot aka "AI" (not to be trusted) my original post was "critical, frustrated, opinionated". So ignoring the content, emotionally these comments matched the post. I can only be sorry for the people who felt threatened in any way. It was not my intention. (The intention was to see what David Denton thinks 🙈)
