@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/12/08
+Here is [a bit of code](https://gist.github.com/dkandalov/232dcfe2b328d6ea46c4b1ac48810a6e) for #LivePlugin to measure the duration of tests in #IntelliJ IDEs because test runners don't show the actual time. (To be precise, the code is also inaccurate because it relies on IDE callbacks. Screen recording would be better.)
+
 #### 2024/12/07
 Nice video by Duncan McGregor exploring test runners situation in IntelliJ and how they lie to us about the test duration <https://www.youtube.com/watch?v=tvCSZgN1g_w>. And thank you, Duncan, for the #LivePlugin ad at the end of the video!
 
