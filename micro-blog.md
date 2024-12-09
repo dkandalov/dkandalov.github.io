@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/12/09
+Thinking about the actual tests duration reminded me of the custom #LivePlugin tweaks I did for the ["Refactoring from Spring to Kotlin" talk](https://www.youtube.com/watch?v=d_GHTBqI7YE). One interesting tweak was to make progress bar visible during Gradle build in the presentation mode, see <https://github.com/dkandalov/gilded-rose-service/blob/trunk/.live-plugins/actions/plugin.kts#L71C5-L71C24>.
+
 #### 2024/12/08
 Here is [a bit of code](https://gist.github.com/dkandalov/232dcfe2b328d6ea46c4b1ac48810a6e) for #LivePlugin to measure the duration of tests in #IntelliJ IDEs because test runners don't show the actual time. (To be precise, the code is also inaccurate because it relies on IDE callbacks. Screen recording would be better.)
 
