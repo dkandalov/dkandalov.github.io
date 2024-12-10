@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/12/10
+One of the big usability gaps for me when using #Kotlin extension and some scope functions is that IDE cannot highlight usages of `this` in the current scope. This is why I try to avoid `apply`, `with`, and nested scopes. (There must be an issue for this somewhere.)
+
 #### 2024/12/09
 Thinking about the actual tests duration reminded me of the custom #LivePlugin tweaks I did for the ["Refactoring from Spring to Kotlin" talk](https://www.youtube.com/watch?v=d_GHTBqI7YE). One interesting tweak was to make progress bar visible during Gradle build in the presentation mode, see <https://github.com/dkandalov/gilded-rose-service/blob/trunk/.live-plugins/actions/plugin.kts#L71C5-L71C24>.
 
