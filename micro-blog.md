@@ -4,7 +4,7 @@ permalink: /micro-blog/
 ---
 
 #### 2024/12/11
-The ideas in this talk by [Holly Cummins](https://bsky.app/profile/holly-cummins.bsky.social) feel just right to me https://hollycummins.com/efficiency-goto (I've only seen the slides though, because the video is behind paywall). TLDR JVM apps are too dynamic, we can reduce runtime waste by doing more at build time. Yes, please!
+The ideas in this talk by [Holly Cummins](https://bsky.app/profile/holly-cummins.bsky.social) feel just right to me <https://hollycummins.com/efficiency-goto> (I've only seen the slides though, because the video is behind paywall). TLDR JVM apps are too dynamic, we can reduce runtime waste by doing more at build time. Yes, please!
 
 #### 2024/12/10
 One of the big usability gaps for me when using #Kotlin extension and some scope functions is that IDE cannot highlight usages of `this` in the current scope. This is why I try to avoid `apply`, `with`, and nested scopes. (There must be an issue for this somewhere.)
