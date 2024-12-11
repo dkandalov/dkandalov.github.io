@@ -223,16 +223,15 @@ For a bit more in-depth overview, here is a video by http4k authors:
 	<iframe width="800" height="450" src="https://www.youtube.com/embed/p1VTfcQJefk" frameborder="0" allowfullscreen></iframe>
 </p>
 
-Given the amount of web-frameworks and technical marketing (things that come to mind are Spring and, obviously, this blogpost), it can be genuinely hard to know what is the right tool for the problem at hand. The important thing is to avoid [Resume Driven Development] by actually solving the problem instead of focusing on a particular technology.
+Given the amount of web-frameworks and technical marketing (things that come to mind are Spring and, obviously, this blogpost), it can be genuinely hard to know what is the right tool for the problem at hand. The important thing is to avoid Resume Driven Development by actually solving the problem instead of focusing on a particular technology.
 
 [http4k]: https://www.http4k.org
 [Live coding: Server as a function with http4k]: https://www.youtube.com/watch?v=vsueRJCJuLI
 [Apache HttpComponents]: https://hc.apache.org/index.html
 [OkHttp]: https://square.github.io/okhttp
-[record/replay client]: https://www.http4k.org/cookbook/record_and_replay
+[record/replay client]: https://www.http4k.org/howto/record_and_replay_http_traffic
 [I_M_A_TEAPOT]: https://en.wikipedia.org/wiki/Hyper_Text_Coffee_Pot_Control_Protocol
 ["Your Server as a Function" paper]: https://monkey.org/~marius/funsrv.pdf
 [RPC]: https://en.wikipedia.org/wiki/Remote_procedure_call
 [modifiers-vs-annotations]: https://blog.jetbrains.com/kotlin/2015/08/modifiers-vs-annotations
-[the core module]: http://www.http4k.org/guide/modules/core
-[Resume Driven Development]: http://radar.oreilly.com/2014/10/resume-driven-development.html
+[the core module]: https://www.http4k.org/ecosystem/http4k
