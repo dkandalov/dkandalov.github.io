@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/12/12
+How come "Optimise Imports" for multiple files/packages/modules in #IntelliJ is a modal operation that blocks all windows and projects 😭 As you can imagine, it's not very fast for large projects, and it stops you from doing literally anything else ☕️ #rant
+
 #### 2024/12/11
 The ideas in this talk by [Holly Cummins](https://bsky.app/profile/holly-cummins.bsky.social) feel just right to me <https://hollycummins.com/efficiency-goto> (I've only seen the slides though, because the video is behind paywall). TLDR JVM apps are too dynamic, we can reduce runtime waste by doing more at build time. Yes, please!
 
