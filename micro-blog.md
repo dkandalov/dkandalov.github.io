@@ -3,6 +3,11 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/12/13
+Here is an #IntelliJ action to optimise imports (in the background!) in all project Kotlin files <https://gist.github.com/dkandalov/a48cae4ad5459b7036f3d52307d1afb4>. Admittedly, this is a hack (aka a "tactical workaround") that will make #IntelliJ log exceptions, but this is still better than modal dialogs blocking all IDE windows #LivePlugin
+
+<img src="../assets/images/micro-blog/2024-12-13.webp" width="80%" height="80%"/>
+
 #### 2024/12/12
 How come "Optimise Imports" for multiple files/packages/modules in #IntelliJ is a modal operation that blocks all windows and projects 😭 As you can imagine, it's not very fast for large projects, and it stops you from doing literally anything else ☕️ #rant
 
