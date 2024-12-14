@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/12/14
+Another great video by [Duncan McGregor](https://twitter.com/duncanmcg) <https://www.youtube.com/watch?v=npxjzNvuH_c> in which he gets to the bottom of #IntelliJ test runners' timings. There are too many IDE UX WTFs to mention and sadly most of them come down to #Gradle integration 😢
+
 #### 2024/12/13
 Here is an #IntelliJ action to optimise imports (in the background!) in all project Kotlin files <https://gist.github.com/dkandalov/a48cae4ad5459b7036f3d52307d1afb4>. Admittedly, this is a hack (aka a "tactical workaround") that will make #IntelliJ log exceptions, but this is still better than modal dialogs blocking all IDE windows #LivePlugin
 
