@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/12/17
+I like the idea of uniform navigation across #IntelliJ editors and tool windows as a grid (or should it be previous/next?). It needs experimenting with inactive/floating windows, but being able to forget tool window shortcuts is promising. (Inspired by this PR <https://github.com/dkandalov/tab-shifter/pull/43>.)
+
 #### 2024/12/14
 Another great video by [Duncan McGregor](https://twitter.com/duncanmcg) <https://www.youtube.com/watch?v=npxjzNvuH_c> in which he gets to the bottom of #IntelliJ test runners' timings. There are too many IDE UX WTFs to mention and sadly most of them come down to #Gradle integration 😢
 
