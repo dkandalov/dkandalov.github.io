@@ -3,6 +3,11 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/12/18
+Random #IntelliJ tip. You can use the "Search Usages" action (which shows a popup with usages) recursively! It will figure out the outer scope of the selected usage (e.g., a function in which it's defined) and show another popup with usages. (It doesn't work in all languages though.)
+
+<img src="../assets/images/micro-blog/2024-12-18.webp" width="100%" height="100%"/>
+
 #### 2024/12/17
 I like the idea of uniform navigation across #IntelliJ editors and tool windows as a grid (or should it be previous/next?). It needs experimenting with inactive/floating windows, but being able to forget tool window shortcuts is promising. (Inspired by this PR <https://github.com/dkandalov/tab-shifter/pull/43>.)
 
