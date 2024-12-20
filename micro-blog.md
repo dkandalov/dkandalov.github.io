@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/12/20
+Is there a good write-up on #Kotlin `FunctionN`, etc.? I found [this document](https://github.com/JetBrains/kotlin/blob/15716a7a3c5e6df4b7520fd07ece62ac5db6debf/spec-docs/function-types.md#function0-function1--types) but not sure if it's up-to-date 🤔 (Also could IDE please navigate to `FunctionN` even it's "fake" source code if nothing else for educational reasons 🙏)
+
 #### 2024/12/18
 Random #IntelliJ tip. You can use the "Search Usages" action (which shows a popup with usages) recursively! It will figure out the outer scope of the selected usage (e.g., a function in which it's defined) and show another popup with usages. (It doesn't work in all languages though.)
 
