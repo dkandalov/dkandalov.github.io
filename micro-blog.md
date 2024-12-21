@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/12/21
+Enum classes in #Kotlin don't get enough IDE navigation :( For example (unlike Java), I can't cmd+click on `valueOf()` to see the source code and docs. ([This YouTrack issue](https://youtrack.jetbrains.com/issue/KTIJ-16701) is probably related #backlog)
+
 #### 2024/12/20
 Is there a good write-up on #Kotlin `FunctionN`, etc.? I found [this document](https://github.com/JetBrains/kotlin/blob/15716a7a3c5e6df4b7520fd07ece62ac5db6debf/spec-docs/function-types.md#function0-function1--types) but not sure if it's up-to-date 🤔 (Also could IDE please navigate to `FunctionN` even it's "fake" source code if nothing else for educational reasons 🙏)
 
