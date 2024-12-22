@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/12/22
+I bet multiplatform is one of the reasons why navigation from #Kotlin enum (or String, Int, etc.) to their actual implementations on the JVM is tricky and still not done. OTOH, I always wanted IDE navigation from Java native methods (at least for OpenJDK) to C++ code. Because why not?
+
 #### 2024/12/21
 Enum classes in #Kotlin don't get enough IDE navigation :( For example (unlike Java), I can't cmd+click on `valueOf()` to see the source code and docs. ([This YouTrack issue](https://youtrack.jetbrains.com/issue/KTIJ-16701) is probably related #backlog)
 
