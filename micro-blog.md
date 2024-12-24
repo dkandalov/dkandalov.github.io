@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/12/24
+Since the advanced feature of committing to Git is not available in [Zed](https://zed.dev), I had a look to see if I could hack something. Interesting to find the editor implementation with 15K lines and 150 functions in Editor <https://github.com/zed-industries/zed/blob/7425d242bc91d054df3c05f2b88307cfb3e9132f/crates/editor/src/editor.rs#L1001> 😮 I don't imply big files are necessarily bad though.
+
 #### 2024/12/22
 I bet multiplatform is one of the reasons why navigation from #Kotlin enum (or String, Int, etc.) to their actual implementations on the JVM is tricky and still not done. OTOH, I always wanted IDE navigation from Java native methods (at least for OpenJDK) to C++ code. Because why not?
 
