@@ -3,14 +3,17 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/12/26
+Since there was a bit of noise about <https://minds.md/zakirullin/cognitive> recently... I really like the call for "something fundamental, something that can't be wrong" and cognitive load is a great choice. Except that without properly designed repeatable studies, "cognitive load" is just a new buzzword.
+
 #### 2024/12/24
 Since the advanced feature of committing to Git is not available in [Zed](https://zed.dev), I had a look to see if I could hack something. Interesting to find the editor implementation with 15K lines and 150 functions in Editor <https://github.com/zed-industries/zed/blob/7425d242bc91d054df3c05f2b88307cfb3e9132f/crates/editor/src/editor.rs#L1001> 😮 I don't imply big files are necessarily bad though.
 
 #### 2024/12/22
-I bet multiplatform is one of the reasons why navigation from #Kotlin enum (or String, Int, etc.) to their actual implementations on the JVM is tricky and still not done. OTOH, I always wanted IDE navigation from Java native methods (at least for OpenJDK) to C++ code. Because why not?
+I bet multiplatform is one of the reasons why navigation from #Kotlin enum (or String, Int, etc.) to its actual implementations on the JVM is tricky and still not done. OTOH, I always wanted IDE navigation from Java native methods (at least for OpenJDK) to C++ code. Because why not?
 
 #### 2024/12/21
-Enum classes in #Kotlin don't get enough IDE navigation :( For example (unlike Java), I can't cmd+click on `valueOf()` to see the source code and docs. ([This YouTrack issue](https://youtrack.jetbrains.com/issue/KTIJ-16701) is probably related #backlog)
+Enum classes in #Kotlin don't get enough IDE navigation :( For example, (unlike Java) I can't cmd+click on `valueOf()` to see the source code and docs. ([This YouTrack issue](https://youtrack.jetbrains.com/issue/KTIJ-16701) is probably related #backlog)
 
 #### 2024/12/20
 Is there a good write-up on #Kotlin `FunctionN`, etc.? I found [this document](https://github.com/JetBrains/kotlin/blob/15716a7a3c5e6df4b7520fd07ece62ac5db6debf/spec-docs/function-types.md#function0-function1--types) but not sure if it's up-to-date 🤔 (Also could IDE please navigate to `FunctionN` even it's "fake" source code if nothing else for educational reasons 🙏)
