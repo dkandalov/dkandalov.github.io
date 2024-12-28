@@ -3,8 +3,19 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/12/28
+The flip side of object initialisation side effects is the clean-up on graceful shutdown or when object graph initialisation fails halfway through. Somehow, this and related topics of object ownership and lifetime are not that big on the JVM 🤔
+
 #### 2024/12/27
 It should be possible to construct classes without significant side effects. Otherwise, object graph wiring is coupled with its initialisation. And if you try making initialisation lazy with higher-order functions, they will propagate implementation dependencies.
+
+=== Reply from [Tom Anderson](https://twitter.com/tomwhoscontrary) ===
+
+I write apps (in Java) with main methods, which usually look like:
+
+wireUp(loadConfig()).forEach(Runnable::run);
+
+Then I write unit tests which call wireUp with various possible configs. This catches all sorts of mistakes. And exerts a lot of pressure to stay side-effect free!
 
 #### 2024/12/26
 Since there was a bit of noise about <https://minds.md/zakirullin/cognitive> recently... I really like the call for "something fundamental, something that can't be wrong" and cognitive load is a great choice. Except that without properly designed repeatable studies, "cognitive load" is just a new buzzword.
