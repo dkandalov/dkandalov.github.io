@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2024/12/30
+Sometimes, I use GitHub to look at projects that I have locally. Opening an editor/IDE feels too slow, e.g., IntelliJ indexing/downloading everything (ahem, Gradle) even though I only need two files to look at. This is a shame. I guess I'll set up Zed on the command line for now.
+
 #### 2024/12/28
 The flip side of object initialisation side effects is the clean-up on graceful shutdown or when object graph initialisation fails halfway through. Somehow, this and related topics of object ownership and lifetime are not that big on the JVM 🤔
 
@@ -13,7 +16,7 @@ It should be possible to construct classes without significant side effects. Oth
 
 I write apps (in Java) with main methods, which usually look like:
 
-wireUp(loadConfig()).forEach(Runnable::run);
+`wireUp(loadConfig()).forEach(Runnable::run);`
 
 Then I write unit tests which call wireUp with various possible configs. This catches all sorts of mistakes. And exerts a lot of pressure to stay side-effect free!
 
