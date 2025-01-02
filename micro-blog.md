@@ -3,6 +3,14 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2025/01/02
+Here is an old idea. Instead of mocking libraries, use approval (aka snapshot) tests to verify object interactions. Maybe with some diagrams 🤔
+
+#### 2024/12/31
+The amount of actively used calendars is a good reminder that the "new year" is very much a social construct. There’s also Julian calendar (making all historical dates "wrong"). There are time zones with changing rules and borders. And of course leap seconds! 🙃
+
+<img src="../assets/images/micro-blog/2024-12-31.webp" width="80%" height="80%"/>
+
 #### 2024/12/30
 Sometimes, I use GitHub to look at projects that I have locally. Opening an editor/IDE feels too slow, e.g., IntelliJ indexing/downloading everything (ahem, Gradle) even though I only need two files to look at. This is a shame. I guess I'll set up Zed on the command line for now.
 
