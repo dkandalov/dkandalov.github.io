@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2025/01/03
+If you ever missed the feature to collapse Kotlin functions/constructors, don't give up just because the issue is in the backlog <https://youtrack.jetbrains.com/issue/KTIJ-14710>. Try LivePlugin with [this Gist](https://gist.github.com/dkandalov/82f37b0d3a6f8b3e4c6f1f2296a63e41) 😎 (Or hack you own!)
+
 #### 2025/01/02
 Here is an old idea. Instead of mocking libraries, use approval (aka snapshot) tests to verify object interactions. Maybe with some diagrams 🤔
 
