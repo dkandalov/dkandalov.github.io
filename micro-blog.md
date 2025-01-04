@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2025/01/04
+I'm sure it's too late to change it now, but I'm not entirely convinced about `kotlin.Metadata` and `kotlin.annotation.Target` annotations being imported by default in Kotlin. They are not used very often but the names are generic enough to have conflicts.
+
 #### 2025/01/03
 If you ever missed the feature to collapse Kotlin functions/constructors, don't give up just because the issue is in the backlog <https://youtrack.jetbrains.com/issue/KTIJ-14710>. Try LivePlugin with [this Gist](https://gist.github.com/dkandalov/82f37b0d3a6f8b3e4c6f1f2296a63e41) 😎 (Or hack you own!)
 
