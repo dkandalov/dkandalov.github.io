@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2025/01/07
+The speed (and complexity) of modern deployment pipelines make me really sad (add pull requests for more misery). It's been a few years since Darklang bragged about 50ms deployment https://blog.darklang.com/how-dark-deploys-code-in-50ms but I am not sure if it had an impact 😞
+
 #### 2025/01/04
 I'm sure it's too late to change it now, but I'm not entirely convinced about `kotlin.Metadata` and `kotlin.annotation.Target` annotations being imported by default in Kotlin. They are not used very often but the names are generic enough to have conflicts.
 
