@@ -3,8 +3,21 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2025/01/09
+From what I can see compiling a few Kotlin files in LivePlugin, the basic embedded Kotlin compiler seems faster (<1s) compared to Gradle builds (several seconds). I wonder if capturing Gradle configs and using embedded compiler can speed up builds 😅 See [EmbeddedCompiler.kt](https://github.com/dkandalov/live-plugin/blob/master/kotlin-compiler-wrapper/src/liveplugin/implementation/kotlin/EmbeddedCompiler.kt).
+
 #### 2025/01/07
 The speed (and complexity) of modern deployment pipelines make me really sad (add pull requests for more misery). It's been a few years since Darklang bragged about 50ms deployment https://blog.darklang.com/how-dark-deploys-code-in-50ms but I am not sure if it had an impact 😞
+
+=== Reply from [Marc Reichelt](https://bsky.app/profile/mreichelt.bsky.social) ===
+
+Absolutely. I've seen pipelines of 40-60 minutes and worse in the mobile world. There are positive examples as well (e.g. in a recent project the pipelines took ~4 minutes).
+Do you have more concrete examples of what you were seeing?
+
+=== My reply ===
+
+Overall, my frustration is that the state of deployment is so bad that we accept ~4 minutes as a positive example. My experience is Kotlin/Java sever side. Concrete example: ~40 minutes to build a PR, wait for it to be approved, ~2 hours to deploy.
+
 
 #### 2025/01/04
 I'm sure it's too late to change it now, but I'm not entirely convinced about `kotlin.Metadata` and `kotlin.annotation.Target` annotations being imported by default in Kotlin. They are not used very often but the names are generic enough to have conflicts.
