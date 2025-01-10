@@ -3,8 +3,19 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2025/01/10
+Speed vs correctness is a false dichotomy (at least for creating software). It's more about making progress without too many negative consequences (broken software, wasted effort, bad design, etc.). And some problems can't be solved by "thinking harder", see https://en.wikipedia.org/wiki/Cynefin_framework #noPRs
+
 #### 2025/01/09
 From what I can see compiling a few Kotlin files in LivePlugin, the basic embedded Kotlin compiler seems faster (<1s) compared to Gradle builds (several seconds). I wonder if capturing Gradle configs and using embedded compiler can speed up builds 😅 See [EmbeddedCompiler.kt](https://github.com/dkandalov/live-plugin/blob/master/kotlin-compiler-wrapper/src/liveplugin/implementation/kotlin/EmbeddedCompiler.kt).
+
+=== Reply from [Martin Bonnin](https://twitter.com/martinbonnin) ===
+
+I'd be curious what the numbers are with Amper.
+
+=== My reply ===
+
+I'm using Amper on a pet project and it's a great setup with ~5 LOM (lines of yaml) but if anything, the build is even slower than Gradle, >2 seconds without any code changes. I'm becoming jealous of Maven build times 😱🙄
 
 #### 2025/01/07
 The speed (and complexity) of modern deployment pipelines make me really sad (add pull requests for more misery). It's been a few years since Darklang bragged about 50ms deployment https://blog.darklang.com/how-dark-deploys-code-in-50ms but I am not sure if it had an impact 😞
@@ -17,6 +28,20 @@ Do you have more concrete examples of what you were seeing?
 === My reply ===
 
 Overall, my frustration is that the state of deployment is so bad that we accept ~4 minutes as a positive example. My experience is Kotlin/Java sever side. Concrete example: ~40 minutes to build a PR, wait for it to be approved, ~2 hours to deploy.
+
+=== Reply from [Marc Reichelt](https://bsky.app/profile/mreichelt.bsky.social) ===
+
+You're right - 4 minutes is still too long.
+May I ask what parts of a PR take the longest time?
+
+It's a tradeoff between correctness & speed. Sure, we could merge everything instantly, but that would be bad if things break.
+But more often I feel that not many actually care enough to fix it.
+
+=== My reply ===
+
+I think it's the wrong question to ask 😅 The problem is async work, e.g. see <http://vimeo.com/842233600>
+
+Answering your question, the slowest part of PRs depends on the project and can fluctuate. Using the concrete example, I think the build part is the slowest. It's also wasteful because you end up building/testing locally, on PR, and on the main branch (even if nothing has changed).
 
 
 #### 2025/01/04
