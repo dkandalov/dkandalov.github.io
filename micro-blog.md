@@ -3,8 +3,11 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2025/01/14
+Here is an old message that not all progress is always progress: [The Real Reason Why Analog Recording Is Better](https://www.youtube.com/watch?v=Zq4BOSaKiYo) What would it mean for software? Labeling apps, UI or APIs as long-term-support and avoiding breaking changes for many years (assuming the company survives)?
+
 #### 2025/01/10
-Speed vs correctness is a false dichotomy (at least for creating software). It's more about making progress without too many negative consequences (broken software, wasted effort, bad design, etc.). And some problems can't be solved by "thinking harder", see https://en.wikipedia.org/wiki/Cynefin_framework #noPRs
+Speed vs correctness is a false dichotomy (at least for creating software). It's more about making progress without too many negative consequences (broken software, wasted effort, bad design, etc.). And some problems can't be solved by "thinking harder", see [Cynefin framework](https://en.wikipedia.org/wiki/Cynefin_framework) #noPRs
 
 #### 2025/01/09
 From what I can see compiling a few Kotlin files in LivePlugin, the basic embedded Kotlin compiler seems faster (<1s) compared to Gradle builds (several seconds). I wonder if capturing Gradle configs and using embedded compiler can speed up builds 😅 See [EmbeddedCompiler.kt](https://github.com/dkandalov/live-plugin/blob/master/kotlin-compiler-wrapper/src/liveplugin/implementation/kotlin/EmbeddedCompiler.kt).
