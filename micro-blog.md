@@ -3,8 +3,11 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2025/01/15
+One of my all-time favourite macOS features is being able to zoom on any part of the screen. It's fast, zooms on tiny details, and basically just works. It's in System Settings -> Accessibility -> Zoom. I use it with control modifier, full screen style.
+
 #### 2025/01/14
-Here is an old message that not all progress is always progress: [The Real Reason Why Analog Recording Is Better](https://www.youtube.com/watch?v=Zq4BOSaKiYo) What would it mean for software? Labeling apps, UI or APIs as long-term-support and avoiding breaking changes for many years (assuming the company survives)?
+Here is an old message that not all progress is always progress: [The Real Reason Why Analog Recording Is Better](https://www.youtube.com/watch?v=Zq4BOSaKiYo). What would it mean for software? Labeling apps, UI or APIs as long-term-support and avoiding breaking changes for many years (assuming the company survives)?
 
 #### 2025/01/10
 Speed vs correctness is a false dichotomy (at least for creating software). It's more about making progress without too many negative consequences (broken software, wasted effort, bad design, etc.). And some problems can't be solved by "thinking harder", see [Cynefin framework](https://en.wikipedia.org/wiki/Cynefin_framework) #noPRs
