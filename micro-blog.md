@@ -3,8 +3,11 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2025/01/16
+Maybe it's already a thing but why isn't there a tool (I mean an executable file) for GraalVM native image that could look at a project and using reasonable guesses just compile it into a binary? (Asking so that I can avoid modifying any Gradle scripts.)
+
 #### 2025/01/15
-One of my all-time favourite macOS features is being able to zoom on any part of the screen. It's fast, zooms on tiny details, and basically just works. It's in System Settings -> Accessibility -> Zoom. I use it with control modifier, full screen style.
+One of my all-time favourite macOS feature is being able to zoom on any part of the screen. It's fast, zooms on tiny details, and basically just works. It's in System Settings -> Accessibility -> Zoom. I use it with control modifier, full screen style.
 
 #### 2025/01/14
 Here is an old message that not all progress is always progress: [The Real Reason Why Analog Recording Is Better](https://www.youtube.com/watch?v=Zq4BOSaKiYo). What would it mean for software? Labeling apps, UI or APIs as long-term-support and avoiding breaking changes for many years (assuming the company survives)?
