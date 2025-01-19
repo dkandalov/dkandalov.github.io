@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2025/01/19
+TIL while iA Presenter is good at quickly creating reasonably looking slides from Markdown, you can pretty much get 80% there with the reveal.js Markdown plugin <https://revealjs.com/markdown>
+
 #### 2025/01/16
 Maybe it's already a thing but why isn't there a tool (I mean an executable file) for GraalVM native image that could look at a project and using reasonable guesses just compile it into a binary? (Asking so that I can avoid modifying any Gradle scripts.)
 
