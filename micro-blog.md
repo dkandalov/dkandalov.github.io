@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2025/01/21
+I'm not convinced about functional parameters called "block" given the ambiguity of "code block" and "to block". It's often obvious from context (until it's not), but then there is `async { block() }` in Kotlin where the block doesn't block.
+
 #### 2025/01/20
 Arguably, there is sometimes a trade-off between expressive code structure/formatting and its usability in debugging tools (e.g. stepping through functional code). Ideally, this is to be fixed by the tooling, but in practice, it is something to consider for libraries/frameworks.
 
