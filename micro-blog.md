@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2025/01/23
+What if in addition to the type inference, there was parameter/variable name inference (e.g. lower camel case based on type and name clashes is an error)? This could encourage the use of tiny (aka micro) types 🤔
+
 #### 2025/01/21
 I'm not convinced about functional parameters called "block" given the ambiguity of "code block" and "to block". It's often obvious from context (until it's not), but then there is `async { block() }` in Kotlin where the block doesn't block.
 
