@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2025/01/29
+It's fascinating how much the lack of a fast feedback loop contributes to the difficulty of a problem. And the "industry standard" infrastructure solutions only make it harder for the sake of scale that you can't have or don't need. I hope the era of "cloud mainframes" will end.
+
 #### 2025/01/23
 What if in addition to the type inference, there was parameter/variable name inference (e.g. lower camel case based on type and name clashes is an error)? This could encourage the use of tiny (aka micro) types 🤔
 
@@ -78,6 +81,14 @@ Here is an old idea. Instead of mocking libraries, use approval (aka snapshot) t
 The amount of actively used calendars is a good reminder that the "new year" is very much a social construct. There’s also Julian calendar (making all historical dates "wrong"). There are time zones with changing rules and borders. And of course leap seconds! 🙃
 
 <img src="../assets/images/micro-blog/2024-12-31.webp" width="80%" height="80%"/>
+
+=== Reply from [楊微粒](https://twitter.com/yx_weili) ===
+
+There is a mistake in the image. While the year 2025 AD does roughly  correspond to the 4722nd year of the Huangdi Era, the Huangdi Era is calculated according to the Chinese calendar. January 29, 2025, is actually the first day of the first month  in the 4722nd year
+
+=== My reply ===
+
+Took me a while, but you're basically saying that it should've been 4721 on the map 🧐 Thank you for the correction! <https://en.wikipedia.org/wiki/Chinese_calendar_correspondence_table>
 
 #### 2024/12/30
 Sometimes, I use GitHub to look at projects that I have locally. Opening an editor/IDE feels too slow, e.g., IntelliJ indexing/downloading everything (ahem, Gradle) even though I only need two files to look at. This is a shame. I guess I'll set up Zed on the command line for now.
