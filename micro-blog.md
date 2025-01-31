@@ -3,8 +3,15 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2025/01/31
+It's party time 🥳 Because we are about to have folding regions for function/constructor arguments in Kotlin <https://youtrack.jetbrains.com/issue/KTIJ-14710>. And I will be able to retire this plugin <https://gist.github.com/dkandalov/82f37b0d3a6f8b3e4c6f1f2296a63e41>.
+
 #### 2025/01/29
 It's fascinating how much the lack of a fast feedback loop contributes to the difficulty of a problem. And the "industry standard" infrastructure solutions only make it harder for the sake of scale that you can't have or don't need. I hope the era of "cloud mainframes" will end.
+
+=== Reply from [Uberto Barbini](https://www.linkedin.com/in/uberto) ===
+
+And still they insist about "just use PRs and build your branch remotely"
 
 #### 2025/01/23
 What if in addition to the type inference, there was parameter/variable name inference (e.g. lower camel case based on type and name clashes is an error)? This could encourage the use of tiny (aka micro) types 🤔
