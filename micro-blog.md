@@ -3,8 +3,8 @@ layout: post
 permalink: /micro-blog/
 ---
 
-#### 2025/01/31
-It's party time 🥳 Because we are about to have folding regions for function/constructor arguments in Kotlin <https://youtrack.jetbrains.com/issue/KTIJ-14710>. And I will be able to retire this plugin <https://gist.github.com/dkandalov/82f37b0d3a6f8b3e4c6f1f2296a63e41>.
+#### 2025/02/03
+TIL there is a JITWatch4i plugin for IntelliJ to analyze/visualize JIT compiler activity, generated assembly, etc., and there are nice examples in its readme <https://github.com/JetBrains/jitwatch4i>.
 
 #### 2025/01/29
 It's fascinating how much the lack of a fast feedback loop contributes to the difficulty of a problem. And the "industry standard" infrastructure solutions only make it harder for the sake of scale that you can't have or don't need. I hope the era of "cloud mainframes" will end.
