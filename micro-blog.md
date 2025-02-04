@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2025/02/04
+Random idea: integrate LLM into a disassembler to make the code somewhat readable even if it was obfuscated. Or observe program behaviour at runtime and generate source code that could reproduce the behaviour 🤔
+
 #### 2025/02/03
 TIL there is a JITWatch4i plugin for IntelliJ to analyze/visualize JIT compiler activity, generated assembly, etc., and there are nice examples in its readme <https://github.com/JetBrains/jitwatch4i>.
 
