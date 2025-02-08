@@ -3,9 +3,11 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2025/02/08
+If higher-level abstractions should be at the top of the file, then shouldn't all imports be listed at the bottom? 🙈
+
 #### 2025/02/07
 Awesome talk by [Andrei Pangin](https://twitter.com/AndreiPangin) ["A Simple Approach to the Advanced JVM Profiling"](https://www.youtube.com/watch?v=TDpbt4thECc). Lots of profiling on the JVM wisdom and reasons why [async-profiler](https://github.com/async-profiler/async-profiler) is the best tool in town (I just wish it had more regular releases 🙏)
-
 
 #### 2025/02/04
 Random idea: integrate LLM into a disassembler to make the code somewhat readable even if it was obfuscated. Or observe program behaviour at runtime and generate source code that could reproduce the behaviour 🤔
