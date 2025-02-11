@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2025/02/11
+Great talk by Anton Arhipov at the [Kotlin London meetup](https://www.meetup.com/kotlin-london/events/305589782) tonight. You can find the (recent enough) slides here <https://speakerdeck.com/antonarhipov>. My main takeaway is that Kotlin contracts could make DSL builder parameters mandatory (like function parameters?) 🤔 
+
 #### 2025/02/08
 If higher-level abstractions should be at the top of the file, then shouldn't all imports be listed at the bottom? 🙈
 
