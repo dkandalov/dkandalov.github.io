@@ -3,6 +3,11 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2025/02/20
+Here is an example of how a small change trying to optimise Kotlin code with `inline` and then using imperative style with `return` can break things.
+
+<img src="../assets/images/micro-blog/2025-02-20.webp" width="80%" height="80%"/>
+
 #### 2025/02/11
 Great talk by Anton Arhipov at the [Kotlin London meetup](https://www.meetup.com/kotlin-london/events/305589782) tonight. You can find the (recent enough) slides here <https://speakerdeck.com/antonarhipov>. My main takeaway is that Kotlin contracts could make DSL builder parameters mandatory (like function parameters?) 🤔 
 
