@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2025/02/21
+Similar to the null reference being a billion-dollar mistake, we need Linus or someone from GitHub to speak up and explain that pull requests are a trillion-dollar mistake.
+
 #### 2025/02/20
 Here is an example of how a small change trying to optimise Kotlin code with `inline` and then using imperative style with `return` can break things.
 
