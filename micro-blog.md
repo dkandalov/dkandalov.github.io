@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2025/02/25
+Should LLM-generated content be labeled similarly to programmatically generated files (at least what is pretty much a cache to save CPU cycles)? As a human consumer, I might want to use a different chatbot to summarise the content (e.g. commit messages) in my preferred way.
+
 #### 2025/02/21
 Similar to the null reference being a billion-dollar mistake, we need Linus or someone from GitHub to speak up and explain that pull requests are a trillion-dollar mistake.
 
