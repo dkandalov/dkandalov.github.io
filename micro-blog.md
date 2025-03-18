@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2025/03/18
+If you happen to be in London on Thursday 17th April, this is the event to attend <https://www.meetup.com/source-talks-on-kotlin/events/306722368> with two talks by the authors of http4k.
+
 #### 2025/03/12
 I wonder if asking (or begging) an LLM/coding agent to follow specific steps is fundamentally futile. It feels like there is missing configurability of steps and/or things that need to be checked, etc., and of the overall context so I can say "Look at that other project".
 
