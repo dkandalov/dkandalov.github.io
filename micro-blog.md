@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2025/03/27
+The meetup looks a bit busy, but if you're in London and would like to see [Duncan McGregor](https://twitter.com/duncanmcg) and me pre-practicing our KotlinConf talk by doing 31 refactoring in 30 minutes, then I'm sure there will be a seat and a free M&S snack/drink <https://www.meetup.com/kotlin-london/events/306456259>
+
 #### 2025/03/18
 If you happen to be in London on Thursday 17th April, this is the event to attend <https://www.meetup.com/source-talks-on-kotlin/events/306722368> with two talks by the authors of http4k.
 
