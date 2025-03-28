@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2025/03/28
+Software that "just works" long enough without any intervention, naturally becomes hard to build/release/support. OTOH software that breaks often enough, creates a sociotechnical system to support its existence. Should it be a deliberate practice though? 🤔
+
 #### 2025/03/27
 The meetup looks a bit busy, but if you're in London and would like to see [Duncan McGregor](https://twitter.com/duncanmcg) and me pre-practicing our KotlinConf talk by doing 31 refactoring in 30 minutes, then I'm sure there will be a seat and a free M&S snack/drink <https://www.meetup.com/kotlin-london/events/306456259>
 
