@@ -4,6 +4,13 @@ title: Public speaking
 permalink: public-speaking
 ---
 
+### 2025
+
+| Dates | Event | Talk |
+| --- | --- | --- |
+| 3 April | [Kotlin London April @ M&S](https://www.meetup.com/kotlin-london/events/306456259/) | 31 refactorings in 30 minutes |
+{:.post-table}
+
 ### 2024
 
 | Dates | Event | Talk |
