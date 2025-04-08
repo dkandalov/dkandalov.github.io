@@ -6,6 +6,17 @@ permalink: /micro-blog/
 #### 2025/03/28
 Software that "just works" long enough without any intervention, naturally becomes hard to build/release/support. OTOH software that breaks often enough, creates a sociotechnical system to support its existence. Should it be a deliberate practice though? 🤔
 
+=== Reply from [@sleepyfox](https://mastodon.social/@sleepyfox@hachyderm.io) ===
+
+So, what you're saying is that people should buy really unreliable cars that break down all the time (like in the early 1900's) so that we can build up our car maintenance skills, and encourage the growth of the garage industry?
+
+=== My reply ===
+
+I didn't think about it from the end-user point of view. This is interesting and, I guess will also keep the sociotechnical system functioning. Bringing the analogy back to software, this sounds a bit like Linux (with its ultimate "right to repair") 🙈
+
+Clarifying the original post, the context was "enterprise" software that works well enough without any intervention for years to the point when nobody can build/release it anymore. So when something finally does go wrong, it's organisationally harder to fix it compared to software that needs more frequent interventions.
+
+
 #### 2025/03/27
 The meetup looks a bit busy, but if you're in London and would like to see [Duncan McGregor](https://twitter.com/duncanmcg) and me pre-practicing our KotlinConf talk by doing 31 refactoring in 30 minutes, then I'm sure there will be a seat and a free M&S snack/drink <https://www.meetup.com/kotlin-london/events/306456259>
 
