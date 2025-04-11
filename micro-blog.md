@@ -16,6 +16,10 @@ I didn't think about it from the end-user point of view. This is interesting and
 
 Clarifying the original post, the context was "enterprise" software that works well enough without any intervention for years to the point when nobody can build/release it anymore. So when something finally does go wrong, it's organisationally harder to fix it compared to software that needs more frequent interventions.
 
+=== Reply from [@sleepyfox](https://mastodon.social/@sleepyfox@hachyderm.io) ===
+
+Okay, what you're talking about is the decay and erosion in organisational process memory.
+This is the reason that in Japan they dismantle and rebuild temples every 25 years.
 
 #### 2025/03/27
 The meetup looks a bit busy, but if you're in London and would like to see [Duncan McGregor](https://twitter.com/duncanmcg) and me pre-practicing our KotlinConf talk by doing 31 refactoring in 30 minutes, then I'm sure there will be a seat and a free M&S snack/drink <https://www.meetup.com/kotlin-london/events/306456259>
