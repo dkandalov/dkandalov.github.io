@@ -3,7 +3,10 @@ layout: post
 permalink: /micro-blog/
 ---
 
-#### 2025/04/11
+#### 2025/04/26
+Random IntelliJ tip. You can compare any directories (including the content of files) by selecting two directories in the project view and invoking the 'Compare Directories' action (ctrl / cmd+D). You can then change the directories to any location outside the project 🧐
+
+#### 2025/04/17
 This is a niche rant, but how come the presentation assistant in IntelliJ shows shortcuts from the keymap instead of the keys that I press on the keyboard 🤷 It had one job! So here is my own assistant using LivePlugin <https://gist.github.com/dkandalov/54839566c1de9e6012c93bcb87309306>.
 
 #### 2025/03/28
