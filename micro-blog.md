@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2025/04/27
+I love how the `Shelve Silently` action in the latest IntelliJ comes up with the change description by default (using `shelveSilentlyTitleProvider` via AI Assistant plugin). The next thing is to make it default for commits, so we'll just be giving our approval to the generated text.
+
 #### 2025/04/26
 Random IntelliJ tip. You can compare any directories (including the content of files) by selecting two directories in the project view and invoking the 'Compare Directories' action (ctrl / cmd+D). You can then change the directories to any location outside the project 🧐
 
