@@ -3,8 +3,19 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2025/04/28
+I wish the Kotlin 'Make private' intention was more like a refactoring and would only work if making var/function wouldn't break the code. Also, an inspection to make everything as private as possible would be great.
+
 #### 2025/04/27
 I love how the `Shelve Silently` action in the latest IntelliJ comes up with the change description by default (using `shelveSilentlyTitleProvider` via AI Assistant plugin). The next thing is to make it default for commits, so we'll just be giving our approval to the generated text.
+
+=== Reply from [Anton Keks](https://twitter.com/antonkeks) ===
+
+Good commit message is "why", not "what"
+
+=== My reply ===
+
+Yes, we need an inspection that compares commit messages, comments, etc. with what LLM would generate and tells you off if they roughly match 🙃 Or more generally, maybe some kind of agent that detects LLM-like content and marks it as generated?
 
 #### 2025/04/26
 Random IntelliJ tip. You can compare any directories (including the content of files) by selecting two directories in the project view and invoking the 'Compare Directories' action (ctrl / cmd+D). You can then change the directories to any location outside the project 🧐
