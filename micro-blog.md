@@ -3,8 +3,15 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2025/04/30
+I miss the 'Convert to lazy property' Kotlin intention after moving to K2. (It looks like it [should be available in](https://github.com/JetBrains/intellij-community/blob/e8cf2732c373bc0309fe7d3edf10c39fcdf887f9/plugins/kotlin/code-insight/intentions-shared/src/org/jetbrains/kotlin/idea/codeInsight/intentions/shared/ConvertOrdinaryPropertyToLazyIntention.kt#L20) both K1 and K2, but I don't see it ☹️)
+
 #### 2025/04/28
 I wish the Kotlin 'Make private' intention was more like a refactoring and would only work if making var/function wouldn't break the code. Also, an inspection to make everything as private as possible would be great.
+
+=== Reply from [Tom Anderson](https://twitter.com/tomwhoscontrary) ===
+
+IntelliJ has some weird blind spots around access control. "Oh if i move this, it won't be accessible to this other method!". Well make it public then?!
 
 #### 2025/04/27
 I love how the `Shelve Silently` action in the latest IntelliJ comes up with the change description by default (using `shelveSilentlyTitleProvider` via AI Assistant plugin). The next thing is to make it default for commits, so we'll just be giving our approval to the generated text.
