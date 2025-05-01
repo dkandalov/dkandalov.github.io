@@ -3,8 +3,15 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2025/05/01
+I wish IntelliJ could put a breakpoint in bytecode and step through it. (The actual problem being several versions of a class without attached source code namespaced by classloader while figuring out who sets empty "idea.plugins.compatible.build" on Kotlin embedded compiler.)
+
 #### 2025/04/30
 I miss the 'Convert to lazy property' Kotlin intention after moving to K2. (It looks like it [should be available in](https://github.com/JetBrains/intellij-community/blob/e8cf2732c373bc0309fe7d3edf10c39fcdf887f9/plugins/kotlin/code-insight/intentions-shared/src/org/jetbrains/kotlin/idea/codeInsight/intentions/shared/ConvertOrdinaryPropertyToLazyIntention.kt#L20) both K1 and K2, but I don't see it ☹️)
+
+=== Reply in DMs ===
+
+It's only available in IntelliJ 2025.2, but should be backported to 2025.1.2.
 
 #### 2025/04/28
 I wish the Kotlin 'Make private' intention was more like a refactoring and would only work if making var/function wouldn't break the code. Also, an inspection to make everything as private as possible would be great.
