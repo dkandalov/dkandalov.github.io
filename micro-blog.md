@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2025/05/21
+I updated the [blog post](https://dmitrykandalov.com/intellij-settings) with the non-default IntelliJ settings I use for 2025.2 EAP. Please let me know if you disagree with them 😅
+
 #### 2025/05/01
 I wish IntelliJ could put a breakpoint in bytecode and step through it. (The actual problem being several versions of a class without attached source code namespaced by classloader while figuring out who sets empty "idea.plugins.compatible.build" on Kotlin embedded compiler.)
 
