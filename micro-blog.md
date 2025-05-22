@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2025/05/22
+If you happen to be at #KotlinConf today, come over to the Kotlin Foundation Booth at 13:45 where I will do a demo of LivePlugin.
+
 #### 2025/05/21
 I updated the [blog post](https://dmitrykandalov.com/intellij-settings) with the non-default IntelliJ settings I use for 2025.2 EAP. Please let me know if you disagree with them 😅
 
