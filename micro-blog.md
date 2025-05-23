@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2025/05/23
+"If you don't know what your organisation is optimising for, then it's probably control" TIL from #KotlinConf keynote by Diana Montalion.
+
 #### 2025/05/22
 If you happen to be at #KotlinConf today, come over to the Kotlin Foundation Booth at 13:45 where I will do a demo of LivePlugin.
 
