@@ -6,9 +6,10 @@ permalink: public-speaking
 
 ### 2025
 
-| Dates | Event | Talk |
-| --- | --- | --- |
-| 3 April | [Kotlin London April @ M&S](https://www.meetup.com/kotlin-london/events/306456259/) | 31 refactorings in 30 minutes |
+| Dates   | Event                                                                               | Talk                                                                                  |
+|---------|-------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|
+| 3 April | [Kotlin London April @ M&S](https://www.meetup.com/kotlin-london/events/306456259/) | 31 refactorings in 30 minutes                                                         |
+| 23 May  | [KotlinConf](https://kotlinconf.com)                                                | [47 refactorings in 45 minutes](https://www.youtube.com/watch?v=XJ9fq-PYCWk&t=26390s) |
 {:.post-table}
 
 ### 2024
@@ -17,7 +18,7 @@ permalink: public-speaking
 | --- | --- | --- |
 | 10-13 October | [Socrates BE](https://socratesbe.org) | The Ultimate Guide to IntelliJ tippy tappy |
 | 6 June | [Kotlin London Meetup](https://www.meetup.com/kotlin-london/events/300882149) | Kotlin Conf Global |
-| 23-24 May | [KotlinConf](https://kotlinconf.com) | [Refactoring to Expressive Kotlin](https://www.youtube.com/watch?v=p5WylVjtzBQ) |
+| 23-24 May | [KotlinConf](https://kotlinconf.com/2024) | [Refactoring to Expressive Kotlin](https://www.youtube.com/watch?v=p5WylVjtzBQ) |
 | 2 May | [Source Talks on Kotlin 8](https://www.linkedin.com/company/source-technology-ltd) | [Refactoring to Expressive Kotlin](https://www.youtube.com/watch?v=UwM3b5D4FjU) |
 {:.post-table}
 
@@ -28,7 +29,7 @@ permalink: public-speaking
 | 4 December | [Advent of Code 2023](https://adventofcode.com/2023) | [Advent of Code 2023 in Kotlin Day 4](https://www.youtube.com/watch?v=I0nCFMDkPNo) |
 | 25 November | [GDG DevFest Berlin](https://devfest.berlin) | Gilded Rose Refactoring Kata |
 | 7 August | [The Developers' Bakery Podcast](https://thebakery.dev) | [LivePlugin with Dmitry Kandalov](https://thebakery.dev/64) |
-| 14 April | [KotlinConf](https://kotlinconf.com) | [Gilded Rose Refactoring Kata](https://www.youtube.com/watch?v=AxxNHKCldzA) |
+| 14 April | [KotlinConf](https://kotlinconf.com/2023) | [Gilded Rose Refactoring Kata](https://www.youtube.com/watch?v=AxxNHKCldzA) |
 {:.post-table}
 
 ### 2022
@@ -100,7 +101,7 @@ permalink: public-speaking
 | Dates | Event | Talk |
 | --- | --- | --- |
 | 8-9 November  | [Code Mesh LDN](https://codesync.global/conferences/code-mesh-2018/) | [Coroutines explained](https://www.youtube.com/watch?v=dWBsdh0BndM) |
-| 3-5 October   | [KotlinConf](https://kotlinconf.com) | [Live Coding Kotlin/Native Snake](https://www.youtube.com/watch?v=U-gdJQeOVAk) |
+| 3-5 October   | [KotlinConf](https://kotlinconf.com/2018) | [Live Coding Kotlin/Native Snake](https://www.youtube.com/watch?v=U-gdJQeOVAk) |
 | 15 September  | [Uncodebar 4](https://codebar.io/events/uncodebar-4) | Live Coding Kotlin/Native Snake |
 | 7-10 June     | [SoCraTes UK](http://socratesuk.org) | Coroutines explained |
 | 20-21 April   | [Citcon](https://www.citconf.com/vienna2018) | Coroutines explained |
