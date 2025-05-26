@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2025/05/26
+For anyone interested, I pushed the code from the "47 refactorings in 45 minutes" talk by Duncan McGregor and myself at #KotlinConf to [this branch](https://github.com/dmcg/gilded-rose-tdd/tree/47-refactorings-at-kotlin-conf?tab=readme-ov-file#47-refactorings-in-45-minutes-references) (including references and mini-plugins). And here is the [live stream video](https://www.youtube.com/watch?v=XJ9fq-PYCWk&t=26390s).
+
 #### 2025/05/23
 "If you don't know what your organisation is optimising for, then it's probably control" TIL from #KotlinConf keynote by Diana Montalion.
 
