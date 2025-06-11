@@ -8,7 +8,7 @@ permalink: public-speaking
 
 | Dates   | Event                                                                               | Talk                                                                                  |
 |---------|-------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|
-| 23 May  | [KotlinConf](https://kotlinconf.com)                                                | [47 refactorings in 45 minutes](https://www.youtube.com/watch?v=XJ9fq-PYCWk&t=26390s) |
+| 23 May  | [KotlinConf](https://kotlinconf.com)                                                | 47 refactorings in 45 minutes |
 | 3 April | [Kotlin London April @ M&S](https://www.meetup.com/kotlin-london/events/306456259/) | 31 refactorings in 30 minutes                                                         |
 {:.post-table}
 
