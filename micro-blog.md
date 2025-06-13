@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2025/06/13
+Assuming systems are doing their job perfectly, if PRs are not about continuous integration (or code quality), they must have another function. What about PRs are about control (or rather an illusion of control)? And that could fundamentally be insecurity/anxiety. #noPRs
+
 #### 2025/06/11
 As Duncan McGregor speculated, we might be using the same part of the brain to track whether our hands are dirty and to track the size of code changes. So people with different hygiene standards and definitions of "dirty" will tend to disagree? How "clean" are two weeks of commits on a branch? 🤷‍
 
