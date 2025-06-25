@@ -186,7 +186,7 @@ image.addEventListener('load', function() {
 	sourceContext.drawImage(image, 0, 0, width, height);
 	main();
 });
-image.src = '/assets/images/me.jpg';
+image.src = '/assets/images/dmitry.jpg';
 
 const image2 = new Image();
 image2.addEventListener('load', function() {

@@ -13,4 +13,4 @@ You can find an incomplete list of the conferences and events I presented at rec
  
 Feel free to get in touch on [Mastodon](https://mastodon.social/@dkandalov) or via [email](mailto:dmitry.kandalov@gmail.com).
 
-![Me](/assets/images/me.jpg)
+![Dmitry](/assets/images/dmitry.jpg)
