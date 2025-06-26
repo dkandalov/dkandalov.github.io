@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2025/06/26
+[This is the recording](https://www.youtube.com/watch?v=SwNTpgp262o) of Duncan McGregor and me doing the "47 refactorings in 45 minutes" talk at #KotlinConf. Aka "47 refactorings in a week with PRs". (Note that it's missing slides, so the intro and outro might not make a lot of sense). 
+
 #### 2025/06/13
 Assuming systems are doing their job perfectly, if PRs are not about continuous integration (or code quality), they must have another function. What about PRs are about control (or rather an illusion of control)? And that could fundamentally be insecurity/anxiety. #noPRs
 
