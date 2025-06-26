@@ -10,7 +10,7 @@ Assuming systems are doing their job perfectly, if PRs are not about continuous 
 As Duncan McGregor speculated, we might be using the same part of the brain to track whether our hands are dirty and to track the size of code changes. So people with different hygiene standards and definitions of "dirty" will tend to disagree? How "clean" are two weeks of commits on a branch? 🤷‍
 
 #### 2025/05/26
-For anyone interested, I pushed the code from the "47 refactorings in 45 minutes" talk by Duncan McGregor and myself at #KotlinConf to [this branch](https://github.com/dmcg/gilded-rose-tdd/tree/47-refactorings-at-kotlin-conf?tab=readme-ov-file#47-refactorings-in-45-minutes-references) (including references and mini-plugins). And here is the ~~[live stream video](https://www.youtube.com/watch?v=XJ9fq-PYCWk&t=26390s)~~ (👈 the video is now private, I'll update the link once it's properly published).
+For anyone interested, I pushed the code from the "47 refactorings in 45 minutes" talk by Duncan McGregor and myself at #KotlinConf to [this branch](https://github.com/dmcg/gilded-rose-tdd/tree/47-refactorings-at-kotlin-conf?tab=readme-ov-file#47-refactorings-in-45-minutes-references) (including references and mini-plugins). And here is the [recorded video](https://www.youtube.com/watch?v=SwNTpgp262o).
 
 #### 2025/05/23
 "If you don't know what your organisation is optimising for, then it's probably control" TIL from #KotlinConf keynote by Diana Montalion.
