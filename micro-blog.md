@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2025/06/27
+One of the most annoyingly unnecessary things I've seen too many times recently (including projects using http4k) is passing around base URL and credentials for each function that makes an HTTP call 🙄 In http4k world you can just do `SetBaseUriFrom(...).then(MyAuth()).then(client)`.
+
 #### 2025/06/26
 [This is the recording](https://www.youtube.com/watch?v=SwNTpgp262o) of Duncan McGregor and me doing the "47 refactorings in 45 minutes" talk at #KotlinConf. Aka "47 refactorings in a week with PRs". (Note that it's missing slides, so the intro and outro might not make a lot of sense). 
 
