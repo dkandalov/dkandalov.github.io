@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2025/06/28
+I find the hallucination metaphor in the context of LLMs very misleading (perhaps deliberately so). For humans, hallucination is an illusion in the absence of an external stimulus, i.e. malfunction. For LLMs, hallucination is all they can do. It just happens to be correct or wrong 🤷
+
 #### 2025/06/27
 One of the most annoyingly unnecessary things I've seen too many times recently (including projects using http4k) is passing around base URL and credentials for each function that makes an HTTP call 🙄 In http4k world you can just do `SetBaseUriFrom(...).then(MyAuth()).then(client)`.
 
