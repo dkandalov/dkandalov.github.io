@@ -9,7 +9,7 @@ The Ultimate Guide to IntelliJ IDEs is a fast-paced, hands-on workshop that teac
 This workshop is focused on Kotlin and Java but can be tailored to other programming languages and development environments.
 If you would like to schedule the workshop, a demo, or have any questions, please feel free to get in touch via [email](mailto:dmitry.kandalov@gmail.com) or social networks.
 
-Inside the Workshop:
+Workshop overview:
 - Where does IDE fit into the software development cycle?
 - Code browsing and navigation
   - Project code exploration
