@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2025/07/25
+I wish IntelliJ "Select in Project" action would say why it couldn't select the current file in the project view, so that I don't need to guess. For example, the file is in an excluded directory that is currently hidden. Details matter!
+
 #### 2025/06/28
 I find the hallucination metaphor in the context of LLMs very misleading (perhaps deliberately so). For humans, hallucination is an illusion in the absence of an external stimulus, i.e. malfunction. For LLMs, hallucination is all they can do. It just happens to be correct or wrong 🤷
 
