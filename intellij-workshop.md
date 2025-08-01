@@ -1,10 +1,10 @@
 ---
 layout: post
-permalink: /intellij-tippy-tappy/
+permalink: /intellij-workshop/
 title: The Ultimate Guide to IntelliJ IDEs
 ---
 
-The Ultimate Guide to IntelliJ IDEs is a fast-paced, hands-on workshop that teaches developers productivity workflows. By covering the development cycle — from code browsing and editing to testing, debugging, and publishing changes to version control — you will learn a new keyboard shortcut or an IDE feature in each of the areas. The workshop emphasises keyboard-centric workflows, fast code navigation, and code transformations via intentions and refactorings. You will discover customisation tips, plugin recommendations, common problems, and strategies for staying focused. Whether you are new to IntelliJ IDEs or looking to refine your development flow, this workshop offers practical techniques to make the IDE work for you.
+The Ultimate Guide to IntelliJ IDEs is a fast-paced, hands-on workshop that teaches developers productivity workflows. By covering the development cycle — from code browsing and editing to testing, debugging, and publishing changes to version control — you will discover new keyboard shortcuts and IDE features in each of the areas. The workshop emphasises keyboard-centric workflows, fast code navigation, and code transformations via intentions and refactorings. You will learn customisation tips, plugin recommendations, common problems, and strategies for staying focused. Whether you are new to IntelliJ IDEs or looking to refine your development flow, this workshop offers practical techniques to make the IDE work for you.
 
 This workshop is focused on Kotlin and Java but can be tailored to other programming languages and development environments.
 If you would like to schedule the workshop, a demo, or have any questions, please feel free to get in touch via [email](mailto:dmitry.kandalov@gmail.com) or social networks.
