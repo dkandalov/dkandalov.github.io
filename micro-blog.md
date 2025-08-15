@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2025/08/15
+Typical IntelliJ plugin maintenance routine: need to recompile a plugin with the latest IDE version, this requires updating Kotlin, IntelliJ platform Gradle plugin (potentially rewriting build.gradle), and of course, updating Gradle, maybe JDK. Could this be less of a big bang? 🤔
+
 #### 2025/07/25
 I wish IntelliJ "Select in Project" action would say why it couldn't select the current file in the project view, so that I don't need to guess. For example, the file is in an excluded directory that is currently hidden. Details matter!
 
