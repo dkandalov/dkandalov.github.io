@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2025/08/22
+There is now KEEP for rich errors in Kotlin <https://github.com/Kotlin/KEEP/blob/main/proposals/KEEP-0441-rich-errors-motivation.md> 🧐
+
 #### 2025/08/15
 Typical IntelliJ plugin maintenance routine: need to recompile a plugin with the latest IDE version, this requires updating Kotlin, IntelliJ platform Gradle plugin (potentially rewriting build.gradle), and of course, updating Gradle, maybe JDK. Could this be less of a big bang? 🤔
 
