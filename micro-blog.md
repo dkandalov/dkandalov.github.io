@@ -4,7 +4,7 @@ permalink: /micro-blog/
 ---
 
 #### 2025/08/31
-I wish I knew about XP×AI unconference https://xpunconf.org before making holiday plans. It would be such a good excuse to visit Berlin 🤩 (No excuse not to come if you live there.)
+I wish I knew about [XP×AI unconference](https://xpunconf.org) before making holiday plans. It would be such a good excuse to visit Berlin 🤩 (No excuse not to come if you live there though.)
 
 #### 2025/08/22
 There is now KEEP for rich errors in Kotlin <https://github.com/Kotlin/KEEP/blob/main/proposals/KEEP-0441-rich-errors-motivation.md> 🧐
