@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2025/09/06
+Why there are no quick fixes for inspections in IntelliJ MCP? And no tool for intentions (with quick fixes)? These would be the first two things I'd implement after basics. Or do I miss something and there is a good reason? 🤔
+
 #### 2025/08/31
 I wish I knew about [XP×AI unconference](https://xpunconf.org) before making holiday plans. It would be such a good excuse to visit Berlin 🤩 (No excuse not to come if you live there though.)
 
