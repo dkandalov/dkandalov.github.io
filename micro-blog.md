@@ -3,6 +3,11 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2025/09/20
+In my experience, I learn more and have better conversations at smaller conferences. [KtConf](https://ktconf.be) was a good example of that. Nice venue, single track with great talks, and just enough people. BTW, everything I showed in my talk (including IDE mini-plugins) is here <https://github.com/dkandalov/error-handling-in-kotlin>.
+
+<img src="../assets/images/micro-blog/2025-09-20.webp" width="80%" height="80%"/>
+
 #### 2025/09/06
 Why there are no quick fixes for inspections in IntelliJ MCP? And no tool for intentions (with quick fixes)? These would be the first two things I'd implement after basics. Or do I miss something and there is a good reason? 🤔
 
