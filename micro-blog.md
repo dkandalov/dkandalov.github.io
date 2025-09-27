@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2025/09/27
+In spite of the horrid LLM (aka "AI") bubble hype, it can actually be useful. My favourite use case is asking Junie questions about large code bases. For example, clone the IntelliJ source code, open it as a project (so that Junie can search actual code) and ask questions.
+
 #### 2025/09/20
 In my experience, I learn more and have better conversations at smaller conferences. [KtConf](https://ktconf.be) was a good example of that. Nice venue, single track with great talks, and just enough people. BTW, everything I showed in my talk (including IDE mini-plugins) is here <https://github.com/dkandalov/error-handling-in-kotlin>.
 
