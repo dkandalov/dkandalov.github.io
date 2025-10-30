@@ -3,6 +3,11 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2025/10/30
+Thanks to everyone who came to the "47 Refactorings in 45 minutes" talk Kodee and I did at Droidcon London today. You can find all the code here <https://github.com/dmcg/gilded-rose-tdd/tree/47-refactorings-at-droidcon>. Since someone asked, these are some of the heuristics I use for Kotlin code <https://dmitrykandalov.com/tidy-kotlin>.
+
+<img src="../assets/images/micro-blog/2025-10-30.webp" width="50%" height="50%"/>
+
 #### 2025/09/27
 In spite of the horrid LLM (aka "AI") bubble hype, it can actually be useful. My favourite use case is asking Junie questions about large code bases. For example, clone the IntelliJ source code, open it as a project (so that Junie can search actual code) and ask questions.
 
