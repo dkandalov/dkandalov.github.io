@@ -80,10 +80,14 @@ Invoke `Find Action` and search for "Registry...":
 - Remove `Markdown > Create Link` shortcut because it clashes with `Toggle Case`
 - Remove `Increase/Decrease Font Size in All Editors` shortcuts
 
-### macOS
+### macOS (Sonoma and above)
 - Disable accents `defaults write -g ApplePressAndHoldEnabled -bool false`
-- Max values for `Preferences > Keyboard > Key Repeat / Delay Until Repeat`
+- Max values for `Preferences > Keyboard > Key Repeat` and `Delay Until Repeat`
 - Map CapsLock to Control in `Preferences > Keyboard > Modifier Keys...`
-- Disable shortcuts in `Preferences > Keyboard > Shortcuts` which clash with IntelliJ, e.g. `cmd+shift+/`
+- Enable "Use scroll gesture with modifier keys to zoom" in <br/>
+  `Preferences > Accessibility > Zoom` and select Control as the modifier key for gesture
+- Select "Three-Finger Drag" as dragging style in <br/>
+  `Preferences > Accessibility > Pointer Control > Trackpad Options...`
+- Disable shortcuts in `Preferences > Keyboard > Shortcuts` that clash with IntelliJ (e.g. `cmd+shift+/`; there is usually a popup notification with the conflict after IDE install)
 - Disable option-space, see [https://superuser.com/questions/78245](https://superuser.com/questions/78245)
  
