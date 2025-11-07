@@ -8,7 +8,7 @@ permalink: public-speaking
 
 | Dates   | Event                                                                               | Talk                                                                                  |
 |---------|-------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|
-| 27 November | [Kotlin Dev Day](https://kotlindevday.com)                                                | 43 Refactorings in 40 minutes |
+| 27 November | [Kotlin Dev Day](https://kotlindevday.com)                                                | 47 Refactorings in 45 minutes |
 | 30 October | [Droidcon London](https://london.droidcon.com)                                                | 47 Refactorings in 45 minutes |
 | 19 September | [KTConf](https://ktconf.be)                                                | [Error handling in Kotlin and beyond](https://ktconf.be/speakers/dmitry-kandalov) |
 | 23 May  | [KotlinConf](https://kotlinconf.com)                                                | [47 refactorings in 45 minutes](https://www.youtube.com/watch?v=SwNTpgp262o) |

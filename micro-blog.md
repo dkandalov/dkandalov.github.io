@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2025/11/07
+If you happen to be in Amsterdam at the end of November, come say "hi" at the Kotlin Dev Day, where [Duncan McGregor](https://twitter.com/duncanmcg) and I will be doing 47 refactorings in 45 minutes (see <https://kotlindevday.com/program>). I will also be just hanging out with Kodee on the 28th, so happy to chat or do a code kata 🧐
+
 #### 2025/10/30
 Thanks to everyone who came to the "47 Refactorings in 45 minutes" talk Kodee and I did at Droidcon London today. You can find all the code here <https://github.com/dmcg/gilded-rose-tdd/tree/47-refactorings-at-droidcon>. Since someone asked, these are some of the heuristics I use for Kotlin code <https://dmitrykandalov.com/tidy-kotlin>.
 
