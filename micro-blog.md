@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2025/11/14
+After about a month of experimentation, I'm happy to present a minimalistic test progress bar plugin for IntelliJ IDEs <https://plugins.jetbrains.com/plugin/28859-test-progress-bar>. Admittedly niche, it's there for 💰 to fund Dark Arts coffee beans, but I'll happily share forever free version(s) with anyone I know or met 😅
+
 #### 2025/11/07
 If you happen to be in Amsterdam at the end of November, come say "hi" at the Kotlin Dev Day, where [Duncan McGregor](https://twitter.com/duncanmcg) and I will be doing 47 refactorings in 45 minutes (see <https://kotlindevday.com/program>). I will also be just hanging out with Kodee on the 28th, so happy to chat or do a code kata 🧐
 
