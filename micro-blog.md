@@ -3,6 +3,11 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2025/11/27
+Apologies for Duncan punching Kodee off the stage at #KotlinDevDay25. I disapprove of this! 😿 You can find the source code from the talk here <https://github.com/dmcg/gilded-rose-tdd/tree/47-refactorings-at-kotlin-dev-day>. We were only seconds away from the `::invoke::invoke::invoke` part 🙈
+
+<img src="../assets/images/micro-blog/2025-11-27.webp" width="80%" height="80%"/>
+
 #### 2025/11/14
 After about a month of experimentation, I'm happy to present a minimalistic test progress bar plugin for IntelliJ IDEs <https://plugins.jetbrains.com/plugin/28859-test-progress-bar>. Admittedly niche, it's there for 💰 to fund Dark Arts coffee beans, but I'll happily share forever free version(s) with anyone I know or met 😅
 
