@@ -3,6 +3,11 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2025/11/28
+I’m pleased to say that Kodee has recovered from the punch and even got a new friend. #KotlinDevDay25 had the most backend Kotlin developers I’ve seen since Kotlin became a thing on Android 🙈 It was also really nice chatting to people from Xebia, JetBrains and Flock. Thank you for having us!
+
+<img src="../assets/images/micro-blog/2025-11-28.webp" width="50%" height="50%"/>
+
 #### 2025/11/27
 Apologies for Duncan punching Kodee off the stage at #KotlinDevDay25. I disapprove of this! 😿 You can find the source code from the talk here <https://github.com/dmcg/gilded-rose-tdd/tree/47-refactorings-at-kotlin-dev-day>. We were only seconds away from the `::invoke::invoke::invoke` part 🙈
 
