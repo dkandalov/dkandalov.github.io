@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2026/01/31
+I wonder why most "AI" tools have such a bad UX and questionable quality? From a sociotechnical system point of view, could this be a reflection of some underlying issues in this space 🤔
+
 #### 2025/11/28
 I’m pleased to say that Kodee has recovered from the punch and even got a new friend. #KotlinDevDay25 had the most backend Kotlin developers I’ve seen since Kotlin became a thing on Android 🙈 It was also really nice chatting to people from Xebia, JetBrains and Flock. Thank you for having us!
 
