@@ -7,7 +7,7 @@ permalink: /micro-blog/
 I wonder why most "AI" tools have such a bad UX and questionable quality? From a sociotechnical system point of view, could this be a reflection of some underlying issues in this space 🤔
 
 #### 2025/11/28
-I’m pleased to say that Kodee has recovered from the punch and even got a new friend. #KotlinDevDay25 had the most backend Kotlin developers I’ve seen since Kotlin became a thing on Android 🙈 It was also really nice chatting to people from Xebia, JetBrains and Flock. Thank you for having us!
+I'm pleased to say that Kodee has recovered from the punch and even got a new friend. #KotlinDevDay25 had the most backend Kotlin developers I've seen since Kotlin became a thing on Android 🙈 It was also really nice chatting to people from Xebia, JetBrains and Flock. Thank you for having us!
 
 <img src="../assets/images/micro-blog/2025-11-28.webp" width="50%" height="50%"/>
 
@@ -246,7 +246,7 @@ If you ever missed the feature to collapse Kotlin functions/constructors, don't 
 Here is an old idea. Instead of mocking libraries, use approval (aka snapshot) tests to verify object interactions. Maybe with some diagrams 🤔
 
 #### 2024/12/31
-The amount of actively used calendars is a good reminder that the "new year" is very much a social construct. There’s also Julian calendar (making all historical dates "wrong"). There are time zones with changing rules and borders. And of course leap seconds! 🙃
+The amount of actively used calendars is a good reminder that the "new year" is very much a social construct. There's also Julian calendar (making all historical dates "wrong"). There are time zones with changing rules and borders. And of course leap seconds! 🙃
 
 <img src="../assets/images/micro-blog/2024-12-31.webp" width="80%" height="80%"/>
 
@@ -521,7 +521,7 @@ Alloy does not run on the browser, but the syntax is much closer to JavaScript t
 
 === Reply from [Ray Myers](https://www.linkedin.com/in/cadrlife) ===
 
-You might already be familiar with FizzBee? Kinda Python-like syntax. Personally I’d love something that integrates with Lean prover.
+You might already be familiar with FizzBee? Kinda Python-like syntax. Personally I'd love something that integrates with Lean prover.
 
 <https://fizzbee.io/>
 
