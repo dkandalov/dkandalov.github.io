@@ -3,6 +3,11 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2026/02/06
+I like the new "group changes" with "AI" feature in IntelliJ version control. If only it was local, then you could run it continuously and get a warning as soon as you start working on more than one thing. This could be a good addition for the Limited WIP plugin 🤨
+
+<img src="../assets/images/micro-blog/2026-02-06.webp" width="80%" height="80%"/>
+
 #### 2026/01/31
 I wonder why most "AI" tools have such a bad UX and questionable quality? From a sociotechnical system point of view, could this be a reflection of some underlying issues in this space 🤔
 
