@@ -3,6 +3,13 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2026/04/03
+Come say "hi" if you're in Paris next week, because Duncan McGregor and I will be doing "43 Refactorings in 40 minutes" talk at <https://androidmakers.droidcon.com>. Is this going to be the last time humans use an IDE to edit code before generative "AI" learns it all? 🤷
+
+Kodee (💜) vs Duncan (👺)<br/>
+📍 Beffroi de Montrouge, Paris<br/>
+📆 9 April 2026
+
 #### 2026/02/06
 I like the new "group changes" with "AI" feature in IntelliJ version control. If only it was local, then you could run it continuously and get a warning as soon as you start working on more than one thing. This could be a good addition for the Limited WIP plugin 🤨
 
