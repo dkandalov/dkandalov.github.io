@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2026/04/04
+Considering the "AI" agents era we're in, I'm surprised how compile-and-run-tests in the project before/after making a change is not easily pluggable into agents or even encouraged during setup. Maybe I miss something, and begging LLM to do it in a Markdown file is fine.
+
 #### 2026/04/03
 Come say "hi" if you're in Paris next week, because Duncan McGregor and I will be doing "43 Refactorings in 40 minutes" talk at <https://androidmakers.droidcon.com>. Is this going to be the last time humans use an IDE to edit code before generative "AI" learns it all? 🤷
 
