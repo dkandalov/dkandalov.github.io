@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2026/04/05
+Another thing that surprises me about LLM agents is the lack of version control integration. Committing on a successful edit would be one of the first features I'd go for (with an option to squash commits later). And obviously include chat history in some form.
+
 #### 2026/04/04
 Considering the "AI" agents era we're in, I'm surprised how compile-and-run-tests in the project before/after making a change is not easily pluggable into agents or even encouraged during setup. Maybe I miss something, and begging LLM to do it in a Markdown file is fine.
 
