@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2026/04/08
+I find it ironic that the same companies that use glorified O(n) complexity in their interviews can be so into the "AI" will replace people theme without specifying the complexity of the problems they want to solve 🧐
+
 #### 2026/04/05
 Another thing that surprises me about LLM agents is the lack of version control integration. Committing on a successful edit would be one of the first features I'd go for (with an option to squash commits later). And obviously include chat history in some form.
 
@@ -10,7 +13,7 @@ Another thing that surprises me about LLM agents is the lack of version control 
 Considering the "AI" agents era we're in, I'm surprised how compile-and-run-tests in the project before/after making a change is not easily pluggable into agents or even encouraged during setup. Maybe I miss something, and begging LLM to do it in a Markdown file is fine.
 
 #### 2026/04/03
-Come say "hi" if you're in Paris next week, because Duncan McGregor and I will be doing "43 Refactorings in 40 minutes" talk at <https://androidmakers.droidcon.com>. Is this going to be the last time humans use an IDE to edit code before generative "AI" learns it all? 🤷
+Come say "hi" if you're in Paris next week, because Duncan McGregor and I will be doing "43 refactorings in 40 minutes" talk at <https://androidmakers.droidcon.com>. Is this going to be the last time humans use an IDE to edit code before generative "AI" learns it all? 🤷
 
 Kodee (💜) vs Duncan (👺)<br/>
 📍 Beffroi de Montrouge, Paris<br/>
