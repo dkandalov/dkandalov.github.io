@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2026/04/16
+Given that LLMs running in a loop (aka agents) are not too bad at searching/analysing code, why not let them access the source code of your project dependencies by default? More often than not, the code is already downloaded by the build tooling.
+
 #### 2026/04/08
 I find it ironic that the same companies that use glorified O(n) complexity in their interviews can be so into the "AI" will replace people theme without specifying the complexity of the problems they want to solve 🧐
 
