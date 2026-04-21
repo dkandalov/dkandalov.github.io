@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2026/04/22
+How come code coverage tools for LLM agents is not a thing? I understand LLM providers might want to just burn more tokens, but everyone else should be interested right? 🤔 (Even if they never run code coverage manually.)
+
 #### 2026/04/16
 Given that LLMs running in a loop (aka agents) are not too bad at searching/analysing code, why not let them access the source code of your project dependencies by default? More often than not, the code is already downloaded by the build tooling.
 
