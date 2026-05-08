@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2026/05/08
+Is that a thing to have a "script" that self-bootstraps via LLMs? For example, start with a minimal script that calls LLM to "write" itself, always leaving some gaps to fall back to LLM.
+
 #### 2026/04/22
 How come code coverage tools for LLM agents is not a thing? I understand LLM providers might want to just burn more tokens, but everyone else should be interested right? 🤔 (Even if they never run code coverage manually.)
 
