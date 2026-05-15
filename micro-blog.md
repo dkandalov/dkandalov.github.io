@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2026/05/15
+[Here is a gist](https://gist.github.com/dkandalov/84d1720684e15fdc9508c25915ef2cb0) with a plugin for OpenCode to commit modified files after each edit tool execution. Because it's easier to review (or undo) changes in Git history.
+
 #### 2026/05/08
 Is that a thing to have a "script" that self-bootstraps via LLMs? For example, start with a minimal script that calls LLM to "write" itself, always leaving some gaps to fall back to LLM.
 
