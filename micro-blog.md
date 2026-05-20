@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2026/05/20
+New code smell: "AI" tool is consistently good at predicting/writing the next piece of code.
+
 #### 2026/05/15
 [Here is a gist](https://gist.github.com/dkandalov/84d1720684e15fdc9508c25915ef2cb0) with a plugin for OpenCode to commit modified files after each edit tool execution. Because it's easier to review (or undo) changes in Git history.
 
