@@ -3,6 +3,11 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2026/05/21
+As always, a great talk by Ross Tate at #KotlinConf26 about local lifetimes in Kotlin. You can watch it on the YouTube live stream <https://www.youtube.com/live/MmwBJbzWbV0?t=18159s> (while it's still there).
+
+<img src="../assets/images/micro-blog/2026-05-21.webp" width="80%" height="80%"/>
+
 #### 2026/05/20
 New code smell: "AI" tool is consistently good at predicting/writing the next piece of code.
 
