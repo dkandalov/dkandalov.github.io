@@ -4,6 +4,13 @@ title: Public speaking
 permalink: public-speaking
 ---
 
+### 2026
+
+| Dates   | Event                                                                               | Talk                                                                                  |
+|---------|-------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|
+| 9 April | [Android Makers](https://androidmakers.droidcon.com) | 43 Refactorings in 40 minutes |
+| 19 June | [SoCraTes UK](https://socratesuk.org) | 37 Refactorings in 45 minutes |
+
 ### 2025
 
 | Dates   | Event                                                                               | Talk                                                                                  |
