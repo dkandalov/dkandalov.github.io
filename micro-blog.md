@@ -3,6 +3,14 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2026/06/24
+Last week I was at the [SoCraTes UK](https://socratesuk.org) conference for the first time in a few years. Classic immersive and expect the unexpected experience. An interesting dichotomy between "how to use AI" and "AI will kill us" discussions ("AI" meaning LLMs).
+
+And if I had to choose just one photo, it would be [Raimo](https://hachyderm.io/@rradczewski) and [Simon](https://mastodon.social/@goertzen@mastodontech.de) crafting the coffee 😋🙏
+
+<img src="../assets/images/micro-blog/2026-06-24.webp" width="50%" height="50%"/>
+
+
 #### 2026/05/21
 As always, a great talk by Ross Tate at #KotlinConf26 about local lifetimes in Kotlin. You can watch it on the YouTube live stream <https://www.youtube.com/live/MmwBJbzWbV0?t=18159s> (while it's still there).
 
