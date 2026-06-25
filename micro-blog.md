@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2026/06/25
+My current faviourite resource for augmented coding is <https://lexler.github.io/augmented-coding-patterns>. So you don't just shout at Copilot to make you a sandwich (well, probably don't use Copilot in the first place).
+
 #### 2026/06/24
 Last week I was at the [SoCraTes UK](https://socratesuk.org) conference for the first time in a few years. Classic immersive and expect the unexpected experience. An interesting dichotomy between "how to use AI" and "AI will kill us" discussions ("AI" meaning LLMs).
 
@@ -10,6 +13,16 @@ And if I had to choose just one photo, it would be [Raimo](https://hachyderm.io/
 
 <img src="../assets/images/micro-blog/2026-06-24.webp" width="50%" height="50%"/>
 
+=== Reply from [@sleepyfox](https://mastodon.social/@sleepyfox@hachyderm.io) ===
+
+I hope you had a good time. I couldn't make it this year due to other commitments but am staunchly in the Resist! camp where it comes to GenAI.
+I hope there was talk about "How can we effectively fight against this" as well as the two previously mentioned AI topics.
+
+=== My reply ===
+
+There was an "Ethics of AI usage" session that I think shifted at least one person into the noAI camp. My takeaway was that as long as there is perceived benefit, companies will keep using LLMs until the bubble bursts for economic reasons (and it will). It will also have a severe climate impact in the long term.
+
+So I wish you had come with the answer to "How can we effectively fight against this" 🙃
 
 #### 2026/05/21
 As always, a great talk by Ross Tate at #KotlinConf26 about local lifetimes in Kotlin. You can watch it on the YouTube live stream <https://www.youtube.com/live/MmwBJbzWbV0?t=18159s> (while it's still there).
