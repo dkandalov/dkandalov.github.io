@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2026/06/26
+The biggest "AI" lucky win was the chat format that shifted metaphor from text completion and pattern matching towards "talking" and "thinking". I prefer the query/search metaphor, where LLM is a lossy snapshot of the Internet (like a JPEG).
+
 #### 2026/06/25
 My current faviourite resource for augmented coding is <https://lexler.github.io/augmented-coding-patterns>. So you don't just shout at Copilot to make you a sandwich (well, probably don't use Copilot in the first place).
 
@@ -561,13 +564,8 @@ I agree that names don't need to reflect implementation details, and I'm happy t
 
 === Update ===
 
-For some reason this post got a bit of attention (42K impressions, 145 comments) on LinkedIn. Mostly from the people who I don't know at all. I genuinely had no idea people actually read technical content on LinkedIn and care enough to reply. At least I don't. I read all the comments, and I'm not going to reply because I don't think there an expectation that I will, and it would take too much effort to have a meaningful conversation with everyone.
+For some reason this post got a bit of attention (42K impressions, 145 comments) on LinkedIn. Mostly from the people who I don't know at all. I genuinely had no idea people actually read technical content on LinkedIn and care enough to reply. At least I don't. I read all the comments, and I'm not going to reply because I don't think there is an expectation that I will, and it would take too much effort to have a meaningful conversation with everyone.
 
-TODO
-What I have learned by reading the comments:
- - Most of the focus was on "req" and "res". Likely, my second "question" about naming functions was not very clear.
- - Sarcastic comments. According to a chatbot aka "AI" (not to be trusted) my original post was "critical, frustrated, opinionated". So ignoring the content, emotionally these comments matched the post. I can only be sorry for the people who felt threatened in any way. It was not my intention. (The intention was to see what David Denton thinks 🙈)
- - There are more "silos" in software developers than I realised. For example, "req, res, cb, and many others, are conventional" and "`req` is basically a standard" gets a reply "WTF does "cb" mean?" 😂
 
 #### 2024/11/11
 The UI looks a bit wonky and there is no obvious keyboard shortcut for this diff popup (I tried hard in the past, let me know if it's there), but overall I really like the option to commit without ceremony! Could we also have "Commit without Dialog" action please 😬 #IntelliJ
