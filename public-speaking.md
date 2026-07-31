@@ -8,8 +8,9 @@ permalink: public-speaking
 
 | Dates   | Event                                                                               | Talk                                                                                  |
 |---------|-------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|
-| 19 June | [SoCraTes UK](https://socratesuk.org) | 37 Refactorings in 45 minutes |
 | 9 April | [Android Makers](https://androidmakers.droidcon.com) | 43 Refactorisations en 40 minutes |
+| 19 June | [SoCraTes UK](https://socratesuk.org) | 37 Refactorings in 45 minutes |
+| 7 October | [next.app devcon](https://www.nextappcon.com/) | AI Agent as a Function |
 {:.post-table}
 
 ### 2025
