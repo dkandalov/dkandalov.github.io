@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2026/10/03
+Witness a human type the last few lines of Kotlin code before AGI takes over! Come watch my "AI agent as a function" talk at the [devcon](https://www.nextappcon.com/agentic-coding-con) milliseconds before singularity arrives in Berlin (sorry, it will not arrive just yet).
+
 #### 2026/06/26
 The biggest "AI" lucky win was the chat format that shifted metaphor from text completion and pattern matching towards "talking" and "thinking". I prefer the query/search metaphor, where LLM is a lossy snapshot of the Internet (like a JPEG).
 
