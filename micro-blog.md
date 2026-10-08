@@ -3,6 +3,11 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2026/10/08
+I did "AI Agent as a Function" talk at my first "agentic" conference and, as Duncan says, nobody died. It might take me some time to review and publish the slop though 🙈
+
+<img src="../assets/images/micro-blog/2026-10-08.webp"/>
+
 #### 2026/10/03
 Witness a human type the last few lines of Kotlin code before AGI takes over! Come watch my "AI agent as a function" talk at the [devcon](https://www.nextappcon.com/agentic-coding-con) milliseconds before singularity arrives in Berlin (sorry, it will not arrive just yet).
 
