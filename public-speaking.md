@@ -8,6 +8,7 @@ permalink: public-speaking
 
 | Dates   | Event                                                                               | Talk                                                                                  |
 |---------|-------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|
+| 23 October | [SoCraTes BE](https://socratesbe.org) | Live Coding AI Agent |
 | 8 October | [next.app devcon](https://www.nextappcon.com/) | AI Agent as a Function |
 | 19 June | [SoCraTes UK](https://socratesuk.org) | 37 Refactorings in 45 minutes |
 | 9 April | [Android Makers](https://androidmakers.droidcon.com) | 43 Refactorisations en 40 minutes |
