@@ -3,6 +3,11 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2026/10/24
+I thought I could tell whether Kotlin code is purely functional, until Duncan redid his KtConf 2025 talk today at [SoCraTes BE](https://socratesbe.org). It's a fuzzy line, but I'm now convinced that, strictly speaking, using `List` as a parameter is not pure.
+
+<img src="../assets/images/micro-blog/2026-10-24.webp" width="80%" height="80%"/>
+
 #### 2026/10/08
 I did "AI Agent as a Function" talk at my first "agentic" conference and, as Duncan says, nobody died. It might take me some time to review and publish the slop though 🙈
 
