@@ -1258,7 +1258,7 @@ Another great (lightning) talk from #KotlinConf is "Kotlin + Power-Assert = ❤�
 I'm watching the #KotlinConf talks I didn't attend, and here is a good one by [Martin Bonnin](https://twitter.com/martinbonnin) <https://www.youtube.com/watch?v=xW39RKtwolA&t=26267s>. Tiny correction, this is the right Result4k link <https://github.com/fork-handles/forkhandles/tree/trunk/result4k> (although [KT-68296](https://youtrack.jetbrains.com/issue/KT-68296) is likely to be the future anyway).
 
 #### 2024/05/27
-I haven't seen all the talks at #KotlinConf but this one is likely to be the best talk this year: "Revamping and Extending Kotlin's Type System" by [Ross Tate](https://twitter.com/rossetate) <https://www.youtube.com/watch?v=xW39RKtwolA&t=18183s> (I sat next to Ross during the keynote but had no idea who he was 🤦)
+I haven't seen all the talks at #KotlinConf but this one is likely to be the best talk this year: "Revamping and Extending Kotlin's Type System" by [Ross Tate](https://twitter.com/rossetate) <https://www.youtube.com/watch?v=3uNpmhHwkuQ> (I sat next to Ross during the keynote but had no idea who he was 🤦)
 
 #### 2024/05/26
 Since someone asked, this is the #LivePlugin I used to have a proper test progress bar in presentation mode at #KotlinConf <https://gist.github.com/dkandalov/765232732a0ef7d2937861fcb035b804> (a bit more code than you'd expect 🤷‍)
