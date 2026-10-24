@@ -34,7 +34,7 @@ Last updated on 20th May 2025 for IntelliJ IDEA `2025.2 EAP`.
 - In `Version Control > Git`
    - Set `Update method` to `Rebase`
    - Enable `Use credential helper` — don't save passwords in IDE (see [IDEA-211251](https://youtrack.jetbrains.com/issue/IDEA-211251))
-- In `Advanaced Settings`
+- In `Advanced Settings`
    - Enable `User Interface > Position mouse cursor on default button in dialogs`
    - Disable `User Interface > Use native faile chooser dialog on Windows/macOS` — because IntelliJ file chooser dialog is just better
    - Enable `Version Control > Toggle commit controls`
