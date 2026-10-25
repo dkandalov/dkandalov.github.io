@@ -4,7 +4,7 @@ permalink: /micro-blog/
 ---
 
 #### 2026/10/25
-Not that the world needs more LLM slop, but LivePlugin now adds a few basic tools like load, unload or list IDE errors to the IntelliJ MCP server. Tools to interact with the IDE UI are hopefully coming soon. https://github.com/dkandalov/live-plugin/blob/master/src/main/liveplugin/implementation/actions/mcp/LivePluginToolset.kt
+Not that the world needs more LLM slop, but LivePlugin now adds a few basic tools like load, unload or list IDE errors to the IntelliJ MCP server. Tools to interact with the IDE UI are hopefully coming soon. <https://github.com/dkandalov/live-plugin/blob/master/src/main/liveplugin/implementation/actions/mcp/LivePluginToolset.kt>
 
 #### 2026/10/24
 I thought I could tell whether Kotlin code is purely functional, until Duncan redid his KtConf 2025 talk today at [SoCraTes BE](https://socratesbe.org). It's a fuzzy line, but I'm now convinced that, strictly speaking, using `List` as a parameter is not pure.
