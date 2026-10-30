@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2026/10/30
+My "AI Agent as a Function" talk from devcon is now on YouTube: <https://www.youtube.com/watch?v=7W5xcOlHRxo>. TLDR, LLM API is just a system prompt, messages, and tools; read/write/list/edit is enough to create a self-modifying program. If you are based in the UK and would like a variation of this talk at your conference/event, let me know 🙃
+
 #### 2026/10/25
 Not that the world needs more LLM slop, but LivePlugin now adds a few basic tools like load, unload or list IDE errors to the IntelliJ MCP server. Tools to interact with the IDE UI are hopefully coming soon. <https://github.com/dkandalov/live-plugin/blob/master/src/main/liveplugin/implementation/actions/mcp/LivePluginToolset.kt>
 
