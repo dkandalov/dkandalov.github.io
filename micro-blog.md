@@ -12,7 +12,7 @@ I thought I could tell whether Kotlin code is purely functional, until Duncan re
 <img src="../assets/images/micro-blog/2026-10-24.webp" width="80%" height="80%"/>
 
 #### 2026/10/08
-I did "AI Agent as a Function" talk at my first "agentic" conference and, as Duncan says, nobody died. It might take me some time to review and publish the slop though 🙈
+I did the [AI Agent as a Function](https://www.youtube.com/watch?v=7W5xcOlHRxo) talk at my first "agentic" conference and, as Duncan says, nobody died. It might take me some time to review and publish the slop though 🙈
 
 <img src="../assets/images/micro-blog/2026-10-08.webp"/>
 
