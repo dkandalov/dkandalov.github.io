@@ -1,12 +1,53 @@
 /* colors */
-$gray5: #2e2e2e;
-$gray4: #808080;
-$gray3: #c0c0c0;
-$gray2: #F5F5F5;
-$gray1: #fafafa;
-$gray0: #ffffff;
+// Colors are CSS custom properties (and not Sass variables) so that the theme can be switched
+// at runtime by setting "data-theme" attribute on the "html" element (see _includes/head.html).
+// Without the attribute, the theme follows the OS setting.
+@mixin dark-theme {
+    @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) { @content; }
+    }
+    :root[data-theme="dark"] { @content; }
+}
 
-$background: $gray1;
+:root {
+    color-scheme: light;
+    --gray5: #2e2e2e;
+    --gray4: #808080;
+    --gray3: #c0c0c0;
+    --gray2: #F5F5F5;
+    --gray1: #fafafa;
+    --gray0: #ffffff;
+
+    --background: var(--gray1);
+    --header-background: var(--gray2);
+    --footer-background: var(--gray2);
+    --pre-border: var(--gray5);
+}
+
+@include dark-theme {
+    color-scheme: dark;
+    --gray5: #e6e6e6;
+    --gray4: #bfbfbf;
+    --gray3: #a6a6a6;
+    --gray2: #737373;
+    --gray1: #262626;
+    --gray0: #1a1a1a;
+
+    --background: var(--gray0);
+    --header-background: var(--gray1);
+    --footer-background: var(--gray1);
+    --pre-border: #f1f1f1;
+}
+
+$gray5: var(--gray5);
+$gray4: var(--gray4);
+$gray3: var(--gray3);
+$gray2: var(--gray2);
+$gray1: var(--gray1);
+$gray0: var(--gray0);
+
+$background: var(--background);
 $pre-background: $background;
-$header-background: $gray2;
-$footer-background: $gray2;
+$pre-border: var(--pre-border);
+$header-background: var(--header-background);
+$footer-background: var(--footer-background);

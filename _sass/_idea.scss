@@ -1,0 +1,100 @@
+/* Code highlighting colors similar to IntelliJ IDEA light and dark (Darcula) themes. */
+:root {
+    --hljs-color: #000;
+    --hljs-background: #fff;
+    --hljs-title: #000;
+    --hljs-meta: #808000;
+    --hljs-keyword: #000080;
+    --hljs-number: #0000ff;
+    --hljs-string: #008000;
+    --hljs-symbol: #000;
+    --hljs-symbol-background: #d0eded;
+    --hljs-variable: #660e7a;
+    --hljs-addition: #baeeba;
+    --hljs-deletion: #ffc8bd;
+}
+
+@include dark-theme {
+    --hljs-color: #A9B7C6;
+    --hljs-background: #2B2B2B;
+    --hljs-title: #FFC66D;
+    --hljs-meta: #BBB529;
+    --hljs-keyword: #CC7832;
+    --hljs-number: #6897BB;
+    --hljs-string: #6A8759;
+    --hljs-symbol: #467CDA;
+    --hljs-symbol-background: transparent;
+    --hljs-variable: #9876AA;
+    --hljs-addition: #447152;
+    --hljs-deletion: #8F5247;
+}
+
+.hljs {
+    display: block;
+    overflow-x: auto;
+    padding: 1em;
+    color: var(--hljs-color);
+    background: var(--hljs-background)
+}
+
+.hljs-subst, .hljs-title {
+    font-weight: normal;
+    color: var(--hljs-title)
+}
+
+.hljs-comment, .hljs-quote {
+    color: #808080;
+    font-style: italic
+}
+
+.hljs-meta {
+    color: var(--hljs-meta)
+}
+
+.hljs-section, .hljs-name, .hljs-literal, .hljs-keyword, .hljs-selector-tag, .hljs-type, .hljs-selector-id, .hljs-selector-class {
+    font-weight: bold;
+    color: var(--hljs-keyword)
+}
+
+.hljs-attribute, .hljs-number, .hljs-regexp, .hljs-link {
+    font-weight: bold;
+    color: var(--hljs-number)
+}
+
+.hljs-number, .hljs-regexp, .hljs-link {
+    font-weight: normal
+}
+
+.hljs-string {
+    color: var(--hljs-string);
+}
+
+.hljs-symbol, .hljs-bullet, .hljs-formula {
+    color: var(--hljs-symbol);
+    background: var(--hljs-symbol-background);
+    font-style: italic
+}
+
+.hljs-doctag {
+    text-decoration: underline
+}
+
+.hljs-variable, .hljs-template-variable {
+    color: var(--hljs-variable)
+}
+
+.hljs-addition {
+    background: var(--hljs-addition)
+}
+
+.hljs-deletion {
+    background: var(--hljs-deletion)
+}
+
+.hljs-emphasis {
+    font-style: italic
+}
+
+.hljs-strong {
+    font-weight: bold
+}

@@ -1,6 +1,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
 
   <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
@@ -8,6 +9,8 @@
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
+
+  <link rel="stylesheet" href="/assets/css/style.css">
 
   <script>
 	  // The main reason for this function is that highlightjs needs "pre" and "code" tags.
@@ -35,29 +38,20 @@
 		  return theme === 'dark' || (theme === null && window.matchMedia("(prefers-color-scheme: dark)").matches);
 	  }
 
+	  function applyTheme(theme) {
+		  document.documentElement.dataset.theme = theme;
+		  document.querySelector('meta[name="color-scheme"]').content = theme;
+	  }
+
 	  function toggleTheme() {
-		  if (isDarkTheme()) {
-			  localStorage.setItem('theme', 'light');
-		  } else {
-			  localStorage.setItem('theme', 'dark');
-		  }
-		  window.location.reload();
+		  const theme = isDarkTheme() ? 'light' : 'dark';
+		  localStorage.setItem('theme', theme);
+		  applyTheme(theme);
 		  return false;
 	  }
 
-	  function appendStylesheet(href) {
-		  const link = document.createElement('link');
-		  link.rel = 'stylesheet';
-		  link.href = href;
-		  document.head.appendChild(link);
-	  }
-
-	  if (isDarkTheme()) {
-		  appendStylesheet('/assets/css/style-dark.css')
-		  appendStylesheet('/assets/css/idea-dark.css')
-	  } else {
-		  appendStylesheet('/assets/css/style.css')
-		  appendStylesheet('/assets/css/idea.css')
+	  if (localStorage.getItem('theme') !== null) {
+		  applyTheme(isDarkTheme() ? 'dark' : 'light');
 	  }
   </script>
 
