@@ -3,6 +3,11 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2026/10/31
+LLM-generated output should be accepted only for entertainment unless it has references to books, articles, source code, or other verifiable sources. Quoting an LLM as an authority is the new astrology. Stop the thinking slop 🎃
+
+<img src="../assets/images/micro-blog/2026-10-31.webp" width="60%" height="60%"/>
+
 #### 2026/10/30
 My "AI Agent as a Function" talk from devcon is now on YouTube: <https://www.youtube.com/watch?v=7W5xcOlHRxo>. TLDR, LLM API is just a system prompt, messages, and tools; read/write/list/edit is enough to create a self-modifying program. If you are based in the UK and would like a variation of this talk at your conference/event, let me know 🙃
 
