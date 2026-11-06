@@ -7,4 +7,4 @@ setup:
 	gem install bundler && bundle install
 
 update:
-	bundle update
+	bundle update --all
