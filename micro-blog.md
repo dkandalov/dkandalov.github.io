@@ -3,6 +3,9 @@ layout: post
 permalink: /micro-blog/
 ---
 
+#### 2026/11/06
+If there is a2ui protocol, shouldn't there also be u2ai? (Yes, I also wonder who thought it was a good idea to drop 'i'.) For example, you want an LLM to "see" and interact with the UI in an existing app without writing custom tools or an MCP server.
+
 #### 2026/10/31
 LLM-generated output should be accepted only for entertainment unless it has references to books, articles, source code, or other verifiable sources. Quoting an LLM as an authority is the new astrology. Stop the thinking slop 🎃
 
